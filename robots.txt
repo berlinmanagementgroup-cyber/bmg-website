@@ -41,4 +41,4 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 # Point to sitemap
-Sitemap: https://berlinmanagementgroup.com/sitemap.xml
+Sitemap: https://berlinmanagementgroup.ai/sitemap.xml
