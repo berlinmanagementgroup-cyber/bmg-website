@@ -1,0 +1,7 @@
+# Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
+[[redirects]]
+  from = "/*"
+  to = "https://berlinmanagementgroup.ai/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["berlinmanagementgroup.com", "www.berlinmanagementgroup.com"]}
