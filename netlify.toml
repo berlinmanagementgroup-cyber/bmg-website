@@ -4,4 +4,6 @@
   to = "https://berlinmanagementgroup.ai/:splat"
   status = 301
   force = true
-  conditions = {Host = ["berlinmanagementgroup.com", "www.berlinmanagementgroup.com"]}
+
+  [redirects.conditions]
+    Host = ["berlinmanagementgroup.com", "www.berlinmanagementgroup.com"]
