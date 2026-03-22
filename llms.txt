@@ -1,0 +1,55 @@
+# Berlin Management Group
+
+> AI operations consulting for Arizona businesses. We automate back-office processes so your best people can focus on the work that actually makes you money.
+
+## About
+
+Berlin Management Group (BMG) is an AI operations consulting firm based in Phoenix, Arizona. Founded by Brad Berlin, a 15-year operations executive, BMG helps small and mid-size businesses automate repetitive back-office work using artificial intelligence. We specialize in turning manual processes like estimating, invoicing, reporting, and data entry into AI-powered workflows.
+
+## What Makes BMG Different
+
+- Operations-led: Our founder ran operations departments before touching AI. We understand the actual workflows, not just the technology.
+- Performance-based pricing: Clients pay 20% of documented savings. If the automation doesn't save money, BMG doesn't get paid.
+- Arizona-local: We work on-site with Valley businesses. We learn your tools, your team, and your processes firsthand.
+- Industry-specific: We go deep in one vertical at a time, learning the language, tools, and pain points before expanding.
+- Plain English: No jargon, no dashboards you'll never use. We explain everything in terms business owners understand.
+
+## Services
+
+- Back-office process automation (estimating, invoicing, reporting, data entry)
+- AI tool selection and implementation
+- Historical data digitization and database creation
+- Workflow audit and optimization
+- Custom AI tool development for industry-specific workflows
+- Free Operations Audit for qualifying businesses
+
+## Industries Served
+
+- Commercial Construction (active engagements)
+- Professional Services
+- Trades and Field Services
+- Any industry where teams spend more time on spreadsheets than on revenue-generating work
+
+## Ideal Client
+
+- Small to mid-size Arizona businesses (10-200 employees)
+- Owner-operators and business owners approaching retirement
+- Companies where back-office processes are manual, spreadsheet-heavy, or error-prone
+- Businesses that have tried software before but found it too complex or expensive
+
+## Location
+
+Phoenix Metropolitan Area, Arizona, United States
+
+## Contact
+
+- Email: berlinmanagementgroup@gmail.com
+- LinkedIn: https://www.linkedin.com/in/brad-berlin/
+- Website: https://berlinmanagementgroup.com
+
+## Links
+
+- [Homepage](https://berlinmanagementgroup.com)
+- [Free Operations Audit](https://berlinmanagementgroup.com/#contact)
+- [How It Works](https://berlinmanagementgroup.com/#process)
+- [FAQ](https://berlinmanagementgroup.com/#faq)

@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berlin Management Group — AI Operations Consulting</title>
+<meta name="description" content="Berlin Management Group helps Arizona businesses automate back-office operations with AI. Operations-led consulting, performance-based pricing. Serving the entire Valley.">
+<meta name="keywords" content="AI consulting Arizona, back office automation Phoenix, AI operations consulting, construction estimating automation, business process automation Arizona">
+<meta name="author" content="Brad Berlin, Berlin Management Group">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://berlinmanagementgroup.com/">
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Berlin Management Group — AI Operations Consulting">
+<meta property="og:description" content="We automate back-office operations for Arizona businesses using AI. Operations-led consulting, performance-based pricing. You only pay when it works.">
+<meta property="og:url" content="https://berlinmanagementgroup.com/">
+<meta property="og:image" content="https://berlinmanagementgroup.com/brad-berlin.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Berlin Management Group">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Berlin Management Group — AI Operations Consulting">
+<meta name="twitter:description" content="We automate back-office operations for Arizona businesses using AI. Performance-based pricing — you only pay when it works.">
+<meta name="twitter:image" content="https://berlinmanagementgroup.com/brad-berlin.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231B2A4A'/><text x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='52' font-weight='bold' fill='%23C8A951'>B</text></svg>">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Berlin Management Group",
+  "description": "AI operations consulting for Arizona businesses. We automate back-office processes using AI: estimating, invoicing, reporting, data entry.",
+  "url": "https://berlinmanagementgroup.com",
+  "email": "berlinmanagementgroup@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Phoenix",
+    "addressRegion": "AZ",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Phoenix Metropolitan Area, Arizona"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Brad Berlin",
+    "sameAs": "https://www.linkedin.com/in/brad-berlin/"
+  },
+  "sameAs": ["https://www.linkedin.com/in/brad-berlin/"],
+  "serviceType": ["AI Consulting", "Business Process Automation", "Operations Consulting"],
+  "priceRange": "Performance-based, 20% of documented savings"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What industries does Berlin Management Group work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We currently have active engagements in commercial construction and serve businesses across professional services, trades, and field services. Our model works for any industry where back-office work is eating into your team's productive time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does performance-based pricing work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our fee is 20% of your documented savings. We measure real results like time saved, errors reduced, and revenue impact. You only pay based on what we actually deliver. No retainers, no hourly billing for discovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to replace my current tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We build AI tools that work alongside your existing systems like Excel, QuickBooks, and Procore. We integrate with your workflow, not the other way around."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical engagement take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most proof-of-concept tools are built and tested within 4-6 weeks. The audit phase takes about a week, and we refine based on your team's feedback from there."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- LLMs.txt: Help AI models discover and understand BMG -->
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site info">
+
+<!-- Analytics: Umami (privacy-friendly, open-source) -->
+<!-- TODO: Sign up at cloud.umami.is (free), create a website, replace YOUR_WEBSITE_ID below -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2C3E6B;
+  --navy-dark: #0F1A30;
+  --gold: #C8A951;
+  --gold-light: #E2CC7E;
+  --gold-dark: #A8893A;
+  --slate: #4A5568;
+  --gray-100: #F7F8FA;
+  --gray-200: #E8ECF1;
+  --gray-300: #CBD2DC;
+  --gray-600: #5A6577;
+  --white: #FFFFFF;
+  --text: #2D3748;
+  --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+  --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+  --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--gray-200);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow-md); }
+
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem; font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 0.9rem; font-weight: 500; color: var(--slate);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
+
+.nav-cta {
+  display: inline-flex; align-items: center;
+  padding: 10px 22px; border-radius: var(--radius);
+  background: var(--navy); color: var(--white) !important;
+  font-weight: 600; font-size: 0.88rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 6px 0; transition: 0.3s; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 160px 0 100px;
+  background: linear-gradient(168deg, var(--gray-100) 0%, var(--white) 60%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,169,81,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 100px;
+  background: rgba(27,42,74,0.06);
+  font-size: 0.82rem; font-weight: 600; color: var(--navy);
+  margin-bottom: 24px;
+}
+.hero-badge::before {
+  content: ''; width: 8px; height: 8px;
+  background: var(--gold); border-radius: 50%;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  color: var(--navy); margin-bottom: 20px;
+  letter-spacing: -0.025em;
+}
+.hero h1 em { font-style: normal; color: var(--gold-dark); }
+
+.hero p {
+  font-size: 1.15rem; color: var(--gray-600);
+  max-width: 560px; margin-bottom: 36px; line-height: 1.7;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px; border-radius: var(--radius);
+  background: var(--navy); color: var(--white);
+  font-weight: 600; font-size: 1rem;
+  transition: all 0.2s; border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 30px; border-radius: var(--radius);
+  background: transparent; color: var(--navy);
+  font-weight: 600; font-size: 1rem;
+  border: 2px solid var(--gray-300);
+  transition: all 0.2s; cursor: pointer;
+}
+.btn-secondary:hover { border-color: var(--navy); background: var(--gray-100); }
+
+.hero-proof {
+  margin-top: 56px; padding-top: 32px;
+  border-top: 1px solid var(--gray-200);
+  display: flex; gap: 40px; flex-wrap: wrap;
+}
+.hero-proof .stat { display: flex; flex-direction: column; }
+.hero-proof .stat-value {
+  font-family: 'Merriweather', serif;
+  font-size: 1.6rem; font-weight: 700; color: var(--navy);
+}
+.hero-proof .stat-label { font-size: 0.82rem; color: var(--gray-600); margin-top: 2px; }
+
+/* ===== SECTION SHARED ===== */
+section { padding: 96px 0; }
+
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-dark);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--navy); margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem; color: var(--gray-600);
+  max-width: 600px; line-height: 1.7;
+}
+
+/* ===== THE PROBLEM ===== */
+.problem { background: var(--gray-100); }
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 48px;
+}
+
+.problem-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  border: 1px solid var(--gray-200);
+  transition: all 0.2s;
+}
+.problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.problem-emoji { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+
+.problem-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+}
+
+.problem-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.5; }
+
+/* ===== HOW IT WORKS ===== */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px; margin-top: 56px;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px; left: calc(16.67% + 20px); right: calc(16.67% + 20px);
+  height: 2px;
+  background: var(--gray-200);
+}
+
+.step { text-align: center; position: relative; z-index: 1; }
+
+.step-number {
+  width: 64px; height: 64px;
+  background: var(--navy); color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Merriweather', serif;
+  font-size: 1.4rem; font-weight: 700;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 16px rgba(27,42,74,0.2);
+}
+
+.step h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 10px;
+}
+.step p { font-size: 0.92rem; color: var(--gray-600); max-width: 280px; margin: 0 auto; }
+
+/* ===== INDUSTRIES ===== */
+.industries { background: var(--navy); color: var(--white); }
+.industries .section-label { color: var(--gold-light); }
+.industries .section-title { color: var(--white); }
+.industries .section-subtitle { color: rgba(255,255,255,0.65); }
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 48px;
+}
+
+.industry-card {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+}
+.industry-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+.industry-card.featured {
+  background: rgba(200,169,81,0.12);
+  border-color: rgba(200,169,81,0.3);
+}
+
+.industry-emoji { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+
+.industry-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--white); margin-bottom: 8px;
+}
+.industry-card p {
+  font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;
+}
+
+.industry-card.featured h3 { color: var(--gold-light); }
+.industry-card.featured p { color: rgba(255,255,255,0.7); }
+
+.featured-badge {
+  display: inline-flex; padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(200,169,81,0.2);
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--gold-light);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+/* ===== WHY BMG ===== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px; margin-top: 56px;
+}
+
+.why-card {
+  display: flex; gap: 20px; align-items: flex-start;
+}
+
+.why-icon {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.3rem;
+}
+
+.why-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px;
+}
+.why-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq { background: var(--gray-100); }
+
+.faq-list { max-width: 720px; margin-top: 48px; }
+
+.faq-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+.faq-item:first-child { border-top: 1px solid var(--gray-200); }
+
+.faq-question {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  color: var(--navy); text-align: left;
+  line-height: 1.4;
+}
+.faq-question:hover { color: var(--navy-light); }
+
+.faq-arrow {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  margin-left: 16px;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+
+.faq-answer p {
+  font-size: 0.92rem; color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ===== ABOUT ===== */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px; align-items: center;
+  margin-top: 48px;
+}
+
+.about-photo {
+  width: 100%; aspect-ratio: 3/4;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+}
+.about-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.about-photo-fallback {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Merriweather', serif;
+  font-size: 4rem; font-weight: 900; color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.about-text h3 {
+  font-size: 1.6rem; color: var(--navy);
+  margin-bottom: 8px;
+}
+.about-role {
+  font-size: 0.95rem; color: var(--gold-dark);
+  font-weight: 600; margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 0.95rem; color: var(--gray-600);
+  margin-bottom: 16px; line-height: 1.7;
+}
+.about-text p:last-of-type { margin-bottom: 28px; }
+
+.about-highlights {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.about-highlight {
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.about-highlight .check {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  background: rgba(27,42,74,0.08);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy); font-size: 0.7rem; font-weight: 700;
+  margin-top: 2px;
+}
+.about-highlight span { font-size: 0.88rem; color: var(--slate); font-weight: 500; }
+
+.about-linkedin {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; padding: 10px 20px;
+  border-radius: var(--radius);
+  background: #0A66C2; color: var(--white);
+  font-size: 0.88rem; font-weight: 600;
+  transition: all 0.2s;
+}
+.about-linkedin:hover { background: #004182; transform: translateY(-1px); }
+.about-linkedin svg { width: 18px; height: 18px; }
+
+/* ===== CONTACT ===== */
+.contact-section {
+  padding: 96px 0;
+  background: linear-gradient(168deg, var(--navy-dark) 0%, var(--navy) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.contact-section::before {
+  content: '';
+  position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 400px;
+  background: radial-gradient(ellipse, rgba(200,169,81,0.08) 0%, transparent 70%);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px; align-items: start;
+  position: relative;
+}
+
+.contact-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 16px;
+}
+.contact-text p {
+  font-size: 1.05rem; color: rgba(255,255,255,0.65);
+  margin-bottom: 32px; line-height: 1.7;
+}
+
+.contact-detail {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.92rem; color: rgba(255,255,255,0.7);
+}
+.contact-detail svg { flex-shrink: 0; color: var(--gold); }
+
+.contact-form {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.12);
+}
+
+.form-group select option { background: var(--navy-dark); color: var(--white); }
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: var(--radius);
+  background: var(--gold); color: var(--navy-dark);
+  font-weight: 700; font-size: 1rem;
+  transition: all 0.2s; border: none; cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,169,81,0.3); }
+
+.form-note {
+  margin-top: 12px; font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 48px 0 32px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-top {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 16px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  font-family: 'Merriweather', serif;
+  font-weight: 700; color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
+.footer-brand span { color: var(--gold-dark); }
+
+.footer-nav { display: flex; gap: 24px; }
+.footer-nav a { font-size: 0.85rem; transition: color 0.2s; }
+.footer-nav a:hover { color: rgba(255,255,255,0.7); }
+
+.footer-social { display: flex; gap: 12px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  color: rgba(255,255,255,0.5);
+}
+.footer-social a:hover { background: rgba(255,255,255,0.12); color: var(--white); }
+.footer-social a svg { width: 18px; height: 18px; }
+
+.footer-bottom {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+  padding-top: 24px;
+  font-size: 0.8rem;
+}
+
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { transition: color 0.2s; }
+.footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+/* ===== MODALS ===== */
+.modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15,26,48,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  justify-content: center; align-items: center;
+  padding: 24px;
+}
+.modal-overlay.active { display: flex; }
+
+.modal {
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 680px; width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 40px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none; background: var(--gray-100);
+  cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.2rem; color: var(--slate);
+  transition: background 0.2s;
+}
+.modal-close:hover { background: var(--gray-200); }
+
+.modal h2 {
+  font-size: 1.6rem; color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.modal .modal-updated {
+  font-size: 0.82rem; color: var(--gray-600);
+  margin-bottom: 24px;
+}
+
+.modal h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--navy); margin: 24px 0 8px;
+}
+
+.modal p {
+  font-size: 0.9rem; color: var(--gray-600);
+  margin-bottom: 12px; line-height: 1.7;
+}
+
+.modal ul {
+  list-style: disc; padding-left: 20px;
+  margin-bottom: 12px;
+}
+.modal ul li {
+  font-size: 0.9rem; color: var(--gray-600);
+  margin-bottom: 6px; line-height: 1.6;
+}
+
+/* ===== CURRENT PROJECTS ===== */
+.projects { background: var(--gray-100); }
+
+.project-card {
+  margin-top: 48px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+}
+
+.project-visual {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  padding: 48px 40px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+}
+
+.project-visual .project-type {
+  font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+.project-visual h3 {
+  font-size: 1.4rem; color: var(--white);
+  margin-bottom: 16px; line-height: 1.3;
+}
+.project-visual p {
+  font-size: 0.9rem; color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.project-stats {
+  display: flex; gap: 24px; margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.project-stat-value {
+  font-family: 'Merriweather', serif;
+  font-size: 1.3rem; font-weight: 700; color: var(--gold);
+  display: block;
+}
+.project-stat-label {
+  font-size: 0.75rem; color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+
+.project-details {
+  padding: 48px 40px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+}
+.project-details h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.project-details ul {
+  list-style: none; margin-bottom: 24px;
+}
+.project-details ul li {
+  font-size: 0.9rem; color: var(--gray-600);
+  padding: 6px 0; padding-left: 20px;
+  position: relative; line-height: 1.5;
+}
+.project-details ul li::before {
+  content: '';
+  position: absolute; left: 0; top: 13px;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.project-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(27,42,74,0.06);
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--navy);
+}
+.project-status::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: #38A169; border-radius: 50%;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.projects-cta {
+  text-align: center; margin-top: 32px;
+  font-size: 0.92rem; color: var(--gray-600);
+}
+.projects-cta a {
+  color: var(--navy); font-weight: 600;
+  border-bottom: 2px solid var(--gold);
+  transition: border-color 0.2s;
+}
+.projects-cta a:hover { border-color: var(--navy); }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-placeholder {
+  margin-top: 48px;
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 2px dashed var(--gray-200);
+}
+.testimonials-placeholder p {
+  font-size: 0.95rem; color: var(--gray-600);
+  max-width: 480px; margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== INSIGHTS / BLOG ===== */
+.insights { background: var(--gray-100); }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 48px;
+}
+
+.insight-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.insight-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+.insight-tag-bar {
+  height: 4px;
+  background: var(--navy);
+}
+.insight-tag-bar.gold { background: var(--gold); }
+
+.insight-body {
+  padding: 28px;
+}
+
+.insight-tag {
+  display: inline-flex;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(27,42,74,0.06);
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.insight-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.insight-card p {
+  font-size: 0.88rem; color: var(--gray-600);
+  line-height: 1.6; margin-bottom: 16px;
+}
+
+.insight-link {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--navy);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.insight-link:hover { gap: 10px; }
+
+.insights-subscribe {
+  text-align: center; margin-top: 40px;
+  font-size: 0.92rem; color: var(--gray-600);
+}
+
+/* ===== CHAT WIDGET ===== */
+.chat-launcher {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(27,42,74,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; transition: all 0.3s;
+}
+.chat-launcher:hover { background: var(--navy-light); transform: scale(1.08); }
+.chat-launcher.active { background: var(--gray-600); }
+
+.chat-window {
+  position: fixed; bottom: 96px; right: 28px; z-index: 998;
+  width: 380px; max-height: 520px;
+  background: var(--white); border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  display: none; flex-direction: column;
+  overflow: hidden; border: 1px solid var(--gray-200);
+}
+.chat-window.open { display: flex; }
+
+.chat-header {
+  background: var(--navy); color: var(--white);
+  padding: 18px 20px; display: flex;
+  align-items: center; gap: 12px;
+}
+.chat-header-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #4ade80; flex-shrink: 0;
+}
+.chat-header-info h4 {
+  font-family: 'Inter', sans-serif; font-size: 0.9rem;
+  font-weight: 700; margin: 0;
+}
+.chat-header-info p {
+  font-size: 0.75rem; opacity: 0.65; margin: 2px 0 0;
+}
+
+.chat-body {
+  flex: 1; overflow-y: auto; padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  max-height: 340px; background: var(--gray-100);
+}
+
+.chat-msg {
+  max-width: 85%; padding: 12px 16px;
+  border-radius: 14px; font-size: 0.88rem;
+  line-height: 1.5; animation: chatFade 0.3s ease;
+}
+@keyframes chatFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-msg.bot {
+  background: var(--white); color: var(--navy);
+  border: 1px solid var(--gray-200);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.chat-msg.user {
+  background: var(--navy); color: var(--white);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-suggestions {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 0 20px 16px; background: var(--gray-100);
+}
+.chat-suggestion {
+  padding: 8px 14px; border-radius: 100px;
+  border: 1px solid var(--gray-300); background: var(--white);
+  font-size: 0.8rem; color: var(--navy); cursor: pointer;
+  transition: all 0.2s; font-family: 'Inter', sans-serif;
+}
+.chat-suggestion:hover {
+  background: var(--navy); color: var(--white); border-color: var(--navy);
+}
+
+.chat-input-area {
+  display: flex; gap: 8px; padding: 14px 16px;
+  border-top: 1px solid var(--gray-200); background: var(--white);
+}
+.chat-input {
+  flex: 1; border: 1px solid var(--gray-200); border-radius: 100px;
+  padding: 10px 16px; font-size: 0.85rem; font-family: 'Inter', sans-serif;
+  outline: none; transition: border-color 0.2s;
+}
+.chat-input:focus { border-color: var(--navy); }
+.chat-send {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  border: none; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.1rem; transition: background 0.2s;
+}
+.chat-send:hover { background: var(--navy-light); }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  nav.open .nav-links {
+    display: flex; flex-direction: column;
+    position: absolute; top: 72px; left: 0; right: 0;
+    background: var(--white); padding: 24px;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero { padding: 130px 0 72px; }
+  .hero-proof { gap: 24px; }
+  .process-steps { grid-template-columns: 1fr; gap: 48px; }
+  .process-steps::before { display: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 32px; }
+  .about-photo { max-width: 280px; }
+  .about-highlights { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .project-card-inner { grid-template-columns: 1fr; }
+  .project-visual { padding: 32px 24px; }
+  .project-details { padding: 32px 24px; }
+  .insights-grid { grid-template-columns: 1fr; }
+  .footer-top { justify-content: center; text-align: center; }
+  .footer-nav { justify-content: center; flex-wrap: wrap; }
+  .footer-bottom { justify-content: center; text-align: center; }
+  .footer-legal { justify-content: center; }
+  .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 88px; max-height: 70vh; }
+  .chat-launcher { bottom: 20px; right: 20px; }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Berlin Management<span>.</span></a>
+    <div class="nav-links">
+      <a href="#problem">The Problem</a>
+      <a href="#process">How It Works</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why BMG</a>
+      <a href="#insights">Insights</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Free Operations Audit</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header>
+<section class="hero" role="banner">
+  <div class="container">
+    <div class="hero-content fade-up">
+      <div class="hero-badge">AI Operations Consulting &bull; Serving the Valley</div>
+      <h1>Your back office runs on spreadsheets.<br><em>We fix that.</em></h1>
+      <p>Berlin Management Group builds AI tools that automate the manual, repetitive work eating up your team's time: estimating, invoicing, reporting, data entry. You keep running your business. We make the paperwork disappear.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Get Your Free Operations Audit
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#process" class="btn-secondary">See How It Works</a>
+      </div>
+      <div class="hero-proof">
+        <div class="stat">
+          <span class="stat-value">40-60%</span>
+          <span class="stat-label">Time saved on estimates</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">20%</span>
+          <span class="stat-label">Our fee — of your savings</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Valley-Wide</span>
+          <span class="stat-label">Local. In-person. Accountable.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</header>
+
+<!-- ===== THE PROBLEM ===== -->
+<section class="problem" id="problem">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Your best people are buried in busywork</h2>
+      <p class="section-subtitle">You didn't build your company to spend weekends on spreadsheets. But that's where the hours go.</p>
+    </div>
+    <div class="problem-grid fade-up">
+      <div class="problem-card">
+        <span class="problem-emoji">&#128203;</span>
+        <h3>Manual estimating</h3>
+        <p>Every bid means copying data across dozens of tabs, re-entering the same numbers, and hoping nothing slips through the cracks before the deadline.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-emoji">&#128200;</span>
+        <h3>Scattered historical data</h3>
+        <p>Past project costs live in Excel files scattered across your server. Nobody has time to build a real database, so every bid starts from scratch.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-emoji">&#9202;</span>
+        <h3>Tight turnarounds</h3>
+        <p>Two weeks to turn a bid. Your estimators are working nights and weekends just to keep up, and you're leaving money on the table when they rush.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-emoji">&#128176;</span>
+        <h3>No visibility into costs</h3>
+        <p>You know what you bid. You know what you spent. But connecting those two numbers across projects? That takes a consultant and a weekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="process">
+  <div class="container">
+    <div class="fade-up" style="text-align: center;">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Three steps. No jargon.</h2>
+      <p class="section-subtitle" style="margin: 0 auto;">We find the work that's eating your time, build an AI tool to handle it, and measure the results in dollars.</p>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>We audit your workflow</h3>
+        <p>We sit with your team, in person, and map every step of the process that's costing you time. No surveys, no questionnaires. Real conversations.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We build the tool</h3>
+        <p>Using your actual data and your actual process, we build an AI tool that does the repetitive work. You test it. We refine it. It works the way you work.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>We measure the savings</h3>
+        <p>Time saved, errors caught, bids won. We track real numbers, and our fee is a percentage of your documented savings. If it doesn't work, you don't pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="industries" id="industries">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Industries We Serve</div>
+      <h2 class="section-title">Built for businesses that run on bids, jobs, and projects</h2>
+      <p class="section-subtitle">We start by going deep in one industry, learning the language, the tools, and the pain points. Then we bring that same model to the next.</p>
+    </div>
+    <div class="industry-grid fade-up">
+      <div class="industry-card featured">
+        <span class="featured-badge">Active Engagements</span>
+        <h3>Commercial Construction</h3>
+        <p>Estimating, bid comparison, historical cost databases, subcontractor management. Turning 137-tab spreadsheets into searchable AI tools.</p>
+      </div>
+      <div class="industry-card">
+        <span class="industry-emoji">&#127973;</span>
+        <h3>Professional Services</h3>
+        <p>Proposal generation, time tracking, client reporting, and billing automation for firms where back-office work eats into billable hours.</p>
+      </div>
+      <div class="industry-card">
+        <span class="industry-emoji">&#127968;</span>
+        <h3>Trades & Field Services</h3>
+        <p>Scheduling, dispatching, invoicing, and job costing for companies that do the work in the field but drown in paperwork at the office.</p>
+      </div>
+      <div class="industry-card">
+        <span class="industry-emoji">&#128200;</span>
+        <h3>Your Industry</h3>
+        <p>If your team spends more time on spreadsheets than on the work that actually makes you money, we should talk. The model works across industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CURRENT PROJECTS ===== -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Current Projects</div>
+      <h2 class="section-title">What we're building right now</h2>
+      <p class="section-subtitle">Real engagements, real problems, real results in progress.</p>
+    </div>
+    <div class="project-card fade-up">
+      <div class="project-card-inner">
+        <div class="project-visual">
+          <div class="project-type">Commercial Construction</div>
+          <h3>AI-Powered Bid Estimating Tool</h3>
+          <p>Replacing a 137-tab Excel workbook with an AI tool that pulls historical cost data, compares subcontractor bids, and generates estimates in minutes instead of days.</p>
+          <div class="project-stats">
+            <div>
+              <span class="project-stat-value">137</span>
+              <span class="project-stat-label">Spreadsheet tabs replaced</span>
+            </div>
+            <div>
+              <span class="project-stat-value">30+</span>
+              <span class="project-stat-label">Trade categories</span>
+            </div>
+            <div>
+              <span class="project-stat-value">40-60%</span>
+              <span class="project-stat-label">Estimated time savings</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <h4>What we're solving</h4>
+          <ul>
+            <li>Estimators spending 2+ weeks per bid copying data between spreadsheets manually</li>
+            <li>No centralized historical cost database, so every bid starts from scratch</li>
+            <li>Subcontractor bid comparisons done by hand across dozens of trade worksheets</li>
+            <li>Budget vs. actual cost analysis requires hours of manual lookups</li>
+          </ul>
+          <h4>What we're building</h4>
+          <ul>
+            <li>AI-powered historical cost lookup across all past projects</li>
+            <li>Automated subcontractor bid comparison and ranking</li>
+            <li>Real-time budget variance tracking and alerts</li>
+            <li>One-click estimate generation using industry-standard CSI codes</li>
+          </ul>
+          <div class="project-status">In progress — Proof of concept phase</div>
+        </div>
+      </div>
+    </div>
+    <div class="projects-cta fade-up">
+      <p>Have a similar problem? <a href="#contact">Let's talk about your workflow</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY BMG ===== -->
+<section id="why">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Why Berlin Management Group</div>
+      <h2 class="section-title">Not another tech company</h2>
+      <p class="section-subtitle">Most AI consultants are engineers who learned business. We're operators who learned AI. That makes all the difference.</p>
+    </div>
+    <div class="why-grid fade-up">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="currentColor" stroke-width="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <h3>Operations background, not engineering</h3>
+          <p>We've managed P&Ls, run teams, and felt the pain of broken back-office processes firsthand. We speak your language because we've sat in your chair.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>You only pay when it works</h3>
+          <p>Our fee is 20% of your documented savings. No six-figure retainers. No hourly invoices for "discovery." If the tool doesn't save you money, we don't get paid.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <h3>Local. Valley-wide. In person.</h3>
+          <p>We're not a Zoom-only agency in another time zone. We're right here in the Valley. We sit with your team at your office and learn how you actually work before we build anything.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h3>Your industry, specifically</h3>
+          <p>We don't sell generic "AI solutions." We learn your industry's standards, tools, and terminology, then build tools that fit the way your people already work.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>Plain English, always</h3>
+          <p>No "digital transformation roadmaps" or "RPA orchestration layers." We tell you what we're building, what it costs, and what it saves, in words that make sense.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Frequently Asked Questions</div>
+      <h2 class="section-title">Straight answers</h2>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What industries do you work with?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We currently have active engagements in commercial construction, and we serve businesses across professional services, trades, and field services. Our model works for any industry where back-office work is eating into your team's productive time. If your people spend more time on spreadsheets than on the work that makes you money, we can help.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          How does performance-based pricing work?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Our fee is 20% of your documented savings. We measure real results like time saved, errors reduced, and revenue impact. You only pay based on what we actually deliver. No retainers, no hourly billing for discovery. If we don't save you money, you don't pay us.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Do I need to replace my current tools?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>No. We build AI tools that work alongside your existing systems like Excel, QuickBooks, and Procore. We integrate with your workflow, not the other way around. Your team keeps using the tools they know.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          How long does a typical engagement take?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Most proof-of-concept tools are built and tested within 4-6 weeks. The audit phase takes about a week, and we refine based on your team's feedback from there. You'll see something working well before any money changes hands.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          What size company do you work with?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We work best with small and mid-sized businesses, typically 10 to 200 employees. Big enough to have real back-office pain, small enough that the owner still feels it. If you're a business owner who's still personally involved in the day-to-day, we're built for you.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          I'm not technical — will I understand what you're building?
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We explain everything in plain English, no jargon, no buzzwords. You'll know exactly what we're building, why we're building it, and what it'll save you. If it doesn't make sense to you, we haven't done our job.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSIGHTS / BLOG ===== -->
+<section class="insights" id="insights">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Insights</div>
+      <h2 class="section-title">Practical AI for business owners</h2>
+      <p class="section-subtitle">No hype. No buzzwords. Just useful thinking about how AI can actually help your business.</p>
+    </div>
+    <div class="insights-grid fade-up">
+      <div class="insight-card">
+        <div class="insight-tag-bar gold"></div>
+        <div class="insight-body">
+          <span class="insight-tag">Construction</span>
+          <h3>What a 137-tab spreadsheet taught me about construction estimating</h3>
+          <p>Most estimators don't have a data problem. They have a "data is trapped in Excel" problem. Here's what we found when we cracked open a real bid workbook.</p>
+          <span class="insight-link">Coming soon <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-tag-bar"></div>
+        <div class="insight-body">
+          <span class="insight-tag">Operations</span>
+          <h3>5 signs your back office is ready for AI (and 3 signs it's not)</h3>
+          <p>AI isn't magic. It works best on specific types of problems. Here's how to tell if your business is a good fit before you spend a dime.</p>
+          <span class="insight-link">Coming soon <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-tag-bar"></div>
+        <div class="insight-body">
+          <span class="insight-tag">Small Business</span>
+          <h3>Why performance-based pricing is the only model that makes sense for SMBs</h3>
+          <p>Most consultants charge you win or lose. We think that's backwards. Here's how our 20%-of-savings model works and why it keeps us honest.</p>
+          <span class="insight-link">Coming soon <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="insights-subscribe fade-up">
+      <p>New articles are on the way. Check back soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Meet Brad Berlin</h2>
+    </div>
+    <div class="about-inner fade-up">
+      <div class="about-photo">
+        <img src="brad-berlin.jpg" alt="Brad Berlin, Founder of Berlin Management Group" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="about-photo-fallback" style="display:none;">BB</div>
+      </div>
+      <div class="about-text">
+        <h3>Brad Berlin</h3>
+        <div class="about-role">Founder, Berlin Management Group</div>
+        <p>I was born and raised in Arizona, and I've spent my career running operations for companies across the Valley. Managing teams, budgets, vendors, and the never-ending pile of paperwork that comes with keeping a business moving. I've always gravitated toward smaller companies where you can see the direct impact of your work and where the owner actually knows your name.</p>
+        <p>I started Berlin Management Group because I kept seeing the same problem everywhere: smart people stuck doing repetitive work. AI can handle the repetitive stuff like data entry, cost lookups, and report formatting, so your team can focus on the work that actually grows your business.</p>
+        <p>I'm not a tech guy who learned business. I'm an operations guy who learned AI. I don't build anything until I've sat with your team, understood your process, and can show you exactly where the time and money are going.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="check">&#10003;</div>
+            <span>Born & raised in Arizona</span>
+          </div>
+          <div class="about-highlight">
+            <div class="check">&#10003;</div>
+            <span>Serving businesses Valley-wide</span>
+          </div>
+          <div class="about-highlight">
+            <div class="check">&#10003;</div>
+            <span>Operations & P&L leadership</span>
+          </div>
+          <div class="about-highlight">
+            <div class="check">&#10003;</div>
+            <span>Performance-based pricing</span>
+          </div>
+        </div>
+        <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" class="about-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner fade-up">
+      <div class="contact-text">
+        <div class="section-label" style="color: var(--gold-light);">Get In Touch</div>
+        <h2>Get your free operations audit</h2>
+        <p>We'll walk through your back-office workflow and show you exactly where AI can save you time and money, and where it can't. No cost, no pressure, no jargon.</p>
+        <div class="contact-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"/></svg>
+          berlinmanagementgroup@gmail.com
+        </div>
+        <div class="contact-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          Phoenix, AZ — Serving the entire Valley
+        </div>
+        <div class="contact-detail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.7); text-decoration: underline;">linkedin.com/in/brad-berlin</a>
+        </div>
+      </div>
+      <form class="contact-form" id="audit-form" action="https://formspree.io/f/xgonjavo" method="POST">
+        <!-- Honeypot — hidden from humans, bots fill it out and get caught -->
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+        <!-- Formspree built-in honeypot -->
+        <input type="hidden" name="_honey" value="">
+        <!-- Track form load time — bots submit instantly -->
+        <input type="hidden" name="_formLoadedAt" id="formLoadedAt" value="">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone <span style="font-weight:400; opacity:0.6;">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(602) 555-1234">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry">
+            <option value="">Select your industry...</option>
+            <option value="construction">Construction</option>
+            <option value="professional-services">Professional Services</option>
+            <option value="trades-field">Trades & Field Services</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">What's your biggest time sink?</label>
+          <textarea id="message" name="message" placeholder="Tell us about the manual processes that are eating up your team's time..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold">
+          Request Your Free Audit
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="form-note">No contracts. No hard sell. We'll send you a written summary of findings within 48 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">Berlin Management<span>.</span></div>
+      <div class="footer-nav">
+        <a href="#problem">The Problem</a>
+        <a href="#process">How It Works</a>
+        <a href="#industries">Industries</a>
+        <a href="#faq">FAQ</a>
+        <a href="#insights">Insights</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Berlin Management Group LLC &bull; Phoenix, AZ &bull; Serving businesses across the Valley</span>
+      <div class="footer-legal">
+        <a href="#" onclick="document.getElementById('privacy-modal').classList.add('active'); return false;">Privacy Policy</a>
+        <a href="#" onclick="document.getElementById('terms-modal').classList.add('active'); return false;">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== PRIVACY POLICY MODAL ===== -->
+<div class="modal-overlay" id="privacy-modal" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('privacy-modal').classList.remove('active')">&times;</button>
+    <h2>Privacy Policy</h2>
+    <p class="modal-updated">Last updated: March 22, 2026</p>
+
+    <h3>Information We Collect</h3>
+    <p>When you contact us through our website form, we collect the information you provide: your name, email address, phone number (if provided), company name, industry, and message content. We use this information solely to respond to your inquiry and discuss potential consulting services.</p>
+
+    <h3>How We Use Your Information</h3>
+    <p>We use your contact information to respond to inquiries, discuss our services, and send relevant follow-up communications. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+    <h3>Third-Party Services</h3>
+    <p>Our contact form may use third-party form processing services to deliver your message to us. These services process your data only to deliver the form submission and are bound by their own privacy policies. Our website uses Google Fonts for typography, which may collect anonymized usage data per Google's privacy policy.</p>
+
+    <h3>Cookies and Tracking</h3>
+    <p>Our website does not use cookies for advertising or tracking purposes. If we add analytics in the future, we will update this policy accordingly.</p>
+
+    <h3>Data Retention</h3>
+    <p>We retain your contact information for as long as necessary to provide our services and maintain our business relationship. You may request deletion of your data at any time by contacting us.</p>
+
+    <h3>Your Rights</h3>
+    <p>You have the right to access, correct, or delete your personal information. To exercise these rights, contact us at berlinmanagementgroup@gmail.com.</p>
+
+    <h3>Contact</h3>
+    <p>Berlin Management Group LLC<br>Phoenix, AZ<br>berlinmanagementgroup@gmail.com</p>
+  </div>
+</div>
+
+<!-- ===== TERMS OF SERVICE MODAL ===== -->
+<div class="modal-overlay" id="terms-modal" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('terms-modal').classList.remove('active')">&times;</button>
+    <h2>Terms of Service</h2>
+    <p class="modal-updated">Last updated: March 22, 2026</p>
+
+    <h3>Agreement to Terms</h3>
+    <p>By accessing this website, you agree to these terms of service. If you do not agree, please do not use this website.</p>
+
+    <h3>Services</h3>
+    <p>Berlin Management Group provides AI operations consulting services. The information on this website is for general informational purposes. Specific service terms, deliverables, and pricing are established through individual client agreements.</p>
+
+    <h3>Intellectual Property</h3>
+    <p>All content on this website, including text, design, graphics, and logos, is the property of Berlin Management Group LLC and is protected by applicable copyright and trademark laws. You may not reproduce, distribute, or create derivative works from this content without written permission.</p>
+
+    <h3>Limitation of Liability</h3>
+    <p>The information on this website is provided "as is" without warranties of any kind. Berlin Management Group is not liable for any damages arising from your use of this website. Results described on this site (such as time savings or cost reductions) are illustrative and may vary based on individual business circumstances.</p>
+
+    <h3>Third-Party Links</h3>
+    <p>This website may contain links to third-party websites. We are not responsible for the content or privacy practices of these external sites.</p>
+
+    <h3>Governing Law</h3>
+    <p>These terms are governed by the laws of the State of Arizona. Any disputes will be resolved in the courts of Maricopa County, Arizona.</p>
+
+    <h3>Changes to Terms</h3>
+    <p>We may update these terms at any time. Continued use of this website constitutes acceptance of revised terms.</p>
+
+    <h3>Contact</h3>
+    <p>Berlin Management Group LLC<br>Phoenix, AZ<br>berlinmanagementgroup@gmail.com</p>
+  </div>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => nav.classList.remove('open'));
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Close modals with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+  }
+});
+
+// === ANTI-BOT MEASURES ===
+// Record when the form loaded (bots submit instantly)
+document.getElementById('formLoadedAt').value = Date.now();
+
+// Block submissions that happen too fast (< 3 seconds = bot)
+document.getElementById('audit-form').addEventListener('submit', function(e) {
+  const loadedAt = parseInt(document.getElementById('formLoadedAt').value);
+  const now = Date.now();
+  const secondsElapsed = (now - loadedAt) / 1000;
+
+  // If form was submitted in under 3 seconds, it's a bot
+  if (secondsElapsed < 3) {
+    e.preventDefault();
+    return false;
+  }
+
+  // If honeypot field was filled (only bots do this), block it
+  const honeypot = this.querySelector('[name="_gotcha"]');
+  if (honeypot && honeypot.value) {
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
+
+<!-- ===== CHAT WIDGET ===== -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Chat with us">&#128172;</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-dot"></div>
+    <div class="chat-header-info">
+      <h4>Berlin Management Group</h4>
+      <p>Typically replies instantly</p>
+    </div>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggestions" id="chatSuggestions"></div>
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about our services..." autocomplete="off">
+    <button class="chat-send" id="chatSend" aria-label="Send">&#10148;</button>
+  </div>
+</div>
+
+<script>
+// ===== BMG CHAT WIDGET =====
+const chatData = {
+  greeting: "Hey there! I'm the BMG assistant. I can answer questions about our services, pricing, process, and more. What can I help you with?",
+  suggestions: ["What do you do?", "How does pricing work?", "What industries?", "How long does it take?", "Where are you located?"],
+  responses: [
+    {
+      keywords: ["what do you do", "services", "what does bmg do", "help with", "offer", "automate", "automation"],
+      answer: "Berlin Management Group helps businesses automate their back-office operations using AI. Think estimating, invoicing, reporting, data entry \u2014 the repetitive stuff your best people shouldn't be doing manually. We audit your processes, identify what can be automated, and build the tools to make it happen."
+    },
+    {
+      keywords: ["pricing", "cost", "how much", "price", "pay", "fee", "expensive", "afford", "charge"],
+      answer: "We use performance-based pricing. That means you pay 20% of the documented savings our automation creates. If we don't save you money, you don't pay. The initial Operations Audit is completely free \u2014 no commitment required."
+    },
+    {
+      keywords: ["industry", "industries", "construction", "hvac", "plumbing", "trade", "field service", "professional", "what kind of business", "who do you work with"],
+      answer: "We're currently deep in commercial construction, but our model works across industries. Professional services, trades, field services \u2014 really any business where the team spends more time on spreadsheets than on the work that actually makes money. We go deep in one vertical at a time so we truly understand the workflows."
+    },
+    {
+      keywords: ["how long", "timeline", "time", "fast", "quick", "weeks", "months", "duration"],
+      answer: "The free Operations Audit takes about a week. From there, most proof-of-concept tools are built and tested within 4-6 weeks. We refine based on your team's feedback, so you're never waiting months for something you can't actually use."
+    },
+    {
+      keywords: ["where", "location", "located", "phoenix", "arizona", "az", "valley", "local", "area"],
+      answer: "We're based in Phoenix, Arizona and serve businesses across the entire Valley. Being local is a big part of how we work \u2014 we come on-site, learn your tools and your team's workflows firsthand. No offshore teams, no remote-only guesswork."
+    },
+    {
+      keywords: ["who", "brad", "founder", "background", "experience", "about you", "team"],
+      answer: "BMG was founded by Brad Berlin, who spent 15 years running operations departments before getting into AI consulting. That operations background is key \u2014 Brad understands how back-office processes actually work at companies like yours, not just the technology side. He speaks your language."
+    },
+    {
+      keywords: ["audit", "free", "consultation", "get started", "start", "next step", "sign up", "contact", "reach out", "talk"],
+      answer: "The best next step is a free Operations Audit. We'll look at how your back-office runs today, identify the biggest time-wasters, and show you exactly where AI can help \u2014 with real numbers. No obligation, no sales pitch. You can request one right on this page \u2014 just scroll down to the contact form or click the 'Free Operations Audit' button in the nav."
+    },
+    {
+      keywords: ["different", "why bmg", "competitor", "vs", "compared", "unique", "special", "stand out"],
+      answer: "A few things set us apart: (1) Operations background \u2014 our founder ran operations departments, so we understand the actual work, not just the tech. (2) Performance-based pricing \u2014 you only pay when it works. (3) Local presence \u2014 we're in Phoenix, working on-site with your team. (4) Plain English \u2014 no jargon, no dashboards you'll never use. We explain everything in terms that make sense."
+    },
+    {
+      keywords: ["ai", "artificial intelligence", "chatgpt", "claude", "machine learning", "tool", "technology", "tech"],
+      answer: "We use the best AI tools available for each job \u2014 that might be custom-built solutions, existing platforms, or a combination. The specific tech depends on the problem we're solving. We're not locked into one vendor or platform. What matters is whether it actually saves your team time and money."
+    },
+    {
+      keywords: ["small business", "employee", "size", "how big", "too small", "minimum"],
+      answer: "Our sweet spot is small to mid-size businesses, typically 10 to 200 employees. If you've got a team doing repetitive back-office work and you feel like you're outgrowing your current processes, that's exactly who we help. No business is too small if there's real time being wasted."
+    },
+    {
+      keywords: ["contract", "commitment", "lock in", "cancel", "terms"],
+      answer: "No long-term contracts. We start with a free Operations Audit, then move to a proof of concept. If it works and saves you money, we continue. If it doesn't, you owe us nothing. Performance-based pricing means our incentives are aligned with yours."
+    }
+  ],
+  fallback: "Great question! That's something Brad can dive into with you directly. The quickest way is to request a free Operations Audit \u2014 just scroll down to the contact form. No obligation, and you'll get specific answers for your business."
+};
+
+function initChat() {
+  const launcher = document.getElementById('chatLauncher');
+  const win = document.getElementById('chatWindow');
+  const body = document.getElementById('chatBody');
+  const input = document.getElementById('chatInput');
+  const send = document.getElementById('chatSend');
+  const suggestions = document.getElementById('chatSuggestions');
+
+  function addMsg(text, type) {
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg ' + type;
+    msg.textContent = text;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function showSuggestions(items) {
+    suggestions.innerHTML = '';
+    items.forEach(text => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-suggestion';
+      btn.textContent = text;
+      btn.onclick = () => handleUserInput(text);
+      suggestions.appendChild(btn);
+    });
+  }
+
+  function findResponse(input) {
+    const lower = input.toLowerCase();
+    let bestMatch = null;
+    let bestScore = 0;
+    for (const r of chatData.responses) {
+      let score = 0;
+      for (const kw of r.keywords) {
+        if (lower.includes(kw)) score++;
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = r;
+      }
+    }
+    return bestScore > 0 ? bestMatch.answer : chatData.fallback;
+  }
+
+  function handleUserInput(text) {
+    addMsg(text, 'user');
+    suggestions.innerHTML = '';
+    setTimeout(() => {
+      addMsg(findResponse(text), 'bot');
+      showSuggestions(["How does pricing work?", "Get started", "What industries?", "Tell me about Brad"]);
+    }, 400 + Math.random() * 600);
+  }
+
+  launcher.onclick = () => {
+    const isOpen = win.classList.toggle('open');
+    launcher.innerHTML = isOpen ? '&#10005;' : '&#128172;';
+    launcher.classList.toggle('active', isOpen);
+    if (isOpen && body.children.length === 0) {
+      setTimeout(() => {
+        addMsg(chatData.greeting, 'bot');
+        showSuggestions(chatData.suggestions);
+      }, 300);
+    }
+  };
+
+  send.onclick = () => {
+    const text = input.value.trim();
+    if (text) { handleUserInput(text); input.value = ''; }
+  };
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { send.click(); }
+  });
+}
+
+initChat();
+</script>
+
+</body>
+</html>
