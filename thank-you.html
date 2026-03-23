@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Berlin Management Group</title>
+    <meta name="description" content="Thank you for reaching out to Berlin Management Group. We'll review your request and get back to you within 48 hours.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231B2A4A'/><text x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='52' font-weight='bold' fill='%23C8A951'>B</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --navy-dark: #0F1A30; --navy: #1B2A4A; --navy-light: #2A3F6B; --gold: #C8A951; --gold-light: #D4BA6A; --text-primary: #2D3748; --text-secondary: #4A5568; --text-muted: #718096; --bg-warm: #FAF9F7; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background-color: var(--navy-dark); min-height: 100vh; display: flex; flex-direction: column; }
+        nav { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(27,42,74,0.08); padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-family: 'Merriweather', Georgia, serif; font-size: 1.15rem; font-weight: 900; color: var(--navy); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-logo span { color: var(--gold); }
+        .nav-cta { display: inline-flex; align-items: center; padding: 0.6rem 1.4rem; background: var(--navy); color: var(--white); font-size: 0.875rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--navy-light); }
+        .thank-you-section { flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; background: linear-gradient(165deg, var(--navy-dark) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
+        .thank-you-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(200,169,81,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,81,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+        .thank-you-container { max-width: 640px; width: 100%; text-align: center; position: relative; z-index: 1; }
+        .success-icon { width: 80px; height: 80px; margin: 0 auto 2rem; background: rgba(200,169,81,0.12); border: 2px solid rgba(200,169,81,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: scaleIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        .success-icon svg { width: 36px; height: 36px; stroke: var(--gold); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .checkmark-path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: drawCheck 0.6s 0.3s ease-out forwards; }
+        @keyframes scaleIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+        .thank-you-container h1 { font-family: 'Merriweather', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 1rem; }
+        .thank-you-container .subtitle { font-size: 1.125rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 2.5rem; }
+        .next-steps-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem; text-align: left; margin-bottom: 2.5rem; backdrop-filter: blur(8px); }
+        .next-steps-card h2 { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+        .step { display: flex; align-items: flex-start; gap: 1rem; padding: 0.75rem 0; }
+        .step + .step { border-top: 1px solid rgba(255,255,255,0.06); }
+        .step-number { flex-shrink: 0; width: 32px; height: 32px; background: rgba(200,169,81,0.15); border: 1px solid rgba(200,169,81,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--gold); }
+        .step-content h3 { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+        .step-content p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+        .cta-group { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--gold); color: var(--navy-dark); font-size: 0.95rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,169,81,0.3); }
+        .btn-primary svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; background: transparent; color: rgba(255,255,255,0.6); font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .btn-secondary:hover { color: var(--white); border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
+        .btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+        footer { background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem; text-align: center; }
+        footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+        footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+        @media (max-width: 640px) { .thank-you-section { padding: 3rem 1.25rem; } .thank-you-container h1 { font-size: 1.75rem; } .thank-you-container .subtitle { font-size: 1rem; } .next-steps-card { padding: 1.5rem; } nav { padding: 0 1.25rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-logo">Berlin Management Group<span>.</span></a>
+        <a href="/" class="nav-cta">Back to Home</a>
+    </nav>
+    <section class="thank-you-section">
+        <div class="thank-you-container">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24"><path class="checkmark-path" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <h1>We got your request.</h1>
+            <p class="subtitle">Thank you for reaching out. We'll review your information and send you a written summary of findings within 48 hours.</p>
+            <div class="next-steps-card">
+                <h2>What Happens Next</h2>
+                <div class="step"><div class="step-number">1</div><div class="step-content"><h3>We review your submission</h3><p>Brad will personally read your request and research your industry within 24 hours.</p></div></div>
+                <div class="step"><div class="step-number">2</div><div class="step-content"><h3>30-minute workflow review</h3><p>We'll schedule a quick phone or video call to walk through your current processes together.</p></div></div>
+                <div class="step"><div class="step-number">3</div><div class="step-content"><h3>Written summary delivered</h3><p>You'll receive a clear write-up of your top automation opportunities — no jargon, no hard sell.</p></div></div>
+            </div>
+            <div class="cta-group">
+                <a href="/" class="btn-primary"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Home</a>
+                <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" class="btn-secondary"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" rx="0" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Connect on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Berlin Management Group LLC &middot; Phoenix, AZ &middot; <a href="/">berlinmanagementgroup.ai</a></p>
+    </footer>
+</body>
+</html>
