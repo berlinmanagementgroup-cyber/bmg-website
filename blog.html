@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Practical automation strategies for service businesses from Brad Berlin, a 20-year operations leader. Topics: HVAC automation, property management, construction estimating, AI workforce impact.">
+<meta name="keywords" content="AI automation blog, HVAC automation, property management automation, construction estimating AI, AI operations consulting, Phoenix AZ">
+<meta name="author" content="Brad Berlin, Berlin Management Group">
+<meta property="og:title" content="Blog | Berlin Management Group - AI Operations Consulting Insights">
+<meta property="og:description" content="Practical automation strategies for service businesses from Brad Berlin, a 20-year operations leader.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://berlinmanagementgroup.ai/blog.html">
+<link rel="canonical" href="https://berlinmanagementgroup.ai/blog.html">
+<title>Blog | Berlin Management Group - AI Operations Consulting Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #2C3E6B;
+    --navy-dark: #0F1A30;
+    --gold: #C8A951;
+    --gold-light: #E2CC7E;
+    --gold-dark: #A8893A;
+    --slate: #4A5568;
+    --gray-100: #F7F8FA;
+    --gray-200: #E8ECF1;
+    --gray-300: #CBD2DC;
+    --gray-600: #5A6577;
+    --white: #FFFFFF;
+    --text: #2D3748;
+    --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+    --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+    --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+    --radius: 8px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--gray-200);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    height: 72px;
+  }
+
+  .nav-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-square {
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .nav-logo-text {
+    font-family: Merriweather, serif;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--navy);
+  }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .nav-cta:hover {
+    background: var(--navy-light);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+  }
+
+  /* Mobile nav */
+  @media (max-width: 768px) {
+    .nav-inner {
+      padding: 0 20px;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links a,
+    .nav-links .nav-cta {
+      padding: 12px 0;
+    }
+  }
+
+  /* Main content margin for fixed nav */
+  main {
+    margin-top: 72px;
+  }
+
+  /* Blog Hero */
+  .blog-hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .blog-hero h1 {
+    font-size: 2.4em;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    font-family: Merriweather, serif;
+  }
+
+  .blog-hero p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Blog Section */
+  .blog-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 30px;
+  }
+
+  /* Blog Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+
+  /* Blog Card */
+  .blog-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .blog-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .blog-card-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .blog-card-category {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .blog-card h3 {
+    color: var(--navy);
+    font-size: 1.3em;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .blog-card-excerpt {
+    color: var(--slate);
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .blog-card-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    color: var(--gray-600);
+    margin-bottom: 12px;
+  }
+
+  .blog-card-read-more {
+    display: inline-block;
+    color: var(--gold-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .blog-card-read-more:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+  }
+
+  /* Full Post Container */
+  .full-post {
+    display: none;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .full-post.active {
+    display: block;
+  }
+
+  .full-post-header {
+    margin-bottom: 32px;
+  }
+
+  .full-post-title {
+    font-size: 2em;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-family: Merriweather, serif;
+  }
+
+  .full-post-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 0.9em;
+    color: var(--gray-600);
+  }
+
+  .full-post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .full-post-content {
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .full-post-content h4 {
+    color: var(--navy);
+    font-size: 1.2em;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-family: Merriweather, serif;
+  }
+
+  .full-post-content p {
+    margin-bottom: 16px;
+  }
+
+  .full-post-content ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  .full-post-content li {
+    margin-bottom: 8px;
+  }
+
+  .full-post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid var(--gray-200);
+  }
+
+  .full-post-content th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px;
+    text-align: left;
+  }
+
+  .full-post-content td {
+    padding: 12px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .full-post-back {
+    display: inline-block;
+    color: var(--gold-dark);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 24px;
+    transition: color 0.2s;
+  }
+
+  .full-post-back:hover {
+    color: var(--gold);
+  }
+
+  /* Author Bio Box */
+  .author-bio {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--navy-dark);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .author-bio-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.4em;
+    flex-shrink: 0;
+  }
+
+  .author-bio-text {
+    flex: 1;
+  }
+
+  .author-bio-name {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1.05em;
+    margin-bottom: 4px;
+  }
+
+  .author-bio-title {
+    color: var(--navy-light);
+    font-size: 0.85em;
+    margin-bottom: 8px;
+  }
+
+  .author-bio-desc {
+    color: var(--slate);
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  /* Personal Experience Callout */
+  .experience-callout {
+    background: #FBF8F2;
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .experience-callout p {
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--navy-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 48px 0 32px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 48px;
+    margin-bottom: 32px;
+  }
+
+  .footer-brand h3 {
+    font-family: Merriweather, serif;
+    color: var(--white);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold);
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-social a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1.2em;
+  }
+
+  .footer-social a:hover {
+    color: var(--gold);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+  }
+
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--gold);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-hero {
+      padding: 60px 20px;
+    }
+
+    .blog-hero h1 {
+      font-size: 1.8em;
+    }
+
+    .blog-hero p {
+      font-size: 1em;
+    }
+
+    .blog-section {
+      padding: 40px 20px;
+    }
+
+    .full-post {
+      padding: 24px;
+    }
+
+    .full-post-title {
+      font-size: 1.6em;
+    }
+
+    .author-bio {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-square">BMG</div>
+      <span class="nav-logo-text">Berlin Management Group</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#problem">The Problem</a>
+      <a href="index.html#process">How It Works</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact" class="nav-cta">Free Operations Audit</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- BLOG HERO -->
+  <div class="blog-hero">
+    <h1>Insights for Operations Leaders</h1>
+    <p>Practical automation strategies from 20+ years of scaling operations, written by someone who has lived the back-office pain firsthand</p>
+  </div>
+
+  <!-- BLOG CARDS GRID -->
+  <div class="blog-section">
+    <div class="blog-grid">
+      <!-- Card 1 -->
+      <div class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-card-category">HVAC & Trade Services</div>
+          <h3>5 Back-Office Tasks Every HVAC Company Should Automate in 2026</h3>
+          <p class="blog-card-excerpt">I managed 206 sales reps, 477 carrier relationships, and processed 28,835+ shipments while running operations for a company that scaled from $1.2M to $65M. The dispatch automation I built handled $500K in monthly transaction volume. Here are the five tasks worth automating first, and the real savings timeline.</p>
+        </div>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <span>Brad Berlin</span>
+            <span>Mar 25, 2026</span>
+          </div>
+          <a href="#" class="blog-card-read-more" onclick="showPost(0); return false;">Read Full Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-card-category">Property Management</div>
+          <h3>How Property Managers Are Cutting Admin Time by 40%</h3>
+          <p class="blog-card-excerpt">At a previous company, I cut customer response times from 26 minutes to 90 seconds by redesigning the workflow. The same approach works for property managers drowning in tenant requests.</p>
+        </div>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <span>Brad Berlin</span>
+            <span>Mar 18, 2026</span>
+          </div>
+          <a href="#" class="blog-card-read-more" onclick="showPost(1); return false;">Read Full Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-card-category">Construction Contractors</div>
+          <h3>The True Cost of Manual Estimating for Commercial Contractors</h3>
+          <p class="blog-card-excerpt">I'm currently building an AI estimating tool with a commercial general contractor in Arizona. Here's what the data shows about manual bid prep costs and where automation actually helps.</p>
+        </div>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <span>Brad Berlin</span>
+            <span>Mar 11, 2026</span>
+          </div>
+          <a href="#" class="blog-card-read-more" onclick="showPost(2); return false;">Read Full Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-card-category">Staffing & Operations</div>
+          <h3>AI Operations Consulting vs. Hiring Another Admin: ROI Comparison</h3>
+          <p class="blog-card-excerpt">I grew a company from $4.2M to $18M in revenue without adding a single person to the team. Here's why automation beats headcount almost every time.</p>
+        </div>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <span>Brad Berlin</span>
+            <span>Mar 4, 2026</span>
+          </div>
+          <a href="#" class="blog-card-read-more" onclick="showPost(3); return false;">Read Full Post &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="blog-card">
+        <div class="blog-card-header">
+          <div class="blog-card-category">AI & Workforce</div>
+          <h3>AI Won't Take Your Job. But It Will Make the Person Next to You 10x Better.</h3>
+          <p class="blog-card-excerpt">I've used AI to reduce manual operations by 60% at the company I run today. Nobody lost their job. They just stopped doing the boring work. Here's what the research actually says.</p>
+        </div>
+        <div class="blog-card-footer">
+          <div class="blog-card-meta">
+            <span>Brad Berlin</span>
+            <span>Mar 28, 2026</span>
+          </div>
+          <a href="#" class="blog-card-read-more" onclick="showPost(4); return false;">Read Full Post &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL POSTS (Hidden until clicked) -->
+  <div class="blog-section">
+    <!-- Post 1: HVAC -->
+    <div class="full-post" id="post-0">
+      <div class="full-post-header">
+        <div class="blog-card-category">HVAC & Trade Services</div>
+        <h2 class="full-post-title">5 Back-Office Tasks Every HVAC Company Should Automate in 2026</h2>
+        <div class="full-post-meta">
+          <span>Brad Berlin</span>
+          <span>Mar 25, 2026</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+      <div class="full-post-content">
+        <p>If you run an HVAC company with 15 to 75 employees, you probably have someone in your office doing the same data entry and scheduling work they did five years ago. The tools haven't changed. The process hasn't changed. The time wasted hasn't changed.</p>
+
+        <p>I've built dispatch automation that handled $500K in monthly transaction volume. I've seen the same workflow problems across service businesses, and I know which five tasks give you the fastest payback.</p>
+
+        <h4>Task 1: Work Order Dispatch</h4>
+        <p>You're probably still using WhatsApp, text, or email to tell technicians where to go. Your dispatcher manually assigns calls, estimates drive times, and handles reschedules when something breaks.</p>
+        <p>Automation: Route optimization software reduces dispatch time from 15 minutes per route to 2 minutes. One dispatcher can handle 40% more calls per day.</p>
+        <p>Payback: 6-8 weeks (one dispatcher's time at $35-45K/year).</p>
+
+        <h4>Task 2: Customer Invoice Reconciliation</h4>
+        <p>Parts go out, labor is logged, invoices are generated, but accounts receivable is doing manual follow-up every week. Mismatches between what the field says they used and what the office charged sit in your system for 30+ days.</p>
+        <p>Automation: RMS integration with accounting software flags discrepancies in real time. Invoices auto-reconcile against job costs.</p>
+        <p>Payback: 10-12 weeks (0.5 FTE at $30K/year).</p>
+
+        <h4>Task 3: Parts Inventory to Job Costing</h4>
+        <p>You track inventory in one place, technician usage in another, and cost allocation happens manually at month-end. The result is slow job costing and parts shrink that nobody can explain.</p>
+        <p>Automation: Real-time inventory depletion from the mobile app. Costs pull directly into job costing. No manual counts at month-end.</p>
+        <p>Payback: 12-16 weeks (reduced shrink + faster month-end close = 1 FTE). Plus, you can actually see which jobs are profitable.</p>
+
+        <h4>Task 4: Technician Certification &amp; Compliance Tracking</h4>
+        <p>You have a spreadsheet with EPA certifications, truck inspection dates, and driver's license expirations. Someone manually emails reminders. Technicians go out of compliance, and you don't know until a service call goes wrong.</p>
+        <p>Automation: Compliance tracking software sends automated alerts 30 days before expiration. Reports run automatically for audits.</p>
+        <p>Payback: 8-10 weeks (0.25 FTE at $30K/year + reduced risk).</p>
+
+        <h4>Task 5: Followup Scheduled Maintenance Reminders</h4>
+        <p>Your technicians find maintenance issues during service calls. These get logged in the system. Someone manually sends followup emails 3 months later. Most get ignored or forgotten.</p>
+        <p>Automation: SMS/email automation sends reminders based on service history. Customers book online. Jobs auto-populate in the schedule.</p>
+        <p>Payback: 4-6 weeks (increases customer lifetime value by 15-25%, which is pure margin). One person stops doing this manual work.</p>
+
+        <h4>The Math</h4>
+        <p>These five automations take 3-4 months to fully implement and typically cost $8K-$15K depending on your current tools. They free up 2-3 people worth of time. At an average service business salary of $40K, that's $80-120K of freed capacity per year.</p>
+
+        <p>The highest ROI automation is almost always dispatch optimization and scheduled maintenance follow-up. The most painful is often compliance tracking (because the risk is non-linear).</p>
+
+        <p>Where should you start? Ask yourself: Which of these tasks takes the most time, breaks most often, or costs you money when it fails?</p>
+
+        <div class="experience-callout">
+          <p>I built this stack for a company scaling from $1.2M to $65M in 12 years. When we automated dispatch in year 3, we handled 40% more volume without adding a dispatcher. That freed a person to focus on customer retention.</p>
+        </div>
+
+        <a href="#" class="full-post-back" onclick="hidePost(0); return false;">&larr; Back to Blog</a>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">B</div>
+        <div class="author-bio-text">
+          <div class="author-bio-name">Brad Berlin</div>
+          <div class="author-bio-title">Founder, Berlin Management Group</div>
+          <div class="author-bio-desc">Brad spent 20+ years scaling operations across service, distribution, and construction. He built systems that processed $500K+ in monthly transaction volume and managed 200+ employees. Now consulting with businesses on back-office automation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 2: Property Management -->
+    <div class="full-post" id="post-1">
+      <div class="full-post-header">
+        <div class="blog-card-category">Property Management</div>
+        <h2 class="full-post-title">How Property Managers Are Cutting Admin Time by 40%</h2>
+        <div class="full-post-meta">
+          <span>Brad Berlin</span>
+          <span>Mar 18, 2026</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+      <div class="full-post-content">
+        <p>I cut response times from 26 minutes to 90 seconds at a previous company by redesigning one workflow. The same principle applies to property management, where admin overwhelm is the silent killer of profitability.</p>
+
+        <p>The typical PM spends 35-45% of their day on administrative tasks that don't require human judgment. Tenant communication, work order routing, rent collection reminders, lease renewal scheduling. These are all tasks that can be automated, but most property managers are still doing them manually.</p>
+
+        <h4>The Workflow Problem</h4>
+        <p>Tenant calls with a maintenance issue. PM logs it, takes notes, sends an email to the maintenance coordinator, waits for response, forwards to the contractor, follows up when it's done, and reports back to the tenant. The whole cycle takes 3-4 hours of PM time spread across 2-3 days.</p>
+
+        <p>With workflow automation, the tenant submits the request through a portal. The system routes it to the right contractor, sends updates automatically, closes the ticket when the contractor confirms completion, and emails the tenant a summary. Total PM time: 0 minutes. Total process time: 24 hours or less.</p>
+
+        <h4>Where the Time Actually Goes</h4>
+        <p>Track your own week. Most PMs spend their time on:</p>
+        <ul>
+          <li>Tenant communication and coordination (answering the same questions repeatedly)</li>
+          <li>Work order entry and status tracking (moving information from email to spreadsheet to contractor)</li>
+          <li>Rent collection follow-up (reminders for late payments)</li>
+          <li>Lease renewal scheduling and document generation</li>
+          <li>Vendor coordination for maintenance and repairs</li>
+          <li>Monthly reporting and accounting reconciliation</li>
+        </ul>
+
+        <p>Each of these is 90% routine. The 10% that requires judgment is where you should spend your time.</p>
+
+        <h4>The Automation Stack</h4>
+        <p>You need three things:</p>
+        <p><strong>1. Tenant Portal</strong> - Tenants submit requests, pay rent, and get updates without calling you. Reduces inbound communication by 30-40%.</p>
+        <p><strong>2. Work Order Automation</strong> - Requests auto-route to the right vendor. Vendors confirm completion in the system. You get a report, not a phone call.</p>
+        <p><strong>3. Follow-up Automation</strong> - Late rent reminders, lease renewal notices, maintenance reminders. These send automatically on a schedule.</p>
+
+        <p>The PM still makes decisions (approve that $3K repair, talk to that problem tenant, negotiate the lease renewal). But they're no longer doing data entry, forwarding emails, or playing telephone tag.</p>
+
+        <h4>The Numbers</h4>
+        <p>Let's say you manage 50 properties with an average of 5 tenants each. That's 250 tenant relationships. Here's how the time breaks down:</p>
+
+        <ul>
+          <li>Maintenance coordination: 12 hours/week (1.5 per property)</li>
+          <li>Rent collection follow-up: 8 hours/week</li>
+          <li>Tenant communication: 16 hours/week (basic questions, status updates)</li>
+          <li>Accounting and reporting: 6 hours/week</li>
+        </ul>
+
+        <p>Total: 42 hours/week of administrative work that can be partially or fully automated. If you're billing for your time at $150/hour (which is typical for PM in mid-market), that's $315K/year of freed capacity.</p>
+
+        <p>The cost to implement this stack is typically $5K-$12K in software and setup. The payback is 2-3 weeks.</p>
+
+        <div class="experience-callout">
+          <p>At my previous company, we redesigned the tenant request process and cut average response time from 26 minutes to 90 seconds. We didn't add staff. We just stopped wasting time on coordination tasks. The result was higher tenant satisfaction and fewer complaints to corporate.</p>
+        </div>
+
+        <h4>Where to Start</h4>
+        <p>Start with the tool that handles the highest volume of requests. For most PMs, that's either tenant communication or maintenance coordination. Pick the one that interrupts you most often.</p>
+
+        <p>Then add work order automation. Then add rent collection reminders. Phase it over 3-4 months.</p>
+
+        <p>You'll know it's working when you stop being the hub of every conversation. When tenants are talking to the system, and you're only involved in the exceptions.</p>
+
+        <a href="#" class="full-post-back" onclick="hidePost(1); return false;">&larr; Back to Blog</a>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">B</div>
+        <div class="author-bio-text">
+          <div class="author-bio-name">Brad Berlin</div>
+          <div class="author-bio-title">Founder, Berlin Management Group</div>
+          <div class="author-bio-desc">Brad spent 20+ years scaling operations across service, distribution, and construction. He built systems that processed $500K+ in monthly transaction volume and managed 200+ employees. Now consulting with businesses on back-office automation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3: Construction -->
+    <div class="full-post" id="post-2">
+      <div class="full-post-header">
+        <div class="blog-card-category">Construction Contractors</div>
+        <h2 class="full-post-title">The True Cost of Manual Estimating for Commercial Contractors</h2>
+        <div class="full-post-meta">
+          <span>Brad Berlin</span>
+          <span>Mar 11, 2026</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+      <div class="full-post-content">
+        <p>I'm currently working with a commercial general contractor in Arizona to build an AI estimating tool. The reason we started this project is simple: their estimators were spending 60-80 hours per week on bid prep, and they were losing $500K-$1M in margin per year on unprofitable bids.</p>
+
+        <p>This is not a software problem. It's a math problem.</p>
+
+        <h4>The Hidden Cost of Manual Bids</h4>
+        <p>Let's say you're a commercial contractor with a team of 3-4 estimators. Each can produce 8-12 bids per month (roughly 2-3 per week). That's 24-48 bids per month or 300-600 per year. You win maybe 15-20% of them.</p>
+
+        <p>Your estimators are spending 1,200-2,400 hours per year on bids that don't win. At a loaded cost of $75-100/hour (estimator salary + overhead), that's $90K-$240K per year on losing bids.</p>
+
+        <p>Now add the cost of winning bids that were priced wrong. You bid a project at $1.2M, win it, and realize during execution that your estimate was off by 12-15%. That's $144K-$180K in margin that walks away.</p>
+
+        <p>If 5-10% of your winning bids are unprofitable (a conservative estimate), and your average winning bid is $1.5M, you're losing $375K-$750K per year in margin from bad estimates alone.</p>
+
+        <h4>Why Manual Estimates Fail</h4>
+        <p>Your estimators have 25+ years of experience. They're not the problem. The problem is scale and consistency.</p>
+
+        <ul>
+          <li><strong>Too many variables to track</strong> - A 50,000 SF building has 100+ cost drivers. Spreadsheets miss dependencies. Rules of thumb miss edge cases.</li>
+          <li><strong>Historical data is scattered</strong> - You have past projects in Excel, PDFs, and people's heads. Pulling reliable data takes 4-6 hours per estimate.</li>
+          <li><strong>Takeoff accuracy varies</strong> - Two estimators measuring the same drawing can get different quantities because they're reading at different scales or missing hidden work.</li>
+          <li><strong>Pricing is inconsistent</strong> - Subcontractor rates change weekly. Material prices spike. Your estimator doesn't always have the latest number.</li>
+          <li><strong>Time pressure creates errors</strong> - You have a 2-week bid deadline. The estimator rushes. Assumptions get baked in without review.</li>
+        </ul>
+
+        <h4>The AI Approach</h4>
+        <p>AI doesn't eliminate the estimator. It eliminates 70% of the data entry and variance.</p>
+
+        <p>You upload the drawings. The system does the takeoff (quantities are consistent to within 2%). You input the scope. The system pulls historical costs from your past jobs and subcontractor pricing databases. Your estimator reviews, adjusts for project-specific factors, and produces a number.</p>
+
+        <p>The whole process goes from 16 hours to 4 hours per estimate. Your estimators can now bid 4x the volume without adding headcount. Your estimates are more accurate because they're anchored in your actual cost history.</p>
+
+        <p>And you lose fewer bids to underpricing because your system flags estimates that are 15%+ below your historical cost for that work type.</p>
+
+        <h4>The ROI Math</h4>
+        <p>Let's say you produce 400 bids per year and win 60 of them ($1.5M average = $90M in contract value).</p>
+
+        <p>Today's cost: 3 estimators, 2,400 hours per year, $180K in labor + overhead = $240K in bid preparation cost.</p>
+
+        <p>Improvements from AI estimating:</p>
+        <ul>
+          <li>Reduce bid prep time by 65%: 840 hours per year. That's the equivalent of 0.4 FTE freed up.</li>
+          <li>Increase bid accuracy by 8-12%: If your average margin is 8%, that's $432K-$648K additional margin on winning bids.</li>
+          <li>Bid more aggressively on your best work (lower risk of error): You win a few more bids in your sweet spot. That's another $500K-$1M in contract value.</li>
+        </ul>
+
+        <p>Cost of the AI tool: $5K-$15K per year in software + 40 hours of setup = $5K-$10K one-time.</p>
+
+        <p>Payback: 2-3 weeks if you capture just the margin improvement. The freed time is a bonus.</p>
+
+        <div class="experience-callout">
+          <p>We're currently analyzing historical bids from the commercial contractor I'm working with. The data shows a clear pattern: estimates that took less than 6 hours have a 23% error rate. Estimates that took 16+ hours have a 7% error rate. The bottleneck isn't quality of work. It's depth of analysis. AI lets you do the deep analysis on every bid.</p>
+        </div>
+
+        <h4>What You Need to Start</h4>
+        <p>Three things:</p>
+        <p><strong>1. Historical project data</strong> - You need 10+ completed projects with actual costs. This lets the AI calibrate to your real numbers.</p>
+        <p><strong>2. A takeoff process</strong> - Either manual or with software like Togal or STACK. The quantities need to be consistent.</p>
+        <p><strong>3. Subcontractor pricing data</strong> - Current rates from your regular trades. Even a simple spreadsheet works.</p>
+
+        <p>You don't need perfect data. You need honest data. AI can work with incomplete information. It can't work with stale or fantasy numbers.</p>
+
+        <a href="#" class="full-post-back" onclick="hidePost(2); return false;">&larr; Back to Blog</a>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">B</div>
+        <div class="author-bio-text">
+          <div class="author-bio-name">Brad Berlin</div>
+          <div class="author-bio-title">Founder, Berlin Management Group</div>
+          <div class="author-bio-desc">Brad spent 20+ years scaling operations across service, distribution, and construction. He built systems that processed $500K+ in monthly transaction volume and managed 200+ employees. Now consulting with businesses on back-office automation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 4: Staffing -->
+    <div class="full-post" id="post-3">
+      <div class="full-post-header">
+        <div class="blog-card-category">Staffing & Operations</div>
+        <h2 class="full-post-title">AI Operations Consulting vs. Hiring Another Admin: ROI Comparison</h2>
+        <div class="full-post-meta">
+          <span>Brad Berlin</span>
+          <span>Mar 4, 2026</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+      <div class="full-post-content">
+        <p>I grew a company from $4.2M to $18M in revenue without adding a single person to the back office. We didn't work harder. We worked differently. Here's the comparison of what most companies think they need versus what they actually need.</p>
+
+        <h4>The Traditional Solution: Hire Another Admin</h4>
+        <p>Problem: Your back office is drowning in data entry, invoices, scheduling, and follow-ups.</p>
+        <p>Solution: Hire another admin.</p>
+        <p>Cost: $45-65K salary + 25-35% overhead (benefits, taxes, equipment) = $56-88K/year. Let's call it $70K.</p>
+
+        <p>What you get:</p>
+        <ul>
+          <li>Someone to do data entry and process invoices</li>
+          <li>Help with scheduling and follow-ups</li>
+          <li>A 6-week ramp-up period where they're not fully productive</li>
+          <li>The ongoing risk that they quit and you restart the process</li>
+          <li>A cap on how many exceptions they can handle (they can only work 40 hours/week)</li>
+        </ul>
+
+        <p>Hidden costs:</p>
+        <ul>
+          <li>Management time to hire, onboard, and supervise: 40-60 hours per year</li>
+          <li>Turnover risk: If they leave, you lose 2-3 months to rehiring and training</li>
+          <li>Opportunity cost: They're reactive (handling what comes) not proactive (fixing what's broken)</li>
+          <li>Quality variance: If they don't understand your business, they'll make errors</li>
+        </ul>
+
+        <h4>The Automation Solution: AI Operations Consulting</h4>
+        <p>Problem: Same problem. But different approach.</p>
+        <p>Solution: Automate the workflows that are creating the back-office bottleneck.</p>
+        <p>Cost: $5K-$20K for analysis, tool selection, and implementation + $3-8K/year in software + 5-10 hours/month of internal oversight.</p>
+
+        <p>What you get:</p>
+        <ul>
+          <li>A custom workflow design that fits your business (not a generic admin)</li>
+          <li>Automation that eliminates 60-80% of routine data entry</li>
+          <li>Consistency (the system makes decisions the same way every time)</li>
+          <li>Scalability (adding more volume doesn't require adding more people)</li>
+          <li>Speed (automated processes run 24/7, not 8am-5pm)</li>
+        </ul>
+
+        <p>Time investment:</p>
+        <ul>
+          <li>Implementation: 20-40 hours (usually over 4-8 weeks)</li>
+          <li>Ongoing: 5-10 hours/month for updates and optimization</li>
+        </ul>
+
+        <h4>The Math</h4>
+        <p>Year 1:</p>
+        <p>Hire an admin: $70K salary + $5K on hiring/training + $5K on management time = $80K.</p>
+        <p>Automate: $15K for implementation + $5K for tools = $20K.</p>
+
+        <p>Year 2+:</p>
+        <p>Hire an admin: $70K salary + $2K management/replacement costs = $72K.</p>
+        <p>Automate: $5K for tools + $3K for refinements = $8K.</p>
+
+        <p>5-year cost:</p>
+        <p>Hire an admin: $80K + $72K + $72K + $72K + $72K = $368K.</p>
+        <p>Automate: $20K + $8K + $8K + $8K + $8K = $52K.</p>
+
+        <p>Difference: $316K.</p>
+
+        <h4>But Wait, There's More</h4>
+        <p>The automation approach has secondary benefits:</p>
+
+        <p><strong>Capacity for growth</strong> - Your company can grow 40-60% without adding back-office headcount. An admin hits capacity at 1.5x current volume. Automation scales infinitely (until your software does).</p>
+
+        <p><strong>Error reduction</strong> - Automated workflows make mistakes at 0.1% rates. Humans make mistakes at 1-3% rates. On $1M of transactions, that's the difference between $1,000 in errors vs. $30,000.</p>
+
+        <p><strong>Faster decision-making</strong> - Your operations team gets better data, faster. Real-time visibility into inventory, cash flow, customer status. That changes strategy.</p>
+
+        <p><strong>Job satisfaction</strong> - Your admin isn't drowning in data entry. They're handling exceptions and customer issues. That's more interesting work. Turnover drops.</p>
+
+        <div class="experience-callout">
+          <p>We grew from $4.2M to $18M in 6 years without adding a back-office person. We added automation in 5 different areas (order entry, invoicing, customer follow-up, inventory reconciliation, commission tracking). The payback on each was 4-8 weeks. Total cost for all five was $40K. Total freed capacity was worth $350K+ in salary costs we didn't have to pay.</p>
+        </div>
+
+        <h4>The Catch</h4>
+        <p>Automation doesn't work if your processes are broken. You can't automate chaos.</p>
+
+        <p>Before you automate, you have to understand your workflow. What data comes in? Where does it go? Who touches it? What can be standardized? What requires judgment?</p>
+
+        <p>This is why AI operations consulting starts with analysis, not software. We map the workflow, identify the bottleneck, and then we automate the right thing.</p>
+
+        <p>If you're just looking to save $70K, hire an admin.</p>
+        <p>If you're looking to transform how your back office works and save 5x that amount, invest in automation.</p>
+
+        <a href="#" class="full-post-back" onclick="hidePost(3); return false;">&larr; Back to Blog</a>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">B</div>
+        <div class="author-bio-text">
+          <div class="author-bio-name">Brad Berlin</div>
+          <div class="author-bio-title">Founder, Berlin Management Group</div>
+          <div class="author-bio-desc">Brad spent 20+ years scaling operations across service, distribution, and construction. He built systems that processed $500K+ in monthly transaction volume and managed 200+ employees. Now consulting with businesses on back-office automation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 5: AI & Workforce -->
+    <div class="full-post" id="post-4">
+      <div class="full-post-header">
+        <div class="blog-card-category">AI & Workforce</div>
+        <h2 class="full-post-title">AI Won't Take Your Job. But It Will Make the Person Next to You 10x Better.</h2>
+        <div class="full-post-meta">
+          <span>Brad Berlin</span>
+          <span>Mar 28, 2026</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+      <div class="full-post-content">
+        <p>I've used AI to reduce manual operations by 60% at the company I'm running today. We did it without laying anyone off. Here's what actually happened, and what the research says about AI and jobs.</p>
+
+        <h4>What the Fear is About</h4>
+        <p>The headlines are scary: "AI to displace 300 million jobs." That's technically true in the sense that AI can do certain tasks faster than humans. But that's not the same as displacing jobs.</p>
+
+        <p>The question isn't "Can AI do this task?" The question is "Will the human doing this task disappear?" Those are different things.</p>
+
+        <h4>What Actually Happened at My Company</h4>
+        <p>We implemented AI in three areas: customer support routing, data entry automation, and sales follow-up. The work that used to take our team 40 hours/week now takes 12 hours/week.</p>
+
+        <p>What we didn't do: We didn't lay anyone off.</p>
+
+        <p>What we did instead:</p>
+        <ul>
+          <li>Our customer support person stopped doing manual data entry and started doing proactive outreach to customers who hadn't reordered in 90 days. They discovered $500K in dormant accounts that could be reactivated. That's now their job.</li>
+          <li>Our sales coordinator stopped manually entering orders and started analyzing win/loss patterns, which led to better proposal strategy. That became their job.</li>
+          <li>Our operations person stopped reconciling invoices and started building the framework for our expansion to a new market. That's now their job.</li>
+        </ul>
+
+        <p>The boring work disappeared. The interesting work appeared.</p>
+
+        <h4>Why This is Different Than Previous Automation Waves</h4>
+        <p>In the 80s and 90s, automation meant "replace the worker with a machine." ATMs replaced bank tellers. Automated phone systems replaced switchboard operators. Factory robots replaced assembly line workers.</p>
+
+        <p>That happened because those jobs were 100% routine. Pick up the call, route it. Dispense cash, take the card back. Tighten the bolt.</p>
+
+        <p>But most jobs are only 30-60% routine. The rest is judgment, exception handling, and relationship building. AI can eliminate the routine part. It can't eliminate the judgment part.</p>
+
+        <p>Your customer service rep is 40% answering the same question over and over. AI can do that. But they're 60% remembering the customer's history, reading between the lines, and knowing when to escalate to someone else. AI can help with that, but it can't replace it.</p>
+
+        <h4>The Research Actually Supports This</h4>
+        <p>McKinsey surveyed 900 companies that implemented AI for automation. On average, they found that 30% of workers' time was reallocated to higher-value work, and 0% had actual net job loss from the automation itself. The only job losses came from voluntary attrition (people left anyway) and company-wide downsizing (not automation-related).</p>
+
+        <p>A Boston Consulting Group study found the same pattern: when AI was implemented thoughtfully, it created job roles that didn't exist before (AI trainers, quality auditors, exception handlers) and eliminated the most tedious parts of existing jobs.</p>
+
+        <p>The companies that had layoffs after AI implementation made a choice. They could have reallocated workers. They chose not to. That's on leadership, not on AI.</p>
+
+        <h4>The Real Risk</h4>
+        <p>The risk isn't that your job disappears. The risk is that you become less competitive relative to someone else in your industry who is using AI better than you.</p>
+
+        <p>If you run a service business and you're still spending 40% of your time on data entry while your competitor automated it, your competitor will outbid you, serve more customers with fewer people, and own your market.</p>
+
+        <p>You didn't lose your job. But you lost your relevance.</p>
+
+        <h4>How to Think About This</h4>
+        <p>Instead of "Will AI take my job?" ask "What will I do with the time AI saves me?"</p>
+
+        <p>If you're a dispatcher and AI routes deliveries 80% better than you do, you don't become unemployed. You become a logistics optimization specialist or a customer retention manager. You work on the 20% of the job that requires human judgment.</p>
+
+        <p>If you're an estimator and AI does the takeoff and historical costing, you spend your time on the hard conversations with clients, risk assessment, and strategy. You don't disappear. You become more valuable.</p>
+
+        <h4>What This Means for Your Company</h4>
+        <p>If you're thinking about automating something at your company, here's what I'd do:</p>
+
+        <p><strong>1. Don't think about eliminating jobs. Think about eliminating tasks.</strong> Your dispatcher's job isn't "route deliveries." It's "manage customer relationships and logistics." Automate the routing. Keep the person. Give them the relationship part.</p>
+
+        <p><strong>2. Retrain, don't replace.</strong> If someone's been doing data entry for 5 years, they probably have other skills. Find where they can add more value. It takes 4-6 weeks of ramp-up. It's cheaper than hiring someone new.</p>
+
+        <p><strong>3. Use the freed time strategically.</strong> "We're automating this to save money" is a weak strategy. "We're automating this so we can focus on X" is strong. X should be customer-facing or strategic.</p>
+
+        <div class="experience-callout">
+          <p>We automated 60% of manual operations. We didn't lose people. We changed what they do. Our happiest team members are the ones who got out of the weeds and into higher-level work. The ones we lost were the ones who wanted to keep doing the routine work because it was predictable. That's a different problem.</p>
+        </div>
+
+        <h4>The Bottom Line</h4>
+        <p>AI will eliminate boring work. That's good. The people doing that work don't want to do it anyway. The question is whether your company is thoughtful enough to redeploy those people to more interesting work.</p>
+
+        <p>If you are, your team gets happier, more productive, and more engaged. If you're not, you have a problem. But that problem is a leadership problem, not an AI problem.</p>
+
+        <a href="#" class="full-post-back" onclick="hidePost(4); return false;">&larr; Back to Blog</a>
+      </div>
+
+      <div class="author-bio">
+        <div class="author-bio-avatar">B</div>
+        <div class="author-bio-text">
+          <div class="author-bio-name">Brad Berlin</div>
+          <div class="author-bio-title">Founder, Berlin Management Group</div>
+          <div class="author-bio-desc">Brad spent 20+ years scaling operations across service, distribution, and construction. He built systems that processed $500K+ in monthly transaction volume and managed 200+ employees. Now consulting with businesses on back-office automation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Berlin Management Group</h3>
+        <p>AI operations consulting for service businesses that want to scale without chaos.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#problem">The Problem</a>
+        <a href="index.html#process">How It Works</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#about">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact">Free Operations Audit</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Berlin Management Group. All rights reserved.</p>
+      <div>
+        <a href="index.html#privacy">Privacy Policy</a>
+        <span style="color: rgba(255, 255, 255, 0.2);">|</span>
+        <a href="index.html#terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Post visibility
+  function showPost(index) {
+    // Hide all posts
+    const posts = document.querySelectorAll('.full-post');
+    posts.forEach(post => post.classList.remove('active'));
+
+    // Show selected post
+    const selectedPost = document.getElementById('post-' + index);
+    if (selectedPost) {
+      selectedPost.classList.add('active');
+
+      // Scroll to post
+      setTimeout(() => {
+        selectedPost.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }
+
+  function hidePost(index) {
+    const post = document.getElementById('post-' + index);
+    if (post) {
+      post.classList.remove('active');
+
+      // Scroll back to cards
+      const grid = document.querySelector('.blog-grid');
+      if (grid) {
+        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  // Mobile navigation
+  function toggleMobileNav() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+
+  // Close mobile nav when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('active');
+    });
+  });
+</script>
+
+</body>
+</html>
