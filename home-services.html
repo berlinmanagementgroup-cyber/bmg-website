@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI automation for home service companies: HVAC, plumbing, electrical. Reduce manual dispatch, accelerate invoicing, capture more leads. Free operations audit.">
+  <meta name="keywords" content="home service automation, HVAC automation, plumbing company AI, electrical contractor tools, dispatch automation, service business software">
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="AI Automation for Home Service Companies | HVAC, Plumbing, Electrical | BMG">
+  <meta property="og:description" content="Automate dispatch, invoicing, and customer communication. Eliminate manual admin work. Capture more leads. Free audit inside.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://berlinmanagementgroup.ai/home-services.html">
+  <meta property="og:image" content="https://berlinmanagementgroup.ai/og-image.png">
+
+  <link rel="canonical" href="https://berlinmanagementgroup.ai/home-services.html">
+  <title>AI Automation for Home Service Companies | HVAC, Plumbing, Electrical | BMG</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy-light: #2C3E6B;
+      --navy-dark: #0F1A30;
+      --gold: #C8A951;
+      --gold-light: #E2CC7E;
+      --gold-dark: #A8893A;
+      --slate: #4A5568;
+      --gray-100: #F7F8FA;
+      --gray-200: #E8ECF1;
+      --white: #FFFFFF;
+      --text: #2D3748;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+      --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+      --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      max-width: 1140px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95em;
+      transition: opacity 0.3s;
+    }
+
+    .nav-logo:hover {
+      opacity: 0.7;
+    }
+
+    .nav-logo-square {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.75em;
+    }
+
+    .nav-logo-text {
+      font-family: Merriweather, serif;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 1px;
+      transition: all 0.3s;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-cta {
+      padding: 10px 20px !important;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+      color: var(--white) !important;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      color: var(--white) !important;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 24px 40px;
+      gap: 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .mobile-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 12px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 72px;
+      padding: 100px 40px;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: Merriweather, serif;
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Problem Section */
+    .problem {
+      padding: 80px 40px;
+      background: var(--white);
+    }
+
+    .section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.4em;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.1em;
+      color: var(--slate);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .problem-card {
+      padding: 32px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--gold);
+    }
+
+    .problem-card h3 {
+      font-family: Merriweather, serif;
+      font-size: 1.3em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .problem-card p {
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* Automate Section */
+    .automate {
+      padding: 80px 40px;
+      background: var(--gray-100);
+    }
+
+    .automate h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.4em;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .automate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .automate-card {
+      padding: 32px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+
+    .automate-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .automate-card h3 {
+      font-family: Merriweather, serif;
+      font-size: 1.2em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .automate-card p {
+      color: var(--slate);
+      font-size: 0.95em;
+      line-height: 1.7;
+    }
+
+    .automate-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.4em;
+      margin-bottom: 16px;
+    }
+
+    /* Credentials Section */
+    .credentials {
+      padding: 80px 40px;
+      background: var(--white);
+    }
+
+    .credentials h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.4em;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .credentials-intro {
+      text-align: center;
+      color: var(--slate);
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.05em;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .credential-item {
+      padding: 32px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+    }
+
+    .credential-item h3 {
+      font-family: Merriweather, serif;
+      font-size: 1.1em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .credential-stat {
+      font-size: 1.8em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .credential-item p {
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    /* ROI Section */
+    .roi {
+      padding: 80px 40px;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: var(--white);
+    }
+
+    .roi h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.4em;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .roi-card {
+      text-align: center;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .roi-stat {
+      font-size: 2.2em;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .roi-label {
+      font-size: 0.95em;
+      opacity: 0.9;
+    }
+
+    /* Process Section */
+    .process {
+      padding: 80px 40px;
+      background: var(--white);
+    }
+
+    .process h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.4em;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .process-step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.8em;
+      margin: 0 auto 20px;
+    }
+
+    .process-step h3 {
+      font-family: Merriweather, serif;
+      font-size: 1.3em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 40px;
+      background: var(--gray-100);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-family: Merriweather, serif;
+      font-size: 2.2em;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .cta-section p {
+      font-size: 1.05em;
+      color: var(--slate);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Related Blog Section */
+    .related-blog {
+      padding: 80px 40px;
+      background: var(--white);
+    }
+
+    .related-blog h2 {
+      font-family: Merriweather, serif;
+      font-size: 2em;
+      color: var(--navy);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .blog-preview {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--gold);
+    }
+
+    .blog-preview h3 {
+      font-family: Merriweather, serif;
+      font-size: 1.4em;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .blog-preview p {
+      color: var(--slate);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .blog-link {
+      display: inline-block;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+      transition: color 0.3s;
+    }
+
+    .blog-link:hover {
+      color: var(--gold);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255, 255, 255, 0.5);
+      padding: 60px 40px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand h3 {
+      font-family: Merriweather, serif;
+      color: var(--white);
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    .footer-brand p {
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      color: rgba(255, 255, 255, 0.4);
+      transition: all 0.3s;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85em;
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-bottom a:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom span {
+      color: rgba(255, 255, 255, 0.2);
+      margin: 0 8px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-logo-text {
+        display: none;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      .hero {
+        padding: 60px 24px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .problem {
+        padding: 60px 24px;
+      }
+
+      .section-header h2 {
+        font-size: 1.8em;
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .automate {
+        padding: 60px 24px;
+      }
+
+      .automate-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .credentials {
+        padding: 60px 24px;
+      }
+
+      .credentials-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .roi {
+        padding: 60px 24px;
+      }
+
+      .roi-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .process {
+        padding: 60px 24px;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .cta-section {
+        padding: 60px 24px;
+      }
+
+      .cta-section h2 {
+        font-size: 1.6em;
+      }
+
+      .related-blog {
+        padding: 60px 24px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner {
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.6em;
+      }
+
+      .section-header h2 {
+        font-size: 1.5em;
+      }
+
+      .automate-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roi-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .problem-card,
+      .automate-card,
+      .credential-item {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-square">BMG</div>
+      <span class="nav-logo-text">Berlin Management Group</span>
+    </a>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#problem">The Problem</a>
+      <a href="index.html#process">How It Works</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact" class="nav-cta">Free Operations Audit</a>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#problem">The Problem</a>
+    <a href="index.html#process">How It Works</a>
+    <a href="index.html#industries">Industries</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact" class="nav-cta">Free Operations Audit</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Stop Managing Service Operations Like It's 1995</h1>
+    <p>Home service companies waste 30% of labor hours on paperwork, manual dispatch, and invoicing. Automate it. Capture more leads. Collect faster. Scale without chaos.</p>
+    <a href="index.html#contact" class="hero-cta">Get Your Free Operations Audit</a>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem" id="problem">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>The Back-Office Is Killing Your Growth</h2>
+      <p>Four critical pain points every home service company faces, and how much they cost you.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Dispatchers Are Drowning</h3>
+        <p>Whiteboards, spreadsheets, sticky notes. Missed calls during peak season. One person handling 50+ service requests. When they take a day off, everything breaks.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Invoicing Delays Cost Cash Flow</h3>
+        <p>Handwritten invoices. Delayed submission. 14 to 30+ day collection cycles. You complete the work, but money doesn't hit your account for a month. That's working on their timeline, not yours.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Technicians Spend Half Their Day on Paperwork</h3>
+        <p>Techs should be in the field, billable. Instead they're filling out job cards, taking photos, hunting for parts, entering notes. 30% of their time: admin work. 30% of revenue: walking out the door.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Leads Fall Through the Cracks</h3>
+        <p>Ring phone. Busy dispatcher. Call goes to voicemail. Customer calls competitor. You never know. No lead intake system. No routing logic. Just chaos and lost money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Automate Section -->
+<section class="automate">
+  <div class="section-inner">
+    <h2>What We Automate for Home Service Companies</h2>
+    <div class="automate-grid">
+      <div class="automate-card">
+        <div class="automate-icon">📅</div>
+        <h3>Smart Dispatch & Scheduling</h3>
+        <p>Automatic job assignment based on technician location, availability, and skills. Real-time optimization. No more manual scheduling. Dispatch takes minutes instead of hours.</p>
+      </div>
+      <div class="automate-card">
+        <div class="automate-icon">💰</div>
+        <h3>Automated Invoicing & Collections</h3>
+        <p>Invoices generate instantly after job completion. Automatic email/SMS delivery. Automatic reminders. Collect 2-3 weeks faster. Your cash flow problem becomes cash flow momentum.</p>
+      </div>
+      <div class="automate-card">
+        <div class="automate-icon">📞</div>
+        <h3>Lead Intake & Routing</h3>
+        <p>Every call, online inquiry, and referral gets captured. Automatic routing to the right team member. No more dropped leads. 20-30% more jobs get scheduled.</p>
+      </div>
+      <div class="automate-card">
+        <div class="automate-icon">📨</div>
+        <h3>Customer Communication</h3>
+        <p>Automatic appointment reminders (text and email). Completion confirmations. Follow-up surveys. Upsell and repeat business alerts. Stay in touch without overhead.</p>
+      </div>
+      <div class="automate-card">
+        <div class="automate-icon">📦</div>
+        <h3>Inventory & Parts Reordering</h3>
+        <p>Track parts usage per job. Automatic low-stock alerts. Prevent technicians from running out of materials mid-job. Reduce emergency orders and expedite fees.</p>
+      </div>
+      <div class="automate-card">
+        <div class="automate-icon">📊</div>
+        <h3>KPI Dashboards & Reporting</h3>
+        <p>See what's really happening: jobs per day, average ticket value, first-time completion rate, technician utilization, revenue by service type. Real data drives real decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials Section -->
+<section class="credentials">
+  <div class="section-inner">
+    <h2>Proven. At Scale.</h2>
+    <p class="credentials-intro">I have spent the last 10 years automating back-office operations at companies handling millions in transaction volume. The same principles I used at those companies work for home service businesses. Here is proof.</p>
+    <div class="credentials-grid">
+      <div class="credential-item">
+        <h3>GlobalTranz</h3>
+        <div class="credential-stat">$500K/month</div>
+        <p>Built dispatch and logistics automation handling $500K in monthly transaction volume. Scaled the company from $1.2M to $65M in annual revenue. Tens of thousands of shipments coordinated without manual intervention.</p>
+      </div>
+      <div class="credential-item">
+        <h3>FreightClaims.com</h3>
+        <div class="credential-stat">60% reduction</div>
+        <p>Used AI to eliminate manual effort from claims processing. Reduced manual work by 60%, cut operational costs by 30-40%, and freed up the team to handle higher-value work and customer relationships.</p>
+      </div>
+      <div class="credential-item">
+        <h3>MyCarrier TMS</h3>
+        <div class="credential-stat">90 seconds</div>
+        <p>Redesigned customer response workflow. Reduced average response time from 26 minutes to 90 seconds. More leads converted. Higher customer satisfaction. Same team, better results.</p>
+      </div>
+      <div class="credential-item">
+        <h3>The Pattern</h3>
+        <p>Every automation project follows the same logic: identify the bottleneck, remove the manual work, let the team focus on revenue. That works in logistics, transportation, claims processing. It works for HVAC, plumbing, and electrical too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI Section -->
+<section class="roi">
+  <div class="section-inner">
+    <h2>Typical Savings: First Year</h2>
+    <div class="roi-grid">
+      <div class="roi-card">
+        <div class="roi-stat">15-20 hrs/week</div>
+        <div class="roi-label">Dispatcher Time Saved</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-stat">2-3 weeks</div>
+        <div class="roi-label">Faster Invoice Collection</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-stat">20-30%</div>
+        <div class="roi-label">More Leads Captured</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-stat">25-35%</div>
+        <div class="roi-label">Reduced Admin Headcount</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process" id="process">
+  <div class="section-inner">
+    <h2>How It Works</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Audit</h3>
+        <p>We map your current processes, identify the biggest time sinks, and calculate the cost. Free. Takes two hours. You walk away with numbers.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>Build</h3>
+        <p>We design and implement automations tailored to your workflows. Dispatch optimization, invoicing systems, lead routing, dashboards. Done with your team, not to your team.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Launch & Scale</h3>
+        <p>Go live. Train the team. Monitor KPIs. Optimize ongoing. We work on a performance basis, meaning we succeed when you save time and money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Get Your Free Operations Audit</h2>
+    <p>Two hours. No obligation. You walk away with a clear picture of where your business is losing time and money, plus concrete next steps. Based on audits at companies like yours, we typically identify between $200K and $800K in annual savings.</p>
+    <a href="index.html#contact" class="cta-button">Schedule Your Audit Now</a>
+  </div>
+</section>
+
+<!-- Related Blog Section -->
+<section class="related-blog">
+  <div class="section-inner">
+    <h2>Read Next</h2>
+    <div class="blog-preview">
+      <h3>5 Back-Office Tasks Every HVAC Company Should Automate in 2026</h3>
+      <p>Most HVAC companies do the same five tasks manually every single day: invoice generation, appointment reminders, parts tracking, technician routing, and customer follow-up. Every one of them can be automated. Every one of them costs you money when done by hand.</p>
+      <a href="blog.html#hvac-automation" class="blog-link">Read the article →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Berlin Management Group</h3>
+        <p>AI operations consulting for service businesses that want to scale without chaos.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#problem">The Problem</a>
+        <a href="index.html#process">How It Works</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#about">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact">Free Operations Audit</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Berlin Management Group. All rights reserved.</p>
+      <div>
+        <a href="index.html#privacy">Privacy Policy</a>
+        <span>|</span>
+        <a href="index.html#terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.remove('active');
+    });
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>

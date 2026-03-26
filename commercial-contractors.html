@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI automation for commercial contractors. Cut bid prep time 40-60%. Improve cost accuracy. Build historical data libraries. Free operations audit.">
+    <meta name="keywords" content="commercial contractor automation, construction estimating AI, bid management automation Phoenix, construction technology">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AI Automation for Commercial Contractors | Estimating, Bid Management | BMG">
+    <meta property="og:description" content="Cut bid prep time 40-60%. Improve cost accuracy. Build historical data libraries. Free operations audit for Phoenix contractors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berlinmanagementgroup.ai/commercial-contractors.html">
+    <meta property="og:image" content="https://berlinmanagementgroup.ai/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://berlinmanagementgroup.ai/commercial-contractors.html">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>AI Automation for Commercial Contractors | Estimating, Bid Management | BMG</title>
+
+    <style>
+        :root {
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --navy-dark: #0F1A30;
+            --gold: #C8A951;
+            --gold-light: #E2CC7E;
+            --gold-dark: #A8893A;
+            --slate: #4A5568;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --white: #FFFFFF;
+            --text: #2D3748;
+            --radius: 8px;
+            --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+            --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+            --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(27, 42, 74, 0.05);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .nav-logo-square {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .nav-logo-text {
+            display: none;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 72px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 5vw, 3.5em);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            line-height: 1.2;
+            margin-bottom: 50px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* What We Automate */
+        .automate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .automate-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .automate-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .automate-card .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5em;
+        }
+
+        .automate-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .automate-card p {
+            color: var(--text);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Credentials Section */
+        .credentials-alt {
+            background: var(--gray-100);
+        }
+
+        .credential-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .credential-item h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            font-size: 1em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .credential-item p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .impact-number {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-buttons .cta-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-buttons .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-buttons .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border: 2px solid var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-buttons .cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* Related Blog */
+        .related-blog {
+            background: var(--gray-100);
+            padding: 60px 40px;
+        }
+
+        .related-blog-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-content {
+            padding: 32px;
+        }
+
+        .blog-category {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .blog-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom span {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Navigation Panel */
+        .nav-panel {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 24px;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-panel.active {
+            display: flex;
+        }
+
+        .nav-panel a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            transition: background 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-panel a:hover {
+            background: var(--gray-100);
+            color: var(--gold);
+        }
+
+        .nav-panel .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-logo-text {
+                display: inline;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 8px 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons button,
+            .cta-buttons a {
+                width: 100%;
+            }
+
+            .problem-grid,
+            .automate-grid,
+            .steps-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-logo" href="index.html">
+                <div class="nav-logo-square">BMG</div>
+                <span class="nav-logo-text">Berlin Management Group</span>
+            </a>
+            <div class="hamburger" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#problem">The Problem</a>
+                <a href="index.html#process">How It Works</a>
+                <a href="index.html#industries">Industries</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact" class="nav-cta">Free Operations Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div class="nav-panel" id="mobileNav">
+        <a href="index.html#problem">The Problem</a>
+        <a href="index.html#process">How It Works</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="nav-cta">Free Operations Audit</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-inner">
+                <h1>Stop Losing Bids to Manual Estimating</h1>
+                <p>Commercial contractors spend 60 to 80 hours per bid on takeoffs and pricing. Your estimators are stuck in spreadsheets instead of winning work. We automate the back-office so they focus on strategy.</p>
+                <button class="cta-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Get Your Free Operations Audit</button>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section class="section" id="problem">
+            <div class="section-inner">
+                <h2 class="section-heading">The Cost of Manual Operations</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h3>Estimators Locked in Spreadsheets</h3>
+                        <p>Your best estimators spend 60 to 80 hours per bid on manual takeoffs, pricing lookups, and formula corrections. That's time they're not winning new work.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Abstract Sheets That Break</h3>
+                        <p>Excel workbooks grow brittle over time. Hidden dependencies, broken formulas, and errors that compound across projects. Every bid starts from a risky foundation.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Subcontractor Bid Leveling is Manual</h3>
+                        <p>You're manually emailing, calling, and tracking subs. Bid leveling takes days. Communication is scattered across email, texts, and phone calls nobody can find later.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>No Historical Cost Library</h3>
+                        <p>Each bid builds from scratch. You're not reusing historical unit costs, labor productivity, or overhead structures from completed projects. Years of data gathering dust.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Go/No-Go Decisions Based on Gut Feel</h3>
+                        <p>You're making bid, no-bid decisions without clear data. Missing margin trends, cost patterns, and project fit. Leaving money on the table or chasing the wrong work.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Admin Work Drowning Payroll and AP</h3>
+                        <p>Invoice processing, payroll data entry, and compliance docs are still manual. Your finance team spends 20+ hours weekly on rekeying and chasing documents.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Automate -->
+        <section class="section" style="background: var(--gray-100);">
+            <div class="section-inner">
+                <h2 class="section-heading">What We Automate</h2>
+                <div class="automate-grid">
+                    <div class="automate-card">
+                        <div class="icon">📏</div>
+                        <h3>AI-Assisted Estimating</h3>
+                        <p>Machine learning takeoff analysis combined with your historical data. Cut prep time in half. Fewer estimation errors. Built on your real project history.</p>
+                    </div>
+                    <div class="automate-card">
+                        <div class="icon">📚</div>
+                        <h3>Historical Data Libraries</h3>
+                        <p>Centralized cost and productivity data from completed projects. Reuse unit costs, labor rates, and overhead structures across similar work. Data that compounds over time.</p>
+                    </div>
+                    <div class="automate-card">
+                        <div class="icon">🤝</div>
+                        <h3>Sub Bid Leveling</h3>
+                        <p>Automated outreach, centralized responses, real-time comparison. Track every bid, every revision, every timeline. No more scattered email chains.</p>
+                    </div>
+                    <div class="automate-card">
+                        <div class="icon">📊</div>
+                        <h3>Go/No-Go Frameworks</h3>
+                        <p>Data-driven bid, no-bid decisions based on margin trends, project fit, and capacity. Capture margin patterns you're missing. Say no to the wrong work.</p>
+                    </div>
+                    <div class="automate-card">
+                        <div class="icon">📄</div>
+                        <h3>Project Documentation</h3>
+                        <p>RFI tracking, change order management, contract data extraction. Everything centralized and searchable. Reduce project delays from lost paperwork.</p>
+                    </div>
+                    <div class="automate-card">
+                        <div class="icon">💰</div>
+                        <h3>Back-Office Admin</h3>
+                        <p>Automated invoice processing, payroll data extraction, compliance document organization. Free your finance team from rekeying. Accelerate cash flow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section class="section credentials-alt" id="credentials">
+            <div class="section-inner">
+                <h2 class="section-heading">Built on Real Construction Operations</h2>
+                <div style="max-width: 800px;">
+                    <div class="credential-item">
+                        <h4>Currently Building AI Estimating for a Top Arizona Commercial Contractor</h4>
+                        <p>I'm designing an AI estimating tool with a commercial general contractor that cuts bid prep time and improves cost accuracy. Real projects, real deadlines, real P&L impact. This isn't theory.</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>Led System Architecture Across 18 Integrated Modules</h4>
+                        <p>At PLS Logistics, I worked with systems spanning rating engines, carrier management, invoice routing, and financial reconciliation. That experience taught me how to connect complex operations without breaking what already works.</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>Analyzed $25M in Operations for a Venture-Backed Startup</h4>
+                        <p>At project44, I led a business assessment involving 11 stakeholder interviews and identified 10 plus product gaps. I bring the same analytical rigor to construction operations, finding where the biggest wins hide.</p>
+                    </div>
+                    <div class="credential-item">
+                        <h4>Built Portfolio Across 16 Plus Contractors as a Project Manager</h4>
+                        <p>My career started coordinating construction projects with 16 plus general contractors, subs, and suppliers at TDV and Town and Country Homes. I know how real projects work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="section">
+            <div class="section-inner">
+                <h2 class="section-heading">Typical Results for Commercial Contractors</h2>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-number">40-60%</div>
+                        <div class="impact-label">Reduction in Bid Prep Time</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number">20-30%</div>
+                        <div class="impact-label">Fewer Estimation Errors</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number">15+</div>
+                        <div class="impact-label">Historical Projects Indexed</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number">2 Weeks</div>
+                        <div class="impact-label">Faster Subcontractor Bids</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section how-it-works" id="process">
+            <div class="section-inner">
+                <h2 class="section-heading">How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Operations Audit</h3>
+                        <p>We map your current workflow, identify bottlenecks, and find quick wins. You'll get a concrete list of where automation creates the most value.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Build Your System</h3>
+                        <p>We design and build AI-assisted tools specific to your projects, data, and team. You maintain full control. No vendor lock-in, no surprise costs.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Launch and Scale</h3>
+                        <p>We train your team, measure results, and iterate. Performance-based pricing means we only win when you save money. Your success is our success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Cut Bid Prep Time in Half?</h2>
+            <p>Get a free operations audit and find out exactly where automation creates the biggest impact for your business.</p>
+            <div class="cta-buttons">
+                <button class="cta-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">Schedule Your Free Audit</button>
+                <a href="blog.html" class="cta-secondary">Read Our Latest Insights</a>
+            </div>
+        </section>
+
+        <!-- Related Blog -->
+        <section class="section related-blog">
+            <div class="related-blog-inner">
+                <h2 class="section-heading" style="margin-bottom: 40px;">Related Reading</h2>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-category">Operations + AI</div>
+                        <h3>The True Cost of Manual Estimating for Commercial Contractors</h3>
+                        <p>What your team loses when estimators spend 60 hours per bid. The hidden cost of spreadsheet errors. How historical data reuse compounds across years of projects.</p>
+                        <a href="blog.html#post-3" class="blog-link">Read the Full Article</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Berlin Management Group</h3>
+                    <p>AI operations consulting for service businesses that want to scale without chaos.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#problem">The Problem</a>
+                    <a href="index.html#process">How It Works</a>
+                    <a href="index.html#industries">Industries</a>
+                    <a href="index.html#about">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html#contact">Free Operations Audit</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Berlin Management Group. All rights reserved.</p>
+                <div>
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="index.html#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileNav() {
+            const hamburger = document.querySelector('.hamburger');
+            const navPanel = document.getElementById('mobileNav');
+            hamburger.classList.toggle('active');
+            navPanel.classList.toggle('active');
+        }
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-panel a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.getElementById('mobileNav').classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navPanel = document.getElementById('mobileNav');
+
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navPanel.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
