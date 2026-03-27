@@ -1766,14 +1766,28 @@ footer {
 
 <!-- ===== CONTACT ===== -->
 <section class="contact-section" id="contact">
-  <div class="contact-inner" style="display:block;max-width:640px;margin:0 auto;text-align:center;">
-    <h2 style="margin-bottom:16px;">Get Your Free Operations Audit</h2>
-    <p style="margin-bottom:40px;text-align:center;line-height:1.7;">Tell me where manual work is slowing your team down. We'll review your workflow and identify 1-3 automation opportunities. No obligation.</p>
+  <div class="contact-inner">
 
-    <!-- Form -->
-    <div class="contact-form" id="auditFormContainer" style="text-align:left;">
+    <!-- Left Column -->
+    <div class="contact-text">
+      <p style="text-transform:uppercase;letter-spacing:2px;font-size:0.85em;color:var(--gold);font-weight:600;margin-bottom:12px;">Get In Touch</p>
+      <h2>Get Your Free Operations Audit</h2>
+      <p>Tell us where manual work is slowing your team down. We'll review your workflow and identify 1–3 automation opportunities. No obligation.</p>
 
-      <!-- Server error banner -->
+      <div style="margin-top:32px;">
+        <p style="font-weight:600;color:var(--white);margin-bottom:12px;font-size:1.05em;">What you'll get</p>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--slate-light,#CBD5E0);line-height:2;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> 20–30 minute workflow review</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> 1–3 automation opportunities identified</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> Written summary within 48 hours</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--gold);">✓</span> No obligation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Column: Form -->
+    <div class="contact-form" id="auditFormContainer">
+
       <div class="form-error-banner" id="formErrorBanner" style="display:none;background:#FFF5F5;border:1px solid #E53E3E;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#E53E3E;font-size:0.9em;text-align:center;">
         Something went wrong. Please try again or email us at brad@berlinmanagementgroup.com.
       </div>
@@ -1826,10 +1840,10 @@ footer {
 
         <div class="form-group" id="painGroup">
           <label for="painPoint">What process is taking too much time right now?*</label>
-          <textarea id="painPoint" name="painPoint" placeholder="Tell us about the manual work, bottlenecks, or repetitive office tasks eating up your team's time." required minlength="20" maxlength="1000"></textarea>
+          <textarea id="painPoint" name="painPoint" placeholder="Tell us about the manual work, bottlenecks, or repetitive office tasks eating up your team's time." required minlength="10" maxlength="1000"></textarea>
           <span style="display:block;font-size:0.82em;color:var(--slate);margin-top:6px;font-style:italic;">Examples: estimating, invoicing, scheduling, reporting, job costing, data entry</span>
           <span id="charCount" style="display:block;font-size:0.78em;color:#A0AEC0;margin-top:4px;text-align:right;transition:color 0.2s ease;"></span>
-          <span class="error-msg" id="painError" style="display:none;">Please share a bit more detail (at least 20 characters) so we can prepare your audit.</span>
+          <span class="error-msg" id="painError" style="display:none;">Please tell us a little about the process you want to improve.</span>
         </div>
 
         <div style="text-align:center;margin-top:28px;">
@@ -1843,13 +1857,13 @@ footer {
       </form>
     </div>
 
-    <!-- Success State -->
-    <div id="formSuccess" style="display:none;text-align:center;padding:48px 32px;">
+    <!-- Success State (spans both columns) -->
+    <div id="formSuccess" style="display:none;text-align:center;padding:48px 32px;grid-column:1/-1;">
       <div style="width:64px;height:64px;background:#F0FFF4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
         <svg viewBox="0 0 24 24" width="32" height="32" stroke="#38A169" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h3 style="font-family:Merriweather,serif;font-size:1.6em;color:var(--navy);margin-bottom:12px;">Thanks - we got your request.</h3>
-      <p style="color:var(--slate);font-size:1.05em;line-height:1.7;margin-bottom:28px;">We'll review your submission and follow up shortly. If you want to move faster, book a quick intro call below.</p>
+      <h3 style="font-family:Merriweather,serif;font-size:1.6em;color:var(--white);margin-bottom:12px;">Thanks — we got your request.</h3>
+      <p style="color:var(--slate-light,#CBD5E0);font-size:1.05em;line-height:1.7;margin-bottom:28px;">We'll review your submission and follow up shortly. If you want to move faster, book a quick intro call below.</p>
       <a href="https://calendly.com/brad-berlinmanagementgroup/20min-intro" target="_blank" rel="noopener" id="scheduleBtn" class="btn-gold" style="display:inline-block;padding:14px 36px;text-decoration:none;font-size:1em;">Schedule a 20-Minute Intro Call</a>
     </div>
 
@@ -2164,10 +2178,10 @@ initChat();
     el.addEventListener("focus", function() { if (!formStarted) { formStarted = true; trackEvent("contact_form_start", {first_field: el.name}); } });
   });
 
-  // Character counter
+  // Character counter (10 char minimum)
   var painPoint = document.getElementById("painPoint");
   var charCount = document.getElementById("charCount");
-  var minChars = 20;
+  var minChars = 10;
   function updateCharCount() {
     var len = painPoint.value.length;
     if (len === 0) { charCount.textContent = "min " + minChars + " characters"; charCount.style.color = "#A0AEC0"; }
@@ -2177,14 +2191,13 @@ initChat();
   updateCharCount();
   painPoint.addEventListener("input", updateCharCount);
 
-  // Validation helpers
+  // Validation
   function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
   function setError(gid, show) { var g = document.getElementById(gid); if (show) g.classList.add("error"); else g.classList.remove("error"); }
   document.querySelectorAll("#auditForm input, #auditForm select, #auditForm textarea").forEach(function(el) {
     el.addEventListener("input", function() { this.closest(".form-group").classList.remove("error"); });
   });
 
-  // Form submission
   document.getElementById("auditForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var gotcha = document.querySelector('input[name="_gotcha"]');
@@ -2197,7 +2210,7 @@ initChat();
     if (!fn) { setError("nameGroup", true); valid = false; } else { setError("nameGroup", false); }
     if (!em || !validateEmail(em)) { setError("emailGroup", true); valid = false; } else { setError("emailGroup", false); }
     if (!co) { setError("companyGroup", true); valid = false; } else { setError("companyGroup", false); }
-    if (!pp || pp.length < 20) { setError("painGroup", true); valid = false; } else { setError("painGroup", false); }
+    if (!pp || pp.length < 10) { setError("painGroup", true); valid = false; } else { setError("painGroup", false); }
     if (!valid) { trackEvent("contact_form_submit_error", {reason:"validation"}); var fe = document.querySelector(".form-group.error"); if (fe) fe.scrollIntoView({behavior:"smooth",block:"center"}); return; }
     var btn = document.getElementById("submitBtn");
     btn.querySelector(".btn-text").style.display = "none";
@@ -2224,7 +2237,6 @@ initChat();
       trackEvent("contact_form_submit_error", {reason:"network_error"});
     });
   });
-  // Calendly click tracking
   var sb = document.getElementById("scheduleBtn");
   if (sb) sb.addEventListener("click", function() { trackEvent("calendly_click", {link: sb.href}); });
 </script>
