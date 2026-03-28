@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free operations audit for Phoenix small businesses. Discover where you're losing 15+ hours a week to manual work. Get a custom automation roadmap.">
+    <meta name="theme-color" content="#1B2A4A">
+    <link rel="canonical" href="https://berlinmanagementgroup.ai/free-audit.html">
+    <title>Free Operations Audit | Berlin Management Group</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B2L1VB82X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1B2L1VB82X');
+    </script>
+
+    <style>
+        :root {
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --navy-dark: #0F1A30;
+            --gold: #C8A951;
+            --gold-light: #E2CC7E;
+            --gold-dark: #A8893A;
+            --slate: #4A5568;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --white: #FFFFFF;
+            --text: #2D3748;
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-logo {
+                font-size: 18px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 72px;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(200, 169, 81, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 1140px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 24px;
+                margin-top: 72px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+        }
+
+        /* What You Get Section */
+        .section {
+            padding: 80px 40px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            text-align: center;
+            color: var(--navy);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--gold);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--slate);
+            line-height: 1.6;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: var(--gray-100);
+            padding: 80px 40px;
+        }
+
+        .trust-content {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .trust-title {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--navy);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--slate);
+            line-height: 1.5;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 40px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .process-title {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--navy);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0 auto 16px;
+        }
+
+        .process-step h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--slate);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            padding: 80px 40px;
+            scroll-margin-top: 72px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--slate);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .required {
+            color: var(--gold);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            color: var(--text);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(200, 169, 81, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .error-message {
+            color: #DC2626;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #DC2626;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .form-submit {
+            width: 100%;
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background-color: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            display: none;
+            background: #DBEAFE;
+            border-left: 4px solid #0EA5E9;
+            padding: 16px;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+            color: #0C4A6E;
+            font-size: 14px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .honeypot {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 32px 24px;
+            }
+
+            .form-title {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 60px 24px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .trust-section {
+                padding: 60px 24px;
+            }
+
+            .process-section {
+                padding: 60px 24px;
+            }
+
+            .form-section {
+                padding: 60px 24px;
+            }
+
+            .cards-grid {
+                gap: 24px;
+            }
+
+            .stats-grid {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-content {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="nav-logo">BMG</a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><button class="nav-cta" onclick="document.getElementById('form-section').scrollIntoView()">Free Audit</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Out Where You're Losing 15+ Hours a Week to Manual Work</h1>
+            <p>Get a free, zero-pressure operations audit. Discover hidden automation opportunities and see exactly how much you could save.</p>
+            <button class="hero-cta" onclick="document.getElementById('form-section').scrollIntoView()">Get Your Free Audit</button>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="section">
+        <h2 class="section-title">What's Included in Your Audit</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">📊</span>
+                <h3>Process Mapping</h3>
+                <p>We map your biggest back-office bottlenecks, from estimating to invoicing, scheduling to reporting.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">⚙️</span>
+                <h3>Automation Opportunities</h3>
+                <p>Identify specific tasks that can be automated using the systems you already have. No new tools required.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">💰</span>
+                <h3>ROI Estimate</h3>
+                <p>See the dollar impact: how many hours you'll save per week, and what that means for your bottom line.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🗺️</span>
+                <h3>Implementation Roadmap</h3>
+                <p>A simple, phased plan showing what to automate first, what's quickest to implement, and expected savings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-content">
+            <h2 class="trust-title">Why Small Business Owners in Phoenix Trust Us</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">40-60%</div>
+                    <div class="stat-label">Potential reduction in admin work</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">13.7 hrs</div>
+                    <div class="stat-label">Hours saved per week on average</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Phoenix Metro</div>
+                    <div class="stat-label">Serving home services, construction, property management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <h2 class="process-title">How It Works</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Book Your Audit</h3>
+                <p>Submit a quick form. Tell us your biggest back-office challenge.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>We Review</h3>
+                <p>We dive into your processes and map out all the automation opportunities.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>You Decide</h3>
+                <p>We deliver your roadmap. Implement it yourself, or let us help you execute.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form-section">
+        <div class="form-container">
+            <h2 class="form-title">Get Your Free Audit</h2>
+            <p class="form-subtitle">No credit card required. Takes 2 minutes.</p>
+
+            <div class="success-message" id="success-message">
+                Thanks for requesting your free audit! We'll review your information and be in touch within 24 hours.
+            </div>
+
+            <form id="audit-form" action="https://formspree.io/f/xgonjavo" method="POST" novalidate>
+                <input type="hidden" name="_next" value="https://berlinmanagementgroup.ai/free-audit.html">
+                <input type="hidden" name="_honey">
+                <input type="text" name="_gotcha" class="honeypot">
+
+                <div class="form-group">
+                    <label>Full Name <span class="required">*</span></label>
+                    <input type="text" name="full_name" required>
+                    <div class="error-message">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Work Email <span class="required">*</span></label>
+                    <input type="email" name="email" required>
+                    <div class="error-message">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Company Name <span class="required">*</span></label>
+                    <input type="text" name="company_name" required>
+                    <div class="error-message">Please enter your company name</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label>Industry <span class="required">*</span></label>
+                    <select name="industry" required>
+                        <option value="">Select your industry</option>
+                        <option value="HVAC/Plumbing/Electrical">HVAC, Plumbing, or Electrical</option>
+                        <option value="General Contractor">General Contractor</option>
+                        <option value="Specialty Contractor">Specialty Contractor</option>
+                        <option value="Property Management">Property Management</option>
+                        <option value="Restoration/Remediation">Restoration or Remediation</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="error-message">Please select an industry</div>
+                </div>
+
+                <div class="form-group">
+                    <label>What's your biggest back-office headache? <span class="required">*</span></label>
+                    <textarea name="biggest_challenge" placeholder="Tell us about your biggest pain point..." required></textarea>
+                    <div class="error-message">Please describe your biggest challenge (at least 10 characters)</div>
+                </div>
+
+                <button type="submit" class="form-submit">Request Your Free Audit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Berlin Management Group. All rights reserved. | <a href="/privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('audit-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+
+            // Validate
+            const fullName = form.full_name.value.trim();
+            const email = form.email.value.trim();
+            const companyName = form.company_name.value.trim();
+            const industry = form.industry.value.trim();
+            const challenge = form.biggest_challenge.value.trim();
+
+            let isValid = true;
+
+            if (!fullName) {
+                form.full_name.parentElement.parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (!email || !email.includes('@')) {
+                form.email.parentElement.parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (!companyName) {
+                form.company_name.parentElement.parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (!industry) {
+                form.industry.parentElement.parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (challenge.length < 10) {
+                form.biggest_challenge.parentElement.parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Submit
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Show success
+                    successMessage.classList.add('show');
+                    form.reset();
+                    form.style.display = 'none';
+
+                    // Track GA event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submission', {
+                            'form_name': 'free_audit_request'
+                        });
+                    }
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                    // Reset after 5 seconds
+                    setTimeout(() => {
+                        form.style.display = 'block';
+                        form.reset();
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+            }
+        });
+
+        // Smooth scroll for nav button
+        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

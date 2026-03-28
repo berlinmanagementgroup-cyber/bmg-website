@@ -1,0 +1,475 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-03-28 16:00:00",
+  "containerVersion": {
+    "tag": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "1",
+        "name": "GA4 - Config - All Pages",
+        "type": "gaawc",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-1B2L1VB82X"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "sendPageView",
+            "value": "true"
+          }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "GA4 configuration tag. Fires on every page. Sends page_view automatically. Measurement ID: G-1B2L1VB82X."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "2",
+        "name": "GA4 - Event - Generate Lead",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "generate_lead"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 - Config - All Pages"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+                  { "type": "TEMPLATE", "key": "value", "value": "ops_audit_form" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["100"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "Primary conversion event. Fires when user lands on /thank-you.html after form submission. Mark as Key Event in GA4 Admin."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "3",
+        "name": "GA4 - Event - Generate Lead (AJAX Backup)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "generate_lead"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 - Config - All Pages"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_name}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_industry" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_industry}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["101"],
+        "blockingTriggerId": ["103"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "Backup conversion via AJAX dataLayer push from form-handler.js. Blocked if thank-you page trigger already fired (dedup). Phase 2."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "4",
+        "name": "GA4 - Event - Calendly Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "calendly_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 - Config - All Pages"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "link_url" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Click URL}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "page_path" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Page Path}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["102"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "Tracks clicks on Calendly scheduling links. Mark as Key Event (secondary) in GA4 Admin."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "5",
+        "name": "GA4 - Event - CTA Click",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "cta_click"
+          },
+          {
+            "type": "TAG_REFERENCE",
+            "key": "measurementId",
+            "value": "GA4 - Config - All Pages"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "button_text" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Click Text}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "page_path" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Page Path}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["104"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "Phase 2. Tracks clicks on primary CTA buttons (.btn-gold, .nav-cta)."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "6",
+        "name": "GAds - Conversion - Form Submit",
+        "type": "awct",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "AW-XXXXXXXXX"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "REPLACE_WITH_LABEL"
+          }
+        ],
+        "firingTriggerId": ["100"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "IMPORTANT: Replace AW-XXXXXXXXX and REPLACE_WITH_LABEL with actual values from Google Ads > Tools > Conversions. Primary conversion tag. Fires only on thank-you.html pageview (not AJAX) to avoid duplication."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "7",
+        "name": "GAds - Remarketing - All Pages",
+        "type": "sp",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "AW-XXXXXXXXX"
+          }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "IMPORTANT: Replace AW-XXXXXXXXX with actual Google Ads Conversion ID. Remarketing tag builds audience lists on all pages."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "tagId": "8",
+        "name": "Dedup - Lead Flag Reset",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n  // Deduplication flag for generate_lead event.\n  // Prevents double-firing when both AJAX and thank-you pageview triggers hit.\n  window._bmg_lead_fired = false;\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "priority": {
+          "type": "TEMPLATE",
+          "value": "100"
+        },
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "notes": "Phase 2 dedup. Initializes the lead-fired flag on every page load. Fires with high priority before event tags."
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "100",
+        "name": "Pageview - Thank You",
+        "type": "PAGEVIEW",
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Page Path}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "/thank-you.html" }
+            ]
+          }
+        ],
+        "notes": "Fires on page load of /thank-you.html. Primary conversion trigger."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "101",
+        "name": "Custom Event - Form Submit Success",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submission_success" }
+            ]
+          }
+        ],
+        "notes": "Phase 2. Fires when form-handler.js pushes form_submission_success to dataLayer. Backup conversion trigger."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "102",
+        "name": "Click - Calendly Link",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "calendly.com" }
+            ]
+          }
+        ],
+        "waitForTags": {
+          "type": "BOOLEAN",
+          "value": "true"
+        },
+        "waitForTagsTimeout": {
+          "type": "TEMPLATE",
+          "value": "2000"
+        },
+        "checkValidation": {
+          "type": "BOOLEAN",
+          "value": "true"
+        },
+        "notes": "Fires on click of any link containing calendly.com. Waits for tags before navigating."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "103",
+        "name": "Blocking - Thank You Already Loaded",
+        "type": "PAGEVIEW",
+        "filter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Page Path}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "/thank-you.html" }
+            ]
+          }
+        ],
+        "notes": "Phase 2 dedup. Used as a blocking trigger on the AJAX backup tag. If the user is already on thank-you.html, the pageview trigger handles the conversion, so the AJAX backup should not also fire."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "104",
+        "name": "Click - CTA Button",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "CSS_SELECTOR",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Click Element}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": ".btn-gold, .nav-cta, [data-cta]" }
+            ]
+          }
+        ],
+        "notes": "Phase 2. Fires on click of primary CTA buttons."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "triggerId": "105",
+        "name": "Click - Phone Link",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "STARTS_WITH",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "tel:" }
+            ]
+          }
+        ],
+        "notes": "Phase 2. Fires on click of tel: links. Only relevant if phone number is added to site."
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "200",
+        "name": "DLV - form_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "form_name"
+          },
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          }
+        ],
+        "notes": "Data Layer Variable. Reads form_name from dataLayer push in form-handler.js."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "201",
+        "name": "DLV - form_industry",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "form_industry"
+          },
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          }
+        ],
+        "notes": "Data Layer Variable. Reads form_industry from dataLayer push in form-handler.js."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "202",
+        "name": "Const - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "G-1B2L1VB82X"
+          }
+        ],
+        "notes": "Constant. GA4 Measurement ID for berlinmanagementgroup.ai."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "203",
+        "name": "Const - GAds Conversion ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "AW-XXXXXXXXX"
+          }
+        ],
+        "notes": "IMPORTANT: Replace AW-XXXXXXXXX with actual Google Ads Conversion ID."
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "204",
+        "name": "Const - GAds Conversion Label",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "REPLACE_WITH_LABEL"
+          }
+        ],
+        "notes": "IMPORTANT: Replace REPLACE_WITH_LABEL with actual conversion label from Google Ads."
+      }
+    ],
+    "builtInVariable": [
+      { "type": "PAGE_URL", "name": "Page URL" },
+      { "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
+      { "type": "PAGE_PATH", "name": "Page Path" },
+      { "type": "REFERRER", "name": "Referrer" },
+      { "type": "EVENT", "name": "Event" },
+      { "type": "CLICK_URL", "name": "Click URL" },
+      { "type": "CLICK_TEXT", "name": "Click Text" },
+      { "type": "CLICK_ELEMENT", "name": "Click Element" },
+      { "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "type": "CLICK_ID", "name": "Click ID" },
+      { "type": "FORM_ID", "name": "Form ID" },
+      { "type": "FORM_URL", "name": "Form URL" },
+      { "type": "FORM_CLASSES", "name": "Form Classes" }
+    ]
+  }
+}
