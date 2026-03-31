@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google Tag Manager -->
@@ -1219,7 +1219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   // Post visibility
-  function showPost(index) {
+  window.showPost = function(index) {
     // Hide all posts
     const posts = document.querySelectorAll('.full-post');
     posts.forEach(post => post.classList.remove('active'));
