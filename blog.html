@@ -108,8 +108,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nav-logo-text {
     font-family: Merriweather, serif;
     color: var(--navy);
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 900;
+    font-size: 1.05rem;
+    line-height: 1.2;
   }
 
   .nav-links {
@@ -132,15 +133,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .nav-cta {
     background: var(--navy);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 10px 22px;
     border-radius: var(--radius);
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
   }
 
   .nav-cta:hover {
@@ -626,8 +628,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-square">BMG</div>
-      <span class="nav-logo-text">Berlin Management Group</span>
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="6" fill="#1B2A4A"/>
+        <text x="20" y="26" text-anchor="middle" fill="#C8A951" font-family="Merriweather, serif" font-weight="700" font-size="14">BMG</text>
+      </svg>
+      <span class="nav-logo-text">Berlin<br>Management<br>Group</span>
     </a>
     <div class="nav-links">
       <a href="index.html#problem">The Problem</a>
