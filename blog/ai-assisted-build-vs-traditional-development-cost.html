@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>AI-Built Tech Stack vs Traditional Dev Cost | BMG Case Study</title>
+<meta name="description" content="A non-technical founder built a consulting tech stack with AI in two weeks, then estimated the traditional US development cost. The honest breakdown.">
+<meta name="keywords" content="AI development cost, AI-assisted build, traditional development cost comparison, small business automation, Claude AI, operations consulting, Phoenix AZ">
+<meta name="author" content="Brad Berlin, Berlin Management Group">
+<link rel="canonical" href="https://berlinmanagementgroup.ai/blog/ai-assisted-build-vs-traditional-development-cost">
+
+<!-- Open Graph -->
+<meta property="og:title" content="I Built My Consulting Tech Stack with AI. Here Is What It Would Have Cost the Traditional Way.">
+<meta property="og:description" content="A non-technical founder built a consulting tech stack with AI in two weeks, then estimated the traditional US development cost. The honest breakdown.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://berlinmanagementgroup.ai/blog/ai-assisted-build-vs-traditional-development-cost">
+<meta property="og:site_name" content="Berlin Management Group">
+<meta property="article:author" content="Brad Berlin">
+<meta property="article:published_time" content="2026-03-31T12:00:00Z">
+<meta property="article:section" content="Case Study">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-Built Tech Stack vs Traditional Dev Cost | BMG Case Study">
+<meta name="twitter:description" content="A non-technical founder built a consulting tech stack with AI in two weeks, then estimated the traditional US development cost. The honest breakdown.">
+
+<!-- Schema.org BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "I Built My Consulting Tech Stack with AI. Here Is What It Would Have Cost the Traditional Way.",
+  "description": "A non-technical founder built a consulting tech stack with AI in two weeks, then estimated the traditional US development cost. The honest breakdown.",
+  "author": {
+    "@type": "Person",
+    "name": "Brad Berlin",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Berlin Management Group",
+      "url": "https://berlinmanagementgroup.ai"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Berlin Management Group",
+    "url": "https://berlinmanagementgroup.ai"
+  },
+  "datePublished": "2026-03-31",
+  "dateModified": "2026-03-31",
+  "url": "https://berlinmanagementgroup.ai/blog/ai-assisted-build-vs-traditional-development-cost",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://berlinmanagementgroup.ai/blog/ai-assisted-build-vs-traditional-development-cost"
+  },
+  "keywords": ["AI development", "cost comparison", "small business automation", "operations consulting"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #2C3E6B;
+    --navy-dark: #0F1A30;
+    --gold: #C8A951;
+    --gold-light: #E2CC7E;
+    --gold-dark: #A8893A;
+    --slate: #4A5568;
+    --gray-100: #F7F8FA;
+    --gray-200: #E8ECF1;
+    --gray-300: #CBD2DC;
+    --gray-600: #5A6577;
+    --white: #FFFFFF;
+    --text: #2D3748;
+    --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+    --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--gray-200);
+    backdrop-filter: blur(8px);
+    z-index: 100; height: 72px;
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto; padding: 0 32px;
+    display: flex; justify-content: space-between; align-items: center; height: 100%;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-square {
+    width: 32px; height: 32px; background: var(--navy); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-weight: 700; font-size: 0.9rem;
+  }
+  .nav-logo-text { font-family: Merriweather, serif; color: var(--navy); font-weight: 700; font-size: 0.95rem; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { color: var(--text); font-weight: 500; font-size: 0.92rem; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--navy); color: var(--white) !important; padding: 10px 22px; border-radius: var(--radius);
+    font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--navy-light); }
+  .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    .nav-inner { padding: 0 20px; }
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: absolute; top: 72px; left: 0; right: 0;
+      background: var(--white); flex-direction: column; gap: 16px; padding: 20px;
+      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-md);
+    }
+    .nav-links.active { display: flex; }
+  }
+
+  /* Article layout */
+  main { margin-top: 72px; }
+
+  .article-hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    padding: 80px 40px 60px; text-align: center; color: var(--white);
+  }
+  .article-hero h1 {
+    font-size: 2.2em; color: var(--white); margin-bottom: 16px;
+    font-family: Merriweather, serif; max-width: 800px; margin-left: auto; margin-right: auto;
+    line-height: 1.3; letter-spacing: -0.3px;
+  }
+  .article-hero .subtitle {
+    font-size: 1.05em; color: rgba(255,255,255,0.75); max-width: 640px;
+    margin: 0 auto 20px; font-style: italic; line-height: 1.5;
+  }
+  .article-hero .meta {
+    font-size: 0.9em; color: rgba(255,255,255,0.5);
+  }
+
+  .article-container {
+    max-width: 720px; margin: 0 auto; padding: 48px 24px 80px;
+  }
+
+  /* Typography */
+  .article-container p {
+    margin-bottom: 18px; line-height: 1.8; font-size: 1.02em;
+  }
+
+  .article-container h2 {
+    font-family: Merriweather, serif; color: var(--navy); font-size: 1.6em;
+    margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--gray-200);
+  }
+
+  .article-container h3 {
+    font-family: Merriweather, serif; color: var(--navy); font-size: 1.2em;
+    margin: 32px 0 12px;
+  }
+
+  .article-container strong { color: var(--navy); }
+
+  .article-container a {
+    color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+  .article-container a:hover { color: var(--gold); }
+
+  /* Screenshot styling */
+  .screenshot-placeholder {
+    background: var(--gray-100); border: 2px dashed var(--gray-300);
+    border-radius: var(--radius); padding: 40px 24px; text-align: center;
+    margin: 24px 0; color: var(--gray-600); font-size: 0.9em; font-style: italic;
+  }
+  .article-screenshot {
+    width: 100%; border-radius: var(--radius); border: 1px solid var(--gray-200);
+    margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .screenshot-caption {
+    text-align: center; font-size: 0.85em; color: var(--gray-600);
+    font-style: italic; margin-top: -16px; margin-bottom: 24px;
+  }
+
+  /* Objection blocks */
+  .objection { margin-bottom: 20px; }
+  .objection .claim {
+    font-weight: 700; color: var(--navy); font-size: 1.02em; margin-bottom: 6px;
+  }
+
+  /* Numbers highlight box */
+  .numbers-box {
+    background: var(--gray-100); border-left: 4px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0; padding: 24px 28px; margin: 28px 0;
+  }
+  .numbers-box p { margin-bottom: 10px; }
+  .numbers-box p:last-child { margin-bottom: 0; }
+
+  /* CTA section */
+  .article-cta {
+    background: var(--gray-100); border: 1px solid var(--gray-200);
+    border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center;
+  }
+  .article-cta p { margin-bottom: 16px; color: var(--text); }
+  .article-cta a.cta-button {
+    display: inline-block; background: var(--navy); color: var(--white); padding: 14px 32px;
+    border-radius: var(--radius); font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .article-cta a.cta-button:hover { background: var(--navy-light); color: var(--white); }
+
+  /* Author box */
+  .author-box {
+    background: var(--gray-100); border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--navy-dark); border-radius: var(--radius);
+    padding: 24px; margin: 40px 0; display: flex; gap: 20px; align-items: flex-start;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-weight: 700; font-size: 1.4em; flex-shrink: 0;
+  }
+  .author-info h4 { color: var(--navy); font-size: 1.05em; margin-bottom: 2px; }
+  .author-info .role { color: var(--navy-light); font-size: 0.85em; margin-bottom: 8px; }
+  .author-info p { color: var(--slate); font-size: 0.9em; line-height: 1.6; margin-bottom: 0; }
+
+  /* Methodology note */
+  .methodology {
+    font-size: 0.85em; color: var(--gray-600); font-style: italic;
+    border-top: 1px solid var(--gray-200); padding-top: 20px; margin-top: 40px;
+    line-height: 1.6;
+  }
+
+  /* Back to blog */
+  .back-link {
+    display: inline-block; color: var(--gold-dark); font-weight: 600;
+    text-decoration: none; margin-bottom: 32px; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--gold); }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--gray-200); margin: 32px 0; }
+
+  /* Footer */
+  footer {
+    background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 48px 0 32px; color: rgba(255,255,255,0.4);
+  }
+  .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+  .footer-content {
+    display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 48px; margin-bottom: 32px;
+  }
+  .footer-brand h3 { font-family: Merriweather, serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; }
+  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .article-hero { padding: 60px 20px 40px; }
+    .article-hero h1 { font-size: 1.6em; }
+    .article-container { padding: 32px 20px 60px; }
+    .article-container h2 { font-size: 1.35em; }
+    .author-box { flex-direction: column; align-items: center; text-align: center; }
+    .footer-content { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <div class="nav-logo-square">BMG</div>
+      <span class="nav-logo-text">Berlin Management Group</span>
+    </a>
+    <div class="nav-links">
+      <a href="/index.html#problem">The Problem</a>
+      <a href="/index.html#process">How It Works</a>
+      <a href="/index.html#industries">Industries</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/index.html#about">About</a>
+      <a href="/index.html#contact" class="nav-cta">Free Operations Audit</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Article Hero -->
+  <div class="article-hero">
+    <h1>I Built My Consulting Tech Stack with AI. Here Is What It Would Have Cost the Traditional Way.</h1>
+    <p class="subtitle">A cost estimate from a non-technical founder who used Claude to build business systems, then priced out what US developers would have charged.</p>
+    <p class="meta">Brad Berlin &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Case Study</p>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-container">
+
+    <a href="/blog.html" class="back-link">&larr; Back to all posts</a>
+
+    <p>I am not a developer. I have never shipped a line of production code. I am an operations consultant who launched a new business in early 2026 and needed systems to run it.</p>
+
+    <p>Over about two weeks, roughly 70 hours of work, I used Anthropic's Claude to build a marketing automation platform, a business website, an operator dashboard, and a consulting delivery system. Claude wrote the code. I told it what to build, reviewed everything, and made the calls.</p>
+
+    <p>When the build was mostly done, I asked a simple question: what would a US-based developer or agency have charged for this? Knock a third off every number in this post. I think the point still holds.</p>
+
+    <h2>What Was Built</h2>
+
+    <h3>Live</h3>
+
+    <p><strong>Business website</strong> (berlinmanagementgroup.ai). Six pages on Netlify, auto-deployed from GitHub. Analytics, structured data markup, contact forms, five blog posts. Marketing site, not a web app.</p>
+
+    <!-- Screenshot 1: Homepage -->
+    <img class="article-screenshot" src="images/screenshot-homepage.jpg" alt="Screenshot of berlinmanagementgroup.ai homepage showing the BMG brand, navigation, and hero section" loading="lazy">
+    <p class="screenshot-caption">berlinmanagementgroup.ai homepage</p>
+
+    <p><strong>CRM and pipeline.</strong> File-based CRM inside Claude's workspace. Pipeline tracker, client folder templates, lead capture. No external CRM software. Works for one person.</p>
+
+    <p><strong>GTM tools.</strong> Eight outbound and analytics tools configured, connected, and running. Includes a dedicated sending domain with email warm-up.</p>
+
+    <h3>Built and tested, not yet live</h3>
+
+    <p><strong>Marketing automation platform.</strong> Nine Python modules: email outreach, LinkedIn, content, SEO, ads, social publishing, QA, sales enablement, prospect enrichment. 26 database tables, 10+ API integrations, human-in-the-loop approval on everything outbound, compliance safeguards. Currently in dry-run mode. Code is tested but has not processed live campaigns at scale.</p>
+
+    <!-- Screenshot 2: Operator Workspace -->
+    <img class="article-screenshot" src="images/screenshot-workspace.jpg" alt="Screenshot of the BMG operator workspace dashboard showing the Outreach queue with prospect data blurred, approval status badges, and review controls" loading="lazy">
+    <p class="screenshot-caption">Operator workspace: Outreach queue with human-in-the-loop approval workflow</p>
+
+    <p><strong>Operator workspace.</strong> Flask-based UI with five views, 18 endpoints, approval workflow. Browser-tested, not yet used daily.</p>
+
+    <h3>Internal</h3>
+
+    <p><strong>Delivery system docs.</strong> Operations playbook (19,000 words), engineering guardrails (21,000 words), and 11 sales templates. Reference documents, not software. In use for the first client engagement.</p>
+
+    <p><strong>Enrichment engine.</strong> Web crawler and inference system for three industries. Tested against a small sample with mixed results. Not yet run at volume.</p>
+
+    <h3>Infrastructure</h3>
+
+    <p>Two domains, three email addresses, GitHub repos, Netlify deployment, warm-up domain with SPF/DKIM/DMARC, and API credentials for all services.</p>
+
+    <h2>How I Estimated the Traditional Cost</h2>
+
+    <p>I had Claude adopt the perspective of a senior US engineering manager and produce a directional estimate of what this scope would likely cost through normal development channels. Each workstream was broken into phases (MVP, production-ready, stabilization) and priced at 2026 US contract rates ($120 to $200/hour depending on role). I modeled three scenarios: a strong solo developer, an architect paired with a developer, and a small agency. All estimates include rework, debugging, integration surprises, and communication overhead.</p>
+
+    <p>For a fair comparison, I included my own time at $150/hour. About 70 hours of prompting, reviewing, testing, and deciding, plus under $5,000 in tools and subscriptions. All-in: under $17,000.</p>
+
+    <p>The code is in GitHub. The website is live. You can verify the scope. The rate assumptions are standard for the US market, and the ranges are wide: $115,000 to $260,000 depending on team size and engagement model.</p>
+
+    <!-- Screenshot 3: Test Results -->
+    <img class="article-screenshot" src="images/screenshot-tests.jpg" alt="Terminal output showing E2E test results: 44 passed, 3 failed, 1 skipped across all 9 bot modules, database, CLI commands, and API integrations" loading="lazy">
+    <p class="screenshot-caption">E2E test results: 44 passed, 3 failed, 1 skipped</p>
+
+    <h2>What Could Make This Estimate Wrong</h2>
+
+    <div class="objection">
+      <p class="claim">"You estimated the value of your own work."</p>
+      <p>Self-assessment has obvious bias. I have used conservative rates, honest system statuses, and ranges instead of point estimates. Cut every number by a third and you still land above $80,000 and three months.</p>
+    </div>
+
+    <div class="objection">
+      <p class="claim">"AI-generated code is verbose. 27,000 lines might be 15,000 from a human."</p>
+      <p>Probably right. But the integration work, database schema, and state machines do not shrink just because the code is more compact.</p>
+    </div>
+
+    <div class="objection">
+      <p class="claim">"Test count does not equal quality."</p>
+      <p>The 133 tests cover database operations, approval workflows, retry logic, and API endpoints. I have not measured formal coverage. It is a scope indicator, not a guarantee.</p>
+    </div>
+
+    <div class="objection">
+      <p class="claim">"Most of this has not run in production."</p>
+      <p>True. The bot platform is in dry-run mode. Production will find bugs that testing missed. I have budgeted for a stabilization phase, but the real number is uncertain.</p>
+    </div>
+
+    <div class="objection">
+      <p class="claim">"You skipped formal discovery."</p>
+      <p>Discovery happened through conversation, not as a structured phase. That works for one person making decisions in real-time. I would not recommend it for a team.</p>
+    </div>
+
+    <div class="objection">
+      <p class="claim">"Maintainability is unproven."</p>
+      <p>The strongest long-term objection. The code is modular and documented, but nobody who will maintain it wrote it. I think the architecture holds up. That is a belief, not a fact. A hand-built system has the advantage of a developer who understood every decision from the start.</p>
+    </div>
+
+    <h2>What AI Did, and What It Did Not</h2>
+
+    <h3>AI replaced</h3>
+
+    <p><strong>All the coding.</strong> I did not hand-write any of the Python, HTML, or configuration files.</p>
+
+    <p><strong>Integration research.</strong> Buffer GraphQL, Google Ads API, DKIM records. Stuff that would have taken days of Googling happened in minutes.</p>
+
+    <p><strong>Documentation drafts.</strong> 40,000+ words of playbooks, templates, specs. Claude drafted; I reviewed and revised.</p>
+
+    <p><strong>Tests and rewrites.</strong> 133 tests written alongside the code. Architecture changes that would take a developer days happened in the same session. This is where the time savings were largest.</p>
+
+    <p>That said, it was not smooth. I rebuilt the enrichment engine three times before the architecture stuck. The first version crawled too many pages and returned garbage. The second was better but choked on edge cases. The third worked. Each rebuild took about an hour. With a traditional developer, each of those would have been a week and a difficult conversation about scope.</p>
+
+    <h3>AI did not replace</h3>
+
+    <p><strong>My decisions.</strong> Every feature, integration, and architecture choice was mine. Claude proposed; I picked. The system reflects what I think the business needs.</p>
+
+    <p><strong>Quality judgment.</strong> I reviewed every output and rejected what was not good enough. The compliance safeguards and approval workflows exist because I required them. Claude did not add safety features unprompted.</p>
+
+    <p><strong>Domain knowledge.</strong> The enrichment engine targets specific industries because I know those markets. The sales templates come from my consulting experience, not from a prompt.</p>
+
+    <!-- Screenshot 4: Delivery Playbook TOC -->
+    <img class="article-screenshot" src="images/screenshot-playbook.jpg" alt="Table of contents from the BMG Delivery Playbook showing the six-stage engagement lifecycle, operational standards, and pipeline review cadence" loading="lazy">
+    <p class="screenshot-caption">Delivery Playbook: 19,000-word operations document with six-stage engagement lifecycle</p>
+
+    <h2>The Numbers</h2>
+
+    <div class="numbers-box">
+      <p><strong>Traditional cost:</strong> roughly $100,000 to $200,000. Most realistic scenario (architect plus developer): $120,000 to $160,000. US rates, iterative requirements, normal project friction.</p>
+      <p><strong>Traditional timeline:</strong> 3.5 to 7 months.</p>
+      <p><strong>What I spent:</strong> about 70 hours and under $17,000 all-in, including my imputed labor.</p>
+    </div>
+
+    <p>By my estimate, the AI-assisted approach was several times faster and cost a fraction of what traditional development would have, even after accounting for my own time. Those are estimates, not measurements. But even at the conservative end, the gap is hard to explain away.</p>
+
+    <h2>What This Means If You Run a Small Business</h2>
+
+    <p>AI is fast. It is not smart about your business. You still have to know what you want and whether the output is any good. Without that, you get a lot of working code that does not actually solve your problem.</p>
+
+    <p>The biggest savings were not from writing code fast. They were from rewriting it fast. In traditional development, going back and changing things is where the money goes. AI makes those changes cheap. That mattered more than anything else in this build.</p>
+
+    <p>I built a consulting tech stack that would have cost six figures the traditional way. I did it in two weeks for under $17,000. There are real ongoing costs (maintenance, production bugs, learning curve), and some of these systems have not been battle-tested yet. But even with generous discounting, the cost difference is significant.</p>
+
+    <p>If you run a small business and know how you want it to operate, this approach is worth exploring. I am still learning what works and what does not, but so far the economics have held up.</p>
+
+    <hr>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <p>If any of this is relevant to your business, I am happy to walk through it. I do free 30-minute operations audits where I look at your workflows and flag the highest-value automation opportunities. No pitch, no obligation.</p>
+      <a href="/free-audit" class="cta-button">Book a Free Operations Audit</a>
+    </div>
+
+    <!-- Author Box -->
+    <div class="author-box">
+      <div class="author-avatar">BB</div>
+      <div class="author-info">
+        <h4>Brad Berlin</h4>
+        <p class="role">Founder, Berlin Management Group &nbsp;|&nbsp; Phoenix, AZ</p>
+        <p>He helps small and mid-size businesses automate back-office processes using AI. He has no formal coding background. Everything described in this article is his first hands-on software project.</p>
+      </div>
+    </div>
+
+    <!-- Methodology Note -->
+    <p class="methodology">Methodology note: This article presents a directional replacement-cost estimate, not a third-party valuation, formal appraisal, or agency quote. The estimate was produced using AI assistance and reflects the author's self-assessment of scope, supplemented by standard 2026 US contract rate assumptions. Actual costs for equivalent work could be higher or lower depending on team composition, requirements clarity, and project-specific factors.</p>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Berlin Management Group</h3>
+        <p>AI operations consulting for service businesses</p>
+      </div>
+      <div class="footer-links">
+        <a href="/index.html">Home</a>
+        <a href="/index.html#process">How It Works</a>
+        <a href="/index.html#industries">Industries</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/index.html#about">About</a>
+        <a href="/free-audit">Free Audit</a>
+      </div>
+      <div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Berlin Management Group. All rights reserved.</span>
+      <a href="mailto:brad@berlinmanagementgroup.com">brad@berlinmanagementgroup.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
