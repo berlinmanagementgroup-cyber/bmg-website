@@ -21,10 +21,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Berlin Management Group | AI Operations Consulting</title>
 <meta name="description" content="Phoenix, AZ AI operations consulting for home services, construction, and property management companies. We automate back-office workflows, fix broken handoffs, and cut paperwork. Performance-based pricing, you only pay when it works.">
 <meta name="keywords" content="AI consulting, AI operations consulting, back office automation, construction estimating automation, business process automation, AI consulting Phoenix, AI consulting Arizona">
-<meta name="author" content="Brad Behrlin, Berlin Management Group">h
-<meta name="robots" content="index, follow">h
+<meta name="author" content="Brad Behrlin, Berlin Management Group">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://berlinmanagementgroup.ai/">
-h
+
 <!-- Open Graph / LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Berlin Management Group | AI Operations Consulting">
@@ -1366,6 +1366,7 @@ footer {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}.skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:12px 20px;background:#1B2B4B;color:#fff;z-index:10000;text-decoration:none;border-radius:4px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
 </style>
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -1613,16 +1614,18 @@ footer {
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ===== NAVIGATION ===== -->
+<header>
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="logo" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-      <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;"><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
+      <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;" role="img" aria-labelledby="logo-title"><title id="logo-title">Berlin Management Group logo</title><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
       <span style="font-family:'Merriweather',Georgia,serif;font-weight:900;font-size:1.05rem;color:#1B2B4B;line-height:1.15;letter-spacing:-0.02em;">Berlin Management<br>Group</span>
     </a>
     <div class="nav-links">
@@ -1633,15 +1636,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#about">About</a><a href="blog.html">Blog</a>
       <a href="#contact" class="nav-cta">Free Operations Audit</a>
     </div>
-    <button class="mobile-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
+    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded', n.classList.contains('open'));">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
-<header>
-<section class="hero" role="banner">
+<section class="hero">
   <div class="container">
     <div class="hero-content fade-up">
       <div class="hero-badge">AI Operations Consulting &bull; Phoenix, AZ &bull; Serving the Valley</div>
@@ -1651,7 +1653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
           Get Your Free Operations Audit
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#process" class="btn-secondary">See How It Works</a>
       </div>
@@ -1661,6 +1663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 </header>
 
+<main id="main-content">
 <!-- ===== PROOF STRIP ===== -->
 <section class="proof-strip">
   <div class="container">
@@ -1701,28 +1704,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="case-study-right">
         <div class="case-study-metric">
-          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
           <div class="case-study-metric-text">
             <h4>40-60% time reduction</h4>
             <p>Estimate prep that took days is moving to hours</p>
           </div>
         </div>
         <div class="case-study-metric">
-          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
           <div class="case-study-metric-text">
             <h4>137-tab workbook replaced</h4>
             <p>One searchable AI tool instead of dozens of spreadsheet tabs</p>
           </div>
         </div>
         <div class="case-study-metric">
-          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
           <div class="case-study-metric-text">
             <h4>Historical cost database</h4>
             <p>Every past bid becomes searchable data for future estimates</p>
           </div>
         </div>
         <div class="case-study-metric">
-          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <div class="case-study-metric-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <div class="case-study-metric-text">
             <h4>CSI MasterFormat standard</h4>
             <p>Industry-standard cost codes for consistent, reliable estimates</p>
@@ -1747,22 +1750,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="problem-grid fade-up">
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></span>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></span>
         <h3>Manual estimating</h3>
         <p>Every bid means copying data across dozens of tabs, re-entering the same numbers, and hoping nothing slips through the cracks before the deadline.</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span>
         <h3>Scattered historical data</h3>
         <p>Past project costs live in Excel files scattered across your server. Nobody has time to build a real database, so every bid starts from scratch.</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <h3>Tight turnarounds</h3>
         <p>Two weeks to turn a bid. Your estimators are working nights and weekends just to keep up, and you're leaving money on the table when they rush.</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
         <h3>No visibility into costs</h3>
         <p>You know what you bid. You know what you spent. But connecting those two numbers across projects? That takes a consultant and a weekend.</p>
       </div>
@@ -1810,20 +1813,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="industry-card featured">
         <span class="featured-badge">Active Engagements</span>
         <h3>Commercial Construction</h3>
-        <p>Estimating, bid comparison, historical cost databases, subcontractor management. Turning 137-tab spreadsheets into searchable AI tools.</p><a href="commercial-contractors.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More ?</a></p>
+        <p>Estimating, bid comparison, historical cost databases, subcontractor management. Turning 137-tab spreadsheets into searchable AI tools.</p><a href="commercial-contractors.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More &rarr;</a>
       </div>
       <div class="industry-card">
-        <span class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
+        <span class="industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
         <h3>Property Management</h3>
-        <p>Tenant communication, maintenance dispatch, lease renewals, compliance tracking, and owner reporting for companies managing portfolios at scale.</p><a href="property-management.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More ?</a></p>
+        <p>Tenant communication, maintenance dispatch, lease renewals, compliance tracking, and owner reporting for companies managing portfolios at scale.</p><a href="property-management.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More &rarr;</a>
       </div>
       <div class="industry-card">
-        <span class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+        <span class="industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
         <h3>Trades & Field Services</h3>
-        <p>Scheduling, dispatching, invoicing, and job costing for companies that do the work in the field but drown in paperwork at the office.</p><a href="home-services.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More ?</a></p>
+        <p>Scheduling, dispatching, invoicing, and job costing for companies that do the work in the field but drown in paperwork at the office.</p><a href="home-services.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More &rarr;</a>
       </div>
       <div class="industry-card">
-        <span class="industry-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+        <span class="industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
         <h3>Your Industry</h3>
         <p>If your team spends more time on spreadsheets than on the work that actually makes you money, we should talk. The model works across industries.</p>
       </div>
@@ -1843,7 +1846,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="best-fit-grid fade-up">
       <div class="best-fit-col">
-        <h3 class="fit-yes">&#10003; Best fit if:</h3>
+        <h3 class="fit-yes"><span aria-hidden="true">&#10003;</span> Best fit if:</h3>
         <ul>
           <li><span class="check-icon">&#10003;</span><span>You have 10 to 200 employees and feel the growing pains in your back office</span></li>
           <li><span class="check-icon">&#10003;</span><span>Your business is job-based, bid-based, or project-based (construction, trades, Property Management)</span></li>
@@ -1853,7 +1856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="best-fit-col">
-        <h3 class="fit-no">&#10007; Probably not a fit if:</h3>
+        <h3 class="fit-no"><span aria-hidden="true">&#10007;</span> Probably not a fit if:</h3>
         <ul>
           <li><span class="x-icon">&#10007;</span><span>You're looking for a generic chatbot or off-the-shelf AI product</span></li>
           <li><span class="x-icon">&#10007;</span><span>You need a large-scale enterprise transformation program</span></li>
@@ -1932,65 +1935,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-list fade-up">
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           What industries do you work with?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-1" role="region">
           <p>We currently have active engagements in commercial construction, and we serve businesses across Property Management, trades, and field services. Our model works for any industry where back-office work is eating into your team's productive time. If your people spend more time on spreadsheets than on the work that makes you money, we can help.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           How does performance-based pricing work?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-2" role="region">
           <p>Our fee is 20% of your documented savings. We measure real results like time saved, errors reduced, and revenue impact. You only pay based on what we actually deliver. No retainers, no hourly billing for discovery. If we don't save you money, you don't pay us.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           Do I need to replace my current tools?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-3" role="region">
           <p>No. We build AI tools that work alongside your existing systems like Excel, QuickBooks, and Procore. We integrate with your workflow, not the other way around. Your team keeps using the tools they know.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           How long does a typical engagement take?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-4" role="region">
           <p>Most proof-of-concept tools are built and tested within 4-6 weeks. The audit phase takes about a week, and we refine based on your team's feedback from there. You'll see something working well before any money changes hands.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           What size company do you work with?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-5" role="region">
           <p>We work best with small and mid-sized businesses, typically 10 to 200 employees. Big enough to have real back-office pain, small enough that the owner still feels it. If you're a business owner who's still personally involved in the day-to-day, we're built for you.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           I'm not technical — will I understand what you're building?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-6" role="region">
           <p>Yes. We explain everything in plain English, no jargon, no buzzwords. You'll know exactly what we're building, why we're building it, and what it'll save you. If it doesn't make sense to you, we haven't done our job.</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7" onclick="var p=this.parentElement;p.classList.toggle('open');this.setAttribute('aria-expanded', p.classList.contains('open'));">
           How do you ensure automations are safe to deploy?
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="faq-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" id="faq-answer-7" role="region">
           <p>We use AI to accelerate design and implementation, but every client automation is technically reviewed for architecture, integration fit, and deployment risk before going live in a client environment.</p>
         </div>
       </div>
@@ -2081,7 +2084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" class="about-linkedin">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
           Connect on LinkedIn
         </a>
       </div>
@@ -2113,7 +2116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Right Column: Form -->
     <div class="contact-form" id="auditFormContainer">
 
-      <div class="form-error-banner" id="formErrorBanner" style="display:none;background:#FFF5F5;border:1px solid #E53E3E;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#E53E3E;font-size:0.9em;text-align:center;">
+      <div class="form-error-banner" id="formErrorBanner" role="alert" aria-live="assertive" style="display:none;background:#FFF5F5;border:1px solid #E53E3E;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#E53E3E;font-size:0.9em;text-align:center;">
         Something went wrong. Please try again or email us at brad@berlinmanagementgroup.com.
       </div>
 
@@ -2127,20 +2130,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="form-group" id="nameGroup">
           <label for="fullName">Full Name*</label>
-          <input type="text" id="fullName" name="name" placeholder="John Smith" autocomplete="name" required>
-          <span class="error-msg" id="nameError" style="display:none;">Please enter your full name.</span>
+          <input type="text" id="fullName" name="name" placeholder="John Smith" autocomplete="name" required aria-required="true" aria-invalid="false" aria-describedby="nameError">
+          <span class="error-msg" id="nameError" role="alert" aria-live="polite" style="display:none;">Please enter your full name.</span>
         </div>
 
         <div class="form-group" id="emailGroup">
           <label for="workEmail">Work Email*</label>
-          <input type="email" id="workEmail" name="email" placeholder="john@company.com" autocomplete="email" required>
-          <span class="error-msg" id="emailError" style="display:none;">Please enter a valid work email.</span>
+          <input type="email" id="workEmail" name="email" placeholder="john@company.com" autocomplete="email" required aria-required="true" aria-invalid="false" aria-describedby="emailError">
+          <span class="error-msg" id="emailError" role="alert" aria-live="polite" style="display:none;">Please enter a valid work email.</span>
         </div>
 
         <div class="form-group" id="companyGroup">
           <label for="companyName">Company Name*</label>
-          <input type="text" id="companyName" name="company" placeholder="Your company name" autocomplete="organization" required>
-          <span class="error-msg" id="companyError" style="display:none;">Please enter your company name.</span>
+          <input type="text" id="companyName" name="company" placeholder="Your company name" autocomplete="organization" required aria-required="true" aria-invalid="false" aria-describedby="companyError">
+          <span class="error-msg" id="companyError" role="alert" aria-live="polite" style="display:none;">Please enter your company name.</span>
         </div>
 
         <div class="form-group" id="phoneGroup">
@@ -2165,10 +2168,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="form-group" id="painGroup">
           <label for="painPoint">What process is taking too much time right now?*</label>
-          <textarea id="painPoint" name="painPoint" placeholder="Tell us about the manual work, bottlenecks, or repetitive office tasks eating up your team's time." required minlength="10" maxlength="1000"></textarea>
+          <textarea id="painPoint" name="painPoint" placeholder="Tell us about the manual work, bottlenecks, or repetitive office tasks eating up your team's time." required minlength="10" maxlength="1000" aria-required="true" aria-invalid="false" aria-describedby="painError"></textarea>
           <span style="display:block;font-size:0.82em;color:var(--slate);margin-top:6px;font-style:italic;">Examples: estimating, invoicing, scheduling, reporting, job costing, data entry</span>
           <span id="charCount" style="display:block;font-size:0.78em;color:#A0AEC0;margin-top:4px;text-align:right;transition:color 0.2s ease;"></span>
-          <span class="error-msg" id="painError" style="display:none;">Please tell us a little about the process you want to improve.</span>
+          <span class="error-msg" id="painError" role="alert" aria-live="polite" style="display:none;">Please tell us a little about the process you want to improve.</span>
         </div>
 
         <div style="text-align:center;margin-top:28px;">
@@ -2185,7 +2188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Success State (spans both columns) -->
     <div id="formSuccess" style="display:none;text-align:center;padding:48px 32px;grid-column:1/-1;">
       <div style="width:64px;height:64px;background:#F0FFF4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
-        <svg viewBox="0 0 24 24" width="32" height="32" stroke="#38A169" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="32" height="32" stroke="#38A169" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h3 style="font-family:Merriweather,serif;font-size:1.6em;color:var(--white);margin-bottom:12px;">Thanks — we got your request.</h3>
       <p style="color:var(--slate-light,#CBD5E0);font-size:1.05em;line-height:1.7;margin-bottom:28px;">We'll review your submission and follow up shortly. If you want to move faster, book a quick intro call below.</p>
@@ -2194,6 +2197,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div>
 </section>
+
+</main>
 
 <!-- ===== FOOTER ===== -->
 <footer>
@@ -2210,7 +2215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/brad-berlin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
         </a>
       </div>
     </div>
@@ -2226,9 +2231,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== PRIVACY POLICY MODAL ===== -->
 <div class="modal-overlay" id="privacy-modal" onclick="if(event.target===this)this.classList.remove('active')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('privacy-modal').classList.remove('active')">&times;</button>
-    <h2>Privacy Policy</h2>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" tabindex="-1">
+    <button class="modal-close" aria-label="Close Privacy Policy" onclick="document.getElementById('privacy-modal').classList.remove('active')">&times;</button>
+    <h2 id="privacy-modal-title">Privacy Policy</h2>
     <p class="modal-updated">Last updated: March 22, 2026</p>
 
     <h3>Information We Collect</h3>
@@ -2248,3 +2253,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h3>Your Rights</h3>
  
+    <p>You have the right to request access to the personal information we hold about you, request corrections, or request deletion of your information. To exercise these rights, contact us using the information on this site.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="terms-modal" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" tabindex="-1">
+    <button class="modal-close" aria-label="Close Terms of Service" onclick="document.getElementById('terms-modal').classList.remove('active')">&times;</button>
+    <h2 id="terms-modal-title">Terms of Service</h2>
+    <p>Use of this website constitutes acceptance of these terms. Information on this site is provided for general informational purposes only. Berlin Management Group LLC makes no guarantees regarding outcomes of consulting engagements.</p>
+  </div>
+</div>
+
+<script>
+/* P12 modal a11y: focus trap, escape-to-close, return focus */
+(function(){
+  var lastFocus=null, trapHandler=null, activeOverlay=null;
+  function getFocusable(el){
+    var sel='a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
+    return Array.prototype.slice.call(el.querySelectorAll(sel)).filter(function(n){return n.offsetWidth>0||n.offsetHeight>0||n===document.activeElement;});
+  }
+  function activate(overlay){
+    lastFocus=document.activeElement;
+    activeOverlay=overlay;
+    var dialog=overlay.querySelector('.modal');
+    if(!dialog)return;
+    var focusables=getFocusable(dialog);
+    var first=focusables[0]||dialog;
+    setTimeout(function(){try{first.focus();}catch(e){}},0);
+    trapHandler=function(e){
+      if(e.key==='Escape'||e.keyCode===27){e.preventDefault();overlay.classList.remove('active');return;}
+      if(e.key==='Tab'||e.keyCode===9){
+        var f=getFocusable(dialog);
+        if(f.length===0){e.preventDefault();return;}
+        var firstEl=f[0],lastEl=f[f.length-1];
+        if(e.shiftKey&&document.activeElement===firstEl){e.preventDefault();lastEl.focus();}
+        else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();firstEl.focus();}
+      }
+    };
+    document.addEventListener('keydown',trapHandler);
+  }
+  function deactivate(){
+    if(trapHandler){document.removeEventListener('keydown',trapHandler);trapHandler=null;}
+    activeOverlay=null;
+    if(lastFocus&&typeof lastFocus.focus==='function'){setTimeout(function(){try{lastFocus.focus();}catch(e){}},0);}
+    lastFocus=null;
+  }
+  var overlays=document.querySelectorAll('.modal-overlay');
+  for(var i=0;i<overlays.length;i++){
+    (function(o){
+      var wasActive=o.classList.contains('active');
+      var obs=new MutationObserver(function(){
+        var isActive=o.classList.contains('active');
+        if(isActive&&!wasActive){activate(o);}
+        else if(!isActive&&wasActive){deactivate();}
+        wasActive=isActive;
+      });
+      obs.observe(o,{attributes:true,attributeFilter:['class']});
+    })(overlays[i]);
+  }
+})();
+</script>
+</body>
+</html>
