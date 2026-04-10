@@ -797,27 +797,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 if (response.ok) {
-                    // Show success
-                    successMessage.classList.add('show');
-                    form.reset();
-                    form.style.display = 'none';
-
-                    // Track GA event
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'form_submission', {
-                            'form_name': 'free_audit_request'
-                        });
-                    }
-
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth' });
-
-                    // Reset after 5 seconds
-                    setTimeout(() => {
-                        form.style.display = 'block';
-                        form.reset();
-                        successMessage.classList.remove('show');
-                    }, 5000);
+                    // Redirect to thank-you page for conversion tracking
+                    window.location.href = '/thank-you.html';
                 }
             } catch (error) {
                 console.error('Form submission error:', error);
