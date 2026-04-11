@@ -73,11 +73,16 @@
         }
 
         .nav-logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            letter-spacing: -0.5px;
+            color: var(--navy);
+            font-family: Merriweather, serif;
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
@@ -130,7 +135,10 @@
             }
 
             .nav-logo {
-                font-size: 18px;
+                font-size: 0.85rem;
+            }
+            .nav-logo span {
+                display: none;
             }
         }
 
@@ -577,7 +585,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <!-- Navigation -->
     <nav>
-        <a href="/" class="nav-logo">BMG</a>
+        <a href="/" class="nav-logo">
+            <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;" role="img" aria-labelledby="logo-title"><title id="logo-title">Berlin Management Group logo</title><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
+            <span>Berlin Management Group</span>
+        </a>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/blog.html">Blog</a></li>
