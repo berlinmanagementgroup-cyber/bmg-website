@@ -1,3 +1,16 @@
+# Audit funnel routing (BMG-WEEK1-AUDIT-FUNNEL-KICKOFF 2026-04-23)
+# /audit and /audit/thanks are Google Ads + social CTA destinations.
+# Redirected to existing funnel files. No page duplication.
+[[redirects]]
+  from = "/audit"
+  to = "/free-audit.html"
+  status = 301
+
+[[redirects]]
+  from = "/audit/thanks"
+  to = "/thank-you.html"
+  status = 301
+
 # Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
 [[redirects]]
   from = "/*"
