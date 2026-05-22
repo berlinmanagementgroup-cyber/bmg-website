@@ -1,0 +1,14 @@
+# Enforce LF line endings repo-wide. Prevents CRLF drift from Windows and OneDrive sync.
+* text=auto eol=lf
+
+# Binary assets, excluded from line-ending normalization.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.docx binary
