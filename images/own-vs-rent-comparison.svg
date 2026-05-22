@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Comparison of renting SaaS subscriptions versus owning one integrated workflow">
+  <title>Renting SaaS subscriptions versus owning one integrated workflow</title>
+  <rect width="800" height="420" fill="#ffffff"/>
+  <text x="208" y="40" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#5A6577" text-anchor="middle">RENTING SaaS</text>
+  <text x="602" y="40" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#1B2A4A" text-anchor="middle">OWNING THE WORKFLOW</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="64" y="70" width="248" height="56" rx="8" fill="#F7F8FA" stroke="#CBD2DC" stroke-width="2"/>
+    <text x="82" y="103" font-size="15" fill="#5A6577">Estimating app</text>
+    <rect x="244" y="86" width="52" height="24" rx="12" fill="#E8ECF1"/>
+    <text x="270" y="102" font-size="11" font-weight="700" fill="#5A6577" text-anchor="middle">$ / mo</text>
+    <rect x="88" y="138" width="248" height="56" rx="8" fill="#F7F8FA" stroke="#CBD2DC" stroke-width="2"/>
+    <text x="106" y="171" font-size="15" fill="#5A6577">Scheduling app</text>
+    <rect x="268" y="154" width="52" height="24" rx="12" fill="#E8ECF1"/>
+    <text x="294" y="170" font-size="11" font-weight="700" fill="#5A6577" text-anchor="middle">$ / mo</text>
+    <rect x="56" y="206" width="248" height="56" rx="8" fill="#F7F8FA" stroke="#CBD2DC" stroke-width="2"/>
+    <text x="74" y="239" font-size="15" fill="#5A6577">Invoicing app</text>
+    <rect x="236" y="222" width="52" height="24" rx="12" fill="#E8ECF1"/>
+    <text x="262" y="238" font-size="11" font-weight="700" fill="#5A6577" text-anchor="middle">$ / mo</text>
+    <rect x="84" y="274" width="248" height="56" rx="8" fill="#F7F8FA" stroke="#CBD2DC" stroke-width="2"/>
+    <text x="102" y="307" font-size="15" fill="#5A6577">CRM app</text>
+    <rect x="264" y="290" width="52" height="24" rx="12" fill="#E8ECF1"/>
+    <text x="290" y="306" font-size="11" font-weight="700" fill="#5A6577" text-anchor="middle">$ / mo</text>
+    <text x="200" y="372" font-size="14" font-style="italic" fill="#8A93A3" text-anchor="middle">Disconnected tools. Paid every month.</text>
+  </g>
+  <line x1="400" y1="60" x2="400" y2="356" stroke="#E8ECF1" stroke-width="2"/>
+  <circle cx="400" cy="208" r="26" fill="#1B2A4A"/>
+  <text x="400" y="214" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">vs</text>
+  <rect x="468" y="70" width="268" height="260" rx="14" fill="#1B2A4A"/>
+  <rect x="468" y="70" width="268" height="10" rx="5" fill="#C8A951"/>
+  <text x="602" y="112" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Your workflow</text>
+  <line x1="602" y1="150" x2="602" y2="312" stroke="#C8A951" stroke-width="4"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1B2A4A" text-anchor="middle">
+    <rect x="520" y="138" width="164" height="38" rx="8" fill="#E2CC7E"/>
+    <text x="602" y="162">Estimating</text>
+    <rect x="520" y="184" width="164" height="38" rx="8" fill="#E2CC7E"/>
+    <text x="602" y="208">Scheduling</text>
+    <rect x="520" y="230" width="164" height="38" rx="8" fill="#E2CC7E"/>
+    <text x="602" y="254">Invoicing</text>
+    <rect x="520" y="276" width="164" height="38" rx="8" fill="#E2CC7E"/>
+    <text x="602" y="300">CRM</text>
+  </g>
+  <text x="602" y="372" font-family="Arial, Helvetica, sans-serif" font-size="14" font-style="italic" fill="#1B2A4A" text-anchor="middle">One system. Built once. Yours.</text>
+</svg>
