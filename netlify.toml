@@ -11,6 +11,58 @@
   to = "/thank-you.html"
   status = 301
 
+# Dual-URL consolidation: each page resolves at one canonical URL
+# (P-SEO-NETLIFY-301-DUAL-URL 2026-05-22). force = true is required: Netlify
+# serves these paths from existing files, and a non-forced redirect is shadowed
+# by an existing file. Direction matches the committed canonical tags and sitemap.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/own-vs-rent"
+  to = "/own-vs-rent.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/free-audit"
+  to = "/free-audit.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/commercial-contractors"
+  to = "/commercial-contractors.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/property-management"
+  to = "/property-management.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home-services"
+  to = "/home-services.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ai-assisted-build-vs-traditional-development-cost"
+  to = "/blog/ai-assisted-build-vs-traditional-development-cost.html"
+  status = 301
+  force = true
+
 # Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
 [[redirects]]
   from = "/*"
