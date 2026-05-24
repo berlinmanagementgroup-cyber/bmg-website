@@ -81,6 +81,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/turning-past-bids-into-a-cost-database"
+  to = "/blog/turning-past-bids-into-a-cost-database.html"
+  status = 301
+  force = true
+
 # Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
 [[redirects]]
   from = "/*"

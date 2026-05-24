@@ -1,5 +1,14 @@
 [
   {
+    "slug": "turning-past-bids-into-a-cost-database",
+    "title": "You Have Ten Years of Bid History. Most of It You Cannot Use.",
+    "date": "2026-05-23",
+    "author": "Brad Berlin",
+    "description": "The best estimating data a commercial GC owns is its own past bids, but it is trapped in scattered files. How historical bid data becomes a cost database you can use.",
+    "tags": ["commercial-construction", "estimating", "cost-database", "historical-data", "operations"],
+    "file": "turning-past-bids-into-a-cost-database.html"
+  },
+  {
     "slug": "the-gap-between-your-estimating-tools",
     "title": "You Bought Togal and Building Connected. The Gap Between Them Is Still Manual.",
     "date": "2026-05-23",
