@@ -87,6 +87,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/what-a-phoenix-construction-operations-audit-actually-involves"
+  to = "/blog/what-a-phoenix-construction-operations-audit-actually-involves.html"
+  status = 301
+  force = true
+
 # Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
 [[redirects]]
   from = "/*"
