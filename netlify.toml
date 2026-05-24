@@ -63,6 +63,24 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/where-the-hours-go-in-a-commercial-construction-bid"
+  to = "/blog/where-the-hours-go-in-a-commercial-construction-bid.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/hire-another-estimator-or-fix-the-workflow"
+  to = "/blog/hire-another-estimator-or-fix-the-workflow.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/the-gap-between-your-estimating-tools"
+  to = "/blog/the-gap-between-your-estimating-tools.html"
+  status = 301
+  force = true
+
 # Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
 [[redirects]]
   from = "/*"

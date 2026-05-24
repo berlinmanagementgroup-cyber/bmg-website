@@ -1,4 +1,31 @@
-﻿[
+[
+  {
+    "slug": "the-gap-between-your-estimating-tools",
+    "title": "You Bought Togal and Building Connected. The Gap Between Them Is Still Manual.",
+    "date": "2026-05-23",
+    "author": "Brad Berlin",
+    "description": "You bought good takeoff and bid software. Estimating still feels slow because the friction lives in the hand-offs between the tools, where your estimator stands.",
+    "tags": ["commercial-construction", "estimating", "estimating-software", "workflow", "operations"],
+    "file": "the-gap-between-your-estimating-tools.html"
+  },
+  {
+    "slug": "hire-another-estimator-or-fix-the-workflow",
+    "title": "Hire Another Estimator, or Make the Four You Have Faster?",
+    "date": "2026-05-23",
+    "author": "Brad Berlin",
+    "description": "Most contractors facing a slow estimating team reach for a fifth estimator. Often it is a workflow-coordination problem, and a new hire just inherits the drag.",
+    "tags": ["commercial-construction", "estimating", "hiring", "workflow", "operations"],
+    "file": "hire-another-estimator-or-fix-the-workflow.html"
+  },
+  {
+    "slug": "where-the-hours-go-in-a-commercial-construction-bid",
+    "title": "Where the Hours Actually Go in a Commercial Construction Bid",
+    "date": "2026-05-23",
+    "author": "Brad Berlin",
+    "description": "Estimators assume bid prep time lives in the takeoff. After sitting with estimating teams, here is where the hours in a commercial construction bid actually go.",
+    "tags": ["commercial-construction", "estimating", "bid-process", "operations"],
+    "file": "where-the-hours-go-in-a-commercial-construction-bid.html"
+  },
   {
     "slug": "ai-assisted-build-vs-traditional-development-cost",
     "title": "I Built My Consulting Tech Stack with AI. Here Is What It Would Have Cost the Traditional Way.",
