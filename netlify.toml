@@ -59,7 +59,13 @@
 
 [[redirects]]
   from = "/blog/ai-assisted-build-vs-traditional-development-cost"
-  to = "/blog/ai-assisted-build-vs-traditional-development-cost.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ai-assisted-build-vs-traditional-development-cost.html"
+  to = "/"
   status = 301
   force = true
 
