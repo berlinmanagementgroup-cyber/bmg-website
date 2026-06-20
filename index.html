@@ -187,7 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -210,6 +210,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
   --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
   --radius: 8px;
+  /* Packet 4A operator-grade palette tokens */
+  --ink: #0e1621; --ink2: #16212f; --ink3: #1c2a3a;
+  --surface: #ffffff; --surface2: #f5f7fa; --line: #e4e9f0;
+  --steel: #3f6491; --steel2: #5b82b3; --steel-soft: #e8eef6;
+  --muted: #5b6675;
+  --on-dark: #e4ecf6; --on-dark-muted: #9fb1c6;
+  --r: 14px; --r-sm: 10px; --maxw: 1180px;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -222,14 +229,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { font-family: 'Merriweather', Georgia, serif; line-height: 1.25; }
+h1, h2, h3, h4 { font-family: 'Space Grotesk', system-ui, Georgia, sans-serif; line-height: 1.25; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
 /* ===== NAVIGATION ===== */
-nav {
+#nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: #ffffff;
   border-bottom: 1px solid var(--gray-200);
@@ -249,7 +256,7 @@ nav.scrolled { box-shadow: var(--shadow-md); }
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
-.logo span { font-family: 'Merriweather', Georgia, serif; font-weight: 900; font-size: 1.05rem; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
+.logo span { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
 
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
@@ -339,7 +346,7 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 }
 .hero-proof .stat { display: flex; flex-direction: column; }
 .hero-proof .stat-value {
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 1.6rem; font-weight: 700; color: var(--navy);
 }
 .hero-proof .stat-label { font-size: 0.82rem; color: var(--gray-600); margin-top: 2px; }
@@ -421,7 +428,7 @@ section { padding: 96px 0; }
   background: var(--navy); color: var(--white);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 1.4rem; font-weight: 700;
   margin: 0 auto 24px;
   box-shadow: 0 4px 16px rgba(27,42,74,0.2);
@@ -584,7 +591,7 @@ section { padding: 96px 0; }
   width: 100%; height: 100%;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 4rem; font-weight: 900; color: var(--gold);
   letter-spacing: 0.05em;
 }
@@ -764,7 +771,7 @@ footer {
 }
 
 .footer-brand {
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700; color: rgba(255,255,255,0.6);
   font-size: 0.95rem;
 }
@@ -908,7 +915,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 .project-stat-value {
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 1.3rem; font-weight: 700; color: var(--gold);
   display: block;
 }
@@ -1369,6 +1376,86 @@ footer {
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}.skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:12px 20px;background:#1B2B4B;color:#fff;z-index:10000;text-decoration:none;border-radius:4px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+/* ===================== PACKET 4A — OPERATOR-GRADE DESIGN LAYER ===================== */
+.container { max-width: var(--maxw); }
+
+/* Header: solid/opaque, scoped to #nav (no backdrop-filter) */
+#nav { background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: none; }
+#nav.scrolled { box-shadow: 0 6px 24px rgba(14,22,33,.06); }
+.nav-inner { max-width: var(--maxw); height: 64px; }
+.logo span { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--navy); }
+.nav-links a { color: var(--muted); font-weight: 500; }
+.nav-links a:hover { color: var(--navy); }
+.nav-cta { background: var(--navy); color: #fff !important; border-radius: var(--r-sm); }
+.nav-cta:hover { background: var(--steel); transform: none; }
+
+/* Eyebrows / titles / leads */
+.section-label { color: var(--steel); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; }
+.section-title { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--navy); letter-spacing: -0.02em; }
+.section-subtitle { color: var(--muted); }
+
+/* HERO — dark, solid, two-column with workflow visual */
+.hero { background: radial-gradient(1100px 480px at 80% -10%, rgba(91,130,179,.20), transparent 60%), linear-gradient(180deg, var(--ink), var(--ink2)); color: var(--on-dark); padding: 104px 0 84px; position: relative; overflow: hidden; }
+.hero::after { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:46px 46px; -webkit-mask-image:radial-gradient(900px 460px at 75% 0,#000,transparent 70%); mask-image:radial-gradient(900px 460px at 75% 0,#000,transparent 70%); pointer-events:none; }
+.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.hero-content { max-width: none; }
+.hero-badge { display:inline-flex; align-items:center; gap:9px; background: rgba(91,130,179,.16); color:#cfe0f5; border:0; padding:7px 14px; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+.hero-badge::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--gold); }
+.hero h1 { font-family:'Space Grotesk',system-ui,sans-serif; font-size:3.05rem; color:#fff; margin:18px 0 6px; letter-spacing:-0.02em; line-height:1.08; }
+.hero h1 em { display:block; font-style:normal; font-size:1.5rem; font-weight:600; color:var(--gold); margin-top:12px; }
+.hero-content p { color: var(--on-dark); font-size:1.1rem; max-width:560px; }
+.hero-def { font-size:.97rem !important; color: var(--on-dark-muted) !important; padding-left:14px; border-left:2px solid var(--steel2); margin-top:14px; }
+.hero-fineprint { font-size:.86rem !important; color: var(--on-dark-muted) !important; margin-top:12px; }
+.hero-actions { margin-top:24px; display:flex; gap:13px; flex-wrap:wrap; }
+.hero .btn-primary { background:var(--steel); color:#fff; border-radius:var(--r-sm); box-shadow:0 8px 20px rgba(63,100,145,.28); }
+.hero .btn-primary:hover { background:#34577f; }
+.hero .btn-secondary { background:transparent; border:1px solid rgba(255,255,255,.24); color:var(--on-dark); border-radius:var(--r-sm); }
+.hero .btn-secondary:hover { border-color:rgba(255,255,255,.55); background:transparent; }
+.hero-trust { display:flex; gap:26px; flex-wrap:wrap; margin-top:30px; padding-top:22px; border-top:1px solid rgba(255,255,255,.1); }
+.hero-trust b { font-family:'Space Grotesk',system-ui,sans-serif; font-size:1.02rem; color:#fff; display:block; }
+.hero-trust span { font-size:.8rem; color:var(--on-dark-muted); }
+.hero-visual .flow { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:18px; padding:20px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.flow-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.flow-top b { font-family:'Space Grotesk',system-ui,sans-serif; color:#fff; font-size:.95rem; }
+.flow-dot { width:9px; height:9px; border-radius:50%; background:var(--gold); }
+.hero-visual svg { width:100%; height:auto; display:block; }
+
+/* Tactile cards (problem grid + buckets reuse .problem-*) */
+.problem-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.problem-card { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px; box-shadow:var(--shadow-md); transition:.2s; }
+.problem-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:#cdd8e6; }
+.problem-icon { width:42px; height:42px; border-radius:10px; background:var(--steel-soft); color:var(--steel); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.problem-icon svg { width:20px; height:20px; }
+.problem-card h3 { font-family:'Space Grotesk',system-ui,sans-serif; color:var(--navy); font-size:1.08rem; }
+.problem-card p { color:var(--muted); font-size:.94rem; }
+
+/* Industry + best-fit cards: align to tactile look */
+.industry-card, .best-fit-col { border:1px solid var(--line); box-shadow:var(--shadow-md); }
+.industry-card.featured { background:linear-gradient(160deg,var(--navy),var(--ink2)); color:var(--on-dark); border-color:transparent; }
+.industry-icon { background:var(--steel-soft); color:var(--steel); }
+
+/* Proof strip: dashboard metric chips */
+.proof-strip { background:var(--ink); }
+.proof-stat-number { color:var(--gold); font-family:'Space Grotesk',system-ui,sans-serif; }
+.proof-stat-label { color:var(--on-dark-muted); }
+
+/* Stepper number chips */
+.step-number { background:var(--navy); color:#fff; border-radius:10px; font-family:'Space Grotesk',system-ui,sans-serif; }
+
+/* Buttons (global) */
+.btn-primary { background:var(--steel); border-radius:var(--r-sm); }
+.btn-primary:hover { background:#34577f; }
+
+/* Footer structure */
+footer { background:var(--ink2); }
+.footer-pages nav a:hover { color:#fff; }
+
+@media (max-width: 860px) {
+  .hero .container { grid-template-columns:1fr; gap:32px; }
+  .hero h1 { font-size:2.2rem; }
+  .hero h1 em { font-size:1.2rem; }
+  .problem-grid { grid-template-columns:1fr; }
+}
 </style>
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -1661,8 +1748,8 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       <div class="hero-badge">Phoenix Construction, Trades &amp; Property Operations</div>
       <h1>Operations bots for the businesses behind the build.<br><em>Own the workflow, not another subscription.</em></h1>
       <p>BMG helps Phoenix construction operators, trades, developers, and property operators across Arizona turn scattered emails, documents, follow-ups, reporting, admin work, and handoffs into practical operations bots their teams actually use.</p>
-      <p>Operations bots are practical workflow tools that help your team handle repeatable work &mdash; emails, documents, follow-ups, reporting, admin, handoffs, and owner updates &mdash; without buying another bloated software subscription.</p>
-      <p>Operator-designed automation. AI-accelerated execution. Technically reviewed before deployment.</p>
+      <p class="hero-def">Operations bots are practical workflow tools that help your team handle repeatable work &mdash; emails, documents, follow-ups, reporting, admin, handoffs, and owner updates &mdash; without buying another bloated software subscription.</p>
+      <p class="hero-fineprint">Operator-designed automation. AI-accelerated execution. Technically reviewed before deployment.</p>
       <div class="hero-actions">
         <a href="/audit" class="btn-primary">
           Get Your Free Operations Audit
@@ -1670,7 +1757,45 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
         </a>
         <a href="/own-vs-rent.html" class="btn-secondary">See: Own vs Rent</a>
       </div>
-      <!-- hero stats moved to proof strip -->
+      <div class="hero-trust">
+        <div><b>Phoenix, AZ</b><span>Local, operator-led</span></div>
+        <div><b>Fixed-fee</b><span>Scoped after a free audit</span></div>
+        <div><b>You own it</b><span>Not another subscription</span></div>
+      </div>
+    </div>
+    <div class="hero-visual fade-up" role="img" aria-label="Operations bot workflow: scattered inputs — emails and requests, documents, follow-ups, admin work — flow into an operations bot and come out as clean outputs: reporting, handoffs, owner updates, and clean records.">
+      <div class="flow">
+        <div class="flow-top"><b>Operations bot</b><span class="flow-dot"></span></div>
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <defs>
+            <marker id="botah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#5b82b3"/></marker>
+            <linearGradient id="botgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f6491"/><stop offset="1" stop-color="#5b82b3"/></linearGradient>
+          </defs>
+          <g font-family="Inter, sans-serif" font-size="11" fill="#cdd8e6">
+            <g><rect x="6" y="20" width="120" height="30" rx="7" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/><text x="20" y="39">Emails &amp; requests</text></g>
+            <g><rect x="6" y="62" width="120" height="30" rx="7" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/><text x="20" y="81">Documents / PDFs</text></g>
+            <g><rect x="6" y="104" width="120" height="30" rx="7" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/><text x="20" y="123">Follow-ups</text></g>
+            <g><rect x="6" y="146" width="120" height="30" rx="7" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/><text x="20" y="165">Admin work</text></g>
+          </g>
+          <g stroke="#5b82b3" stroke-width="1.6" fill="none" marker-end="url(#botah)" opacity=".8">
+            <path d="M126 35 C160 35 160 130 188 132"/><path d="M126 77 C160 77 165 135 188 140"/>
+            <path d="M126 119 C160 119 168 145 188 148"/><path d="M126 161 C160 161 168 156 188 156"/>
+          </g>
+          <g><rect x="188" y="108" width="74" height="74" rx="16" fill="url(#botgrad)"/><rect x="188" y="108" width="74" height="74" rx="16" fill="none" stroke="#c9a24b" stroke-opacity=".5"/>
+            <g transform="translate(213,131)" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><rect x="0" y="4" width="24" height="18" rx="4"/><line x1="6" y1="11" x2="6" y2="15"/><line x1="18" y1="11" x2="18" y2="15"/><line x1="12" y1="-4" x2="12" y2="4"/><circle cx="12" cy="-6" r="2" fill="#c9a24b" stroke="none"/></g>
+          </g>
+          <g stroke="#5b82b3" stroke-width="1.6" fill="none" marker-end="url(#botah)" opacity=".85">
+            <path d="M262 130 C300 130 300 50 330 52"/><path d="M262 145 C300 145 305 110 330 112"/>
+            <path d="M262 160 C300 160 305 172 330 174"/><path d="M262 172 C300 172 305 230 330 232"/>
+          </g>
+          <g font-family="Inter, sans-serif" font-size="11" fill="#fff">
+            <g><rect x="330" y="38" width="86" height="28" rx="7" fill="rgba(91,130,179,.22)" stroke="#5b82b3"/><text x="342" y="56">Reporting</text></g>
+            <g><rect x="330" y="98" width="86" height="28" rx="7" fill="rgba(91,130,179,.22)" stroke="#5b82b3"/><text x="342" y="116">Handoffs</text></g>
+            <g><rect x="330" y="160" width="86" height="28" rx="7" fill="rgba(91,130,179,.22)" stroke="#5b82b3"/><text x="342" y="178">Owner updates</text></g>
+            <g><rect x="330" y="218" width="86" height="28" rx="7" fill="rgba(91,130,179,.22)" stroke="#5b82b3"/><text x="342" y="236">Clean records</text></g>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1821,56 +1946,47 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
   </div>
 </section>
 
-<!-- ===== USE CASES ===== -->
-<section class="use-cases" id="use-cases">
+<!-- ===== WHERE OPERATIONS BOTS HELP (C7 buckets) ===== -->
+<section class="use-cases" id="buckets">
   <div class="container">
     <div class="fade-up">
-      <div class="section-label">What We Systematize</div>
-      <h2 class="section-title">The operations we turn into systems</h2>
-      <p class="section-subtitle">Most of the day-to-day that runs a construction business can be supported with AI-backed workflows. Bidding is one piece &mdash; not the whole job.</p>
+      <div class="section-label">Where operations bots help</div>
+      <h2 class="section-title">A few business areas &mdash; not a hundred-bot menu</h2>
+      <p class="section-subtitle">Start with the part of the business that keeps slipping. BMG maps the workflow, builds the bot, and keeps it practical enough for your team to use.</p>
     </div>
     <div class="problem-grid fade-up">
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
-        <h3>Email &amp; communication control</h3>
-        <p>Inbound requests captured, triaged, and routed in one place.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+        <h3>Sales, Bids &amp; Opportunity Intake</h3>
+        <p>Calls &amp; leads &middot; bid invites / RFQs &middot; quote requests &middot; proposal follow-up</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span>
-        <h3>Documents &amp; PDFs</h3>
-        <p>Plans, specs, contracts, and invoices organized and searchable.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12V4"/><circle cx="12" cy="4" r="1.6"/></svg></span>
+        <h3>Marketing &amp; Reputation</h3>
+        <p>Review requests &middot; project photos &middot; social post drafts &middot; Google Business Profile prompts</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-        <h3>Follow-ups</h3>
-        <p>Subs, quotes, and clients chased automatically until they close.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Customer Support &amp; Client Success</h3>
+        <p>Owner updates &middot; client/tenant questions &middot; service requests &middot; status replies</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-        <h3>Reporting &amp; owner updates</h3>
-        <p>Status and owner updates assembled for you, not by hand.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></span>
+        <h3>Accounting &amp; Admin</h3>
+        <p>Invoice prep &middot; missing-info follow-up &middot; document collection &middot; payment reminders</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-        <h3>Scheduling &amp; dispatch</h3>
-        <p>Crews and jobs coordinated without the phone tag.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/></svg></span>
+        <h3>Project &amp; Field Operations</h3>
+        <p>Scheduling &amp; dispatch &middot; field-to-office handoffs &middot; daily notes &middot; RFI/document routing</p>
       </div>
       <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span>
-        <h3>Project coordination &amp; handoffs</h3>
-        <p>Field, office, and accounting kept in sync as work moves.</p>
-      </div>
-      <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="9" y="2" width="6" height="4" rx="1"/></svg></span>
-        <h3>Back-office / admin</h3>
-        <p>The repetitive paperwork your team shouldn't be doing.</p>
-      </div>
-      <div class="problem-card">
-        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-        <h3>Bidding &amp; estimating</h3>
-        <p>Faster, more consistent estimates from your own cost history.</p>
+        <span class="problem-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></span>
+        <h3>Executive &amp; Leadership</h3>
+        <p>Weekly dashboards &middot; overdue follow-ups &middot; pipeline snapshot &middot; project-risk summary</p>
       </div>
     </div>
+    <p class="section-subtitle" style="margin-top:24px;">Pick the bucket that keeps slipping &mdash; we build one bot where it earns its keep, then the next. The deeper library of examples lives behind the scenes; you don't shop a catalog.</p>
   </div>
 </section>
 
@@ -2285,7 +2401,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       <div style="width:64px;height:64px;background:#F0FFF4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="32" height="32" stroke="#38A169" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h3 style="font-family:Merriweather,serif;font-size:1.6em;color:var(--white);margin-bottom:12px;">Thanks — we got your request.</h3>
+      <h3 style="font-family:'Space Grotesk',system-ui,sans-serif;font-size:1.6em;color:var(--white);margin-bottom:12px;">Thanks — we got your request.</h3>
       <p style="color:var(--slate-light,#CBD5E0);font-size:1.05em;line-height:1.7;margin-bottom:28px;">We'll review your submission and follow up shortly. If you want to move faster, book a quick intro call below.</p>
       <a href="https://calendly.com/brad-berlinmanagementgroup/30min-discovery" target="_blank" rel="noopener" id="scheduleBtn" class="btn-gold" style="display:inline-block;padding:14px 36px;text-decoration:none;font-size:1em;">Schedule a 30-Minute Discovery Call</a>
     </div>
