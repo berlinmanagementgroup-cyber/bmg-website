@@ -1055,4 +1055,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.querySelectorAll('.nav-panel a').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('.hamburger').classList.remove('active');
-        
+                document.getElementById('mobileNav').classList.remove('active');
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navPanel = document.getElementById('mobileNav');
+
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navPanel.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

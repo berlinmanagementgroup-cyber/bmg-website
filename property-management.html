@@ -1078,4 +1078,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <a href="index.html#privacy">Privacy Policy</a>
           <span style="color: rgba(255,255,255,0.2);">|</span>
-          <a href="index.html#terms">Terms of 
+          <a href="index.html#terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    }
+
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

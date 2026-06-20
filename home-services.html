@@ -1083,4 +1083,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   function toggleMobileNav() {
-    
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.remove('active');
+    });
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
