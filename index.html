@@ -236,6 +236,8 @@ nav {
   transition: box-shadow 0.3s;
 }
 nav.scrolled { box-shadow: var(--shadow-md); }
+/* The footer "Explore" block (ea09398) contains a <nav>; exclude it from the fixed-header rule above so it does not overlay the real header (white band over logo/hamburger on mobile). */
+.footer-pages nav { position: static; background: none; border-bottom: none; }
 
 .nav-inner {
   max-width: 1100px; margin: 0 auto; padding: 0 24px;
