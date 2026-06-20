@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Berlin Management Group">
+  <circle cx="50" cy="50" r="50" fill="#1B2B4B"/>
+  <circle cx="50" cy="50" r="40.5" fill="none" stroke="#F5F3EC" stroke-width="4.5"/>
+  <rect x="35" y="31" width="12" height="38" fill="#C8A951"/>
+  <path d="M47 31 H57 a9.5 9.5 0 0 1 0 19 H47 Z" fill="#F5F3EC"/>
+  <path d="M47 50 H59 a9.5 9.5 0 0 1 0 19 H47 Z" fill="#F5F3EC"/>
+</svg>
