@@ -231,9 +231,8 @@ a { text-decoration: none; color: inherit; }
 /* ===== NAVIGATION ===== */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,0.97);
+  background: #ffffff;
   border-bottom: 1px solid var(--gray-200);
-  backdrop-filter: blur(8px);
   transition: box-shadow 0.3s;
 }
 nav.scrolled { box-shadow: var(--shadow-md); }
@@ -266,7 +265,7 @@ nav.scrolled { box-shadow: var(--shadow-md); }
 }
 .nav-cta:hover { background: var(--navy-light); transform: translateY(-1px); }
 
-.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; min-width: 44px; min-height: 44px; box-sizing: border-box; }
 .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 6px 0; transition: 0.3s; }
 
 /* ===== HERO ===== */
@@ -1647,7 +1646,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       <a href="#about">About</a><a href="blog.html">Blog</a>
       <a href="/audit" class="nav-cta">Free Operations Audit</a>
     </div>
-    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded', n.classList.contains('open'));">
+    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -2336,6 +2335,29 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       obs.observe(o,{attributes:true,attributeFilter:['class']});
     })(overlays[i]);
   }
+})();
+</script>
+<script>
+/* Packet 1A: mobile nav toggle a11y — esc-to-close, focus to first link on open, return focus on close */
+(function(){
+  var nav=document.getElementById('nav');
+  var toggle=nav?nav.querySelector('.mobile-toggle'):null;
+  if(!nav||!toggle)return;
+  function setOpen(open){
+    nav.classList.toggle('open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    if(open){
+      var first=nav.querySelector('.nav-links a');
+      if(first){setTimeout(function(){try{first.focus();}catch(e){}},0);}
+    }
+  }
+  window.toggleMobileMenu=function(){setOpen(!nav.classList.contains('open'));};
+  document.addEventListener('keydown',function(e){
+    if((e.key==='Escape'||e.keyCode===27)&&nav.classList.contains('open')){
+      setOpen(false);
+      try{toggle.focus();}catch(err){}
+    }
+  });
 })();
 </script>
 </body>
