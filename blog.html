@@ -154,6 +154,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
   }
 
   .hamburger span {
@@ -644,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </svg>
       <span class="nav-logo-text">Berlin Management Group</span>
     </a>
-    <div class="nav-links">
+    <div class="nav-links" id="mobileNav">
       <a href="index.html#problem">The Problem</a>
       <a href="index.html#process">How It Works</a>
       <a href="index.html#industries">Industries</a>
@@ -652,11 +659,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="index.html#about">About</a>
       <a href="/audit" class="nav-cta">Free Operations Audit</a>
     </div>
-    <div class="hamburger" onclick="toggleMobileNav()">
+    <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav()">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </div>
 </nav>
 
@@ -793,15 +800,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-  window.toggleMobileNav = function() {
-    var navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  };
+  function toggleMobileNav() {
+    var menu = document.getElementById('mobileNav');
+    var btn = document.querySelector('.hamburger');
+    if (!menu) return;
+    var open = !menu.classList.contains('active');
+    menu.classList.toggle('active', open);
+    if (btn) {
+      btn.classList.toggle('active', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    if (open) {
+      var first = menu.querySelector('a');
+      if (first) { setTimeout(function () { try { first.focus(); } catch (e) {} }, 0); }
+    }
+  }
 
-  document.querySelectorAll('.nav-links a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.remove('active');
+  document.querySelectorAll('#mobileNav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var menu = document.getElementById('mobileNav');
+      if (menu) menu.classList.remove('active');
+      var btn = document.querySelector('.hamburger');
+      if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
     });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      var menu = document.getElementById('mobileNav');
+      if (menu && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        var btn = document.querySelector('.hamburger');
+        if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); try { btn.focus(); } catch (err) {} }
+      }
+    }
   });
 </script>
 

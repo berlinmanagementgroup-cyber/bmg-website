@@ -163,6 +163,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 5px;
             cursor: pointer;
             padding: 8px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .hamburger span {
@@ -795,11 +802,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;" role="img" aria-labelledby="logo-title"><title id="logo-title">Berlin Management Group logo</title><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
                 <span class="nav-logo-text">Berlin Management Group</span>
             </a>
-            <div class="hamburger" onclick="toggleMobileNav()">
+            <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav()">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <div class="nav-links">
                 <a href="index.html#problem">The Problem</a>
                 <a href="index.html#process">How It Works</a>
@@ -1045,29 +1052,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         function toggleMobileNav() {
-            const hamburger = document.querySelector('.hamburger');
-            const navPanel = document.getElementById('mobileNav');
-            hamburger.classList.toggle('active');
-            navPanel.classList.toggle('active');
+            var menu = document.getElementById('mobileNav');
+            var btn = document.querySelector('.hamburger');
+            if (!menu) return;
+            var open = !menu.classList.contains('active');
+            menu.classList.toggle('active', open);
+            if (btn) {
+                btn.classList.toggle('active', open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+            if (open) {
+                var first = menu.querySelector('a');
+                if (first) { setTimeout(function () { try { first.focus(); } catch (e) {} }, 0); }
+            }
         }
 
         // Close mobile nav when a link is clicked
-        document.querySelectorAll('.nav-panel a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.hamburger').classList.remove('active');
-                document.getElementById('mobileNav').classList.remove('active');
+        document.querySelectorAll('#mobileNav a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                var menu = document.getElementById('mobileNav');
+                if (menu) menu.classList.remove('active');
+                var btn = document.querySelector('.hamburger');
+                if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
             });
         });
 
-        // Close mobile nav when clicking outside
-        document.addEventListener('click', (e) => {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            const navPanel = document.getElementById('mobileNav');
-
-            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navPanel.classList.remove('active');
+        // Close mobile nav on Escape; return focus to the toggle button
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                var menu = document.getElementById('mobileNav');
+                if (menu && menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    var btn = document.querySelector('.hamburger');
+                    if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); try { btn.focus(); } catch (err) {} }
+                }
             }
         });
     </script>
