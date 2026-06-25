@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B2L1VB82X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1B2L1VB82X');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKDPWSXS');</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI automation for home service companies: HVAC, plumbing, electrical. Reduce manual dispatch, accelerate invoicing, capture more leads. Free operations audit.">
@@ -817,6 +816,10 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Navigation -->
 <nav>
@@ -1054,31 +1057,3 @@
         <a href="index.html#terms">Terms of Service</a>
       </div>
     </div>
-  </div>
-</footer>
-
-<script>
-  function toggleMobileNav() {
-    const nav = document.getElementById('mobileNav');
-    nav.classList.toggle('active');
-  }
-
-  // Close mobile nav when a link is clicked
-  document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('mobileNav').classList.remove('active');
-    });
-  });
-
-  // Close mobile nav when clicking outside
-  document.addEventListener('click', (e) => {
-    const nav = document.getElementById('mobileNav');
-    const hamburger = document.querySelector('.hamburger');
-    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-      nav.classList.remove('active');
-    }
-  });
-</script>
-
-</body>
-</html>

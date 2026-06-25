@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B2L1VB82X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1B2L1VB82X');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKDPWSXS');</script>
+<!-- End Google Tag Manager -->
+<!-- IMPORTANT: Replace GTM-KKDPWSXS with your actual GTM container ID -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Berlin Management Group | AI Operations Consulting</title>
@@ -1302,6 +1302,10 @@ footer {
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ===== NAVIGATION ===== -->
 <nav id="nav">
@@ -1998,7 +2002,7 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('formLoadedAt').value = Date.now();
 
 // Block submissions that happen too fast (< 3 seconds = bot)
-document.getElementById('audit-form').addEventListener('submit', function(e) {
+document.getElementById('auditForm').addEventListener('submit', function(e) {
   const loadedAt = parseInt(document.getElementById('formLoadedAt').value);
   const now = Date.now();
   const secondsElapsed = (now - loadedAt) / 1000;
@@ -2096,151 +2100,4 @@ function initChat() {
   const body = document.getElementById('chatBody');
   const input = document.getElementById('chatInput');
   const send = document.getElementById('chatSend');
-  const suggestions = document.getElementById('chatSuggestions');
-
-  function addMsg(text, type) {
-    const msg = document.createElement('div');
-    msg.className = 'chat-msg ' + type;
-    msg.textContent = text;
-    body.appendChild(msg);
-    body.scrollTop = body.scrollHeight;
-  }
-
-  function showSuggestions(items) {
-    suggestions.innerHTML = '';
-    items.forEach(text => {
-      const btn = document.createElement('button');
-      btn.className = 'chat-suggestion';
-      btn.textContent = text;
-      btn.onclick = () => handleUserInput(text);
-      suggestions.appendChild(btn);
-    });
-  }
-
-  function findResponse(input) {
-    const lower = input.toLowerCase();
-    let bestMatch = null;
-    let bestScore = 0;
-    for (const r of chatData.responses) {
-      let score = 0;
-      for (const kw of r.keywords) {
-        if (lower.includes(kw)) score++;
-      }
-      if (score > bestScore) {
-        bestScore = score;
-        bestMatch = r;
-      }
-    }
-    return bestScore > 0 ? bestMatch.answer : chatData.fallback;
-  }
-
-  function handleUserInput(text) {
-    addMsg(text, 'user');
-    suggestions.innerHTML = '';
-    setTimeout(() => {
-      addMsg(findResponse(text), 'bot');
-      showSuggestions(["How does pricing work?", "Get started", "What industries?", "Tell me about Brad"]);
-    }, 400 + Math.random() * 600);
-  }
-
-  launcher.onclick = () => {
-    const isOpen = win.classList.toggle('open');
-    launcher.innerHTML = isOpen ? '&#10005;' : '&#128172;';
-    launcher.classList.toggle('active', isOpen);
-    if (isOpen && body.children.length === 0) {
-      setTimeout(() => {
-        addMsg(chatData.greeting, 'bot');
-        showSuggestions(chatData.suggestions);
-      }, 300);
-    }
-  };
-
-  send.onclick = () => {
-    const text = input.value.trim();
-    if (text) { handleUserInput(text); input.value = ''; }
-  };
-
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') { send.click(); }
-  });
-}
-
-initChat();
-</script>
-
-    <script>
-  // Form timestamp and analytics
-  document.getElementById("formLoadedAt").value = Date.now().toString();
-  function trackEvent(n, p) { if (typeof gtag === "function") gtag("event", n, p || {}); }
-  trackEvent("contact_form_view");
-  var formStarted = false;
-  document.querySelectorAll("#auditForm input, #auditForm select, #auditForm textarea").forEach(function(el) {
-    el.addEventListener("focus", function() { if (!formStarted) { formStarted = true; trackEvent("contact_form_start", {first_field: el.name}); } });
-  });
-
-  // Character counter (10 char minimum)
-  var painPoint = document.getElementById("painPoint");
-  var charCount = document.getElementById("charCount");
-  var minChars = 10;
-  function updateCharCount() {
-    var len = painPoint.value.length;
-    if (len === 0) { charCount.textContent = "min " + minChars + " characters"; charCount.style.color = "#A0AEC0"; }
-    else if (len < minChars) { charCount.textContent = len + " / 1000 (need " + (minChars - len) + " more)"; charCount.style.color = "#A0AEC0"; }
-    else { charCount.textContent = len + " / 1000"; charCount.style.color = "#38A169"; }
-  }
-  updateCharCount();
-  painPoint.addEventListener("input", updateCharCount);
-
-  // Validation
-  function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
-  function setError(gid, show) { var g = document.getElementById(gid); if (show) g.classList.add("error"); else g.classList.remove("error"); }
-  document.querySelectorAll("#auditForm input, #auditForm select, #auditForm textarea").forEach(function(el) {
-    el.addEventListener("input", function() { this.closest(".form-group").classList.remove("error"); });
-  });
-
-  document.getElementById("auditForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    var gotcha = document.querySelector('input[name="_gotcha"]');
-    if (gotcha && gotcha.value) return;
-    var valid = true;
-    var fn = document.getElementById("fullName").value.trim();
-    var em = document.getElementById("workEmail").value.trim();
-    var co = document.getElementById("companyName").value.trim();
-    var pp = document.getElementById("painPoint").value.trim();
-    if (!fn) { setError("nameGroup", true); valid = false; } else { setError("nameGroup", false); }
-    if (!em || !validateEmail(em)) { setError("emailGroup", true); valid = false; } else { setError("emailGroup", false); }
-    if (!co) { setError("companyGroup", true); valid = false; } else { setError("companyGroup", false); }
-    if (!pp || pp.length < 10) { setError("painGroup", true); valid = false; } else { setError("painGroup", false); }
-    if (!valid) { trackEvent("contact_form_submit_error", {reason:"validation"}); var fe = document.querySelector(".form-group.error"); if (fe) fe.scrollIntoView({behavior:"smooth",block:"center"}); return; }
-    var btn = document.getElementById("submitBtn");
-    btn.querySelector(".btn-text").style.display = "none";
-    btn.querySelector(".spinner").style.display = "inline-block";
-    btn.disabled = true;
-    document.getElementById("formLoadedAt").value = Date.now().toString();
-    var fd = new FormData(document.getElementById("auditForm"));
-    fetch("https://formspree.io/f/xgonjavo", {method:"POST", body:fd, headers:{"Accept":"application/json"}})
-    .then(function(r) {
-      btn.querySelector(".btn-text").style.display = "";
-      btn.querySelector(".spinner").style.display = "none";
-      btn.disabled = false;
-      if (r.ok) {
-        document.getElementById("auditFormContainer").style.display = "none";
-        document.getElementById("formSuccess").style.display = "block";
-        document.getElementById("formSuccess").scrollIntoView({behavior:"smooth",block:"center"});
-        trackEvent("contact_form_submit_success", {industry: document.getElementById("industry").value || "not_specified"});
-      } else { document.getElementById("formErrorBanner").style.display = "block"; trackEvent("contact_form_submit_error", {reason:"server_error"}); }
-    }).catch(function() {
-      btn.querySelector(".btn-text").style.display = "";
-      btn.querySelector(".spinner").style.display = "none";
-      btn.disabled = false;
-      document.getElementById("formErrorBanner").style.display = "block";
-      trackEvent("contact_form_submit_error", {reason:"network_error"});
-    });
-  });
-  var sb = document.getElementById("scheduleBtn");
-  if (sb) sb.addEventListener("click", function() { trackEvent("calendly_click", {link: sb.href}); });
-</script>
-</body>
-</html>
-
-
+  const suggestions = document.getElementById('chatSuggesti
