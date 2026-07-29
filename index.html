@@ -782,70 +782,6 @@ footer {
 .footer-legal a { transition: color 0.2s; }
 .footer-legal a:hover { color: rgba(255,255,255,0.7); }
 
-/* ===== MODALS ===== */
-.modal-overlay {
-  display: none;
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(15,26,48,0.8);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  justify-content: center; align-items: center;
-  padding: 24px;
-}
-.modal-overlay.active { display: flex; }
-
-.modal {
-  background: var(--white);
-  border-radius: 12px;
-  max-width: 680px; width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 40px;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute; top: 16px; right: 16px;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: none; background: var(--gray-100);
-  cursor: pointer; display: flex;
-  align-items: center; justify-content: center;
-  font-size: 1.2rem; color: var(--slate);
-  transition: background 0.2s;
-}
-.modal-close:hover { background: var(--gray-200); }
-
-.modal h2 {
-  font-size: 1.6rem; color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.modal .modal-updated {
-  font-size: 0.82rem; color: var(--gray-600);
-  margin-bottom: 24px;
-}
-
-.modal h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem; font-weight: 700;
-  color: var(--navy); margin: 24px 0 8px;
-}
-
-.modal p {
-  font-size: 0.9rem; color: var(--gray-600);
-  margin-bottom: 12px; line-height: 1.7;
-}
-
-.modal ul {
-  list-style: disc; padding-left: 20px;
-  margin-bottom: 12px;
-}
-.modal ul li {
-  font-size: 0.9rem; color: var(--gray-600);
-  margin-bottom: 6px; line-height: 1.6;
-}
-
 /* ===== CURRENT PROJECTS ===== */
 .projects { background: var(--gray-100); }
 
@@ -2022,7 +1958,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       </div>
       <div class="industry-card">
         <span class="industry-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
-        <h3>Trades & Field Services</h3>
+        <h3>Field Services</h3>
         <p>Workflow standardization, software adoption, cross-system handoffs, exception management, billing visibility, and operating accountability for field-service businesses.</p><a href="home-services.html" style="position:absolute;bottom:20px;left:24px;color:#C8A951;font-weight:600;text-decoration:none;">Learn More &rarr;</a>
       </div>
       <div class="industry-card">
@@ -2437,71 +2373,15 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
       <span>&copy; 2026 Berlin Management Group LLC &bull; Phoenix, AZ &bull; Serving businesses across the Valley</span>
       <div class="footer-legal">
         <a href="/privacy.html">Privacy Policy</a>
-        <a href="#" onclick="document.getElementById('terms-modal').classList.add('active'); return false;">Terms of Service</a>
+        <a href="/terms.html">Terms of Service</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- Privacy policy lives at the canonical /privacy.html page. -->
+<!-- Terms of Service lives at the canonical /terms.html page. -->
 
-<div class="modal-overlay" id="terms-modal" onclick="if(event.target===this)this.classList.remove('active')">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" tabindex="-1">
-    <button class="modal-close" aria-label="Close Terms of Service" onclick="document.getElementById('terms-modal').classList.remove('active')">&times;</button>
-    <h2 id="terms-modal-title">Terms of Service</h2>
-    <p>Use of this website constitutes acceptance of these terms. Information on this site is provided for general informational purposes only. Berlin Management Group LLC makes no guarantees regarding outcomes of consulting engagements.</p>
-  </div>
-</div>
-
-<script>
-/* P12 modal a11y: focus trap, escape-to-close, return focus */
-(function(){
-  var lastFocus=null, trapHandler=null, activeOverlay=null;
-  function getFocusable(el){
-    var sel='a[href],button:not([disabled]),textarea:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
-    return Array.prototype.slice.call(el.querySelectorAll(sel)).filter(function(n){return n.offsetWidth>0||n.offsetHeight>0||n===document.activeElement;});
-  }
-  function activate(overlay){
-    lastFocus=document.activeElement;
-    activeOverlay=overlay;
-    var dialog=overlay.querySelector('.modal');
-    if(!dialog)return;
-    var focusables=getFocusable(dialog);
-    var first=focusables[0]||dialog;
-    setTimeout(function(){try{first.focus();}catch(e){}},0);
-    trapHandler=function(e){
-      if(e.key==='Escape'||e.keyCode===27){e.preventDefault();overlay.classList.remove('active');return;}
-      if(e.key==='Tab'||e.keyCode===9){
-        var f=getFocusable(dialog);
-        if(f.length===0){e.preventDefault();return;}
-        var firstEl=f[0],lastEl=f[f.length-1];
-        if(e.shiftKey&&document.activeElement===firstEl){e.preventDefault();lastEl.focus();}
-        else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();firstEl.focus();}
-      }
-    };
-    document.addEventListener('keydown',trapHandler);
-  }
-  function deactivate(){
-    if(trapHandler){document.removeEventListener('keydown',trapHandler);trapHandler=null;}
-    activeOverlay=null;
-    if(lastFocus&&typeof lastFocus.focus==='function'){setTimeout(function(){try{lastFocus.focus();}catch(e){}},0);}
-    lastFocus=null;
-  }
-  var overlays=document.querySelectorAll('.modal-overlay');
-  for(var i=0;i<overlays.length;i++){
-    (function(o){
-      var wasActive=o.classList.contains('active');
-      var obs=new MutationObserver(function(){
-        var isActive=o.classList.contains('active');
-        if(isActive&&!wasActive){activate(o);}
-        else if(!isActive&&wasActive){deactivate();}
-        wasActive=isActive;
-      });
-      obs.observe(o,{attributes:true,attributeFilter:['class']});
-    })(overlays[i]);
-  }
-})();
-</script>
 <script>
 /* Packet 1A: mobile nav toggle a11y — esc-to-close, focus to first link on open, return focus on close */
 (function(){
