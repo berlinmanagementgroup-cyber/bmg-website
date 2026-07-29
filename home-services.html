@@ -447,6 +447,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: rgba(255, 255, 255, 0.08);
       border-radius: var(--radius);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      /* allow grid tracks to shrink below intrinsic content width */
+      min-width: 0;
     }
 
     .roi-stat {
@@ -454,6 +456,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--gold-light);
       font-weight: 700;
       margin-bottom: 8px;
+      overflow-wrap: anywhere;
     }
 
     .roi-label {
@@ -914,26 +917,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- What We Automate Section -->
+<!-- Where Operations Can Improve Section -->
 <section class="automate">
   <div class="section-inner">
-    <h2>What We Automate for Home Service Companies</h2>
+    <h2>Where Operations Can Improve</h2>
     <img src="/images/home-services-automation-flow.svg" alt="Workflow diagram: manual dispatch, invoicing and lead intake versus an automated home-service operations flow" loading="lazy" style="display:block;width:100%;max-width:760px;height:auto;margin:24px auto;">
     <div class="automate-grid">
       <div class="automate-card">
         <div class="automate-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
         <h3>Smart Dispatch & Scheduling</h3>
-        <p>Automatic job assignment based on technician location, availability, and skills. Real-time optimization. No more manual scheduling. Dispatch takes minutes instead of hours.</p>
+        <p>Job assignment informed by technician location, availability, and skills. Reduce manual scheduling effort and improve assignment visibility.</p>
       </div>
       <div class="automate-card">
         <div class="automate-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Automated Invoicing & Collections</h3>
-        <p>Invoices generate instantly after job completion. Automatic email/SMS delivery. Automatic reminders. Collect 2-3 weeks faster. Your cash flow problem becomes cash flow momentum.</p>
+        <p>Invoices generated after job completion, with email and SMS delivery and reminders. Support faster, more consistent invoicing and follow-up.</p>
       </div>
       <div class="automate-card">
         <div class="automate-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <h3>Lead Intake & Routing</h3>
-        <p>Every call, online inquiry, and referral gets captured. Automatic routing to the right team member. No more dropped leads. More jobs get scheduled without more staff.</p>
+        <p>Calls, online inquiries, and referrals captured and routed to the right team member. Capture and route inquiries more consistently.</p>
       </div>
       <div class="automate-card">
         <div class="automate-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -954,35 +957,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- Credentials Section -->
-<section class="credentials">
-  <div class="section-inner">
-    <h2>Proven. At Scale.</h2>
-    <p class="credentials-intro">I have spent 20+ years running operations at companies handling millions in transaction volume. The same principles I used at those companies work for home service businesses. Here is proof.</p>
-    <div class="credentials-grid">
-      <div class="credential-item">
-        <h3>GlobalTranz</h3>
-        <div class="credential-stat">$1.2M to $65M</div>
-        <p>Scaled revenue from $1.2M to $65M and the team from 5 to 260 employees. Directed development of a proprietary transportation management system with a 30-person team.</p>
-      </div>
-      <div class="credential-item">
-        <h3>FreightClaims.com</h3>
-        <div class="credential-stat">30&ndash;40%</div>
-        <p>Reduced operating costs by 30%&ndash;40%. Deployed production AI workflows and established a consistent operating cadence.</p>
-      </div>
-      <div class="credential-item">
-        <h3>MyCarrier TMS</h3>
-        <div class="credential-stat">90 seconds</div>
-        <p>Redesigned customer response workflow. Reduced average response time from 26 minutes to 90 seconds. More leads converted. Higher customer satisfaction. Same team, better results.</p>
-      </div>
-      <div class="credential-item">
-        <h3>The Pattern</h3>
-        <p>Every automation project follows the same logic: identify the bottleneck, remove the manual work, let the team focus on revenue. That works in logistics, transportation, claims processing. It works for HVAC, plumbing, and electrical too.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Results Section -->
 <section class="roi">
   <div class="section-inner">
@@ -997,7 +971,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="roi-stat">$4.2M to $18M</div>
         <div class="roi-label">Revenue growth at CarrierDirect with zero headcount increase</div>
       </div>
+      <div class="roi-card">
+        <div class="roi-stat">$1.2M to $65M</div>
+        <div class="roi-label">Revenue growth at GlobalTranz, with the team scaling from 5 to 260 employees</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-stat">26 min to 90 sec</div>
+        <div class="roi-label">Customer response time at MyCarrier TMS after redesigning intake and routing</div>
+      </div>
     </div>
+    <p style="color: var(--slate); max-width: 700px; margin: 32px auto 0; text-align: center;">The operating principles&mdash;clear ownership, better handoffs, useful data, and practical systems&mdash;can be applied across field-service businesses. The specific solution depends on the workflow.</p>
   </div>
 </section>
 
@@ -1008,18 +991,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-number">1</div>
-        <h3>Audit</h3>
-        <p>We map your current processes, identify the biggest time sinks, and calculate the cost. Free. Takes 30 minutes. You walk away with numbers.</p>
+        <h3>Understand the operation</h3>
+        <p>We map how field and office work moves today, identify the bottleneck, and understand its effect on time, cost, accountability, and service.</p>
       </div>
       <div class="process-step">
         <div class="step-number">2</div>
-        <h3>Build</h3>
-        <p>We design and implement automations tailored to your workflows. Dispatch optimization, invoicing systems, lead routing, dashboards. Done with your team, not to your team.</p>
+        <h3>Improve the workflow</h3>
+        <p>We clarify ownership, simplify the handoffs between dispatch, technicians, and the office, and define how the work should move before automating anything.</p>
       </div>
       <div class="process-step">
         <div class="step-number">3</div>
-        <h3>Launch & Scale</h3>
-        <p>Go live. Train the team. Monitor KPIs. Optimize ongoing. BMG works on fixed-fee, scope-clear engagements. We start with a free 30-minute operations audit, identify the manual work costing your team time, then price the implementation before work begins.</p>
+        <h3>Implement and support the right system</h3>
+        <p>We implement the right combination of process changes, software, automation, and AI, then support the team as it is adopted. BMG works on fixed-fee, scope-clear engagements, priced before work begins.</p>
       </div>
     </div>
   </div>
@@ -1052,7 +1035,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-content">
       <div class="footer-brand">
         <h3>Berlin Management Group</h3>
-        <p>AI operations consulting for service businesses that want to scale without chaos.</p>
+        <p>Operations advisory and workflow improvement for businesses that need clearer execution and practical systems.</p>
       </div>
       <div class="footer-links">
         <a href="index.html#problem">The Problem</a>
