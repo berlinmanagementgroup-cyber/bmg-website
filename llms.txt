@@ -1,62 +1,70 @@
 # Berlin Management Group
 
-> AI operations consulting for Phoenix construction operators and adjacent service businesses. We help contractors stop renting disconnected SaaS subscriptions and start owning the workflow that actually runs estimating, bids, and back-office handoffs.
+> Operations advisory and systems implementation for owner-led and project-driven businesses. BMG helps improve operations, simplify workflows, and implement practical systems that scale. The work starts with the operating problem; software, automation, and AI are used only where they improve execution.
 
 ## About
 
-Berlin Management Group (BMG) is an AI operations consulting firm based in Phoenix, Arizona. Founded by Brad Berlin, a 15-year operations executive, BMG helps small and mid-size businesses automate repetitive back-office work using artificial intelligence. We specialize in turning manual processes like estimating, invoicing, reporting, and data entry into AI-powered workflows.
+Berlin Management Group (BMG) is an operations advisory and systems implementation practice based in Phoenix, Arizona, founded by Brad Berlin, an operations executive with 20+ years of experience across P&L leadership, operational transformation, customer operations, cost reduction, and scalable systems.
 
-## What Makes BMG Different
+BMG applies that operating background to selective advisory and implementation work. Engagements begin with the operating problem — workflow bottlenecks, unclear ownership, manual handoffs, reporting gaps, or systems that no longer scale — before any technology decision is made.
 
-- Operations-led: Our founder ran operations departments before touching AI. We understand the actual workflows, not just the technology.
-- Fixed-fee implementations and audit-based engagements: Scope and price are set after a free 30-minute back-office audit. No retainers, no hourly billing for discovery, no surprise overages.
-- Arizona-local: We work on-site with Valley businesses. We learn your tools, your team, and your processes firsthand.
-- Industry-specific: We go deep in one vertical at a time, learning the language, tools, and pain points before expanding.
-- Plain English: No jargon, no dashboards you'll never use. We explain everything in terms business owners understand.
+## Primary Value
 
-## Services
+- Business-process diagnosis and workflow improvement
+- Ownership, accountability, and handoff clarity
+- Operational transformation and scalable operating systems
+- Software implementation readiness, adoption, optimization, and recovery
+- Practical execution and operating cadence
+- Automation and AI where they create measurable operating value
 
-- Back-office process automation (estimating, invoicing, reporting, data entry)
-- AI tool selection and implementation
-- Historical data digitization and database creation
-- Workflow audit and optimization
-- Custom AI tool development for industry-specific workflows
-- Free Operations Audit for qualifying businesses
+## Technology Position
 
-## Industries Served
+Software, automation, and AI are supporting tools, not the starting point. BMG is not an AI agency, a bot-development shop, or a replacement for established business software. Most businesses will continue to use subscription platforms; the advantage comes from owning the workflow, process decisions, data standards, integrations, and management practices around those systems. Custom automation is added only where standard software stops.
 
-- Commercial Construction (active engagements)
-- Professional Services
-- Trades and Field Services
-- Any industry where teams spend more time on spreadsheets than on revenue-generating work
+## Industries
 
-## Ideal Client
+- Construction and contracting (a specialty, not the entire practice)
+- Field services and trades
+- Property management
+- Other owner-led or project-driven businesses
 
-- Phoenix-area commercial construction operators, $5M to $50M revenue
-- Owner-operators and operations leaders who still personally feel the pain of admin work
-- Companies running estimating and back-office through Excel, email threads, and disconnected SaaS logins
-- Businesses that have already bought the software and are looking for the workflow that ties it together
+## What BMG Does Not Claim
 
-## Adjacent Capabilities
+- BMG does not claim platform or vendor certifications unless explicitly documented.
+- BMG does not present prior-employer results as BMG client results. Career metrics belong to Brad Berlin's operating career and are labeled as such.
+- BMG does not publish client outcomes, customer counts, revenue claims, or testimonials it cannot support.
+- BMG does not guarantee savings, staffing avoidance, or specific operational outcomes.
 
-BMG also engages with select property management and field-service operations facing the same workflow-fragmentation problems.
+## Ideal Fit
+
+- Owner-led and project-driven businesses, typically 10 to 200 employees
+- Leadership willing to participate and assign an internal process owner
+- Businesses that have already bought software and need the operating model around it
+- Organizations seeking a clear business case before implementation
 
 ## Location
 
 Phoenix Metropolitan Area, Arizona, United States
 
+## Primary Call to Action
+
+Start a Conversation — https://berlinmanagementgroup.ai/free-audit.html
+
 ## Contact
 
-- Email: brad@berlinmanagementgroup.com
+- Email: brad@berlinmanagementgroup.ai
 - LinkedIn: https://www.linkedin.com/in/brad-berlin/
-- Website: https://berlinmanagementgroup.ai
+- Website: https://berlinmanagementgroup.ai/
 
 ## Links
 
-- [Homepage](https://berlinmanagementgroup.ai)
-- [Free Operations Audit](https://berlinmanagementgroup.ai/audit)
+- [Homepage](https://berlinmanagementgroup.ai/)
+- [Start a Conversation](https://berlinmanagementgroup.ai/free-audit.html)
 - [How It Works](https://berlinmanagementgroup.ai/#process)
 - [FAQ](https://berlinmanagementgroup.ai/#faq)
-- [Own the Workflow vs Rent Retail Software](https://berlinmanagementgroup.ai/own-vs-rent.html)
-- [Construction Industry Page](https://berlinmanagementgroup.ai/commercial-contractors.html)
-- [Blog](https://berlinmanagementgroup.ai/blog.html)
+- [Own the Operating Model](https://berlinmanagementgroup.ai/own-vs-rent.html)
+- [Commercial Contractors](https://berlinmanagementgroup.ai/commercial-contractors.html)
+- [Property Management](https://berlinmanagementgroup.ai/property-management.html)
+- [Home Services](https://berlinmanagementgroup.ai/home-services.html)
+- [Insights](https://berlinmanagementgroup.ai/blog.html)
+- [Privacy Policy](https://berlinmanagementgroup.ai/privacy.html)
