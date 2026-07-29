@@ -9,6 +9,20 @@
     <link rel="canonical" href="https://berlinmanagementgroup.ai/free-audit.html">
     <title>Start a Conversation | Berlin Management Group</title>
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berlinmanagementgroup.ai/free-audit.html">
+    <meta property="og:title" content="Start a Conversation | Berlin Management Group">
+    <meta property="og:description" content="Start a conversation with Berlin Management Group about an operational bottleneck, workflow problem, or practical systems opportunity.">
+    <meta property="og:image" content="https://berlinmanagementgroup.ai/assets/og-default.png">
+    <meta property="og:site_name" content="Berlin Management Group">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Start a Conversation | Berlin Management Group">
+    <meta name="twitter:description" content="Start a conversation with Berlin Management Group about an operational bottleneck, workflow problem, or practical systems opportunity.">
+    <meta name="twitter:image" content="https://berlinmanagementgroup.ai/assets/og-default.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -508,6 +522,21 @@
             display: block;
         }
 
+        .form-error-message {
+            background: #FEE2E2;
+            border-left: 4px solid #DC2626;
+            padding: 16px;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+            color: #7F1D1D;
+            font-size: 14px;
+        }
+
+        .form-error-message a {
+            color: #7F1D1D;
+            font-weight: 600;
+        }
+
         .honeypot {
             display: none;
         }
@@ -709,8 +738,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Thanks for reaching out. We&rsquo;ll review your information and follow up within one business day.
             </div>
 
+            <div class="form-error-message" id="form-error-message" role="alert" hidden>
+                Something went wrong while sending your request. Please try again or email <a href="mailto:brad@berlinmanagementgroup.ai">brad@berlinmanagementgroup.ai</a>.
+            </div>
+
             <form id="audit-form" action="https://formspree.io/f/xgonjavo" method="POST" novalidate>
-                <input type="hidden" name="_next" value="https://berlinmanagementgroup.ai/free-audit.html">
+                <input type="hidden" name="_next" value="https://berlinmanagementgroup.ai/thank-you.html">
                 <input type="hidden" name="_honey">
                 <input type="text" name="_gotcha" class="honeypot">
 
@@ -772,11 +805,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         const form = document.getElementById('audit-form');
         const successMessage = document.getElementById('success-message');
+        const submitButton = form.querySelector('.form-submit');
+        const submissionError = document.getElementById('form-error-message');
+
+        function showSubmissionError() {
+            submissionError.hidden = false;
+            submitButton.disabled = false;
+        }
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             // Clear previous errors
+            submissionError.hidden = true;
             document.querySelectorAll('.form-group').forEach(group => {
                 group.classList.remove('error');
             });
@@ -820,6 +861,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
 
             // Submit
+            submitButton.disabled = true;
             try {
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
@@ -831,11 +873,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 if (response.ok) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'form_submission_success',
+                        form_name: 'conversation_page_form'
+                    });
                     // Redirect to thank-you page for conversion tracking
                     window.location.href = '/thank-you.html';
+                } else {
+                    showSubmissionError();
                 }
             } catch (error) {
                 console.error('Form submission error:', error);
+                showSubmissionError();
             }
         });
 
