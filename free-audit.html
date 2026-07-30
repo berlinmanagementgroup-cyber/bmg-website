@@ -873,13 +873,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 if (response.ok) {
+                    // Deliver the lead event to GTM, then navigate. Redirect happens from
+                    // the event callback (or the fallback), never immediately, so navigation
+                    // cannot cancel the in-flight GTM dispatch.
+                    let hasRedirected = false;
+                    const redirectToThankYou = () => {
+                        if (hasRedirected) return;
+                        hasRedirected = true;
+                        window.location.assign('/thank-you.html');
+                    };
+
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({
                         event: 'form_submission_success',
-                        form_name: 'conversation_page_form'
+                        form_name: 'conversation_page_form',
+                        form_industry: industry,
+                        eventCallback: redirectToThankYou,
+                        eventTimeout: 2000
                     });
-                    // Redirect to thank-you page for conversion tracking
-                    window.location.href = '/thank-you.html';
+
+                    // Fallback when GTM is blocked, unavailable, or fails to invoke the callback.
+                    window.setTimeout(redirectToThankYou, 2100);
                 } else {
                     showSubmissionError();
                 }

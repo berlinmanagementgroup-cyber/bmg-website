@@ -30,16 +30,27 @@
       if (xhr.readyState !== 4) return;
 
       if (xhr.status >= 200 && xhr.status < 300) {
-        // Push form_submission_success to dataLayer for GTM AJAX backup trigger
+        // Success - deliver the lead event to GTM, then navigate.
+        // Redirect happens from the event callback (or the fallback), never immediately,
+        // so navigation cannot cancel the in-flight GTM dispatch.
+        var hasRedirected = false;
+        var redirectToThankYou = function() {
+          if (hasRedirected) return;
+          hasRedirected = true;
+          window.location.assign("/thank-you.html");
+        };
+
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: "form_submission_success",
           form_name: "ops_audit_form",
-          form_industry: formIndustry
+          form_industry: formIndustry,
+          eventCallback: redirectToThankYou,
+          eventTimeout: 2000
         });
 
-        // Success - redirect to custom thank-you page
-        window.location.href = "/thank-you.html";
+        // Fallback when GTM is blocked, unavailable, or fails to invoke the callback.
+        window.setTimeout(redirectToThankYou, 2100);
       } else {
         // Error - restore button and alert
         if (btn) {
