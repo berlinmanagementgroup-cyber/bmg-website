@@ -285,27 +285,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Navigation -->
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 <nav>
-  <div class="nav-inner">
-    <a href="/index.html" class="nav-logo">
-      <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;" role="img" aria-labelledby="logo-title"><title id="logo-title">Berlin Management Group logo</title><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
-      <span class="nav-logo-text">Berlin Management Group</span>
-    </a>
-    <div class="nav-links" id="mobileNav">
-      <a href="/index.html#problem">The Problem</a>
-      <a href="/index.html#process">How It Works</a>
-      <a href="/index.html#industries">Industries</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/index.html#about">About</a>
-      <a href="/audit" class="nav-cta">Start a Conversation</a>
+    <div class="nav-inner">
+        <a class="nav-logo" href="/">
+            <svg viewBox="0 0 88 88" width="40" height="40" style="flex-shrink:0;" role="img" aria-labelledby="logo-title"><title id="logo-title">Berlin Management Group logo</title><rect width="88" height="88" rx="8" fill="#1B2B4B"/><text x="44" y="56" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="34" fill="#C6993E" text-anchor="middle" letter-spacing="1">BMG</text></svg>
+            <span class="nav-logo-text">Berlin Management Group</span>
+        </a>
+        <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav()">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="/how-we-work">How We Work</a>
+            <a href="/operations-diagnostic">Operations Diagnostic</a>
+            <div class="dropdown">
+                <a href="#" onclick="return false" aria-haspopup="true">Who We Help</a>
+                <div class="dropdown-menu">
+                    <a href="/growing-businesses">Growing Businesses</a>
+                    <a href="/enterprise">Enterprise</a>
+                </div>
+            </div>
+            <a href="/blog">Field Notes</a>
+            <a href="/about">About</a>
+            <a href="/contact" class="nav-cta">Contact</a>
+        </div>
     </div>
-    <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
 </nav>
-
-<main>
+<div class="nav-panel" id="mobileNav">
+    <a href="/how-we-work">How We Work</a>
+    <a href="/operations-diagnostic">Operations Diagnostic</a>
+    <a href="/growing-businesses">Growing Businesses</a>
+    <a href="/enterprise">Enterprise</a>
+    <a href="/blog">Field Notes</a>
+    <a href="/about">About</a>
+    <a href="/contact" class="nav-cta">Contact</a>
+</div><main>
 
   <!-- Article Hero -->
   <div class="article-hero">
@@ -317,11 +331,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Article Body -->
   <div class="article-container">
 
-    <a href="/blog.html" class="back-link">&larr; Back to all posts</a>
+    <a href="/blog" class="back-link">&larr; Back to all posts</a>
 
     <p>A commercial contractor invests in good software. Takeoff software like Togal AI to measure quantities off the drawings. Building Connected to package bids and get them out to subcontractors. Real tools, real money, and the expectation that estimating will get easier.</p>
 
-    <p>Then it does not, or not as much as expected. Bids still go out rushed. The estimating team still feels behind. The instinct at that point is usually one of two things: the tools are not being used fully, or the shop needs another tool. Most of the time it is neither. I have written before about <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a bid actually go</a>, and this is the closest look at one of them.</p>
+    <p>Then it does not, or not as much as expected. Bids still go out rushed. The estimating team still feels behind. The instinct at that point is one of two things: the tools are not being used fully, or the shop needs another tool. In my experience, it is often neither. I have written before about <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a bid actually go</a>, and this is the closest look at one of them.</p>
 
     <h2>Good tools, bought one stage at a time</h2>
 
@@ -331,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h2>Where the workflow breaks between the tools</h2>
 
-    <p>The friction is not inside Togal and it is not inside Building Connected. It is in the hand-offs between them and the stages around them. Three seams show up on almost every bid.</p>
+    <p>The friction is not inside Togal and it is not inside Building Connected. It is in the hand-offs between them and the stages around them. Three seams are worth checking on any bid.</p>
 
     <div class="stage"><p><span class="label">From the takeoff to the abstract sheet.</span> Togal hands you quantities. The abstract sheet is a hand-built Excel workbook organized by CSI division, and that structure is yours, not Togal's. Getting the quantities from one into the other is a person exporting, reformatting, mapping Togal's organization onto the workbook's, and pasting. The takeoff got fast. The step immediately after the takeoff did not.</p></div>
 
@@ -343,7 +357,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p>Each seam, on its own, is small. One export. One reformat. One paste. One check of which version is current. But there are several of them, on every bid, and the work compounds across a week and a bid list.</p>
 
-    <p>It is also invisible. Togal's screen shows the takeoff finished. Building Connected's screen shows the quotes are in. Neither screen shows the hours an estimator spent carrying data from the first tool to the workbook, or from the inbox to the leveling sheet. No tool you bought reports the cost of the gaps between the tools you bought. That is why this friction is so hard to name. Everyone can see the tools working. Nobody can see the seams.</p>
+    <p>It is also invisible. Togal's screen shows the takeoff finished. Building Connected's screen shows the quotes are in. Neither screen shows the hours an estimator spent carrying data from the first tool to the workbook, or from the inbox to the leveling sheet. No tool you bought reports the cost of the gaps between the tools you bought. That is why this friction is so hard to name. It is easy to see the tools working. It is much harder to see the seams.</p>
 
     <h2>Your estimator is the integration layer</h2>
 
@@ -382,8 +396,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- CTA -->
     <div class="article-cta">
       <h3>Start with the operating problem</h3>
-      <p>BMG helps owner-led and project-driven businesses improve workflows, implement practical systems, and use automation or AI where it adds measurable value.</p>
-      <a href="/audit" class="cta-button">Start a Conversation</a>
+      <p>Berlin Management Group is an operator-led operations improvement firm. BMG finds and fixes the operating problems costing businesses time, margin, and capacity.</p>
+      <a href="/contact" class="cta-button">Talk through an operating problem</a>
     </div>
 
     <!-- Author Box -->
@@ -392,11 +406,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="author-info">
         <h4>Brad Berlin</h4>
         <p class="role">Founder, Berlin Management Group &nbsp;|&nbsp; Phoenix, AZ</p>
-        <p>Brad Berlin is an operations executive with 20+ years of experience leading teams, managing P&amp;Ls, improving workflows, and implementing scalable systems. Through Berlin Management Group, he helps owner-led and project-driven businesses improve operations and use automation or AI where it creates practical value.</p>
+        <p>Brad Berlin is an operations executive with more than twenty years building, repairing, and scaling operations across venture-stage, growth, and enterprise environments. He is the founder of Berlin Management Group.</p>
       </div>
     </div>
 
     <!-- Sourcing Note -->
+    <p class="methodology">Field notes describe how we think about operating problems. They are not client case studies.</p>
     <p class="methodology">A note on sourcing: this article draws on first-hand discovery work observing how a Phoenix commercial general contractor runs its estimating process, alongside general commercial estimating practice. It describes a workflow pattern, not a client case study, and every observation here is generalized. Togal and Building Connected are referenced as widely used tools, not as clients or partners, and no company, project, or figure in this article identifies a specific business.</p>
 
   </div>
@@ -404,27 +419,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Footer -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>Berlin Management Group</h3>
-        <p>Operations advisory, workflow improvement, and practical systems implementation for owner-led and project-driven businesses.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/index.html">Home</a>
-        <a href="/index.html#process">How It Works</a>
-        <a href="/index.html#industries">Industries</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/index.html#about">About</a>
-        <a href="/audit">Start a Conversation</a>
-      </div>
-      <div></div>
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Berlin Management Group</h3>
+                <p>Operator-led operations improvement. We find and fix the operating problems costing businesses time, margin, and capacity.</p>
+                <p>Phoenix, AZ</p>
+            </div>
+            <div class="footer-links">
+                <a href="/commercial-contractors">Commercial Contractors</a>
+                <a href="/home-services">Home Services</a>
+                <a href="/property-management">Property Management</a>
+                <a href="/operations-consulting-phoenix">Phoenix Operations Consulting</a>
+                <a href="/fractional-coo">Fractional COO</a>
+                <a href="/start-with-the-problem">Start With the Problem</a>
+                <a href="/own-vs-rent">Own the Workflow</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Berlin Management Group. All rights reserved.</p>
+            <div>
+                <a href="/privacy">Privacy</a>
+                <span>|</span>
+                <a href="/terms">Terms</a>
+            </div>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Berlin Management Group. All rights reserved.</span>
-      <a href="mailto:brad@berlinmanagementgroup.ai">brad@berlinmanagementgroup.ai</a>
-    </div>
-  </div>
 </footer>
 
 <script>

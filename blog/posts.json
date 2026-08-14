@@ -1,11 +1,54 @@
 [
   {
+    "slug": "signs-your-operations-cant-keep-up-with-growth",
+    "title": "Six signs the operation is not keeping up with the business",
+    "date": "2026-08-14",
+    "author": "Brad Berlin",
+    "description": "Growth can hide operating problems for a while. Six signs a business has outgrown how its work is designed, and a first step that costs nothing.",
+    "tags": [
+      "workflows",
+      "growth",
+      "operations"
+    ],
+    "file": "signs-your-operations-cant-keep-up-with-growth/"
+  },
+  {
+    "slug": "get-out-of-the-day-to-day",
+    "title": "Getting out of the day-to-day: an operator's approach",
+    "date": "2026-08-14",
+    "author": "Brad Berlin",
+    "description": "Owners stay trapped in daily operations because of design, not discipline. A five-step redesign of decision rights, ownership, and cadence.",
+    "tags": [
+      "management",
+      "owner-led",
+      "operations"
+    ],
+    "file": "get-out-of-the-day-to-day/"
+  },
+  {
+    "slug": "own-vs-rent",
+    "title": "Own the Workflow Before You Add Another Subscription",
+    "date": "2026-05-23",
+    "author": "Brad Berlin",
+    "description": "When software subscriptions help, when they create more work, and why the workflow should be clear before another tool is added.",
+    "tags": [
+      "systems"
+    ],
+    "file": "../own-vs-rent/"
+  },
+  {
     "slug": "what-a-phoenix-construction-operations-audit-actually-involves",
     "title": "What I Actually Look At in a Construction Operations Audit",
     "date": "2026-05-23",
     "author": "Brad Berlin",
     "description": "An operations audit is not a software pitch. It is watching where the friction in a construction business actually lives. Here is what I look at, and why.",
-    "tags": ["commercial-construction", "operations-audit", "workflow", "estimating", "operations"],
+    "tags": [
+      "commercial-construction",
+      "operations-audit",
+      "workflow",
+      "estimating",
+      "operations"
+    ],
     "file": "what-a-phoenix-construction-operations-audit-actually-involves.html"
   },
   {
@@ -14,7 +57,13 @@
     "date": "2026-05-23",
     "author": "Brad Berlin",
     "description": "The best estimating data a commercial GC owns is its own past bids, but it is trapped in scattered files. How historical bid data becomes a cost database you can use.",
-    "tags": ["commercial-construction", "estimating", "cost-database", "historical-data", "operations"],
+    "tags": [
+      "commercial-construction",
+      "estimating",
+      "cost-database",
+      "historical-data",
+      "operations"
+    ],
     "file": "turning-past-bids-into-a-cost-database.html"
   },
   {
@@ -23,7 +72,13 @@
     "date": "2026-05-23",
     "author": "Brad Berlin",
     "description": "You bought good takeoff and bid software. Estimating still feels slow because the friction lives in the hand-offs between the tools, where your estimator stands.",
-    "tags": ["commercial-construction", "estimating", "estimating-software", "workflow", "operations"],
+    "tags": [
+      "commercial-construction",
+      "estimating",
+      "estimating-software",
+      "workflow",
+      "operations"
+    ],
     "file": "the-gap-between-your-estimating-tools.html"
   },
   {
@@ -31,8 +86,14 @@
     "title": "Hire Another Estimator, or Make the Four You Have Faster?",
     "date": "2026-05-23",
     "author": "Brad Berlin",
-    "description": "Most contractors facing a slow estimating team reach for a fifth estimator. Often it is a workflow-coordination problem, and a new hire just inherits the drag.",
-    "tags": ["commercial-construction", "estimating", "hiring", "workflow", "operations"],
+    "description": "The instinct is to reach for a fifth estimator. Before hiring, check whether the real constraint is estimating capacity or workflow coordination.",
+    "tags": [
+      "commercial-construction",
+      "estimating",
+      "hiring",
+      "workflow",
+      "operations"
+    ],
     "file": "hire-another-estimator-or-fix-the-workflow.html"
   },
   {
@@ -41,7 +102,12 @@
     "date": "2026-05-23",
     "author": "Brad Berlin",
     "description": "Estimators assume bid prep time lives in the takeoff. After sitting with estimating teams, here is where the hours in a commercial construction bid actually go.",
-    "tags": ["commercial-construction", "estimating", "bid-process", "operations"],
+    "tags": [
+      "commercial-construction",
+      "estimating",
+      "bid-process",
+      "operations"
+    ],
     "file": "where-the-hours-go-in-a-commercial-construction-bid.html"
   }
 ]

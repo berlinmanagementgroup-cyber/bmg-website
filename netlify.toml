@@ -1,20 +1,8 @@
-# Audit funnel routing (BMG-WEEK1-AUDIT-FUNNEL-KICKOFF 2026-04-23)
-# /audit and /audit/thanks are Google Ads + social CTA destinations.
-# Redirected to existing funnel files. No page duplication.
-[[redirects]]
-  from = "/audit"
-  to = "/free-audit.html"
-  status = 301
+# BMG relaunch redirect matrix (Packet 5 Phase 2, APPROVED/FINAL 2026-08-14)
+# Clean URLs canonical for new/rebuilt pages; five legacy construction Field Notes
+# retain their .html URLs as a deliberate preservation exception.
+# All rules single-hop 301. www/http redirects live in Netlify domain settings.
 
-[[redirects]]
-  from = "/audit/thanks"
-  to = "/thank-you.html"
-  status = 301
-
-# Dual-URL consolidation: each page resolves at one canonical URL
-# (P-SEO-NETLIFY-301-DUAL-URL 2026-05-22). force = true is required: Netlify
-# serves these paths from existing files, and a non-forced redirect is shadowed
-# by an existing file. Direction matches the committed canonical tags and sitemap.
 [[redirects]]
   from = "/index.html"
   to = "/"
@@ -22,50 +10,98 @@
   force = true
 
 [[redirects]]
-  from = "/own-vs-rent"
-  to = "/own-vs-rent.html"
+  from = "/audit"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/audit/thanks"
+  to = "/contact"
   status = 301
   force = true
 
 [[redirects]]
   from = "/free-audit"
-  to = "/free-audit.html"
+  to = "/contact"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/commercial-contractors"
-  to = "/commercial-contractors.html"
+  from = "/free-audit.html"
+  to = "/contact"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/property-management"
-  to = "/property-management.html"
+  from = "/commercial-contractors.html"
+  to = "/commercial-contractors"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/home-services"
-  to = "/home-services.html"
+  from = "/home-services.html"
+  to = "/home-services"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/blog"
-  to = "/blog.html"
+  from = "/property-management.html"
+  to = "/property-management"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/own-vs-rent.html"
+  to = "/own-vs-rent"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/data-deletion.html"
+  to = "/data-deletion"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/ai-assisted-build-vs-traditional-development-cost"
-  to = "/"
+  to = "/blog"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/ai-assisted-build-vs-traditional-development-cost.html"
-  to = "/"
+  to = "/blog"
   status = 301
   force = true
 
@@ -98,13 +134,3 @@
   to = "/blog/what-a-phoenix-construction-operations-audit-actually-involves.html"
   status = 301
   force = true
-
-# Redirect berlinmanagementgroup.com to berlinmanagementgroup.ai
-[[redirects]]
-  from = "/*"
-  to = "https://berlinmanagementgroup.ai/:splat"
-  status = 301
-  force = true
-
-  [redirects.conditions]
-    Host = ["berlinmanagementgroup.com", "www.berlinmanagementgroup.com"]
