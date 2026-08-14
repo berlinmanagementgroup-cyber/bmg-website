@@ -835,6 +835,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:12px;border:1px solid #cdd3df;border-radius:8px;font:inherit}
 .form-grid textarea{min-height:120px}
 .byline{color:#5a6478;font-size:.95rem;margin-bottom:8px}
+
+/* Traffic-readiness polish (2026-08-14): branded content links + contact form finish */
+main a:not([class]){color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease}
+main a:not([class]):visited{color:var(--navy)}
+main a:not([class]):hover{color:var(--navy-dark);text-decoration-thickness:2.5px;text-decoration-color:var(--gold-dark)}
+main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.hero a:not([class]),.cta-section a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.hero a:not([class]):visited,.cta-section a:not([class]):visited{color:var(--white)}
+.hero a:not([class]):hover,.cta-section a:not([class]):hover{color:var(--gold-light)}
+.form-grid input,.form-grid select,.form-grid textarea{min-height:48px;padding:12px 14px;border:1px solid #cdd3df;border-radius:var(--radius);font:inherit;font-size:1em;color:var(--text);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease}
+.form-grid textarea{min-height:140px;resize:vertical}
+.form-grid select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B2A4A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,.28)}
+.form-grid .cta-primary{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--white);padding:15px 40px;min-height:48px;border:none;border-radius:var(--radius);font:inherit;font-size:1em;font-weight:600;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.form-grid .cta-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.form-grid .cta-primary:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+.form-grid .cta-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+@media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
 </head>
 <body>
