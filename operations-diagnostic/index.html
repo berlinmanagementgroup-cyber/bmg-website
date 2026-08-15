@@ -838,6 +838,84 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D2 Editorial Operator: Diagnostic page system (2026-08-15) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Editorial opening chapter */
+.d2-open .section-heading{margin-bottom:20px}
+.d2-open-rule{width:56px;height:3px;background:var(--gold);margin:0 0 28px}
+.d2-open p{font-family:'Merriweather',serif;font-size:1.06em;line-height:1.85;color:var(--navy)}
+/* Arrow links (D1 pattern) */
+a.d1-arrow{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;display:inline-block;min-height:24px}
+a.d1-arrow:after{content:" \2192";color:var(--gold-dark)}
+a.d1-arrow:hover{color:var(--navy-dark);border-bottom-color:var(--gold-dark)}
+a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.cta-section a.d1-arrow{color:var(--white);border-bottom-color:var(--gold);padding:10px 2px}
+.cta-section a.d1-arrow:after{color:var(--gold-light)}
+.cta-section a.d1-arrow:hover{color:var(--gold-light)}
+.cta-section a.d1-arrow:focus-visible{outline-color:var(--gold-light)}
+/* Five-lens ledger */
+.lens-ledger{max-width:980px;margin:0 auto;border-top:2px solid var(--navy)}
+.ll-row{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 22px;border-bottom:1px solid var(--gray-200);border-left:3px solid transparent}
+.ll-head{display:flex;gap:16px;align-items:baseline}
+.ll-num{font-family:'Merriweather',serif;font-weight:900;font-size:1.5rem;color:var(--gold-dark);line-height:1.1;min-width:34px}
+.ll-row h3{font-family:'Merriweather',serif;font-size:1.08em;color:var(--navy);font-weight:700;margin:0}
+.ll-q{font-family:'Merriweather',serif;font-size:.98rem;color:var(--navy);font-weight:700;margin-bottom:8px}
+.ll-body p{font-size:.95em;color:var(--text);line-height:1.65}
+.ll-row.money{border-left-color:var(--gold);background:linear-gradient(90deg,rgba(200,169,81,.09) 0%,rgba(200,169,81,.02) 100%)}
+.ll-decision{font-family:'Merriweather',serif;color:var(--navy);font-weight:700}
+/* Career evidence rows */
+.career-rows{list-style:none;margin:0 auto;padding:0;max-width:860px;border-top:2px solid var(--navy)}
+.career-rows li{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.7;color:var(--text)}
+.career-rows .cr-num{font-family:'Merriweather',serif;font-weight:900;font-size:1.3rem;color:var(--gold-dark);line-height:1.3}
+.career-rows strong{font-family:'Merriweather',serif;color:var(--navy)}
+/* Snapshot / Full comparison panel */
+.sf{max-width:1020px;margin:0 auto;border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.sf-panels{display:grid;grid-template-columns:1fr 1fr}
+.sf-panel{padding:38px 34px}
+.sf-panel.snapshot{background:var(--white)}
+.sf-panel.full{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);color:#C9D2E4}
+.sf-panel h3{font-family:'Merriweather',serif;font-size:1.25em;font-weight:700;margin-bottom:16px}
+.sf-panel.snapshot h3{color:var(--navy)}
+.sf-panel.full h3{color:var(--white)}
+.sf-panel ul{list-style:none;margin:0;padding:0}
+.sf-panel li{display:flex;gap:14px;padding:13px 0;font-size:.93em;line-height:1.65;border-bottom:1px solid var(--gray-200)}
+.sf-panel.full li{border-bottom-color:rgba(255,255,255,.14)}
+.sf-panel li:last-child{border-bottom:none}
+.sf-panel li:before{content:"";width:14px;height:2px;background:var(--gold);flex-shrink:0;margin-top:.72em}
+.sf-caption{background:var(--cream);padding:18px 34px;font-family:'Merriweather',serif;color:var(--navy);font-size:.98em;text-align:center;border-top:1px solid var(--gray-200)}
+.sf-note{max-width:1020px;margin:26px auto 0;font-size:.95em;color:var(--slate)}
+/* Process rail (D1 pattern; no gold-filled stop on this page) */
+.rail{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:54px 0 8px;gap:18px;list-style:none;padding:0}
+.rail:before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:var(--gold);opacity:.55}
+.rail-stop{text-align:center;position:relative}
+.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:var(--gold-dark);font-family:'Merriweather',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.rail-stop h3{font-family:'Merriweather',serif;font-size:1em;color:var(--navy);margin-bottom:8px;font-weight:700}
+.rail-stop p{font-size:.88em;color:var(--text);max-width:210px;margin:0 auto;line-height:1.6}
+.rail-close{max-width:720px;margin:46px auto 0;text-align:center}
+.rail-close .rc-rule{width:56px;height:3px;background:var(--gold);margin:0 auto 20px}
+.rail-close p{font-family:'Merriweather',serif;color:var(--navy);font-size:1.02em;line-height:1.8}
+/* D2 responsive */
+@media (max-width:768px){
+  .ll-row{grid-template-columns:1fr;padding:22px 18px}
+  .career-rows li{grid-template-columns:34px 1fr;gap:14px}
+  .sf-panels{grid-template-columns:1fr}
+  .sf-panel{padding:30px 24px}
+  .sf-caption{padding:16px 24px}
+  .rail{grid-template-columns:1fr;gap:0;margin-top:36px}
+  .rail:before{left:25px;right:auto;top:26px;bottom:26px;width:1px;height:auto}
+  .rail-stop{display:flex;text-align:left;gap:20px;padding:14px 0}
+  .rail-stop .dot{margin:0;flex-shrink:0}
+  .rail-stop p{margin:0;max-width:none}
+  .rail-stop h3{margin-top:14px}
+  .ll-body p,.ll-q,.career-rows li,.sf-panel li,.rail-stop p,.rail-close p,.d2-open p,.sf-caption,.sf-note{font-size:1em}
+  .band-cream .receipts-label{font-size:1em}
+}
+@media (prefers-reduced-motion: reduce){
+  a.d1-arrow{transition:none}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -885,13 +963,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-inner">
     <h1>The BMG Operations Diagnostic</h1>
     <p>A fixed-fee assessment that finds where your operation is losing time, margin, and capacity, quantifies what each finding costs, and delivers a prioritized plan to fix it. You can run the plan yourself, or ask BMG to help implement the highest-priority fixes.</p>
-    <a href="/contact" class="cta-primary" style="display:inline-block;">Book a Diagnostic conversation</a>
+    <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream d2-open">
   <div class="section-inner prose">
     <h2 class="section-heading">Why is the Diagnostic paid?</h2>
+    <div class="d2-open-rule" aria-hidden="true"></div>
     <p>Because it produces a standalone decision document, not a sales proposal. The scope is fixed in writing before work begins. The fee is fixed. The work includes direct observation of how your operation actually runs, not just interviews. The deliverable contains findings, the economic impact of each material finding, priorities, named owners, and a 90-day plan. It is built to be useful whether or not you ever hire BMG again.</p>
   </div>
 </section>
@@ -899,50 +978,101 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">What gets examined</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Work.</h3><p>How the work actually moves: process steps, handoffs, queues, rework, exceptions, cycle time. Where does work wait, stall, or get done twice?</p></div>
-      <div class="problem-card"><h3>People.</h3><p>Ownership and decision rights. Who owns each outcome, who can actually decide, and where capacity is lost to unclear roles.</p></div>
-      <div class="problem-card"><h3>Systems.</h3><p>The software you own, how much of it is actually used, the manual work happening between tools, and where integration, automation, or AI would pay for itself once the workflow is designed to support it.</p></div>
-      <div class="problem-card"><h3>Management.</h3><p>What leadership can see and how fast problems surface: metrics, cadence, escalation.</p></div>
-      <div class="problem-card"><h3>Money.</h3><p>The economic impact of each material finding: what it costs, what fixing it is worth, at what effort, quantified as rigorously as the available data supports. This lens is what makes the deliverable a decision document.</p></div>
+    <div class="lens-ledger">
+      <div class="ll-row">
+        <div class="ll-head"><span class="ll-num" aria-hidden="true">I</span><h3>Work.</h3></div>
+        <div class="ll-body">
+          <p class="ll-q">How does the work actually flow?</p>
+          <p>How the work actually moves: process steps, handoffs, queues, rework, exceptions, cycle time. Where does work wait, stall, or get done twice?</p>
+        </div>
+      </div>
+      <div class="ll-row">
+        <div class="ll-head"><span class="ll-num" aria-hidden="true">II</span><h3>People.</h3></div>
+        <div class="ll-body">
+          <p class="ll-q">Who owns what, and who decides?</p>
+          <p>Ownership and decision rights. Who owns each outcome, who can actually decide, and where capacity is lost to unclear roles.</p>
+        </div>
+      </div>
+      <div class="ll-row">
+        <div class="ll-head"><span class="ll-num" aria-hidden="true">III</span><h3>Systems.</h3></div>
+        <div class="ll-body">
+          <p class="ll-q">What talks to what?</p>
+          <p>The software you own, how much of it is actually used, the manual work happening between tools, and where integration, automation, or AI would pay for itself once the workflow is designed to support it.</p>
+        </div>
+      </div>
+      <div class="ll-row">
+        <div class="ll-head"><span class="ll-num" aria-hidden="true">IV</span><h3>Management.</h3></div>
+        <div class="ll-body">
+          <p class="ll-q">What can leadership see?</p>
+          <p>What leadership can see and how fast problems surface: metrics, cadence, escalation.</p>
+        </div>
+      </div>
+      <div class="ll-row money">
+        <div class="ll-head"><span class="ll-num" aria-hidden="true">V</span><h3>Money.</h3></div>
+        <div class="ll-body">
+          <p class="ll-q">What is each finding worth?</p>
+          <p>The economic impact of each material finding: what it costs, what fixing it is worth, at what effort, quantified as rigorously as the available data supports. <span class="ll-decision">This lens is what makes the deliverable a decision document.</span></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">The same lenses, applied in Brad's operating career</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <ul>
-      <li><strong>Work:</strong> as Chief Customer Officer at MyCarrier, Brad worked with the frontline team to trace the customer onboarding workflow end to end, then redesigned it. Onboarding fell from multiple weeks to about 3 to 4 days, and platform utilization rose roughly 40%.</li>
-      <li><strong>Systems:</strong> at the same company, support ran on email queues with day-long waits. Redesigning the workflow and connecting the systems already owned (HubSpot, Jira, Intercom) cut support resolution time from about 26 minutes to about 90 seconds.</li>
-      <li><strong>People:</strong> while serving with a larger consulting firm, Brad was part of a team that helped redesign roles, ownership, and incentives across an anonymized carrier division of roughly $150M so that its thirteen offices operated as one business.</li>
-      <li><strong>Management:</strong> as COO of Freightclaims.com, Brad installed the operating cadence from zero: annual planning, quarterly rhythms, 13-week execution plans, KPI dashboards.</li>
-      <li><strong>Money:</strong> in the same role, a cost restructuring during a capital-constrained period cut monthly operating expenses 30 to 40%.</li>
+    <ul class="career-rows" role="list">
+      <li><span class="cr-num" aria-hidden="true">I</span><div><strong>Work:</strong> as Chief Customer Officer at MyCarrier, Brad worked with the frontline team to trace the customer onboarding workflow end to end, then redesigned it. Onboarding fell from multiple weeks to about 3 to 4 days, and platform utilization rose roughly 40%.</div></li>
+      <li><span class="cr-num" aria-hidden="true">II</span><div><strong>People:</strong> while serving with a larger consulting firm, Brad was part of a team that helped redesign roles, ownership, and incentives across an anonymized carrier division of roughly $150M so that its thirteen offices operated as one business.</div></li>
+      <li><span class="cr-num" aria-hidden="true">III</span><div><strong>Systems:</strong> at MyCarrier, support ran on email queues with day-long waits. Redesigning the workflow and connecting the systems already owned (HubSpot, Jira, Intercom) cut support resolution time from about 26 minutes to about 90 seconds.</div></li>
+      <li><span class="cr-num" aria-hidden="true">IV</span><div><strong>Management:</strong> as COO of Freightclaims.com, Brad installed the operating cadence from zero: annual planning, quarterly rhythms, 13-week execution plans, KPI dashboards.</div></li>
+      <li><span class="cr-num" aria-hidden="true">V</span><div><strong>Money:</strong> in the same role, a cost restructuring during a capital-constrained period cut monthly operating expenses 30 to 40%.</div></li>
     </ul>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-inner prose">
+  <div class="section-inner">
     <h2 class="section-heading">Snapshot or Full</h2>
-    <p><strong>The Snapshot Diagnostic.</strong> One workflow or one business area. One to two weeks. Built for owner-led businesses, and for larger companies that want a limited first engagement on one specific problem. Deliverable: a findings map, a quantified opportunity list, and a 90-day fix plan.</p>
-    <p><strong>The Full Diagnostic.</strong> The whole operation, or several workflows at once. Three to five weeks, including on-site observation of the real work. Deliverable: everything in the Snapshot at operation scope, plus a sequenced roadmap with an owner and a business case for each initiative, and a measurement baseline for whatever gets fixed next.</p>
-    <p>Same method, same rigor. The difference is scope. Larger organizations usually start with a Diagnostic scoped to one named problem; see <a href="/enterprise">how BMG works with enterprise teams</a>.</p>
+    <div class="sf">
+      <div class="sf-panels">
+        <div class="sf-panel snapshot">
+          <h3>The Snapshot Diagnostic.</h3>
+          <ul role="list">
+            <li>One workflow or one business area.</li>
+            <li>One to two weeks.</li>
+            <li>Built for owner-led businesses, and for larger companies that want a limited first engagement on one specific problem.</li>
+            <li>Deliverable: a findings map, a quantified opportunity list, and a 90-day fix plan.</li>
+          </ul>
+        </div>
+        <div class="sf-panel full">
+          <h3>The Full Diagnostic.</h3>
+          <ul role="list">
+            <li>The whole operation, or several workflows at once.</li>
+            <li>Three to five weeks, including on-site observation of the real work.</li>
+            <li>Deliverable: everything in the Snapshot at operation scope, plus a sequenced roadmap with an owner and a business case for each initiative, and a measurement baseline for whatever gets fixed next.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sf-caption">Same method, same rigor. The difference is scope.</div>
+    </div>
+    <p class="sf-note">Larger organizations usually start with a Diagnostic scoped to one named problem; see <a href="/enterprise">how BMG works with enterprise teams</a>.</p>
   </div>
 </section>
 
-<section class="section how-it-works">
+<section class="section band-cream">
   <div class="section-inner">
     <h2 class="section-heading">What actually happens</h2>
-    <div class="steps-grid">
-      <div class="step"><div class="step-number">1</div><h3>Frame.</h3><p>Scope agreed in writing. Baseline data requested: org chart, unit-level financials, systems list, samples of real work.</p></div>
-      <div class="step"><div class="step-number">2</div><h3>Observe.</h3><p>We watch the work happen where it happens. The people doing the work usually know where it slows down, gets repeated, or breaks, and we ask them directly.</p></div>
-      <div class="step"><div class="step-number">3</div><h3>Trace.</h3><p>Workflow maps, handoff analysis, ownership mapping, system utilization.</p></div>
-      <div class="step"><div class="step-number">4</div><h3>Quantify.</h3><p>The economic impact of each material finding, assessed against the available data.</p></div>
-      <div class="step"><div class="step-number">5</div><h3>Readout.</h3><p>Findings presented live to leadership, then delivered as a written report you keep.</p></div>
-    </div>
-    <div class="prose" style="margin-top:26px">
+    <ol class="rail" role="list">
+      <li class="rail-stop"><div class="dot" aria-hidden="true">01</div><h3>Frame.</h3><p>Scope agreed in writing. Baseline data requested: org chart, unit-level financials, systems list, samples of real work.</p></li>
+      <li class="rail-stop"><div class="dot" aria-hidden="true">02</div><h3>Observe.</h3><p>We watch the work happen where it happens. The people doing the work usually know where it slows down, gets repeated, or breaks, and we ask them directly.</p></li>
+      <li class="rail-stop"><div class="dot" aria-hidden="true">03</div><h3>Trace.</h3><p>Workflow maps, handoff analysis, ownership mapping, system utilization.</p></li>
+      <li class="rail-stop"><div class="dot" aria-hidden="true">04</div><h3>Quantify.</h3><p>The economic impact of each material finding, assessed against the available data.</p></li>
+      <li class="rail-stop"><div class="dot" aria-hidden="true">05</div><h3>Readout.</h3><p>Findings presented live to leadership, then delivered as a written report you keep.</p></li>
+    </ol>
+    <div class="rail-close">
+      <div class="rc-rule" aria-hidden="true"></div>
       <p>Measurement is defined from the start: baseline, target, method, owner, review cadence. If anything gets fixed afterward, the before-and-after comparison is already in place.</p>
     </div>
   </div>
@@ -956,10 +1086,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section class="cta-section">
-  <h2>Book a Diagnostic conversation</h2>
+  <h2>Start with one problem.</h2>
   <div class="cta-buttons">
-    <a href="/contact" class="cta-primary" style="display:inline-block;">Book a Diagnostic conversation</a>
-    <a href="/how-we-work" class="cta-secondary">Where the Diagnostic sits in the full engagement model</a>
+    <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
+    <a href="/how-we-work" class="d1-arrow">Where the Diagnostic sits in the full engagement model</a>
   </div>
 </section>
 
