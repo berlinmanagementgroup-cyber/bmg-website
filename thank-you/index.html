@@ -25,12 +25,166 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root { --navy-dark: #0F1A30; --navy: #1B2A4A; --navy-light: #2A3F6B; --gold: #C8A951; --gold-light: #D4BA6A; --text-primary: #2D3748; --text-secondary: #4A5568; --text-muted: #718096; --bg-warm: #FAF9F7; --white: #FFFFFF; }
+        :root { --navy-dark: #0F1A30; --navy: #1B2A4A; --navy-light: #2A3F6B; --gold: #C8A951; --gold-light: #D4BA6A; --text-primary: #2D3748; --text-secondary: #4A5568; --text-muted: #718096; --bg-warm: #FAF9F7; --white: #FFFFFF;
+            --gold-dark: #A8893A;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --text: #2D3748;
+            --radius: 8px;
+            --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+            --shadow-md: 0 4px 12px rgba(27,42,74,0.1); }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background-color: var(--navy-dark); min-height: 100vh; display: flex; flex-direction: column; }
-        nav { background: #ffffff; border-bottom: 1px solid rgba(27,42,74,0.08); padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; font-family: 'Merriweather', Georgia, serif; font-size: 1.05rem; font-weight: 900; color: var(--navy); text-decoration: none; letter-spacing: -0.02em; line-height: 1.15; }
-        .nav-cta { display: inline-flex; align-items: center; padding: 0.6rem 1.4rem; background: var(--navy); color: var(--white); font-size: 0.875rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
-        .nav-cta:hover { background: var(--navy-light); }
+        /* Current navigation shell (ported verbatim from contact/index.html) */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(27, 42, 74, 0.05);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .nav-logo-text {
+            font-family: Merriweather, serif;
+            color: var(--navy);
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+
+        .nav-panel {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 24px;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-panel.active { display: flex; }
+
+        .nav-panel a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            transition: background 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-panel a:hover { background: var(--gray-100); color: var(--gold); }
+
+        .nav-panel .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .nav-links .dropdown { position:relative;display:inline-block }
+        .nav-links .dropdown>a { cursor:default }
+        .nav-links .dropdown-menu { display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60 }
+        .nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu { display:block }
+        .nav-links .dropdown-menu a { display:block;padding:9px 18px;white-space:nowrap }
+
+        main { flex: 1; display: flex; flex-direction: column; margin-top: 72px; }
+
+        @media (min-width: 768px) {
+            .nav-logo-text { display: inline; }
+            .hamburger { display: none; }
+            .nav-links { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner { padding: 0 20px; }
+        }
         .thank-you-section { flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; background: linear-gradient(165deg, var(--navy-dark) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
         .thank-you-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(200,169,81,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,81,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
         .thank-you-container { max-width: 640px; width: 100%; text-align: center; position: relative; z-index: 1; }
@@ -101,7 +255,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/blog">Field Notes</a>
     <a href="/about">About</a>
     <a href="/contact" class="nav-cta">Contact</a>
-</div><section class="thank-you-section">
+</div><main id="main">
+    <section class="thank-you-section">
         <div class="thank-you-container">
             <div class="success-icon">
                 <svg viewBox="0 0 24 24"><path class="checkmark-path" d="M5 13l4 4L19 7" /></svg>
@@ -121,6 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </section>
+    </main>
     <footer>
     <div class="footer-inner">
         <div class="footer-content">
@@ -154,5 +310,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </footer>
+<script>
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  var b=document.querySelector('.hamburger');
+  var open=p.classList.toggle('active');
+  b.classList.toggle('active',open);
+  b.setAttribute('aria-expanded',open?'true':'false');
+}
+</script>
 </body>
 </html>
