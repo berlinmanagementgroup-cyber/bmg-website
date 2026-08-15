@@ -80,6 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --gray-100: #F7F8FA;
             --gray-200: #E8ECF1;
             --white: #FFFFFF;
+            --cream: #F9F6EF;
             --text: #2D3748;
             --radius: 8px;
             --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
@@ -857,6 +858,108 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D1 Editorial Operator homepage system (2026-08-15) */
+.hero-rule{width:56px;height:3px;background:var(--gold);margin:0 auto 28px}
+.hero-micro{margin-top:36px;letter-spacing:.18em;font-size:.7rem;font-weight:600;color:var(--gold-light);text-transform:uppercase}
+.hero-micro span{margin:0 .35em}
+.d1-kicker{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:700;color:#8F7433;margin-bottom:12px}
+.d1-lede{max-width:680px;color:var(--slate);margin-bottom:40px}
+.d1-close{margin-top:38px;text-align:center}
+a.d1-arrow{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;display:inline-block;min-height:24px}
+a.d1-arrow:after{content:" \2192";color:var(--gold-dark)}
+a.d1-arrow:hover{color:var(--navy-dark);border-bottom-color:var(--gold-dark)}
+a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+/* Problem ledger */
+.ledger{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;border-top:1px solid var(--gray-200)}
+.ledger-item{display:flex;gap:22px;padding:26px 0;border-bottom:1px solid var(--gray-200)}
+.ledger-item .num{font-family:'Merriweather',serif;font-weight:900;font-size:1.7rem;color:var(--gold-dark);line-height:1.1;min-width:44px;flex-shrink:0}
+.ledger-item h3{font-family:'Merriweather',serif;font-size:1.05em;color:var(--navy);margin-bottom:6px;font-weight:700}
+.ledger-item p{font-size:.95em;color:var(--text);line-height:1.6}
+/* Process rail */
+.band-cream{background:var(--cream)}
+.rail{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:54px 0 8px;gap:18px}
+.rail:before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:var(--gold);opacity:.55}
+.rail-stop{text-align:center;position:relative}
+.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:var(--gold-dark);font-family:'Merriweather',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.rail-stop.filled .dot{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--white);border-color:var(--gold-dark)}
+.rail-stop h3{font-family:'Merriweather',serif;font-size:1em;color:var(--navy);margin-bottom:8px;font-weight:700}
+.rail-stop p{font-size:.88em;color:var(--text);max-width:210px;margin:0 auto;line-height:1.6}
+.rail-note{text-align:center;margin-top:42px}
+.rail-note .big{font-family:'Merriweather',serif;font-weight:700;color:var(--navy);font-size:1.15rem;margin-bottom:16px}
+/* Proof band */
+.proof-band{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);color:var(--white);padding:84px 40px}
+.proof-band .section-heading{color:var(--white);margin-bottom:10px}
+.proof-band .receipts-label{color:var(--gold-light);margin-bottom:48px}
+.receipts{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;max-width:1140px;margin:0 auto}
+.receipt .stat{font-family:'Merriweather',serif;font-weight:900;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.18;color:var(--white);margin-bottom:6px}
+.receipt .stat-rule{width:38px;height:2px;background:var(--gold);margin:16px 0}
+.receipt p{font-size:.92em;color:#C9D2E4;line-height:1.65}
+.proof-band a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.proof-band a:not([class]):visited{color:var(--white)}
+.proof-band a:not([class]):hover{color:var(--gold-light)}
+/* Five-lens strip */
+.lens-strip{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid var(--gray-200);margin-top:6px}
+.lens{border-right:1px solid var(--gray-200);padding:6px 22px 2px}
+.lens .tick{width:18px;height:4px;background:var(--gold);margin-bottom:16px}
+.lens h3{letter-spacing:.14em;font-size:.74rem;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-family:'Inter',sans-serif}
+.lens p{font-size:.87em;color:var(--slate);line-height:1.6}
+.lens.money .tick{width:34px;background:var(--gold-dark)}
+/* Modern tooling */
+.tooling{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start;max-width:1140px;margin:0 auto}
+.tool-list{border-top:2px solid var(--navy)}
+.tool-list .cap{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:14px 0 6px;font-weight:700}
+.tool-list ul{list-style:none;margin:0;padding:0}
+.tool-list li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--gray-200);font-size:.93em;color:var(--text)}
+.tool-list li:before{content:"\2014";color:var(--gold-dark);font-weight:700;flex-shrink:0}
+.fd-block{margin-top:30px;border-left:3px solid var(--gold);padding-left:22px}
+.fd-block p{font-size:.95em;color:var(--slate);line-height:1.7}
+/* Operator */
+.operator{display:grid;grid-template-columns:190px 1fr;gap:52px;align-items:center;max-width:900px;margin:0 auto}
+.portrait{width:190px;border-radius:var(--radius);position:relative;box-shadow:var(--shadow-md);overflow:hidden}
+.portrait img{width:190px;height:238px;object-fit:cover;object-position:50% 18%;display:block;border-radius:var(--radius)}
+.portrait .frame{position:absolute;inset:10px;border:1px solid rgba(200,169,81,.55);border-radius:5px;pointer-events:none}
+/* Footer recomposition */
+footer{color:#B9C2D4}
+.footer-content{grid-template-columns:1.6fr 1fr 1fr}
+.footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
+.footer-head{letter-spacing:.16em;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.footer-links{display:block}
+.footer-links a{display:block;color:#B9C2D4;font-size:.9em;padding:6px 0;line-height:1.5}
+.footer-social a{color:#B9C2D4;display:inline-block;margin-top:18px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);color:#8D99B2}
+.footer-bottom a{color:#8D99B2}
+.footer-bottom span{color:rgba(255,255,255,.25)}
+/* D1 responsive */
+@media (max-width:768px){
+  .hero-micro span.sep{display:none}
+  .hero-micro span.item{display:block;margin:7px 0}
+  .ledger{grid-template-columns:1fr}
+  .rail{grid-template-columns:1fr;gap:0;margin-top:36px}
+  .rail:before{left:25px;right:auto;top:26px;bottom:26px;width:1px;height:auto}
+  .rail-stop{display:flex;text-align:left;gap:20px;padding:14px 0}
+  .rail-stop .dot{margin:0;flex-shrink:0}
+  .rail-stop p{margin:0;max-width:none}
+  .rail-stop h3{margin-top:14px}
+  .proof-band{padding:64px 20px}
+  .receipts{grid-template-columns:1fr;gap:40px}
+  .receipt .stat{font-size:1.9rem}
+  .lens-strip{grid-template-columns:1fr;border-left:none;border-top:1px solid var(--gray-200)}
+  .lens{border-right:none;border-bottom:1px solid var(--gray-200);padding:18px 0}
+  .tooling{grid-template-columns:1fr;gap:40px}
+  .operator{grid-template-columns:1fr;text-align:center}
+  .portrait{margin:0 auto}
+  .footer-content{grid-template-columns:1fr}
+  .footer-links a{padding:12px 0;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.07)}
+  .footer-links a:last-child{border-bottom:none}
+  .ledger-item p,.rail-stop p,.receipt p,.lens p,.tooling p,.fd-block p,.tool-list li{font-size:1em}
+  .proof-band .receipts-label{font-size:1em}
+  .blog-card p{font-size:1em}
+}
+@media (prefers-reduced-motion: reduce){
+  a.d1-arrow,.footer-links a,.proof-band a{transition:none}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -902,74 +1005,120 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="hero">
   <div class="hero-inner">
+    <div class="hero-rule" aria-hidden="true"></div>
     <h1>We find and fix the operating problems costing you time, margin, and capacity.</h1>
     <p>Berlin Management Group delivers operations improvement that stays through implementation. We diagnose where the work breaks down, fix it with your team, and measure what changed.</p>
     <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
     &nbsp; <a href="/operations-diagnostic" class="cta-secondary">See how the Diagnostic works</a>
+    <p class="hero-micro"><span class="item">Fixed scope</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Fixed fee</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Senior-led</span></p>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">Where operating problems show up</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Growth outpaced the operation.</h3><p>Revenue is up, and so are rework, missed dates, and overtime. The business is busier than ever and earning less per job.</p></div>
-      <div class="problem-card"><h3>Work slows down between departments.</h3><p>Estimating to field. Sales to service. Office to accounting. The gaps between teams become queues that nobody owns.</p></div>
-      <div class="problem-card"><h3>Too many decisions still run through the owner.</h3><p>Approvals, exceptions, pricing calls. When every question needs the same person, the business waits.</p></div>
-      <div class="problem-card"><h3>Software you own but do not fully use.</h3><p>Tools bought one problem at a time, with your people filling the gaps between them by hand.</p></div>
-      <div class="problem-card"><h3>Customers wait on internal process.</h3><p>Onboarding, scheduling, invoicing, closeout. The delay is inside the operation, not with the customer.</p></div>
+    <p class="d1-lede">These problems are common, and they are fixable. Most of them are design problems, not effort problems, and they are rarely solved by buying another tool.</p>
+    <div class="ledger">
+      <div class="ledger-item"><span class="num" aria-hidden="true">01</span><div><h3>Growth outpaced the operation.</h3><p>Revenue is up, and so are rework, missed dates, and overtime. The business is busier than ever and earning less per job.</p></div></div>
+      <div class="ledger-item"><span class="num" aria-hidden="true">02</span><div><h3>Work slows down between departments.</h3><p>Estimating to field. Sales to service. Office to accounting. The gaps between teams become queues that nobody owns.</p></div></div>
+      <div class="ledger-item"><span class="num" aria-hidden="true">03</span><div><h3>Too many decisions still run through the owner.</h3><p>Approvals, exceptions, pricing calls. When every question needs the same person, the business waits.</p></div></div>
+      <div class="ledger-item"><span class="num" aria-hidden="true">04</span><div><h3>Software you own but do not fully use.</h3><p>Tools bought one problem at a time, with your people filling the gaps between them by hand.</p></div></div>
+      <div class="ledger-item"><span class="num" aria-hidden="true">05</span><div><h3>Customers wait on internal process.</h3><p>Onboarding, scheduling, invoicing, closeout. The delay is inside the operation, not with the customer.</p></div></div>
     </div>
-    <div class="prose" style="margin-top:26px">
-      <p>These problems are common, and they are fixable. Most of them are design problems, not effort problems, and they are rarely solved by buying another tool.</p>
-      <p><a href="/contact">Recognize one of these? Start the conversation.</a></p>
+    <div class="d1-close">
+      <p><a class="d1-arrow" href="/contact">Recognize one of these? Start the conversation.</a></p>
     </div>
   </div>
 </section>
 
-<section class="section how-it-works">
+<section class="section how-it-works band-cream">
   <div class="section-inner">
     <h2 class="section-heading">Diagnose. Fix. Prove.</h2>
-    <div class="steps-grid">
-      <div class="step"><div class="step-number">1</div><h3>A conversation.</h3><p>Thirty minutes on one operating problem, at no charge. You get a candid read on what the problem likely is and whether BMG is the right fit. If we are not, we say so.</p></div>
-      <div class="step"><div class="step-number">2</div><h3>An Operations Diagnostic.</h3><p>A fixed-fee assessment that finds where the operation is losing time, margin, and capacity, what each finding costs, and what to fix first. The deliverable is built to stand on its own. You can run the plan without us.</p></div>
-      <div class="step"><div class="step-number">3</div><h3>Fix Sprints.</h3><p>Bounded implementation engagements, 30 to 90 days each, one named problem at a time.</p></div>
-      <div class="step"><div class="step-number">4</div><h3>Measurement.</h3><p>Every Fix Sprint starts with a baseline, a target, a measurement method, and an owner. It closes with the agreed measurement wherever clean measurement is possible. Where it is not, we say so before the work begins, not after.</p></div>
+    <div class="rail">
+      <div class="rail-stop"><div class="dot" aria-hidden="true">01</div><h3>An operating problem.</h3><p>You bring one operating problem, named in plain language.</p></div>
+      <div class="rail-stop"><div class="dot" aria-hidden="true">02</div><h3>A conversation.</h3><p>Thirty minutes on one operating problem, at no charge. You get a candid read on what the problem likely is and whether BMG is the right fit. If we are not, we say so.</p></div>
+      <div class="rail-stop"><div class="dot" aria-hidden="true">03</div><h3>An Operations Diagnostic.</h3><p>A fixed-fee assessment that finds where the operation is losing time, margin, and capacity, what each finding costs, and what to fix first. The deliverable is built to stand on its own. You can run the plan without us.</p></div>
+      <div class="rail-stop"><div class="dot" aria-hidden="true">04</div><h3>Fix Sprints.</h3><p>Bounded implementation engagements, 30 to 90 days each, one named problem at a time.</p></div>
+      <div class="rail-stop filled"><div class="dot" aria-hidden="true">05</div><h3>Measurement.</h3><p>Every Fix Sprint starts with a baseline, a target, a measurement method, and an owner. It closes with the agreed measurement wherever clean measurement is possible. Where it is not, we say so before the work begins, not after.</p></div>
     </div>
-    <div class="prose" style="margin-top:26px">
-      <p>Fixed scope. Fixed fee. Priced after the conversation, in writing, before work begins.</p>
-      <p><a href="/how-we-work">See the full engagement model</a></p>
+    <div class="rail-note">
+      <p class="big">Fixed scope. Fixed fee. Priced after the conversation, in writing, before work begins.</p>
+      <p><a class="d1-arrow" href="/how-we-work">See the full engagement model</a></p>
     </div>
+  </div>
+</section>
+
+<section class="proof-band">
+  <div class="section-inner" style="max-width:1140px;margin:0 auto">
+    <h2 class="section-heading">The track record behind the method</h2>
+    <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
+    <div class="receipts">
+      <div class="receipt"><h3 class="stat">Weeks to days.</h3><div class="stat-rule" aria-hidden="true"></div><p>Customer onboarding cut from multiple weeks to about 3 to 4 days as Chief Customer Officer at MyCarrier, by redesigning the workflow with the frontline team.</p></div>
+      <div class="receipt"><h3 class="stat">30 to 40% off monthly operating costs.</h3><div class="stat-rule" aria-hidden="true"></div><p>Led a cost restructuring as COO of Freightclaims.com during a capital-constrained period: vendor renegotiation, tool consolidation, financial controls.</p></div>
+      <div class="receipt"><h3 class="stat">13 offices, one operating model.</h3><div class="stat-rule" aria-hidden="true"></div><p>While at CarrierDirect/Metafora, Brad was part of the consulting team that redesigned the operating model for an anonymized carrier division spanning 13 offices. Ten months after implementation, the division reached 100% of its revenue goal and 118% of its gross-profit goal.</p></div>
+    </div>
+    <div style="margin-top:44px;text-align:center"><p><a href="/about">The full operating record</a></p></div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
-    <h2 class="section-heading">The track record behind the method</h2>
-    <p class="receipts-label" style="text-align:center">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Weeks to days.</h3><p>Customer onboarding cut from multiple weeks to about 3 to 4 days as Chief Customer Officer at MyCarrier, by redesigning the workflow with the frontline team.</p></div>
-      <div class="problem-card"><h3>30 to 40% off monthly operating costs.</h3><p>Led a cost restructuring as COO of Freightclaims.com during a capital-constrained period: vendor renegotiation, tool consolidation, financial controls.</p></div>
-      <div class="problem-card"><h3>13 offices, one operating model.</h3><p>While at CarrierDirect/Metafora, Brad was part of the consulting team that redesigned the operating model for an anonymized carrier division spanning 13 offices. Ten months after implementation, the division reached 100% of its revenue goal and 118% of its gross-profit goal.</p></div>
+    <p class="d1-kicker">The Diagnostic</p>
+    <h2 class="section-heading">Five lenses on one operation</h2>
+    <p class="d1-lede">Most operations advice starts with an answer: a platform, a framework, an AI strategy. We start with a question: where exactly does the work break down, and what is that costing you?</p>
+    <div class="lens-strip">
+      <div class="lens"><div class="tick" aria-hidden="true"></div><h3>Work</h3><p>How it flows, where it waits, where it gets redone.</p></div>
+      <div class="lens"><div class="tick" aria-hidden="true"></div><h3>People</h3><p>Who owns what, and who decides.</p></div>
+      <div class="lens"><div class="tick" aria-hidden="true"></div><h3>Systems</h3><p>What you bought, what you use, and what talks to what.</p></div>
+      <div class="lens"><div class="tick" aria-hidden="true"></div><h3>Management</h3><p>What leadership can see, and how fast problems surface.</p></div>
+      <div class="lens money"><div class="tick" aria-hidden="true"></div><h3>Money</h3><p>The economic impact of each finding, quantified as rigorously as the data supports.</p></div>
     </div>
-    <div class="prose" style="margin-top:22px"><p style="text-align:center"><a href="/about">The full operating record</a></p></div>
+    <div class="d1-close">
+      <p><a class="d1-arrow" href="/operations-diagnostic">See how the Diagnostic works</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section band-cream">
+  <div class="tooling">
+    <div>
+      <p class="d1-kicker">Modern tools</p>
+      <h2 class="section-heading" style="margin-bottom:24px">Operations first. Modern tools where they earn their place.</h2>
+      <p style="color:var(--slate);margin-bottom:16px">The fix might be a redesigned workflow, a clarified owner, a management cadence, or software you already pay for, finally connected. Sometimes it includes automation or AI.</p>
+      <p style="color:var(--slate)">Technology cannot compensate for a poorly designed workflow, so the tool is chosen after the problem is understood, not before. That discipline comes from more than twenty years of operating experience.</p>
+      <div class="fd-block">
+        <p class="d1-kicker" style="margin-bottom:8px">A forward-deployed delivery model</p>
+        <p>BMG works inside the operation with your team to understand the real workflow, determine whether process, existing systems, automation, or AI is the right fix, and carry the change through implementation and measurement.</p>
+      </div>
+    </div>
+    <div class="tool-list">
+      <p class="cap">Where tools earn their place</p>
+      <ul>
+        <li>Integrations between the systems you already own</li>
+        <li>Workflow automation and routing</li>
+        <li>Operational dashboards and reporting</li>
+        <li>AI-assisted intake, classification, and validation</li>
+        <li>Knowledge search across your own documents</li>
+        <li>Controlled agents, always with human approval</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-inner prose">
-    <h2 class="section-heading">Start with the problem, not the tool.</h2>
-    <p>Most operations advice starts with an answer: a platform, a framework, an AI strategy. We start with a question: where exactly does the work break down, and what is that costing you?</p>
-    <p>The Diagnostic examines five things. The <strong>Work</strong>: how it flows, where it waits, where it gets redone. The <strong>People</strong>: who owns what, and who decides. The <strong>Systems</strong>: what you bought, what you use, and what talks to what. The <strong>Management</strong>: what leadership can see, and how fast problems surface. The <strong>Money</strong>: the economic impact of each finding, quantified as rigorously as the data supports.</p>
-    <p>The fix might be a redesigned workflow, a clarified owner, a management cadence, or software you already pay for, finally connected. Sometimes it includes automation or AI. Technology cannot compensate for a poorly designed workflow, so the tool is chosen after the problem is understood, not before. That discipline comes from more than twenty years of operating experience.</p>
-    <p style="margin-top:20px"><a href="/operations-diagnostic" class="cta-primary" style="display:inline-block;">See how the Diagnostic works</a></p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner prose">
-    <h2 class="section-heading">Built on operating experience</h2>
-    <p>Brad Berlin has spent more than twenty years inside operations, including COO and CCO roles across growing and venture-stage businesses and enterprise consulting engagements. BMG exists because many operating problems do not need another executive or another platform. They need someone who has run operations to look at how the work actually moves, and fix it.</p>
-    <p><a href="/about">About Brad</a></p>
+  <div class="operator">
+    <div class="portrait">
+      <picture>
+        <source srcset="/assets/brad-berlin-500.webp" type="image/webp">
+        <img src="/assets/brad-berlin-500.jpg" width="500" height="627" loading="lazy" alt="Brad Berlin, founder of Berlin Management Group">
+      </picture>
+      <div class="frame" aria-hidden="true"></div>
+    </div>
+    <div>
+      <h2 class="section-heading" style="margin-bottom:20px">Built on operating experience</h2>
+      <p style="margin-bottom:16px">Brad Berlin has spent more than twenty years inside operations, including COO and CCO roles across growing and venture-stage businesses and enterprise consulting engagements. BMG exists because many operating problems do not need another executive or another platform. They need someone who has run operations to look at how the work actually moves, and fix it.</p>
+      <p><a href="/about">About Brad</a></p>
+    </div>
   </div>
 </section>
 
@@ -1004,20 +1153,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h3>Berlin Management Group</h3>
                 <p>Operations improvement that stays through implementation. Find the problem. Fix the operation. Measure what changed.</p>
                 <p>Phoenix, AZ</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                        <span style="position:absolute;left:-9999px">LinkedIn</span>
+                    </a>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="/commercial-contractors">Commercial Contractors</a>
-                <a href="/home-services">Home Services</a>
-                <a href="/property-management">Property Management</a>
-                <a href="/operations-consulting-phoenix">Phoenix Operations Consulting</a>
-                <a href="/fractional-coo">Fractional COO</a>
-                <a href="/start-with-the-problem">Start With the Problem</a>
-                <a href="/own-vs-rent">Own the Workflow</a>
+            <div>
+                <p class="footer-head">Who we help</p>
+                <div class="footer-links">
+                    <a href="/commercial-contractors">Commercial Contractors</a>
+                    <a href="/home-services">Home Services</a>
+                    <a href="/property-management">Property Management</a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-                </a>
+            <div>
+                <p class="footer-head">Explore BMG</p>
+                <div class="footer-links">
+                    <a href="/operations-consulting-phoenix">Phoenix Operations Consulting</a>
+                    <a href="/fractional-coo">Fractional COO</a>
+                    <a href="/start-with-the-problem">Start With the Problem</a>
+                    <a href="/own-vs-rent">Own the Workflow</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
