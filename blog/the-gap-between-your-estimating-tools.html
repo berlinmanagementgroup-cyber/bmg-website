@@ -66,216 +66,814 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "keywords": ["construction estimating software", "estimating workflow", "takeoff", "bid leveling", "workflow integration"]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/bmg-icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/bmg-apple-touch-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1B2B4B">
 
 <style>
-  :root {
-    --navy: #1B2A4A;
-    --navy-light: #2C3E6B;
-    --navy-dark: #0F1A30;
-    --gold: #C8A951;
-    --gold-light: #E2CC7E;
-    --gold-dark: #A8893A;
-    --slate: #4A5568;
-    --gray-100: #F7F8FA;
-    --gray-200: #E8ECF1;
-    --gray-300: #CBD2DC;
-    --gray-600: #5A6577;
-    --white: #FFFFFF;
-    --text: #2D3748;
-    --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
-    --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
-    --radius: 8px;
-  }
+        :root {
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --navy-dark: #0F1A30;
+            --gold: #C8A951;
+            --gold-light: #E2CC7E;
+            --gold-dark: #A8893A;
+            --slate: #4A5568;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --white: #FFFFFF;
+            --text: #2D3748;
+            --radius: 8px;
+            --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+            --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+            --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+        }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--white);
-    color: var(--text);
-    line-height: 1.6;
-  }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Navigation */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid var(--gray-200);
-    z-index: 100; height: 72px;
-  }
-  .nav-inner {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px;
-    display: flex; justify-content: space-between; align-items: center; height: 100%;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-square {
-    width: 32px; height: 32px; background: var(--navy); border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--white); font-weight: 700; font-size: 0.9rem;
-  }
-  .nav-logo-text { font-family: Merriweather, serif; color: var(--navy); font-weight: 700; font-size: 0.95rem; }
-  .nav-links { display: flex; align-items: center; gap: 32px; }
-  .nav-links a { color: var(--text); font-weight: 500; font-size: 0.92rem; text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--navy); }
-  .nav-cta {
-    background: var(--navy); color: var(--white) !important; padding: 10px 22px; border-radius: var(--radius);
-    font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--navy-light); }
-  .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; box-sizing: border-box; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
 
-  @media (max-width: 768px) {
-    .nav-inner { padding: 0 20px; }
-    .hamburger { display: flex; }
-    .nav-links {
-      display: none; position: absolute; top: 72px; left: 0; right: 0;
-      background: var(--white); flex-direction: column; gap: 16px; padding: 20px;
-      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-md);
-    }
-    .nav-links.active { display: flex; }
-  }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(27, 42, 74, 0.05);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
 
-  /* Article layout */
-  main { margin-top: 72px; }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-  .article-hero {
-    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
-    padding: 80px 40px 60px; text-align: center; color: var(--white);
-  }
-  .article-hero h1 {
-    font-size: 2.2em; color: var(--white); margin-bottom: 16px;
-    font-family: Merriweather, serif; max-width: 800px; margin-left: auto; margin-right: auto;
-    line-height: 1.3; letter-spacing: -0.3px;
-  }
-  .article-hero .subtitle {
-    font-size: 1.05em; color: rgba(255,255,255,0.75); max-width: 640px;
-    margin: 0 auto 20px; font-style: italic; line-height: 1.5;
-  }
-  .article-hero .meta {
-    font-size: 0.9em; color: rgba(255,255,255,0.5);
-  }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
 
-  .article-container {
-    max-width: 720px; margin: 0 auto; padding: 48px 24px 80px;
-  }
+        .nav-logo-square {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.9em;
+        }
 
-  /* Typography */
-  .article-container p {
-    margin-bottom: 18px; line-height: 1.8; font-size: 1.02em;
-  }
+        .nav-logo-text {
+            font-family: Merriweather, serif;
+            color: var(--navy);
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
 
-  .article-container h2 {
-    font-family: Merriweather, serif; color: var(--navy); font-size: 1.6em;
-    margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--gray-200);
-  }
+        .nav-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
 
-  .article-container h3 {
-    font-family: Merriweather, serif; color: var(--navy); font-size: 1.2em;
-    margin: 32px 0 12px;
-  }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
 
-  .article-container strong { color: var(--navy); }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
 
-  .article-container a {
-    color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px;
-    transition: color 0.2s;
-  }
-  .article-container a:hover { color: var(--gold); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-  /* Stage list */
-  .stage { margin-bottom: 16px; }
-  .stage .label {
-    font-weight: 700; color: var(--navy); font-size: 1.02em;
-  }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white) !important;
+        }
 
-  /* Key-point highlight box */
-  .numbers-box {
-    background: var(--gray-100); border-left: 4px solid var(--gold);
-    border-radius: 0 var(--radius) var(--radius) 0; padding: 24px 28px; margin: 28px 0;
-  }
-  .numbers-box p { margin-bottom: 10px; }
-  .numbers-box p:last-child { margin-bottom: 0; }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
 
-  /* CTA section */
-  .article-cta {
-    background: var(--gray-100); border: 1px solid var(--gray-200);
-    border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center;
-  }
-  .article-cta p { margin-bottom: 16px; color: var(--text); }
-  .article-cta a.cta-button {
-    display: inline-block; background: var(--navy); color: var(--white); padding: 14px 32px;
-    border-radius: var(--radius); font-weight: 600; text-decoration: none;
-    transition: background 0.2s;
-  }
-  .article-cta a.cta-button:hover { background: var(--navy-light); color: var(--white); }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
 
-  /* Author box */
-  .author-box {
-    background: var(--gray-100); border: 1px solid var(--gray-200);
-    border-left: 3px solid var(--navy-dark); border-radius: var(--radius);
-    padding: 24px; margin: 40px 0; display: flex; gap: 20px; align-items: flex-start;
-  }
-  .author-avatar {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--white); font-weight: 700; font-size: 1.4em; flex-shrink: 0;
-  }
-  .author-info h4 { color: var(--navy); font-size: 1.05em; margin-bottom: 2px; }
-  .author-info .role { color: var(--navy-light); font-size: 0.85em; margin-bottom: 8px; }
-  .author-info p { color: var(--slate); font-size: 0.9em; line-height: 1.6; margin-bottom: 0; }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
 
-  /* Sourcing note */
-  .methodology {
-    font-size: 0.85em; color: var(--gray-600); font-style: italic;
-    border-top: 1px solid var(--gray-200); padding-top: 20px; margin-top: 40px;
-    line-height: 1.6;
-  }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-  /* Back to blog */
-  .back-link {
-    display: inline-block; color: var(--gold-dark); font-weight: 600;
-    text-decoration: none; margin-bottom: 32px; transition: color 0.2s;
-  }
-  .back-link:hover { color: var(--gold); }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
 
-  /* Divider */
-  hr { border: none; border-top: 1px solid var(--gray-200); margin: 32px 0; }
+        /* Main Content */
+        main {
+            margin-top: 72px;
+        }
 
-  /* Footer */
-  footer {
-    background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 48px 0 32px; color: rgba(255,255,255,0.4);
-  }
-  .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
-  .footer-content {
-    display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 48px; margin-bottom: 32px;
-  }
-  .footer-brand h3 { font-family: Merriweather, serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; }
-  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9em; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
-    display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;
-  }
-  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-bottom a:hover { color: var(--gold); }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 100px 40px;
+            text-align: center;
+        }
 
-  @media (max-width: 768px) {
-    .article-hero { padding: 60px 20px 40px; }
-    .article-hero h1 { font-size: 1.6em; }
-    .article-container { padding: 32px 20px 60px; }
-    .article-container h2 { font-size: 1.35em; }
-    .author-box { flex-direction: column; align-items: center; text-align: center; }
-    .footer-content { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  }
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 5vw, 3.5em);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            line-height: 1.2;
+            margin-bottom: 50px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Where Operations Can Improve */
+        .automate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .automate-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .automate-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .automate-card .icon {
+            margin: 0 auto 16px;
+        }
+
+        .automate-card .icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--navy);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .automate-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .automate-card p {
+            color: var(--text);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Credentials Section */
+        .credentials-alt {
+            background: var(--gray-100);
+        }
+
+        .credential-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .credential-item h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            font-size: 1em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .credential-item p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .impact-number {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-buttons .cta-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-buttons .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-buttons .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border: 2px solid var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-buttons .cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* Related Blog */
+        .related-blog {
+            background: var(--gray-100);
+            padding: 60px 40px;
+        }
+
+        .related-blog-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-content {
+            padding: 32px;
+        }
+
+        .blog-category {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .blog-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom span {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Navigation Panel */
+        .nav-panel {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 24px;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-panel.active {
+            display: flex;
+        }
+
+        .nav-panel a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            transition: background 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-panel a:hover {
+            background: var(--gray-100);
+            color: var(--gold);
+        }
+
+        .nav-panel .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-logo-text {
+                display: inline;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 8px 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons button,
+            .cta-buttons a {
+                width: 100%;
+            }
+
+            .problem-grid,
+            .automate-grid,
+            .steps-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+/* Relaunch additions */
+.nav-links .dropdown{position:relative;display:inline-block}
+.nav-links .dropdown>a{cursor:default}
+.nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
+.nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
+.nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
+.receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
+.prose{max-width:800px;margin:0 auto}
+.prose p{margin-bottom:1.1em;line-height:1.7}
+.prose ul{margin:0 0 1.1em 1.2em;line-height:1.7}
+.prose li{margin-bottom:.55em}
+.prose h3{margin:1.4em 0 .5em;color:#1B2B4B}
+.eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#C6993E;font-weight:700;margin-bottom:10px}
+.note-label{font-style:italic;color:#5a6478;font-size:.95rem;border-top:1px solid #e4e7ee;margin-top:34px;padding-top:16px}
+.wp-sources{font-size:.9rem;color:#5a6478;line-height:1.65;border-top:1px solid #e4e7ee;margin-top:30px;padding-top:18px}
+.form-grid{max-width:640px;margin:0 auto;display:grid;gap:16px}
+.form-grid label{font-weight:600;color:#1B2B4B;display:block;margin-bottom:6px}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:12px;border:1px solid #cdd3df;border-radius:8px;font:inherit}
+.form-grid textarea{min-height:120px}
+.byline{color:#5a6478;font-size:.95rem;margin-bottom:8px}
+
+/* Traffic-readiness polish (2026-08-14): branded content links + contact form finish */
+main a:not([class]){color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease}
+main a:not([class]):visited{color:var(--navy)}
+main a:not([class]):hover{color:var(--navy-dark);text-decoration-thickness:2.5px;text-decoration-color:var(--gold-dark)}
+main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.hero a:not([class]),.cta-section a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.hero a:not([class]):visited,.cta-section a:not([class]):visited{color:var(--white)}
+.hero a:not([class]):hover,.cta-section a:not([class]):hover{color:var(--gold-light)}
+.form-grid input,.form-grid select,.form-grid textarea{min-height:48px;padding:12px 14px;border:1px solid #cdd3df;border-radius:var(--radius);font:inherit;font-size:1em;color:var(--text);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease}
+.form-grid textarea{min-height:140px;resize:vertical}
+.form-grid select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B2A4A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,.28)}
+.form-grid .cta-primary{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--white);padding:15px 40px;min-height:48px;border:none;border-radius:var(--radius);font:inherit;font-size:1em;font-weight:600;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.form-grid .cta-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.form-grid .cta-primary:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+.form-grid .cta-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+@media (max-width:640px){.form-grid .cta-primary{width:100%}}
+
+/* Field Note editorial H2 hierarchy (P-BMG-LEGACY-MIGRATION-03 correction) */
+.prose h2 {
+    font-family: 'Merriweather', serif;
+    color: var(--navy);
+    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    line-height: 1.3;
+    margin: 2.25rem 0 0.75rem;
+    font-weight: 700;
+}
+
+.prose hr {
+    border: 0;
+    border-top: 1px solid var(--gray-200);
+    margin: 2.5rem 0;
+}
 </style>
 </head>
 <body>
@@ -283,8 +881,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<!-- Navigation -->
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 <nav>
     <div class="nav-inner">
@@ -319,105 +915,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/blog">Field Notes</a>
     <a href="/about">About</a>
     <a href="/contact" class="nav-cta">Contact</a>
-</div><main>
+</div>
+<main id="main">
 
-  <!-- Article Hero -->
-  <div class="article-hero">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Field Notes &middot; Estimating</div>
     <h1>You Bought Togal and Building Connected. The Gap Between Them Is Still Manual.</h1>
-    <p class="subtitle">The tools are good. They each do their stage of the bid well. The friction you still feel lives in the hand-offs between them, and your estimator is standing in every one.</p>
-    <p class="meta">Brad Berlin &nbsp;|&nbsp; May 2026 &nbsp;|&nbsp; Estimating</p>
+    <p>The tools are good. They each do their stage of the bid well. The friction you still feel lives in the hand-offs between them, and your estimator is standing in every one.</p>
+    <p class="byline" style="color:#dfe4ee">By Brad Berlin &middot; May 2026</p>
   </div>
+</section>
 
-  <!-- Article Body -->
-  <div class="article-container">
+<section class="section">
+  <div class="section-inner prose">
+      <p><a href="/blog">← Back to all posts</a></p>
 
-    <a href="/blog" class="back-link">&larr; Back to all posts</a>
-
-    <p>A commercial contractor invests in good software. Takeoff software like Togal AI to measure quantities off the drawings. Building Connected to package bids and get them out to subcontractors. Real tools, real money, and the expectation that estimating will get easier.</p>
-
-    <p>Then it does not, or not as much as expected. Bids still go out rushed. The estimating team still feels behind. The instinct at that point is one of two things: the tools are not being used fully, or the shop needs another tool. In my experience, it is often neither. I have written before about <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a bid actually go</a>, and this is the closest look at one of them.</p>
-
-    <h2>Good tools, bought one stage at a time</h2>
-
-    <p>Start by being fair to the software. Togal measures quantities off a set of drawings far faster than anyone dragging a scale across a sheet. Building Connected gets bid packages to a subcontractor list and tracks who was invited and who responded. Neither tool is the problem, and nothing in this article is a complaint about either one.</p>
-
-    <p>But notice what each one is. It is a tool for one stage of the bid. You bought a takeoff capability and a bid-distribution capability. A bid, though, is not a set of separate stages. It is a continuous flow from invitation to a submitted number, and you did not buy the flow. You bought strong points along it.</p>
-
-    <h2>Where the workflow breaks between the tools</h2>
-
-    <p>The friction is not inside Togal and it is not inside Building Connected. It is in the hand-offs between them and the stages around them. Three seams are worth checking on any bid.</p>
-
-    <div class="stage"><p><span class="label">From the takeoff to the abstract sheet.</span> Togal hands you quantities. The abstract sheet is a hand-built Excel workbook organized by CSI division, and that structure is yours, not Togal's. Getting the quantities from one into the other is a person exporting, reformatting, mapping Togal's organization onto the workbook's, and pasting. The takeoff got fast. The step immediately after the takeoff did not.</p></div>
-
-    <div class="stage"><p><span class="label">From the returned quotes to leveling.</span> Building Connected tracks the invitations and the responses. The responses themselves arrive however the subs send them, as PDFs and emails and attachments, each in its own shape, each describing inclusions and exclusions in its own way. To level them you pull them out of the platform and out of the inbox and rebuild them into one comparison by hand. The platform tracked who answered. It did not normalize what they said.</p></div>
-
-    <div class="stage"><p><span class="label">The abstract sheet as the hub.</span> Numbers arrive in the abstract sheet from the takeoff and from leveling, and the workbook itself moves around as emailed versions. Nothing is connected live. Every update is a manual entry, and every manual entry is a place a stale number can hide.</p></div>
-
-    <h2>The seams are where the invisible labor lives</h2>
-
-    <p>Each seam, on its own, is small. One export. One reformat. One paste. One check of which version is current. But there are several of them, on every bid, and the work compounds across a week and a bid list.</p>
-
-    <p>It is also invisible. Togal's screen shows the takeoff finished. Building Connected's screen shows the quotes are in. Neither screen shows the hours an estimator spent carrying data from the first tool to the workbook, or from the inbox to the leveling sheet. No tool you bought reports the cost of the gaps between the tools you bought. That is why this friction is so hard to name. It is easy to see the tools working. It is much harder to see the seams.</p>
-
-    <h2>Your estimator is the integration layer</h2>
-
-    <p>Because nothing connects the tools, a person does. The estimator becomes the courier and the translator, carrying the takeoff into the workbook, carrying the quotes into the leveling sheet, keeping the versions straight. The estimator you hired for judgment spends a real share of the week as connective tissue between systems.</p>
-
-    <p>The tools did not cause that. They simply do not include it. Each was scoped, correctly, to its own stage, and the work of joining the stages was never part of what you purchased.</p>
-
-    <h2>Why the next purchase does not close the gap</h2>
-
-    <p>When the friction persists, the reflex is to look for another tool. But the seam is not a missing tool. It is inherent to point tools. No takeoff product can know the shape of your particular abstract sheet. No bid-distribution platform can know how your shop levels quotes. A tool scoped to one stage cannot, by design, own the hand-off to the next one.</p>
-
-    <p>So a third tool adds a third stage and two more seams. The gap does not close by buying. It closes by implementing.</p>
-
-    <h2>What implementing the workflow actually means</h2>
-
-    <p>Buying software gives you a capability at a stage. Implementing the workflow means making the stages connect, so the output of one arrives at the next in a form the next can use, without a person translating it in between.</p>
-
-    <p>Concretely, that means the takeoff quantities land in the abstract sheet in your structure without a re-key. It means incoming sub quotes get organized into one comparable shape so leveling can start on them instead of starting with assembly. It means the current version of the workbook is never in question. That connective tissue is exactly what a contractor who bought the software has not yet bought. It is not another subscription. It is the workflow built around the tools you already own.</p>
-
-    <h2>What this does not change</h2>
-
-    <p>Closing the seams moves the courier work off the estimator. It does not touch the estimating. Scope interpretation, the leveling judgment, the go or no-go call, the final number, all of that stays with the estimator, and should. The goal of connecting the tools is not to remove the estimator from the bid. It is to stop the estimator from spending the bid as a courier between tools.</p>
-
-    <div class="numbers-box">
+      <p>A commercial contractor invests in good software. Takeoff software like Togal AI to measure quantities off the drawings. Building Connected to package bids and get them out to subcontractors. Real tools, real money, and the expectation that estimating will get easier.</p>
+      <p>Then it does not, or not as much as expected. Bids still go out rushed. The estimating team still feels behind. The instinct at that point is one of two things: the tools are not being used fully, or the shop needs another tool. In my experience, it is often neither. I have written before about <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a bid actually go</a>, and this is the closest look at one of them.</p>
+      <h2>Good tools, bought one stage at a time</h2>
+      <p>Start by being fair to the software. Togal measures quantities off a set of drawings far faster than anyone dragging a scale across a sheet. Building Connected gets bid packages to a subcontractor list and tracks who was invited and who responded. Neither tool is the problem, and nothing in this article is a complaint about either one.</p>
+      <p>But notice what each one is. It is a tool for one stage of the bid. You bought a takeoff capability and a bid-distribution capability. A bid, though, is not a set of separate stages. It is a continuous flow from invitation to a submitted number, and you did not buy the flow. You bought strong points along it.</p>
+      <h2>Where the workflow breaks between the tools</h2>
+      <p>The friction is not inside Togal and it is not inside Building Connected. It is in the hand-offs between them and the stages around them. Three seams are worth checking on any bid.</p>
+      <p><strong>From the takeoff to the abstract sheet.</strong> Togal hands you quantities. The abstract sheet is a hand-built Excel workbook organized by CSI division, and that structure is yours, not Togal's. Getting the quantities from one into the other is a person exporting, reformatting, mapping Togal's organization onto the workbook's, and pasting. The takeoff got fast. The step immediately after the takeoff did not.</p>
+      <p><strong>From the returned quotes to leveling.</strong> Building Connected tracks the invitations and the responses. The responses themselves arrive however the subs send them, as PDFs and emails and attachments, each in its own shape, each describing inclusions and exclusions in its own way. To level them you pull them out of the platform and out of the inbox and rebuild them into one comparison by hand. The platform tracked who answered. It did not normalize what they said.</p>
+      <p><strong>The abstract sheet as the hub.</strong> Numbers arrive in the abstract sheet from the takeoff and from leveling, and the workbook itself moves around as emailed versions. Nothing is connected live. Every update is a manual entry, and every manual entry is a place a stale number can hide.</p>
+      <h2>The seams are where the invisible labor lives</h2>
+      <p>Each seam, on its own, is small. One export. One reformat. One paste. One check of which version is current. But there are several of them, on every bid, and the work compounds across a week and a bid list.</p>
+      <p>It is also invisible. Togal's screen shows the takeoff finished. Building Connected's screen shows the quotes are in. Neither screen shows the hours an estimator spent carrying data from the first tool to the workbook, or from the inbox to the leveling sheet. No tool you bought reports the cost of the gaps between the tools you bought. That is why this friction is so hard to name. It is easy to see the tools working. It is much harder to see the seams.</p>
+      <h2>Your estimator is the integration layer</h2>
+      <p>Because nothing connects the tools, a person does. The estimator becomes the courier and the translator, carrying the takeoff into the workbook, carrying the quotes into the leveling sheet, keeping the versions straight. The estimator you hired for judgment spends a real share of the week as connective tissue between systems.</p>
+      <p>The tools did not cause that. They simply do not include it. Each was scoped, correctly, to its own stage, and the work of joining the stages was never part of what you purchased.</p>
+      <h2>Why the next purchase does not close the gap</h2>
+      <p>When the friction persists, the reflex is to look for another tool. But the seam is not a missing tool. It is inherent to point tools. No takeoff product can know the shape of your particular abstract sheet. No bid-distribution platform can know how your shop levels quotes. A tool scoped to one stage cannot, by design, own the hand-off to the next one.</p>
+      <p>So a third tool adds a third stage and two more seams. The gap does not close by buying. It closes by implementing.</p>
+      <h2>What implementing the workflow actually means</h2>
+      <p>Buying software gives you a capability at a stage. Implementing the workflow means making the stages connect, so the output of one arrives at the next in a form the next can use, without a person translating it in between.</p>
+      <p>Concretely, that means the takeoff quantities land in the abstract sheet in your structure without a re-key. It means incoming sub quotes get organized into one comparable shape so leveling can start on them instead of starting with assembly. It means the current version of the workbook is never in question. That connective tissue is exactly what a contractor who bought the software has not yet bought. It is not another subscription. It is the workflow built around the tools you already own.</p>
+      <h2>What this does not change</h2>
+      <p>Closing the seams moves the courier work off the estimator. It does not touch the estimating. Scope interpretation, the leveling judgment, the go or no-go call, the final number, all of that stays with the estimator, and should. The goal of connecting the tools is not to remove the estimator from the bid. It is to stop the estimator from spending the bid as a courier between tools.</p>
       <p><strong>The point in one line.</strong> The tools are not the problem, and a fourth tool is not the answer. Togal and Building Connected each do their stage well. The friction lives in the hand-offs between them, and it closes when the workflow is implemented around the tools you already own.</p>
-    </div>
+      <h2>Buying the tools was the right move. It was just the first one.</h2>
+      <p>You were right to buy good software. Hand takeoff and untracked bid lists are real problems, and these tools solve them. The mistake is expecting the purchase, by itself, to have closed the workflow.</p>
+      <p>The tools are the pieces. The workflow is what makes the pieces a system. Until that connective work is done, the system is a person, and that person is your estimator.</p>
+      <hr></hr>
 
-    <h2>Buying the tools was the right move. It was just the first one.</h2>
-
-    <p>You were right to buy good software. Hand takeoff and untracked bid lists are real problems, and these tools solve them. The mistake is expecting the purchase, by itself, to have closed the workflow.</p>
-
-    <p>The tools are the pieces. The workflow is what makes the pieces a system. Until that connective work is done, the system is a person, and that person is your estimator.</p>
-
-    <hr>
-
-    <!-- CTA -->
-    <div class="article-cta">
-      <h3>Start with the operating problem</h3>
-      <p>Berlin Management Group is an operator-led operations improvement firm. BMG finds and fixes the operating problems costing businesses time, margin, and capacity.</p>
-      <a href="/contact" class="cta-button">Talk through an operating problem</a>
-    </div>
-
-    <!-- Author Box -->
-    <div class="author-box">
-      <div class="author-avatar">BB</div>
-      <div class="author-info">
-        <h4>Brad Berlin</h4>
-        <p class="role">Founder, Berlin Management Group &nbsp;|&nbsp; Phoenix, AZ</p>
+      <p class="note-label">Field notes describe how we think about operating problems. They are not client case studies.</p>
+      <div class="wp-sources">
+        <p><strong>Brad Berlin</strong><br>Founder, Berlin Management Group  |  Phoenix, AZ</p>
         <p>Brad Berlin is an operations executive with more than twenty years building, repairing, and scaling operations across venture-stage, growth, and enterprise environments. He is the founder of Berlin Management Group.</p>
+        <p>A note on sourcing: this article draws on first-hand discovery work observing how a Phoenix commercial general contractor runs its estimating process, alongside general commercial estimating practice. It describes a workflow pattern, not a client case study, and every observation here is generalized. Togal and Building Connected are referenced as widely used tools, not as clients or partners, and no company, project, or figure in this article identifies a specific business.</p>
       </div>
-    </div>
-
-    <!-- Sourcing Note -->
-    <p class="methodology">Field notes describe how we think about operating problems. They are not client case studies.</p>
-    <p class="methodology">A note on sourcing: this article draws on first-hand discovery work observing how a Phoenix commercial general contractor runs its estimating process, alongside general commercial estimating practice. It describes a workflow pattern, not a client case study, and every observation here is generalized. Togal and Building Connected are referenced as widely used tools, not as clients or partners, and no company, project, or figure in this article identifies a specific business.</p>
-
   </div>
-</main>
+</section>
 
-<!-- Footer -->
+<section class="cta-section">
+  <h2>Start with the operating problem</h2>
+  <p>Berlin Management Group is an operator-led operations improvement firm. BMG finds and fixes the operating problems costing businesses time, margin, and capacity.</p>
+  <div class="cta-buttons">
+    <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
+  </div>
+</section>
+
+</main>
 <footer>
     <div class="footer-inner">
         <div class="footer-content">
@@ -451,44 +1012,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </footer>
-
 <script>
-function toggleMobileNav() {
-  var menu = document.getElementById('mobileNav');
-  var btn = document.querySelector('.hamburger');
-  if (!menu) return;
-  var open = !menu.classList.contains('active');
-  menu.classList.toggle('active', open);
-  if (btn) {
-    btn.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  if (open) {
-    var first = menu.querySelector('a');
-    if (first) { setTimeout(function () { try { first.focus(); } catch (e) {} }, 0); }
-  }
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  var b=document.querySelector('.hamburger');
+  var open=p.classList.toggle('active');
+  b.classList.toggle('active',open);
+  b.setAttribute('aria-expanded',open?'true':'false');
 }
-
-document.querySelectorAll('#mobileNav a').forEach(function (link) {
-  link.addEventListener('click', function () {
-    var menu = document.getElementById('mobileNav');
-    if (menu) menu.classList.remove('active');
-    var btn = document.querySelector('.hamburger');
-    if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
-  });
-});
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' || e.keyCode === 27) {
-    var menu = document.getElementById('mobileNav');
-    if (menu && menu.classList.contains('active')) {
-      menu.classList.remove('active');
-      var btn = document.querySelector('.hamburger');
-      if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); try { btn.focus(); } catch (err) {} }
-    }
-  }
-});
 </script>
-
 </body>
 </html>

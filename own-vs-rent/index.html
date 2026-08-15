@@ -19,6 +19,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Own the Workflow Before You Add Another Subscription | BMG</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/bmg-icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/bmg-apple-touch-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1B2B4B">
 <meta name="description" content="A practical look at when software subscriptions help, when they create more work, and why the workflow should be clear before another tool is added.">
 <meta name="keywords" content="operating model, workflow ownership, software implementation, systems integration, construction operations, Phoenix operations advisory">
 <meta name="author" content="Brad Berlin, Berlin Management Group">
@@ -40,9 +46,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="https://berlinmanagementgroup.ai/brad-berlin.jpg">
 
 <!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/bmg-icon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/bmg-apple-touch-180.png">
 
 <!-- JSON-LD WebPage -->
 <script type="application/ld+json">
@@ -72,125 +75,799 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --navy: #1B2A4A;
-  --navy-light: #2C3E6B;
-  --navy-dark: #0F1A30;
-  --gold: #C8A951;
-  --gold-light: #E2CC7E;
-  --gold-dark: #A8893A;
-  --slate: #4A5568;
-  --gray-100: #F7F8FA;
-  --gray-200: #E8ECF1;
-  --white: #FFFFFF;
-  --text: #2D3748;
-  --radius: 8px;
-  --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
-  --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
-  --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+        :root {
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --navy-dark: #0F1A30;
+            --gold: #C8A951;
+            --gold-light: #E2CC7E;
+            --gold-dark: #A8893A;
+            --slate: #4A5568;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --white: #FFFFFF;
+            --text: #2D3748;
+            --radius: 8px;
+            --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+            --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+            --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+        }
 
-.skip-link { position: absolute; left: -9999px; top: 0; background: var(--navy); color: var(--white); padding: 8px 16px; z-index: 9999; }
-.skip-link:focus { left: 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: #ffffff; border-bottom: 1px solid rgba(27,42,74,0.05); z-index: 1000; box-shadow: var(--shadow-sm); }
-.nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo-text { font-family: Merriweather, serif; color: var(--navy); font-weight: 900; font-size: 1.05rem; line-height: 1.15; letter-spacing: -0.02em; }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--text); font-size: 0.9em; transition: color 0.3s ease; }
-.nav-links a:hover { color: var(--gold); }
-.nav-cta { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--white) !important; padding: 10px 20px; border-radius: var(--radius); font-weight: 500; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--white) !important; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-main { margin-top: 72px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
 
-.hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); color: var(--white); padding: 100px 40px; text-align: center; }
-.hero-inner { max-width: 960px; margin: 0 auto; }
-.hero-badge { display: inline-block; padding: 6px 14px; border: 1px solid rgba(200,169,81,0.4); border-radius: 999px; color: var(--gold-light); font-size: 0.8em; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px; }
-.hero h1 { font-family: 'Merriweather', serif; font-size: clamp(2em, 5vw, 3.2em); line-height: 1.2; margin-bottom: 22px; font-weight: 700; }
-.hero p.lede { font-size: 1.15em; margin-bottom: 36px; color: rgba(255,255,255,0.92); max-width: 780px; margin-left: auto; margin-right: auto; }
-.cta-primary { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--white); padding: 16px 40px; border-radius: var(--radius); text-decoration: none; font-weight: 600; font-size: 1em; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.cta-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(27, 42, 74, 0.05);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
 
-.section { padding: 80px 40px; }
-.section-inner { max-width: 1140px; margin: 0 auto; }
-.section-heading { font-family: 'Merriweather', serif; font-size: clamp(1.8em, 4vw, 2.4em); line-height: 1.2; margin-bottom: 16px; color: var(--navy); font-weight: 700; }
-.section-sub { color: var(--slate); max-width: 800px; margin-bottom: 50px; }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-.problem-card { background: var(--gray-100); padding: 28px; border-radius: var(--radius); border-left: 4px solid var(--gold); }
-.problem-card h3 { font-family: 'Merriweather', serif; font-size: 1.15em; margin-bottom: 10px; color: var(--navy); font-weight: 700; }
-.problem-card p { color: var(--text); font-size: 0.95em; }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
 
-.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.compare-card { padding: 32px; border-radius: var(--radius); }
-.compare-rent { background: var(--gray-100); border-top: 4px solid #b22222; }
-.compare-own { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); border-top: 4px solid var(--gold); }
-.compare-card h3 { font-family: 'Merriweather', serif; font-size: 1.3em; margin-bottom: 18px; font-weight: 700; }
-.compare-rent h3 { color: var(--navy); }
-.compare-own h3 { color: var(--gold-light); }
-.compare-card ul { list-style: none; padding: 0; }
-.compare-card li { padding: 10px 0; padding-left: 24px; position: relative; font-size: 0.95em; line-height: 1.5; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.compare-own li { border-bottom: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.92); }
-.compare-card li:last-child { border-bottom: none; }
-.compare-rent li::before { content: '\2717'; position: absolute; left: 0; color: #b22222; font-weight: 700; }
-.compare-own li::before { content: '\2713'; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }
+        .nav-logo-square {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.9em;
+        }
 
-.example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.example-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); }
-.example-card h4 { font-family: 'Merriweather', serif; font-size: 1.05em; margin-bottom: 8px; color: var(--navy); font-weight: 700; }
-.example-card p { color: var(--text); font-size: 0.92em; }
+        .nav-logo-text {
+            font-family: Merriweather, serif;
+            color: var(--navy);
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
 
-.why-bmg { background: var(--gray-100); }
-.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.why-card { background: var(--white); padding: 28px; border-radius: var(--radius); border-left: 4px solid var(--gold); }
-.why-card h3 { font-family: 'Merriweather', serif; font-size: 1.05em; margin-bottom: 8px; color: var(--navy); font-weight: 700; }
-.why-card p { color: var(--text); font-size: 0.92em; }
+        .nav-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
 
-.cta-section { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); color: var(--white); padding: 80px 40px; text-align: center; }
-.cta-section h2 { font-family: 'Merriweather', serif; font-size: clamp(1.8em, 4vw, 2.6em); margin-bottom: 18px; font-weight: 700; }
-.cta-section p { font-size: 1.05em; margin-bottom: 36px; color: rgba(255,255,255,0.9); max-width: 640px; margin-left: auto; margin-right: auto; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
 
-footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 60px 40px 30px; }
-.footer-inner { max-width: 1140px; margin: 0 auto; }
-.footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 32px; }
-.footer-brand h3 { font-family: 'Merriweather', serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; font-weight: 700; }
-.footer-brand p { font-size: 0.9em; line-height: 1.6; }
-.footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
-.footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9em; transition: color 0.3s ease; }
-.footer-links a:hover { color: var(--gold); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85em; flex-wrap: wrap; gap: 16px; }
-.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
-.footer-bottom a:hover { color: var(--gold); }
-.footer-bottom span { color: rgba(255,255,255,0.2); }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
 
-@media (max-width: 768px) {
-  .nav-inner { padding: 0 20px; }
-  .nav-links { gap: 16px; }
-  .nav-links a:not(.nav-cta) { display: none; }
-  .hero { padding: 60px 20px; }
-  .section { padding: 50px 20px; }
-  .cta-section { padding: 60px 20px; }
-  .compare-grid { grid-template-columns: 1fr; }
-  .footer-content { grid-template-columns: 1fr; gap: 32px; }
-}
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 72px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 5vw, 3.5em);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            line-height: 1.2;
+            margin-bottom: 50px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Where Operations Can Improve */
+        .automate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .automate-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .automate-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .automate-card .icon {
+            margin: 0 auto 16px;
+        }
+
+        .automate-card .icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--navy);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .automate-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .automate-card p {
+            color: var(--text);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Credentials Section */
+        .credentials-alt {
+            background: var(--gray-100);
+        }
+
+        .credential-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .credential-item h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            font-size: 1em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .credential-item p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .impact-number {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-buttons .cta-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-buttons .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-buttons .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border: 2px solid var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-buttons .cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* Related Blog */
+        .related-blog {
+            background: var(--gray-100);
+            padding: 60px 40px;
+        }
+
+        .related-blog-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-content {
+            padding: 32px;
+        }
+
+        .blog-category {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .blog-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom span {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Navigation Panel */
+        .nav-panel {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 24px;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-panel.active {
+            display: flex;
+        }
+
+        .nav-panel a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            transition: background 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-panel a:hover {
+            background: var(--gray-100);
+            color: var(--gold);
+        }
+
+        .nav-panel .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-logo-text {
+                display: inline;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 8px 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons button,
+            .cta-buttons a {
+                width: 100%;
+            }
+
+            .problem-grid,
+            .automate-grid,
+            .steps-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+/* Relaunch additions */
+.nav-links .dropdown{position:relative;display:inline-block}
+.nav-links .dropdown>a{cursor:default}
+.nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
+.nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
+.nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
+.receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
+.prose{max-width:800px;margin:0 auto}
+.prose p{margin-bottom:1.1em;line-height:1.7}
+.prose ul{margin:0 0 1.1em 1.2em;line-height:1.7}
+.prose li{margin-bottom:.55em}
+.prose h3{margin:1.4em 0 .5em;color:#1B2B4B}
+.eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#C6993E;font-weight:700;margin-bottom:10px}
+.note-label{font-style:italic;color:#5a6478;font-size:.95rem;border-top:1px solid #e4e7ee;margin-top:34px;padding-top:16px}
+.wp-sources{font-size:.9rem;color:#5a6478;line-height:1.65;border-top:1px solid #e4e7ee;margin-top:30px;padding-top:18px}
+.form-grid{max-width:640px;margin:0 auto;display:grid;gap:16px}
+.form-grid label{font-weight:600;color:#1B2B4B;display:block;margin-bottom:6px}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:12px;border:1px solid #cdd3df;border-radius:8px;font:inherit}
+.form-grid textarea{min-height:120px}
+.byline{color:#5a6478;font-size:.95rem;margin-bottom:8px}
+
+/* Traffic-readiness polish (2026-08-14): branded content links + contact form finish */
+main a:not([class]){color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease}
+main a:not([class]):visited{color:var(--navy)}
+main a:not([class]):hover{color:var(--navy-dark);text-decoration-thickness:2.5px;text-decoration-color:var(--gold-dark)}
+main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.hero a:not([class]),.cta-section a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.hero a:not([class]):visited,.cta-section a:not([class]):visited{color:var(--white)}
+.hero a:not([class]):hover,.cta-section a:not([class]):hover{color:var(--gold-light)}
+.form-grid input,.form-grid select,.form-grid textarea{min-height:48px;padding:12px 14px;border:1px solid #cdd3df;border-radius:var(--radius);font:inherit;font-size:1em;color:var(--text);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease}
+.form-grid textarea{min-height:140px;resize:vertical}
+.form-grid select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B2A4A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,.28)}
+.form-grid .cta-primary{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--white);padding:15px 40px;min-height:48px;border:none;border-radius:var(--radius);font:inherit;font-size:1em;font-weight:600;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.form-grid .cta-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.form-grid .cta-primary:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+.form-grid .cta-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+@media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
-height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
-
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 <nav>
     <div class="nav-inner">
@@ -225,21 +902,22 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
     <a href="/blog">Field Notes</a>
     <a href="/about">About</a>
     <a href="/contact" class="nav-cta">Contact</a>
-</div><main id="main-content">
+</div>
+<main id="main">
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-badge">For construction and project-driven operators</span>
+    <div class="eyebrow">For construction and project-driven operators</div>
     <h1>Own the workflow before you add another subscription</h1>
-    <p class="lede">Most businesses will continue to use subscription software. The advantage comes from owning the workflow, process decisions, data standards, integrations, and management practices around those systems.</p>
+    <p>Most businesses will continue to use subscription software. The advantage comes from owning the workflow, process decisions, data standards, integrations, and management practices around those systems.</p>
     <a class="cta-primary" href="/contact">Talk through an operating problem</a>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
-    <h2 class="section-heading">When the software stack becomes the problem</h2>
-    <p class="section-sub">Most project-driven businesses already use several platforms. The pain is what happens between the logins.</p>
+    <h2 class="section-heading" style="margin-bottom:16px">When the software stack becomes the problem</h2>
+    <p style="max-width:800px;margin-bottom:40px">Most project-driven businesses already use several platforms. The pain is what happens between the logins.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <h3>SaaS sprawl</h3>
@@ -271,102 +949,90 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 
 <section class="section" style="background: var(--gray-100);">
   <div class="section-inner">
-    <h2 class="section-heading">What you subscribe to vs. what you should own</h2>
-    <p class="section-sub">Subscription software is normal and usually the right call. The question is what stays yours regardless of which vendor you use.</p>
-    <div class="compare-grid">
-      <div class="compare-card compare-rent">
-        <h3>Reasonable to subscribe to</h3>
-        <ul>
-          <li>Accounting, project management, estimating, and field platforms</li>
-          <li>Hosting, security, and platform maintenance</li>
-          <li>Feature development and vendor support</li>
-          <li>Standard functionality most businesses need</li>
-          <li>Upgrades you do not want to build or maintain</li>
-          <li>Tools your team already knows how to use</li>
-        </ul>
-      </div>
-      <div class="compare-card compare-own">
-        <h3>Worth owning yourself</h3>
-        <ul>
-          <li>The workflow and how work actually moves</li>
-          <li>Process decisions and who owns each step</li>
-          <li>Data definitions and reporting standards</li>
-          <li>Intentional integrations between systems</li>
-          <li>Business knowledge held outside one person or vendor</li>
-          <li>Integration or custom automation only where a real operating gap remains</li>
-        </ul>
-      </div>
-    </div>
+    <h2 class="section-heading" style="margin-bottom:16px">What you subscribe to vs. what you should own</h2>
+    <p style="max-width:800px;margin-bottom:40px">Subscription software is normal and usually the right call. The question is what stays yours regardless of which vendor you use.</p>
+  </div>
+  <div class="section-inner prose">
+      <h3>Reasonable to subscribe to</h3>
+      <ul>
+        <li>Accounting, project management, estimating, and field platforms</li>
+        <li>Hosting, security, and platform maintenance</li>
+        <li>Feature development and vendor support</li>
+        <li>Standard functionality most businesses need</li>
+        <li>Upgrades you do not want to build or maintain</li>
+        <li>Tools your team already knows how to use</li>
+      </ul>
+      <h3>Worth owning yourself</h3>
+      <ul>
+        <li>The workflow and how work actually moves</li>
+        <li>Process decisions and who owns each step</li>
+        <li>Data definitions and reporting standards</li>
+        <li>Intentional integrations between systems</li>
+        <li>Business knowledge held outside one person or vendor</li>
+        <li>Integration or custom automation only where a real operating gap remains</li>
+      </ul>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
-    <h2 class="section-heading">What workflow ownership looks like in commercial construction</h2>
-    <p class="section-sub">These examples show how clearer ownership and intentional system handoffs can improve a commercial-construction workflow.</p>
-    <div class="example-grid">
-      <div class="example-card">
-        <h4>Takeoff &rarr; bid abstract</h4>
+    <h2 class="section-heading" style="margin-bottom:16px">What workflow ownership looks like in commercial construction</h2>
+    <p style="max-width:800px;margin-bottom:40px">These examples show how clearer ownership and intentional system handoffs can improve a commercial-construction workflow.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Takeoff → bid abstract</h3>
         <p>Quantities from the drawings flow into the abstract sheet without an estimator manually retyping line items.</p>
       </div>
-      <div class="example-card">
-        <h4>Subcontractor proposal intake</h4>
+      <div class="problem-card">
+        <h3>Subcontractor proposal intake</h3>
         <p>Sub bids land in a single place, get normalized to the same line-item format, and surface the apples-to-apples comparison estimators usually do by hand.</p>
       </div>
-      <div class="example-card">
-        <h4>Estimate review</h4>
+      <div class="problem-card">
+        <h3>Estimate review</h3>
         <p>Before-submission review moves from "let's pull a senior estimator off another job for two hours" to a structured checklist with review criteria the workflow applies consistently.</p>
       </div>
-      <div class="example-card">
-        <h4>Bid follow-up</h4>
+      <div class="problem-card">
+        <h3>Bid follow-up</h3>
         <p>Status doesn't live in someone's head. Follow-ups, status changes, and win/loss reasons get captured the day they happen, not three weeks later.</p>
       </div>
-      <div class="example-card">
-        <h4>Project &rarr; admin handoff</h4>
+      <div class="problem-card">
+        <h3>Project → admin handoff</h3>
         <p>Once a bid wins, the data behind it moves into the admin and accounting workflow without the project manager rebuilding it from scratch.</p>
       </div>
-      <div class="example-card">
-        <h4>Historical data that compounds</h4>
+      <div class="problem-card">
+        <h3>Historical data that compounds</h3>
         <p>Every job feeds back unit costs, productivity rates, and lessons into a library your next bid actually uses. The data stops being decorative.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section why-bmg">
+<section class="section" style="background: var(--gray-100);">
   <div class="section-inner">
-    <h2 class="section-heading">Why BMG</h2>
-    <p class="section-sub">Operator-led and Phoenix-based, focused on how the work actually runs.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>20+ years in operations</h3>
-        <p>Brad Berlin brings 20+ years of operations leadership to workflow, systems, and implementation decisions. He has experienced the spreadsheet-as-operating-system problem from inside growing businesses.</p>
-      </div>
-      <div class="why-card">
-        <h3>Scaled $1.2M to $65M</h3>
-        <p>Scaled revenue from $1.2M to $65M and the team from 5 to 260 employees while directing development of a proprietary transportation management system with a 30-person team.</p>
-      </div>
-      <div class="why-card">
-        <h3>Phoenix-based</h3>
-        <p>On-site Valley work when it helps. Your office, your team, your tools.</p>
-      </div>
-      <div class="why-card">
-        <h3>Practical and operator-led</h3>
-        <p>Clear ownership, useful workflows, and technology that supports the operation rather than driving it. Every recommendation must make sense to the people responsible for executing the work.</p>
-      </div>
-    </div>
+    <h2 class="section-heading" style="margin-bottom:16px">Why BMG</h2>
+    <p style="max-width:800px;margin-bottom:40px">Operator-led and Phoenix-based, focused on how the work actually runs.</p>
+  </div>
+  <div class="section-inner prose">
+      <h3>20+ years in operations</h3>
+      <p>Brad Berlin brings 20+ years of operations leadership to workflow, systems, and implementation decisions. He has experienced the spreadsheet-as-operating-system problem from inside growing businesses.</p>
+      <h3>Scaled $1.2M to $65M</h3>
+      <p>Scaled revenue from $1.2M to $65M and the team from 5 to 260 employees while directing development of a proprietary transportation management system with a 30-person team.</p>
+      <h3>Phoenix-based</h3>
+      <p>On-site Valley work when it helps. Your office, your team, your tools.</p>
+      <h3>Practical and operator-led</h3>
+      <p>Clear ownership, useful workflows, and technology that supports the operation rather than driving it. Every recommendation must make sense to the people responsible for executing the work.</p>
   </div>
 </section>
 
 <section class="cta-section">
   <h2>Where to start</h2>
   <p>Review the workflow creating the most friction, clarify what is breaking down, and identify a practical next step.</p>
-  <a class="cta-primary" href="/contact">Talk through an operating problem</a>
+  <div class="cta-buttons">
+    <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
+  </div>
 </section>
 
 </main>
-
-<div style="max-width:800px;margin:0 auto;padding:0 20px;"><p class="note-label">Field Notes &middot; Systems &middot; Field notes describe how we think about operating problems. They are not client case studies.</p></div>
 <footer>
     <div class="footer-inner">
         <div class="footer-content">
@@ -400,5 +1066,14 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
         </div>
     </div>
 </footer>
+<script>
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  var b=document.querySelector('.hamburger');
+  var open=p.classList.toggle('active');
+  b.classList.toggle('active',open);
+  b.setAttribute('aria-expanded',open?'true':'false');
+}
+</script>
 </body>
 </html>

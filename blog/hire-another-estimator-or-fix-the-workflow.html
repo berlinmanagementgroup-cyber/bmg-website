@@ -66,216 +66,814 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "keywords": ["commercial construction estimating", "hiring estimators", "estimating workflow", "coordination drag", "construction operations"]
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/bmg-icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/bmg-apple-touch-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1B2B4B">
 
 <style>
-  :root {
-    --navy: #1B2A4A;
-    --navy-light: #2C3E6B;
-    --navy-dark: #0F1A30;
-    --gold: #C8A951;
-    --gold-light: #E2CC7E;
-    --gold-dark: #A8893A;
-    --slate: #4A5568;
-    --gray-100: #F7F8FA;
-    --gray-200: #E8ECF1;
-    --gray-300: #CBD2DC;
-    --gray-600: #5A6577;
-    --white: #FFFFFF;
-    --text: #2D3748;
-    --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
-    --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
-    --radius: 8px;
-  }
+        :root {
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --navy-dark: #0F1A30;
+            --gold: #C8A951;
+            --gold-light: #E2CC7E;
+            --gold-dark: #A8893A;
+            --slate: #4A5568;
+            --gray-100: #F7F8FA;
+            --gray-200: #E8ECF1;
+            --white: #FFFFFF;
+            --text: #2D3748;
+            --radius: 8px;
+            --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
+            --shadow-md: 0 4px 12px rgba(27,42,74,0.1);
+            --shadow-lg: 0 8px 30px rgba(27,42,74,0.12);
+        }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--white);
-    color: var(--text);
-    line-height: 1.6;
-  }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Navigation */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: #ffffff;
-    border-bottom: 1px solid var(--gray-200);
-    z-index: 100; height: 72px;
-  }
-  .nav-inner {
-    max-width: 1140px; margin: 0 auto; padding: 0 32px;
-    display: flex; justify-content: space-between; align-items: center; height: 100%;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-square {
-    width: 32px; height: 32px; background: var(--navy); border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--white); font-weight: 700; font-size: 0.9rem;
-  }
-  .nav-logo-text { font-family: Merriweather, serif; color: var(--navy); font-weight: 700; font-size: 0.95rem; }
-  .nav-links { display: flex; align-items: center; gap: 32px; }
-  .nav-links a { color: var(--text); font-weight: 500; font-size: 0.92rem; text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--navy); }
-  .nav-cta {
-    background: var(--navy); color: var(--white) !important; padding: 10px 22px; border-radius: var(--radius);
-    font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--navy-light); }
-  .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; box-sizing: border-box; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
-  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
 
-  @media (max-width: 768px) {
-    .nav-inner { padding: 0 20px; }
-    .hamburger { display: flex; }
-    .nav-links {
-      display: none; position: absolute; top: 72px; left: 0; right: 0;
-      background: var(--white); flex-direction: column; gap: 16px; padding: 20px;
-      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-md);
-    }
-    .nav-links.active { display: flex; }
-  }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(27, 42, 74, 0.05);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
 
-  /* Article layout */
-  main { margin-top: 72px; }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-  .article-hero {
-    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
-    padding: 80px 40px 60px; text-align: center; color: var(--white);
-  }
-  .article-hero h1 {
-    font-size: 2.2em; color: var(--white); margin-bottom: 16px;
-    font-family: Merriweather, serif; max-width: 800px; margin-left: auto; margin-right: auto;
-    line-height: 1.3; letter-spacing: -0.3px;
-  }
-  .article-hero .subtitle {
-    font-size: 1.05em; color: rgba(255,255,255,0.75); max-width: 640px;
-    margin: 0 auto 20px; font-style: italic; line-height: 1.5;
-  }
-  .article-hero .meta {
-    font-size: 0.9em; color: rgba(255,255,255,0.5);
-  }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
 
-  .article-container {
-    max-width: 720px; margin: 0 auto; padding: 48px 24px 80px;
-  }
+        .nav-logo-square {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.9em;
+        }
 
-  /* Typography */
-  .article-container p {
-    margin-bottom: 18px; line-height: 1.8; font-size: 1.02em;
-  }
+        .nav-logo-text {
+            font-family: Merriweather, serif;
+            color: var(--navy);
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
 
-  .article-container h2 {
-    font-family: Merriweather, serif; color: var(--navy); font-size: 1.6em;
-    margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--gray-200);
-  }
+        .nav-links {
+            display: none;
+            gap: 32px;
+            align-items: center;
+        }
 
-  .article-container h3 {
-    font-family: Merriweather, serif; color: var(--navy); font-size: 1.2em;
-    margin: 32px 0 12px;
-  }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
 
-  .article-container strong { color: var(--navy); }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
 
-  .article-container a {
-    color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px;
-    transition: color 0.2s;
-  }
-  .article-container a:hover { color: var(--gold); }
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-  /* Stage list */
-  .stage { margin-bottom: 16px; }
-  .stage .label {
-    font-weight: 700; color: var(--navy); font-size: 1.02em;
-  }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white) !important;
+        }
 
-  /* Key-point highlight box */
-  .numbers-box {
-    background: var(--gray-100); border-left: 4px solid var(--gold);
-    border-radius: 0 var(--radius) var(--radius) 0; padding: 24px 28px; margin: 28px 0;
-  }
-  .numbers-box p { margin-bottom: 10px; }
-  .numbers-box p:last-child { margin-bottom: 0; }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
 
-  /* CTA section */
-  .article-cta {
-    background: var(--gray-100); border: 1px solid var(--gray-200);
-    border-radius: var(--radius); padding: 32px; margin: 40px 0; text-align: center;
-  }
-  .article-cta p { margin-bottom: 16px; color: var(--text); }
-  .article-cta a.cta-button {
-    display: inline-block; background: var(--navy); color: var(--white); padding: 14px 32px;
-    border-radius: var(--radius); font-weight: 600; text-decoration: none;
-    transition: background 0.2s;
-  }
-  .article-cta a.cta-button:hover { background: var(--navy-light); color: var(--white); }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
 
-  /* Author box */
-  .author-box {
-    background: var(--gray-100); border: 1px solid var(--gray-200);
-    border-left: 3px solid var(--navy-dark); border-radius: var(--radius);
-    padding: 24px; margin: 40px 0; display: flex; gap: 20px; align-items: flex-start;
-  }
-  .author-avatar {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--white); font-weight: 700; font-size: 1.4em; flex-shrink: 0;
-  }
-  .author-info h4 { color: var(--navy); font-size: 1.05em; margin-bottom: 2px; }
-  .author-info .role { color: var(--navy-light); font-size: 0.85em; margin-bottom: 8px; }
-  .author-info p { color: var(--slate); font-size: 0.9em; line-height: 1.6; margin-bottom: 0; }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
 
-  /* Sourcing note */
-  .methodology {
-    font-size: 0.85em; color: var(--gray-600); font-style: italic;
-    border-top: 1px solid var(--gray-200); padding-top: 20px; margin-top: 40px;
-    line-height: 1.6;
-  }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-  /* Back to blog */
-  .back-link {
-    display: inline-block; color: var(--gold-dark); font-weight: 600;
-    text-decoration: none; margin-bottom: 32px; transition: color 0.2s;
-  }
-  .back-link:hover { color: var(--gold); }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
 
-  /* Divider */
-  hr { border: none; border-top: 1px solid var(--gray-200); margin: 32px 0; }
+        /* Main Content */
+        main {
+            margin-top: 72px;
+        }
 
-  /* Footer */
-  footer {
-    background: var(--navy-dark); border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 48px 0 32px; color: rgba(255,255,255,0.4);
-  }
-  .footer-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
-  .footer-content {
-    display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 48px; margin-bottom: 32px;
-  }
-  .footer-brand h3 { font-family: Merriweather, serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; }
-  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
-  .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9em; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
-    display: flex; justify-content: space-between; align-items: center; font-size: 0.85em;
-  }
-  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-bottom a:hover { color: var(--gold); }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 100px 40px;
+            text-align: center;
+        }
 
-  @media (max-width: 768px) {
-    .article-hero { padding: 60px 20px 40px; }
-    .article-hero h1 { font-size: 1.6em; }
-    .article-container { padding: 32px 20px 60px; }
-    .article-container h2 { font-size: 1.35em; }
-    .author-box { flex-direction: column; align-items: center; text-align: center; }
-    .footer-content { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  }
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 5vw, 3.5em);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.8em, 4vw, 2.5em);
+            line-height: 1.2;
+            margin-bottom: 50px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: var(--gray-100);
+            padding: 32px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Where Operations Can Improve */
+        .automate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .automate-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .automate-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .automate-card .icon {
+            margin: 0 auto 16px;
+        }
+
+        .automate-card .icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--navy);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .automate-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .automate-card p {
+            color: var(--text);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Credentials Section */
+        .credentials-alt {
+            background: var(--gray-100);
+        }
+
+        .credential-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--gold);
+        }
+
+        .credential-item h4 {
+            font-family: 'Merriweather', serif;
+            color: var(--navy);
+            font-size: 1em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .credential-item p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .impact-number {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.05em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-buttons .cta-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-buttons .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-buttons .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border: 2px solid var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-buttons .cta-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* Related Blog */
+        .related-blog {
+            background: var(--gray-100);
+            padding: 60px 40px;
+        }
+
+        .related-blog-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-content {
+            padding: 32px;
+        }
+
+        .blog-category {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3em;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .blog-card p {
+            color: var(--text);
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .blog-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .blog-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom span {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Navigation Panel */
+        .nav-panel {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 8px;
+            padding: 16px 24px;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-panel.active {
+            display: flex;
+        }
+
+        .nav-panel a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius);
+            transition: background 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-panel a:hover {
+            background: var(--gray-100);
+            color: var(--gold);
+        }
+
+        .nav-panel .nav-cta {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--white) !important;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-logo-text {
+                display: inline;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 8px 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons button,
+            .cta-buttons a {
+                width: 100%;
+            }
+
+            .problem-grid,
+            .automate-grid,
+            .steps-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+/* Relaunch additions */
+.nav-links .dropdown{position:relative;display:inline-block}
+.nav-links .dropdown>a{cursor:default}
+.nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
+.nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
+.nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
+.receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
+.prose{max-width:800px;margin:0 auto}
+.prose p{margin-bottom:1.1em;line-height:1.7}
+.prose ul{margin:0 0 1.1em 1.2em;line-height:1.7}
+.prose li{margin-bottom:.55em}
+.prose h3{margin:1.4em 0 .5em;color:#1B2B4B}
+.eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:#C6993E;font-weight:700;margin-bottom:10px}
+.note-label{font-style:italic;color:#5a6478;font-size:.95rem;border-top:1px solid #e4e7ee;margin-top:34px;padding-top:16px}
+.wp-sources{font-size:.9rem;color:#5a6478;line-height:1.65;border-top:1px solid #e4e7ee;margin-top:30px;padding-top:18px}
+.form-grid{max-width:640px;margin:0 auto;display:grid;gap:16px}
+.form-grid label{font-weight:600;color:#1B2B4B;display:block;margin-bottom:6px}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%;padding:12px;border:1px solid #cdd3df;border-radius:8px;font:inherit}
+.form-grid textarea{min-height:120px}
+.byline{color:#5a6478;font-size:.95rem;margin-bottom:8px}
+
+/* Traffic-readiness polish (2026-08-14): branded content links + contact form finish */
+main a:not([class]){color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease}
+main a:not([class]):visited{color:var(--navy)}
+main a:not([class]):hover{color:var(--navy-dark);text-decoration-thickness:2.5px;text-decoration-color:var(--gold-dark)}
+main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.hero a:not([class]),.cta-section a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.hero a:not([class]):visited,.cta-section a:not([class]):visited{color:var(--white)}
+.hero a:not([class]):hover,.cta-section a:not([class]):hover{color:var(--gold-light)}
+.form-grid input,.form-grid select,.form-grid textarea{min-height:48px;padding:12px 14px;border:1px solid #cdd3df;border-radius:var(--radius);font:inherit;font-size:1em;color:var(--text);background:var(--white);transition:border-color .2s ease,box-shadow .2s ease}
+.form-grid textarea{min-height:140px;resize:vertical}
+.form-grid select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B2A4A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,169,81,.28)}
+.form-grid .cta-primary{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--white);padding:15px 40px;min-height:48px;border:none;border-radius:var(--radius);font:inherit;font-size:1em;font-weight:600;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.form-grid .cta-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.form-grid .cta-primary:active{transform:translateY(0);box-shadow:var(--shadow-sm)}
+.form-grid .cta-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+@media (max-width:640px){.form-grid .cta-primary{width:100%}}
+
+/* Field Note editorial H2 hierarchy (P-BMG-LEGACY-MIGRATION-03 correction) */
+.prose h2 {
+    font-family: 'Merriweather', serif;
+    color: var(--navy);
+    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    line-height: 1.3;
+    margin: 2.25rem 0 0.75rem;
+    font-weight: 700;
+}
+
+.prose hr {
+    border: 0;
+    border-top: 1px solid var(--gray-200);
+    margin: 2.5rem 0;
+}
 </style>
 </head>
 <body>
@@ -283,8 +881,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKDPWSXS"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<!-- Navigation -->
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to main content</a>
 <nav>
     <div class="nav-inner">
@@ -319,101 +915,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/blog">Field Notes</a>
     <a href="/about">About</a>
     <a href="/contact" class="nav-cta">Contact</a>
-</div><main>
+</div>
+<main id="main">
 
-  <!-- Article Hero -->
-  <div class="article-hero">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Field Notes &middot; Estimating</div>
     <h1>Hire Another Estimator, or Make the Four You Have Faster?</h1>
-    <p class="subtitle">The instinct is to reach for a fifth estimator. Often the real problem is not how many estimators you have. It is what each one has to fight to get a bid out.</p>
-    <p class="meta">Brad Berlin &nbsp;|&nbsp; May 2026 &nbsp;|&nbsp; Estimating</p>
+    <p>The instinct is to reach for a fifth estimator. Often the real problem is not how many estimators you have. It is what each one has to fight to get a bid out.</p>
+    <p class="byline" style="color:#dfe4ee">By Brad Berlin &middot; May 2026</p>
   </div>
+</section>
 
-  <!-- Article Body -->
-  <div class="article-container">
+<section class="section">
+  <div class="section-inner prose">
+      <p><a href="/blog">← Back to all posts</a></p>
 
-    <a href="/blog" class="back-link">&larr; Back to all posts</a>
-
-    <p>When a commercial estimating team falls behind, the conversation in the office tends to run the same way. Bids are going out late, or going out rushed, and the fix that gets reached for is another estimator. It is the obvious move. It is also, often, the expensive one.</p>
-
-    <p>In an earlier piece I walked through <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a commercial bid actually go</a>, and the short version is that they do not go where people assume. Before you post a job listing for a fifth estimator, it is worth asking a harder question. Are your four estimators slow because there is genuinely too much work for four people, or because each of the four spends a large part of the day on work that is not estimating?</p>
-
-    <p>Those two situations look identical from the outside. Bids are late either way. They have opposite fixes.</p>
-
-    <h2>The staffing problem that is often a workflow problem</h2>
-
-    <p>An estimating team falls behind for one of two reasons. The first is a genuine capacity problem: the volume of bids truly exceeds what the people can produce, even working clean. The second is a workflow problem wearing a staffing problem's clothes. Each estimator spends a large share of the week on coordination rather than estimating, so the team's real estimating capacity is a fraction of its headcount.</p>
-
-    <p>This distinction is the whole decision, because the two problems point in opposite directions. A capacity problem is solved by adding a person. A workflow problem is made slightly worse by adding a person, and it is worth being clear about why.</p>
-
-    <h2>Where an estimator's hours actually disappear</h2>
-
-    <p>Watch a bid move through a shop and the lost hours are not where you would guess. They are not in the takeoff, which takeoff software has largely compressed. They are not in the judgment, the scope reading and the leveling and the final number, which is the part you are actually paying an estimator for. They disappear into the space between the stages.</p>
-
-    <p>That space is coordination. Chasing subcontractors for quotes that have not come in. Rebuilding or reconciling the abstract sheet for each new bid. Re-keying numbers out of one tool and into another because the tools do not talk to each other. Hunting for which version of a workbook is the current one. Reloading mental context every time the estimator switches between three live bids sitting at three different stages. Redoing a section of a bid because a late quote or a drawing addendum rippled through everything downstream of it.</p>
-
-    <p>None of that is estimating. All of it is on the estimator's clock. Call it coordination drag. It is invisible on any timesheet, because the timesheet just says "bid prep," but it is the single biggest reason a four-person team produces like a smaller one.</p>
-
-    <h2>Why coordination drag does not divide across more people</h2>
-
-    <p>Here is the part that decides the hiring question. Coordination drag behaves like debt. Every disconnected tool, every manual hand-off, every emailed spreadsheet version is a small recurring tax, and the tax compounds as bid volume rises.</p>
-
-    <p>And it does not split across a bigger team. It multiplies. A fifth estimator adds a fifth set of hand-offs, a fifth person asking which file is current, a fifth running context to keep coordinated with the other four. You added a person's worth of capacity, and you also added a person's worth of coordination surface. The new hire inherits exactly the same drag the other four are already fighting. It is genuinely possible to end up with five people moving a little slower than four would move in a workflow that was not fighting itself.</p>
-
-    <h2>When hiring really is the right call</h2>
-
-    <p>None of this means hiring is wrong. Sometimes it is exactly right, and it is worth being honest about when.</p>
-
-    <p>If you watch where your four estimators spend the week and most of it is genuine estimating, interpreting scope, leveling sub quotes, making the number, the judgment work, and they are simply out of hours, then you have a real capacity problem. Workflow redesign cannot manufacture more judgment capacity. There is a ceiling on how many considered bids a person can produce, and if your team is at that ceiling and you want to chase more work, you need another estimator. No system changes that. Hire.</p>
-
-    <h2>When fixing the workflow is the higher-leverage move</h2>
-
-    <p>If instead you watch the four and a large share of the week is the coordination drag, the chasing and the re-keying and the version-hunting and the rework, then a fifth estimator will inherit all of it, and the higher-leverage move is to close the seams in the workflow before you add anyone.</p>
-
-    <p>Closing those seams gives capacity back from the four estimators you already have. No new salary, no months-long search for an experienced commercial estimator, no months-long ramp. And it is not an either-or choice. If you tighten the workflow and the math still says you need a fifth, you now hire into a workflow that does not bury new people. A clean workflow has far less tribal coordination knowledge to absorb, so a new estimator becomes productive in weeks instead of months.</p>
-
-    <h2>What implementation changes, and what it does not</h2>
-
-    <p>Closing the seams means the system carries the work between stages instead of a person carrying it by hand. Takeoff quantities move into the bid workbook without being re-keyed. Incoming sub quotes get organized into one comparable shape so leveling can start. The current version of a bid is never in question. Follow-ups to quiet subs go out without someone having to remember to send them. That is the coordination drag, and it can come off the estimator's plate.</p>
-
-    <p>What does not change is the estimating. The estimator still owns the go or no-go call, still reads the scope, still makes the leveling judgments, still sets the final number. None of that should move to a system, and the goal was never fewer estimators. The goal is estimators who spend their hours estimating instead of coordinating.</p>
-
-    <div class="numbers-box">
+      <p>When a commercial estimating team falls behind, the conversation in the office tends to run the same way. Bids are going out late, or going out rushed, and the fix that gets reached for is another estimator. It is the obvious move. It is also, often, the expensive one.</p>
+      <p>In an earlier piece I walked through <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">where the hours in a commercial bid actually go</a>, and the short version is that they do not go where people assume. Before you post a job listing for a fifth estimator, it is worth asking a harder question. Are your four estimators slow because there is genuinely too much work for four people, or because each of the four spends a large part of the day on work that is not estimating?</p>
+      <p>Those two situations look identical from the outside. Bids are late either way. They have opposite fixes.</p>
+      <h2>The staffing problem that is often a workflow problem</h2>
+      <p>An estimating team falls behind for one of two reasons. The first is a genuine capacity problem: the volume of bids truly exceeds what the people can produce, even working clean. The second is a workflow problem wearing a staffing problem's clothes. Each estimator spends a large share of the week on coordination rather than estimating, so the team's real estimating capacity is a fraction of its headcount.</p>
+      <p>This distinction is the whole decision, because the two problems point in opposite directions. A capacity problem is solved by adding a person. A workflow problem is made slightly worse by adding a person, and it is worth being clear about why.</p>
+      <h2>Where an estimator's hours actually disappear</h2>
+      <p>Watch a bid move through a shop and the lost hours are not where you would guess. They are not in the takeoff, which takeoff software has largely compressed. They are not in the judgment, the scope reading and the leveling and the final number, which is the part you are actually paying an estimator for. They disappear into the space between the stages.</p>
+      <p>That space is coordination. Chasing subcontractors for quotes that have not come in. Rebuilding or reconciling the abstract sheet for each new bid. Re-keying numbers out of one tool and into another because the tools do not talk to each other. Hunting for which version of a workbook is the current one. Reloading mental context every time the estimator switches between three live bids sitting at three different stages. Redoing a section of a bid because a late quote or a drawing addendum rippled through everything downstream of it.</p>
+      <p>None of that is estimating. All of it is on the estimator's clock. Call it coordination drag. It is invisible on any timesheet, because the timesheet just says "bid prep," but it is the single biggest reason a four-person team produces like a smaller one.</p>
+      <h2>Why coordination drag does not divide across more people</h2>
+      <p>Here is the part that decides the hiring question. Coordination drag behaves like debt. Every disconnected tool, every manual hand-off, every emailed spreadsheet version is a small recurring tax, and the tax compounds as bid volume rises.</p>
+      <p>And it does not split across a bigger team. It multiplies. A fifth estimator adds a fifth set of hand-offs, a fifth person asking which file is current, a fifth running context to keep coordinated with the other four. You added a person's worth of capacity, and you also added a person's worth of coordination surface. The new hire inherits exactly the same drag the other four are already fighting. It is genuinely possible to end up with five people moving a little slower than four would move in a workflow that was not fighting itself.</p>
+      <h2>When hiring really is the right call</h2>
+      <p>None of this means hiring is wrong. Sometimes it is exactly right, and it is worth being honest about when.</p>
+      <p>If you watch where your four estimators spend the week and most of it is genuine estimating, interpreting scope, leveling sub quotes, making the number, the judgment work, and they are simply out of hours, then you have a real capacity problem. Workflow redesign cannot manufacture more judgment capacity. There is a ceiling on how many considered bids a person can produce, and if your team is at that ceiling and you want to chase more work, you need another estimator. No system changes that. Hire.</p>
+      <h2>When fixing the workflow is the higher-leverage move</h2>
+      <p>If instead you watch the four and a large share of the week is the coordination drag, the chasing and the re-keying and the version-hunting and the rework, then a fifth estimator will inherit all of it, and the higher-leverage move is to close the seams in the workflow before you add anyone.</p>
+      <p>Closing those seams gives capacity back from the four estimators you already have. No new salary, no months-long search for an experienced commercial estimator, no months-long ramp. And it is not an either-or choice. If you tighten the workflow and the math still says you need a fifth, you now hire into a workflow that does not bury new people. A clean workflow has far less tribal coordination knowledge to absorb, so a new estimator becomes productive in weeks instead of months.</p>
+      <h2>What implementation changes, and what it does not</h2>
+      <p>Closing the seams means the system carries the work between stages instead of a person carrying it by hand. Takeoff quantities move into the bid workbook without being re-keyed. Incoming sub quotes get organized into one comparable shape so leveling can start. The current version of a bid is never in question. Follow-ups to quiet subs go out without someone having to remember to send them. That is the coordination drag, and it can come off the estimator's plate.</p>
+      <p>What does not change is the estimating. The estimator still owns the go or no-go call, still reads the scope, still makes the leveling judgments, still sets the final number. None of that should move to a system, and the goal was never fewer estimators. The goal is estimators who spend their hours estimating instead of coordinating.</p>
       <p><strong>The honest test.</strong> Before you post the job, watch where your current estimators actually spend the week. If it is mostly judgment, hire. If it is mostly coordination, a fifth person inherits the same drag. Tighten the workflow first, and if the math still calls for a fifth, they will be productive far sooner.</p>
-    </div>
+      <h2>The question to ask before you post the job</h2>
+      <p>The hire-or-fix decision does not get answered by counting bids or counting people. It gets answered by counting hours, specifically by knowing how much of your estimating team's week is estimating and how much is coordination. It is worth checking whether your shop has actually looked, because the coordination hours hide inside "bid prep" and do not get named separately unless someone separates them.</p>
+      <p>Look first. The answer to whether you need a fifth estimator is sitting in how the four you already have spend their Tuesdays.</p>
+      <hr></hr>
 
-    <h2>The question to ask before you post the job</h2>
-
-    <p>The hire-or-fix decision does not get answered by counting bids or counting people. It gets answered by counting hours, specifically by knowing how much of your estimating team's week is estimating and how much is coordination. It is worth checking whether your shop has actually looked, because the coordination hours hide inside "bid prep" and do not get named separately unless someone separates them.</p>
-
-    <p>Look first. The answer to whether you need a fifth estimator is sitting in how the four you already have spend their Tuesdays.</p>
-
-    <hr>
-
-    <!-- CTA -->
-    <div class="article-cta">
-      <h3>Start with the operating problem</h3>
-      <p>Berlin Management Group is an operator-led operations improvement firm. BMG finds and fixes the operating problems costing businesses time, margin, and capacity.</p>
-      <a href="/contact" class="cta-button">Talk through an operating problem</a>
-    </div>
-
-    <!-- Author Box -->
-    <div class="author-box">
-      <div class="author-avatar">BB</div>
-      <div class="author-info">
-        <h4>Brad Berlin</h4>
-        <p class="role">Founder, Berlin Management Group &nbsp;|&nbsp; Phoenix, AZ</p>
+      <p class="note-label">Field notes describe how we think about operating problems. They are not client case studies.</p>
+      <div class="wp-sources">
+        <p><strong>Brad Berlin</strong><br>Founder, Berlin Management Group  |  Phoenix, AZ</p>
         <p>Brad Berlin is an operations executive with more than twenty years building, repairing, and scaling operations across venture-stage, growth, and enterprise environments. He is the founder of Berlin Management Group.</p>
+        <p>A note on sourcing: this article draws on first-hand discovery work observing how a Phoenix commercial general contractor runs its estimating process, alongside general commercial estimating practice. It describes a workflow pattern, not a client case study, and every observation here is generalized. No company, project, or figure in this article identifies a specific business.</p>
       </div>
-    </div>
-
-    <!-- Sourcing Note -->
-    <p class="methodology">Field notes describe how we think about operating problems. They are not client case studies.</p>
-    <p class="methodology">A note on sourcing: this article draws on first-hand discovery work observing how a Phoenix commercial general contractor runs its estimating process, alongside general commercial estimating practice. It describes a workflow pattern, not a client case study, and every observation here is generalized. No company, project, or figure in this article identifies a specific business.</p>
-
   </div>
-</main>
+</section>
 
-<!-- Footer -->
+<section class="cta-section">
+  <h2>Start with the operating problem</h2>
+  <p>Berlin Management Group is an operator-led operations improvement firm. BMG finds and fixes the operating problems costing businesses time, margin, and capacity.</p>
+  <div class="cta-buttons">
+    <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
+  </div>
+</section>
+
+</main>
 <footer>
     <div class="footer-inner">
         <div class="footer-content">
@@ -447,44 +1010,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </footer>
-
 <script>
-function toggleMobileNav() {
-  var menu = document.getElementById('mobileNav');
-  var btn = document.querySelector('.hamburger');
-  if (!menu) return;
-  var open = !menu.classList.contains('active');
-  menu.classList.toggle('active', open);
-  if (btn) {
-    btn.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  if (open) {
-    var first = menu.querySelector('a');
-    if (first) { setTimeout(function () { try { first.focus(); } catch (e) {} }, 0); }
-  }
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  var b=document.querySelector('.hamburger');
+  var open=p.classList.toggle('active');
+  b.classList.toggle('active',open);
+  b.setAttribute('aria-expanded',open?'true':'false');
 }
-
-document.querySelectorAll('#mobileNav a').forEach(function (link) {
-  link.addEventListener('click', function () {
-    var menu = document.getElementById('mobileNav');
-    if (menu) menu.classList.remove('active');
-    var btn = document.querySelector('.hamburger');
-    if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); }
-  });
-});
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' || e.keyCode === 27) {
-    var menu = document.getElementById('mobileNav');
-    if (menu && menu.classList.contains('active')) {
-      menu.classList.remove('active');
-      var btn = document.querySelector('.hamburger');
-      if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded', 'false'); try { btn.focus(); } catch (err) {} }
-    }
-  }
-});
 </script>
-
 </body>
 </html>

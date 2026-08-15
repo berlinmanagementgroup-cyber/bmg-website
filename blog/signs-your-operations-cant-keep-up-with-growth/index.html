@@ -854,6 +854,22 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
+
+/* Field Note editorial H2 hierarchy (P-BMG-LEGACY-MIGRATION-03 correction) */
+.prose h2 {
+    font-family: 'Merriweather', serif;
+    color: var(--navy);
+    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    line-height: 1.3;
+    margin: 2.25rem 0 0.75rem;
+    font-weight: 700;
+}
+
+.prose hr {
+    border: 0;
+    border-top: 1px solid var(--gray-200);
+    margin: 2.5rem 0;
+}
 </style>
 </head>
 <body>
