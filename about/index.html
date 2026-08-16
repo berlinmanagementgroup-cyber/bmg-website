@@ -854,6 +854,62 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D3 Editorial Operator: About page system (2026-08-15) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Editorial header */
+.d3-header{background:var(--white);padding:96px 40px 72px}
+.d3-header-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 250px;gap:72px;align-items:start}
+.d3-rule{width:56px;height:3px;background:var(--gold);margin-bottom:26px}
+.d3-header h1{font-family:'Merriweather',serif;font-size:clamp(2em,4.6vw,3em);line-height:1.2;font-weight:700;color:var(--navy);margin-bottom:22px}
+.d3-intro{font-size:1.08em;color:var(--slate);line-height:1.75;margin-bottom:26px;max-width:560px}
+.d3-pov{border-left:3px solid var(--gold);padding-left:24px;font-family:'Merriweather',serif;font-size:1.16em;line-height:1.75;color:var(--navy);max-width:560px}
+/* Portrait + nameplate */
+.d3-portrait-wrap{width:250px}
+.d3-portrait{position:relative;width:250px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;box-shadow:var(--shadow-md)}
+.d3-portrait img{display:block;width:250px;height:auto;border-radius:var(--radius) var(--radius) 0 0}
+.d3-portrait .frame{position:absolute;inset:10px;border:1px solid rgba(200,169,81,.55);border-radius:5px;pointer-events:none}
+.d3-nameplate{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);border-radius:0 0 var(--radius) var(--radius);padding:14px 18px;box-shadow:var(--shadow-md)}
+.d3-nameplate strong{display:block;font-family:'Merriweather',serif;color:var(--white);font-size:1em;font-weight:700}
+.d3-nameplate span{display:block;color:var(--gold-light);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-top:5px;line-height:1.5}
+/* Career chapter index */
+.chapters{max-width:800px;border-top:2px solid var(--navy)}
+.ch-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--gray-200)}
+.ch-row h3{font-family:'Merriweather',serif;font-size:1.12em;color:var(--navy);font-weight:700;margin:0}
+.ch-role{font-size:.92em;color:var(--slate);margin:0}
+/* Complete operating record disclosure */
+.record{max-width:800px;margin-top:34px}
+.record summary{display:list-item;cursor:pointer;font-family:'Merriweather',serif;font-weight:700;color:var(--navy);font-size:1.02em;padding:12px 8px;min-height:44px;box-sizing:border-box;border-bottom:2px solid var(--gold)}
+.record summary:hover{color:var(--navy-dark);border-bottom-color:var(--gold-dark)}
+.record summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.record[open] summary{margin-bottom:18px}
+.record p{margin-bottom:1.1em;line-height:1.7}
+/* Arrow links (D1 pattern) */
+a.d1-arrow{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;display:inline-block;min-height:24px}
+a.d1-arrow:after{content:" \2192";color:var(--gold-dark)}
+a.d1-arrow:hover{color:var(--navy-dark);border-bottom-color:var(--gold-dark)}
+a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.cta-section a.d1-arrow{color:var(--white);border-bottom-color:var(--gold);padding:10px 2px}
+.cta-section a.d1-arrow:after{color:var(--gold-light)}
+.cta-section a.d1-arrow:hover{color:var(--gold-light)}
+.cta-section a.d1-arrow:focus-visible{outline-color:var(--gold-light)}
+/* D3 responsive */
+@media (max-width:768px){
+  .d3-header{padding:56px 22px 48px}
+  .d3-header-inner{grid-template-columns:1fr;gap:40px}
+  .d3-portrait-wrap{margin:0 auto;order:-1}
+  .d3-header h1{text-align:center}
+  .d3-rule{margin-left:auto;margin-right:auto}
+  .d3-intro,.d3-pov{max-width:none}
+  .ch-row{grid-template-columns:1fr;gap:4px}
+  .d3-intro,.d3-pov,.ch-role,.record p{font-size:1em}
+  .band-cream .receipts-label{font-size:1em}
+}
+@media (prefers-reduced-motion: reduce){
+  a.d1-arrow,.record summary{transition:none}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -897,22 +953,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <main id="main">
 
-<section class="hero">
-  <div class="hero-inner">
-    <h1>The operator behind BMG</h1>
-    <p>Berlin Management Group is run by Brad Berlin: more than twenty years owning operations and P&amp;Ls, with one repeated pattern. Enter an operation at a hard starting point. Understand how the work actually moves. Redesign it. Stay until the change holds.</p>
+<section class="d3-header">
+  <div class="d3-header-inner">
+    <div class="d3-header-text">
+      <div class="d3-rule" aria-hidden="true"></div>
+      <h1>The operator behind BMG</h1>
+      <p class="d3-intro">Berlin Management Group is run by Brad Berlin: more than twenty years owning operations and P&amp;Ls, with one repeated pattern.</p>
+      <p class="d3-pov">Enter an operation at a hard starting point. Understand how the work actually moves. Redesign it. Stay until the change holds.</p>
+    </div>
+    <div class="d3-portrait-wrap">
+      <div class="d3-portrait">
+        <picture>
+          <source srcset="/assets/brad-berlin-500.webp" type="image/webp">
+          <img src="/assets/brad-berlin-500.jpg"
+               width="500"
+               height="627"
+               alt="Brad Berlin, founder of Berlin Management Group">
+        </picture>
+        <div class="frame" aria-hidden="true"></div>
+      </div>
+      <div class="d3-nameplate">
+        <strong>Brad Berlin</strong>
+        <span>Founder, Berlin Management Group</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">The same method, five different starting points</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
+    <div class="chapters">
+      <div class="ch-row"><h3>Built from zero.</h3><p class="ch-role">COO, Freightclaims.com</p></div>
+      <div class="ch-row"><h3>Repaired.</h3><p class="ch-role">Chief Customer Officer, MyCarrier</p></div>
+      <div class="ch-row"><h3>Recovered.</h3><p class="ch-role">Senior Manager of LTL Carrier Engagement, project44</p></div>
+      <div class="ch-row"><h3>Transformed at scale.</h3><p class="ch-role">Vice President of Operations, CarrierDirect (now Metafora)</p></div>
+    </div>
+    <details class="record">
+      <summary>The complete operating record</summary>
     <p><strong>Built from zero.</strong> As COO of Freightclaims.com, took a venture-stage platform from concept to production in about 15 months while building the operating structure around it: a development organization scaled from 1 to 13 with staged quality gates and post-release validation, a severity-based defect SLA, a support model holding first response under two minutes, customer success separated from support, and an operating cadence installed from nothing: annual planning, quarterly rhythms, 13-week execution plans, KPI dashboards. During that capital-constrained period, led the restructuring: monthly operating expenses down 30 to 40%, with annualized revenue above $420K and bad debt under 0.05%.</p>
     <p><strong>Repaired.</strong> As Chief Customer Officer at MyCarrier, inherited a customer operating model that was underperforming: onboarding took weeks, support ran on email queues, and customer feedback rarely reached development. Started with the frontline teams, redesigned the workflows, and made the case for change with operating data. Onboarding fell to about 3 to 4 days, platform utilization rose about 40%, and support resolution time went from about 26 minutes to about 90 seconds through automation and integration across HubSpot, Jira, and Intercom.</p>
     <p><strong>Recovered.</strong> At project44, as Senior Manager of LTL Carrier Engagement, took over an integration ecosystem that had been deprioritized: 350+ carrier API integrations, many falling out of date. Built the governance from scratch, prioritized by usage, worked directly with the IT organizations of North America's top 50 carriers, and shipped 26 new connections in under nine months, with quality reporting frameworks that made performance gaps visible. None of the three organizations involved reported to him; the work ran on coordination, not authority.</p>
     <p><strong>Transformed at scale.</strong> As Vice President of Operations at CarrierDirect (now Metafora), spent nine years helping client organizations redesign how they operate. The flagship: while serving with this larger consulting firm, Brad was part of the team that redesigned an anonymized carrier division of roughly $150M, running as thirteen siloed offices, into one operating model, from load ownership and shared access to incentives, rules of engagement, training for more than 100 employees, and steering-committee governance. Ten months after the changes took effect, the division stood at 100% of its revenue goal and 118% of its gross-profit goal, on 15% and 28% year-over-year growth. The same assessment-to-implementation method was rebuilt for new-business launches and reused at some of North America's largest transportation enterprises.</p>
     <p><strong>Built operations through rapid growth.</strong> Earlier in his career, Brad served as COO of GlobalTranz, building operating structure and systems as the company grew. The lesson that shaped everything since: growth exposes operating structures that no longer fit the business.</p>
+    </details>
   </div>
 </section>
 
@@ -924,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Practical details</h2>
     <p>Berlin Management Group LLC is based in Phoenix, Arizona and is available for engagements nationally. Engagements are fixed-scope and fixed-fee. Every engagement is senior-led, with Brad accountable from diagnosis through implementation. Read <a href="/how-we-work">how engagements run</a>, see <a href="/operations-diagnostic">what the Diagnostic covers</a>, or start with the pages for <a href="/growing-businesses">growing businesses</a> and <a href="/enterprise">enterprise teams</a>. Field notes are at <a href="/blog">Field Notes</a>.</p>
@@ -932,10 +1017,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section class="cta-section">
-  <h2>Talk through an operating problem</h2>
+  <h2>Start with one problem.</h2>
   <div class="cta-buttons">
     <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
-    <a href="/how-we-work" class="cta-secondary">How engagements run</a>
+    <a href="/how-we-work" class="d1-arrow">How engagements run</a>
   </div>
 </section>
 
