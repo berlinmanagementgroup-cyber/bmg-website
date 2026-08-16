@@ -818,6 +818,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .form-grid textarea{min-height:120px}
 .byline{color:#5a6478;font-size:.95rem;margin-bottom:8px}
 </style>
+<style>
+/* D4C1 sitewide chrome normalization (2026-08-16): F1 footer recomposition + footer fine print + mobile wordmark */
+footer{color:#B9C2D4}
+.footer-content{grid-template-columns:1.6fr 1fr 1fr}
+.footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
+.footer-head{letter-spacing:.16em;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.footer-links{display:block}
+.footer-links a{display:block;color:#B9C2D4;font-size:.9em;padding:6px 0;line-height:1.5}
+.footer-social a{color:#B9C2D4;display:inline-block;margin-top:18px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);color:#8D99B2;font-size:.9rem}
+.footer-bottom a{color:#8D99B2}
+.footer-bottom span{color:rgba(255,255,255,.25)}
+@media (max-width:768px){
+  .footer-content{grid-template-columns:1fr}
+  .footer-links a{padding:12px 0;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.07)}
+  .footer-links a:last-child{border-bottom:none}
+  .nav-logo{flex-shrink:1;min-width:0}
+  .nav-logo .nav-logo-text{font-size:.9rem;white-space:nowrap}
+}
+@media (max-width:345px){
+  .nav-logo .nav-logo-text{font-size:.8rem}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -891,20 +914,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h3>Berlin Management Group</h3>
                 <p>Operations improvement that stays through implementation. Find the problem. Fix the operation. Measure what changed.</p>
                 <p>Phoenix, AZ</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                        <span style="position:absolute;left:-9999px">LinkedIn</span>
+                    </a>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="/commercial-contractors">Commercial Contractors</a>
-                <a href="/home-services">Home Services</a>
-                <a href="/property-management">Property Management</a>
-                <a href="/operations-consulting-phoenix">Phoenix Operations Consulting</a>
-                <a href="/fractional-coo">Fractional COO</a>
-                <a href="/start-with-the-problem">Start With the Problem</a>
-                <a href="/own-vs-rent">Own the Workflow</a>
+            <div>
+                <p class="footer-head">Who we help</p>
+                <div class="footer-links">
+                    <a href="/commercial-contractors">Commercial Contractors</a>
+                    <a href="/home-services">Home Services</a>
+                    <a href="/property-management">Property Management</a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
-                </a>
+            <div>
+                <p class="footer-head">Explore BMG</p>
+                <div class="footer-links">
+                    <a href="/operations-consulting-phoenix">Phoenix Operations Consulting</a>
+                    <a href="/fractional-coo">Fractional COO</a>
+                    <a href="/start-with-the-problem">Start With the Problem</a>
+                    <a href="/own-vs-rent">Own the Workflow</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

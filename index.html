@@ -927,7 +927,7 @@ footer{color:#B9C2D4}
 .footer-links{display:block}
 .footer-links a{display:block;color:#B9C2D4;font-size:.9em;padding:6px 0;line-height:1.5}
 .footer-social a{color:#B9C2D4;display:inline-block;margin-top:18px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.12);color:#8D99B2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);color:#8D99B2;font-size:.9rem}
 .footer-bottom a{color:#8D99B2}
 .footer-bottom span{color:rgba(255,255,255,.25)}
 /* D1 responsive */
@@ -952,9 +952,14 @@ footer{color:#B9C2D4}
   .footer-content{grid-template-columns:1fr}
   .footer-links a{padding:12px 0;min-height:44px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.07)}
   .footer-links a:last-child{border-bottom:none}
+  .nav-logo{flex-shrink:1;min-width:0}
+  .nav-logo .nav-logo-text{font-size:.9rem;white-space:nowrap}
   .ledger-item p,.rail-stop p,.receipt p,.lens p,.tooling p,.fd-block p,.tool-list li{font-size:1em}
   .proof-band .receipts-label{font-size:1em}
   .blog-card p{font-size:1em}
+}
+@media (max-width:345px){
+  .nav-logo .nav-logo-text{font-size:.8rem}
 }
 @media (prefers-reduced-motion: reduce){
   a.d1-arrow,.footer-links a,.proof-band a{transition:none}
