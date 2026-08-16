@@ -838,6 +838,25 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D4B Editorial Operator: vertical-page inheritance (2026-08-16) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Ruled problem rows (inherits D4A shape-list/career-rows pattern) */
+.d4b-rows{max-width:800px;margin:0;border-top:2px solid var(--navy)}
+.d4b-row{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--gray-200)}
+.d4b-tick{width:14px;height:2px;background:var(--gold);margin-top:.72em}
+.d4b-row h3{font-family:'Merriweather',serif;font-size:1.1em;color:var(--navy);font-weight:700;margin:0 0 8px}
+.d4b-row p{font-size:.95em;line-height:1.65;color:var(--text);margin:0}
+/* Ruled career evidence rows (D4A treatment) */
+.career-rows{list-style:none;margin:0;padding:0;max-width:800px;border-top:2px solid var(--navy)}
+.career-rows li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.7;color:var(--text)}
+.career-rows .cr-tick{width:22px;height:3px;background:var(--gold);margin-top:.72em}
+@media (max-width:768px){
+  .d4b-row p,.career-rows li{font-size:1em}
+  .receipts-label{font-size:1em}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -892,17 +911,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">Common operating problems in property management</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Tenant requests scattered across channels.</h3><p>Phone, email, portal, text, with no single queue and no clear owner.</p></div>
-      <div class="problem-card"><h3>Maintenance dispatch by memory.</h3><p>Vendor selection, scheduling, and follow-up living in someone's head instead of a workflow.</p></div>
-      <div class="problem-card"><h3>Owner reporting as a monthly scramble.</h3><p>Data that exists in your systems, assembled by hand every month.</p></div>
-      <div class="problem-card"><h3>Renewals and collections handled reactively.</h3><p>Dates known months in advance, worked at the last minute.</p></div>
-      <div class="problem-card"><h3>Staffing grows at the same rate as the portfolio.</h3><p>If every increase in units requires more coordination staff, the current process may not be scaling.</p></div>
+    <div class="d4b-rows">
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Tenant requests scattered across channels.</h3><p>Phone, email, portal, text, with no single queue and no clear owner.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Maintenance dispatch by memory.</h3><p>Vendor selection, scheduling, and follow-up living in someone's head instead of a workflow.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Owner reporting as a monthly scramble.</h3><p>Data that exists in your systems, assembled by hand every month.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Renewals and collections handled reactively.</h3><p>Dates known months in advance, worked at the last minute.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Staffing grows at the same rate as the portfolio.</h3><p>If every increase in units requires more coordination staff, the current process may not be scaling.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Fix the workflow before adding tools</h2>
     <p>A <strong>Snapshot Diagnostic</strong> on one workflow, typically tenant-request-to-resolution or the monthly owner-reporting cycle: one to two weeks, fixed fee, findings quantified, a 90-day plan. Fix Sprints implement the priorities with a baseline and the agreed measurement. Where your existing property management software is underused or disconnected, the Diagnostic identifies exactly where integration or automation would pay for itself. <a href="/operations-diagnostic">What a Diagnostic covers</a> &middot; <a href="/how-we-work">how engagements run</a>.</p>
@@ -913,9 +932,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-inner prose">
     <h2 class="section-heading">Operating background</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <ul>
-      <li>Support resolution time cut from about 26 minutes to about 90 seconds at MyCarrier, by redesigning intake and routing workflows.</li>
-      <li>At project44, Brad launched 26 new LTL API connections in under nine months across an ecosystem of more than 350 integrations.</li>
+    <ul class="career-rows" role="list">
+      <li><span class="cr-tick" aria-hidden="true"></span><div>Support resolution time cut from about 26 minutes to about 90 seconds at MyCarrier, by redesigning intake and routing workflows.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>At project44, Brad launched 26 new LTL API connections in under nine months across an ecosystem of more than 350 integrations.</div></li>
     </ul>
     <p><a href="/about">The full record</a></p>
   </div>

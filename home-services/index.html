@@ -838,6 +838,25 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D4B Editorial Operator: vertical-page inheritance (2026-08-16) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Ruled problem rows (inherits D4A shape-list/career-rows pattern) */
+.d4b-rows{max-width:800px;margin:0;border-top:2px solid var(--navy)}
+.d4b-row{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--gray-200)}
+.d4b-tick{width:14px;height:2px;background:var(--gold);margin-top:.72em}
+.d4b-row h3{font-family:'Merriweather',serif;font-size:1.1em;color:var(--navy);font-weight:700;margin:0 0 8px}
+.d4b-row p{font-size:.95em;line-height:1.65;color:var(--text);margin:0}
+/* Ruled career evidence rows (D4A treatment) */
+.career-rows{list-style:none;margin:0;padding:0;max-width:800px;border-top:2px solid var(--navy)}
+.career-rows li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.7;color:var(--text)}
+.career-rows .cr-tick{width:22px;height:3px;background:var(--gold);margin-top:.72em}
+@media (max-width:768px){
+  .d4b-row p,.career-rows li{font-size:1em}
+  .receipts-label{font-size:1em}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -892,17 +911,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">Common operating problems in field service businesses</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Dispatch depends too heavily on individual memory.</h3><p>One or two people carrying the schedule by phone, text, and recall.</p></div>
-      <div class="problem-card"><h3>Invoicing lags the work.</h3><p>Jobs finish; billing waits on paperwork; cash arrives weeks later than it should.</p></div>
-      <div class="problem-card"><h3>Technicians do office work.</h3><p>Time that should be billable goes to forms, photos, and status updates that the workflow should carry automatically.</p></div>
-      <div class="problem-card"><h3>Leads fall through.</h3><p>Calls answered but not logged, quotes sent but not followed, no owner for the handoff between intake and sales.</p></div>
-      <div class="problem-card"><h3>The software is owned but not connected.</h3><p>Field service management, accounting, and marketing tools each doing part of the job, with your office as the manual bridge.</p></div>
+    <div class="d4b-rows">
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Dispatch depends too heavily on individual memory.</h3><p>One or two people carrying the schedule by phone, text, and recall.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Invoicing lags the work.</h3><p>Jobs finish; billing waits on paperwork; cash arrives weeks later than it should.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Technicians do office work.</h3><p>Time that should be billable goes to forms, photos, and status updates that the workflow should carry automatically.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Leads fall through.</h3><p>Calls answered but not logged, quotes sent but not followed, no owner for the handoff between intake and sales.</p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>The software is owned but not connected.</h3><p>Field service management, accounting, and marketing tools each doing part of the job, with your office as the manual bridge.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Fix the workflow before adding tools</h2>
     <p>The entry is a <strong>Snapshot Diagnostic</strong> on the workflow hurting most, often dispatch-to-invoice or lead-to-quote: one to two weeks, fixed fee, findings quantified, a 90-day plan you can run with or without us. Fix Sprints then implement the priorities one at a time, each measured against its baseline. Where automation or better integration between your existing systems will pay for itself, the Diagnostic identifies it; the workflow gets designed first. <a href="/operations-diagnostic">What a Diagnostic covers</a> &middot; <a href="/how-we-work">how engagements run</a> &middot; <a href="/growing-businesses">how BMG works with owner-led businesses</a>.</p>
@@ -913,9 +932,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-inner prose">
     <h2 class="section-heading">Operating background</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <ul>
-      <li>Support resolution time cut from about 26 minutes to about 90 seconds at MyCarrier, by redesigning intake and routing workflows and connecting the systems the company already owned.</li>
-      <li>Monthly operating expenses reduced 30 to 40% as COO of Freightclaims.com during a capital-constrained period.</li>
+    <ul class="career-rows" role="list">
+      <li><span class="cr-tick" aria-hidden="true"></span><div>Support resolution time cut from about 26 minutes to about 90 seconds at MyCarrier, by redesigning intake and routing workflows and connecting the systems the company already owned.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>Monthly operating expenses reduced 30 to 40% as COO of Freightclaims.com during a capital-constrained period.</div></li>
     </ul>
     <p><a href="/about">The full record</a></p>
   </div>

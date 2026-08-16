@@ -838,6 +838,27 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D4B Editorial Operator: vertical-page inheritance (2026-08-16) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Ruled problem rows (inherits D4A shape-list/career-rows pattern) */
+.d4b-rows{max-width:800px;margin:0;border-top:2px solid var(--navy)}
+.d4b-row{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--gray-200)}
+.d4b-tick{width:14px;height:2px;background:var(--gold);margin-top:.72em}
+.d4b-row h3{font-family:'Merriweather',serif;font-size:1.1em;color:var(--navy);font-weight:700;margin:0 0 8px}
+.d4b-row p{font-size:.95em;line-height:1.65;color:var(--text);margin:0}
+/* Secondary arrow link in CTA band (D1 arrow treatment, navy-band colorway) */
+a.d4b-arrow{color:var(--white);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;display:inline-block;min-height:24px;align-self:center}
+a.d4b-arrow:after{content:" \2192";color:var(--gold-light)}
+a.d4b-arrow:hover{color:var(--gold-light);border-bottom-color:var(--gold-light)}
+a.d4b-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+@media (max-width:768px){
+  .d4b-row p{font-size:1em}
+  .receipts-label{font-size:1em}
+  a.d4b-arrow{width:auto;padding:10px 0}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -892,17 +913,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">Where contractor operations lose time and margin</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><h3>Bid preparation consumes more hours than it should</h3><p>Most of them are not in the takeoff. They are in assembly, coordination, and chasing information between tools. <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">Where the hours actually go in a commercial construction bid</a></p></div>
-      <div class="problem-card"><h3>Your estimating tools do not talk to each other</h3><p>Takeoff in one system, bid distribution in another, pricing history in spreadsheets. Your estimators fill the gaps by hand. <a href="/blog/the-gap-between-your-estimating-tools.html">The gap between your estimating tools</a></p></div>
-      <div class="problem-card"><h3>Years of bid history you cannot use</h3><p>The numbers exist, in old bid files, but they are not reachable when the next estimate needs them. <a href="/blog/turning-past-bids-into-a-cost-database.html">Turning past bids into a usable cost database</a></p></div>
-      <div class="problem-card"><h3>The hire-or-fix question</h3><p>Estimating is slow, so the instinct is another estimator. Sometimes that is right. Often the workflow is the constraint, not the headcount. <a href="/blog/hire-another-estimator-or-fix-the-workflow.html">Hire another estimator, or fix the workflow?</a></p></div>
-      <div class="problem-card"><h3>Handoffs between estimating, the field, and the office</h3><p>Jobs won and then eroded by rework, missing documentation, and slow closeout.</p></div>
+    <div class="d4b-rows">
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Bid preparation consumes more hours than it should</h3><p>Most of them are not in the takeoff. They are in assembly, coordination, and chasing information between tools. <a href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html">Where the hours actually go in a commercial construction bid</a></p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Your estimating tools do not talk to each other</h3><p>Takeoff in one system, bid distribution in another, pricing history in spreadsheets. Your estimators fill the gaps by hand. <a href="/blog/the-gap-between-your-estimating-tools.html">The gap between your estimating tools</a></p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Years of bid history you cannot use</h3><p>The numbers exist, in old bid files, but they are not reachable when the next estimate needs them. <a href="/blog/turning-past-bids-into-a-cost-database.html">Turning past bids into a usable cost database</a></p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>The hire-or-fix question</h3><p>Estimating is slow, so the instinct is another estimator. Sometimes that is right. Often the workflow is the constraint, not the headcount. <a href="/blog/hire-another-estimator-or-fix-the-workflow.html">Hire another estimator, or fix the workflow?</a></p></div></div>
+      <div class="d4b-row"><span class="d4b-tick" aria-hidden="true"></span><div><h3>Handoffs between estimating, the field, and the office</h3><p>Jobs won and then eroded by rework, missing documentation, and slow closeout.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Start with one workflow</h2>
     <p>The usual entry is a <strong>Snapshot Diagnostic on one workflow</strong>, most often bid preparation or the estimating-to-field handoff: one to two weeks, fixed fee, ending in a findings map, the economic impact of each finding, and a 90-day plan. From there, Fix Sprints implement the highest-priority changes, one at a time, each with a baseline and the agreed measurement. Software, automation, and AI come into the picture only after the workflow is designed to support them. <a href="/operations-diagnostic">What a Diagnostic covers</a>.</p>
@@ -921,7 +942,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Start the conversation.</h2>
   <div class="cta-buttons">
     <a href="/contact" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
-    <a href="/blog" class="cta-secondary">Read the construction field notes</a>
+    <a href="/blog" class="d4b-arrow">Read the construction field notes</a>
   </div>
 </section>
 
