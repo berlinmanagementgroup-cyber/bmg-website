@@ -838,6 +838,41 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D4 Editorial Operator: Enterprise page system (2026-08-16) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Governance strip */
+.gov{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);border-radius:var(--radius);display:grid;grid-template-columns:repeat(5,1fr);margin:34px 0;box-shadow:var(--shadow-md)}
+.gov-cell{padding:26px 22px;border-right:1px solid rgba(255,255,255,.09)}
+.gov-cell:last-child{border-right:none}
+.gov-cell .tick{width:16px;height:3px;background:var(--gold);margin-bottom:14px}
+.gov-cell h3{letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;font-weight:700;color:var(--gold-light);margin:0 0 10px;font-family:'Inter',sans-serif}
+.gov-cell p{font-size:.86em;color:#C9D2E4;line-height:1.65;margin:0}
+/* Bordered serif callout */
+.callout{max-width:800px;border:1px solid var(--gray-200);border-left:3px solid var(--gold);border-radius:var(--radius);padding:28px 32px;background:var(--white);box-shadow:var(--shadow-sm)}
+.callout p{font-family:'Merriweather',serif;font-size:1.05em;line-height:1.8;color:var(--navy);margin:0}
+/* Problem-shapes ruled list */
+.shape-lead{font-weight:600;color:var(--navy);margin-bottom:0}
+.shape-list{list-style:none;margin:14px 0 0;padding:0;max-width:800px;border-top:2px solid var(--navy)}
+.shape-list li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.65;color:var(--text)}
+.shape-list li:before{content:"";width:14px;height:2px;background:var(--gold);flex-shrink:0;margin-top:.72em}
+/* Ruled career evidence rows */
+.career-rows{list-style:none;margin:0;padding:0;max-width:800px;border-top:2px solid var(--navy)}
+.career-rows li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.7;color:var(--text)}
+.career-rows .cr-tick{width:22px;height:3px;background:var(--gold);margin-top:.72em}
+/* D4 responsive */
+@media (max-width:768px){
+  .gov{grid-template-columns:1fr}
+  .gov-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.09);padding:20px 22px}
+  .gov-cell:last-child{border-bottom:none}
+  .gov-cell p,.shape-list li,.career-rows li,.callout p{font-size:1em}
+  .receipts-label{font-size:1em}
+}
+@media (prefers-reduced-motion: reduce){
+  .gov-cell{transition:none}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -890,18 +925,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section class="section">
-  <div class="section-inner prose">
-    <h2 class="section-heading">The shape of the engagement</h2>
-    <p>This is not executive placement, interim management, or a substitute for your leadership team. It is also not a study: the engagement is scoped to end in implemented change, with the outcome measured wherever clean measurement is possible. One senior operator, working through your people, inside a defined governance cadence, with a defined exit.</p>
-    <p>BMG can support focused operating problems inside organizations up to roughly $1 billion in annual revenue. The work starts with one business unit, workflow, or constraint, not an enterprise-wide transformation program.</p>
+  <div class="section-inner">
+    <div class="prose">
+      <h2 class="section-heading">The shape of the engagement</h2>
+      <p>This is not executive placement, interim management, or a substitute for your leadership team. It is also not a study: the engagement is scoped to end in implemented change, with the outcome measured wherever clean measurement is possible. One senior operator, working through your people, inside a defined governance cadence, with a defined exit.</p>
+    </div>
+    <div class="gov">
+      <div class="gov-cell"><div class="tick" aria-hidden="true"></div><h3>Bounded scope</h3><p>The work starts with one business unit, workflow, or constraint, not an enterprise-wide transformation program.</p></div>
+      <div class="gov-cell"><div class="tick" aria-hidden="true"></div><h3>Senior accountability</h3><p>BMG is accountable for design integrity, sequencing, adoption, and measurement.</p></div>
+      <div class="gov-cell"><div class="tick" aria-hidden="true"></div><h3>Through your teams</h3><p>Your teams execute.</p></div>
+      <div class="gov-cell"><div class="tick" aria-hidden="true"></div><h3>Governance cadence</h3><p>Inside whatever governance cadence your organization runs.</p></div>
+      <div class="gov-cell"><div class="tick" aria-hidden="true"></div><h3>Defined exit</h3><p>With a defined exit when the work is complete.</p></div>
+    </div>
+    <div class="callout">
+      <p>BMG can support focused operating problems inside organizations up to roughly $1 billion in annual revenue. The work starts with one business unit, workflow, or constraint, not an enterprise-wide transformation program.</p>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Scoped diagnostic, then implementation leadership</h2>
     <p>It starts with an <strong>Operations Diagnostic scoped to the named problem</strong>: typically four to six weeks across the functions the workflow touches, in the operation itself and in the systems, ending in a quantified findings readout and a sequenced fix design with owners. Where the findings warrant it, BMG then leads implementation: your teams execute, and BMG is accountable for design integrity, sequencing, adoption, and measurement, inside whatever governance cadence your organization runs. Fixed-fee diagnostic; implementation priced per program. <a href="/how-we-work">The method in full</a>.</p>
-    <p>Typical problem shapes: a cross-functional workflow failing between departments &middot; customer or partner onboarding &middot; post-acquisition operational integration &middot; cost-to-serve drift &middot; a function left without an owner after a pivot or reorganization &middot; service delivery that has outgrown its process &middot; capacity constraints that hiring has not fixed.</p>
+    <p class="shape-lead">Typical problem shapes:</p>
+    <ul class="shape-list" role="list">
+      <li>a cross-functional workflow failing between departments</li>
+      <li>customer or partner onboarding</li>
+      <li>post-acquisition operational integration</li>
+      <li>cost-to-serve drift</li>
+      <li>a function left without an owner after a pivot or reorganization</li>
+      <li>service delivery that has outgrown its process</li>
+      <li>capacity constraints that hiring has not fixed.</li>
+    </ul>
   </div>
 </section>
 
@@ -909,10 +964,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-inner prose">
     <h2 class="section-heading">Why an experienced outside operator</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <ul>
-      <li>While serving with a larger consulting firm, Brad was part of a team that redesigned an anonymized carrier division of roughly $150M spanning 13 offices that operated as silos, bringing them into one operating model across work ownership, incentives, rules of engagement, training for more than 100 employees, and steering-committee governance. Ten months after implementation, the division was at 100% of its revenue goal and 118% of its gross-profit goal.</li>
-      <li>At project44, restored a deprioritized integration layer spanning 350+ carrier API integrations and North America's top 50 carrier relationships, coordinating customers, external partner IT organizations, and internal engineering without direct authority over any of them. 26 new connections shipped in under nine months.</li>
-      <li>The same assessment-to-implementation method was reused across successive engagements at some of North America's largest transportation enterprises, and across contexts from new-business builds to multi-site redesigns.</li>
+    <ul class="career-rows" role="list">
+      <li><span class="cr-tick" aria-hidden="true"></span><div>While serving with a larger consulting firm, Brad was part of a team that redesigned an anonymized carrier division of roughly $150M spanning 13 offices that operated as silos, bringing them into one operating model across work ownership, incentives, rules of engagement, training for more than 100 employees, and steering-committee governance. Ten months after implementation, the division was at 100% of its revenue goal and 118% of its gross-profit goal.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>At project44, restored a deprioritized integration layer spanning 350+ carrier API integrations and North America's top 50 carrier relationships, coordinating customers, external partner IT organizations, and internal engineering without direct authority over any of them. 26 new connections shipped in under nine months.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>The same assessment-to-implementation method was reused across successive engagements at some of North America's largest transportation enterprises, and across contexts from new-business builds to multi-site redesigns.</div></li>
     </ul>
     <p>The full record is on the <a href="/about">About page</a>. See also <a href="/operations-diagnostic">what the Diagnostic covers</a>.</p>
   </div>

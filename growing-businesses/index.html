@@ -838,6 +838,37 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .form-grid .cta-primary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 @media (max-width:640px){.form-grid .cta-primary{width:100%}}
 </style>
+<style>
+/* D4 Editorial Operator: Growing Businesses page system (2026-08-16) */
+:root{--cream:#F9F6EF}
+.band-cream{background:var(--cream)}
+/* Owner-statement tiles */
+.owner-tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;margin-bottom:18px}
+.owner{grid-column:span 2;background:var(--cream);border-radius:var(--radius);padding:26px 24px}
+.owner:nth-child(4){grid-column:2 / span 2}
+.owner:nth-child(5){grid-column:4 / span 2}
+.owner .tick{width:22px;height:3px;background:var(--gold);margin-bottom:14px}
+.owner p{font-family:'Merriweather',serif;font-size:.9rem;color:var(--navy);line-height:1.7}
+.owner-note{font-style:italic;color:#5a6478;font-size:.92rem;margin-bottom:34px}
+/* Bordered serif callout */
+.callout{max-width:800px;border:1px solid var(--gray-200);border-left:3px solid var(--gold);border-radius:var(--radius);padding:28px 32px;background:var(--white);box-shadow:var(--shadow-sm)}
+.callout p{font-family:'Merriweather',serif;font-size:1.05em;line-height:1.8;color:var(--navy);margin:0}
+/* Ruled career evidence rows */
+.career-rows{list-style:none;margin:0;padding:0;max-width:800px;border-top:2px solid var(--navy)}
+.career-rows li{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--gray-200);font-size:.95em;line-height:1.7;color:var(--text)}
+.career-rows .cr-tick{width:22px;height:3px;background:var(--gold);margin-top:.72em}
+/* D4 responsive */
+@media (max-width:768px){
+  .owner-tiles{grid-template-columns:1fr;gap:14px}
+  .owner{grid-column:auto}
+  .owner:nth-child(4),.owner:nth-child(5){grid-column:auto}
+  .owner p,.career-rows li,.callout p,.owner-note{font-size:1em}
+  .receipts-label{font-size:1em}
+}
+@media (prefers-reduced-motion: reduce){
+  .owner{transition:none}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -892,21 +923,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">What owners tell us</h2>
-    <div class="problem-grid">
-      <div class="problem-card"><p>"I am the bottleneck. Everything still runs through me."</p></div>
-      <div class="problem-card"><p>"We are busier than we have ever been, and margin went the wrong direction."</p></div>
-      <div class="problem-card"><p>"We bought the software. We still run the business on spreadsheets and memory."</p></div>
-      <div class="problem-card"><p>"Jobs slip somewhere between departments, and I hear about it from the customer."</p></div>
-      <div class="problem-card"><p>"Everyone says hire more people. I am not sure another hire fixes this."</p></div>
+    <div class="owner-tiles">
+      <div class="owner"><div class="tick" aria-hidden="true"></div><p>I am the bottleneck. Everything still runs through me.</p></div>
+      <div class="owner"><div class="tick" aria-hidden="true"></div><p>We are busier than we have ever been, and margin went the wrong direction.</p></div>
+      <div class="owner"><div class="tick" aria-hidden="true"></div><p>We bought the software. We still run the business on spreadsheets and memory.</p></div>
+      <div class="owner"><div class="tick" aria-hidden="true"></div><p>Jobs slip somewhere between departments, and I hear about it from the customer.</p></div>
+      <div class="owner"><div class="tick" aria-hidden="true"></div><p>Everyone says hire more people. I am not sure another hire fixes this.</p></div>
     </div>
-    <div class="prose" style="margin-top:26px">
+    <p class="owner-note">Common owner statements, paraphrased. Not client testimonials.</p>
+    <div class="prose">
       <p>None of these is unusual. These problems usually come from how the operation was designed for an earlier stage of the business, not from a lack of effort.</p>
+    </div>
+    <div class="callout" style="margin-top:26px">
       <p>BMG is generally a fit once a business reaches roughly $25 million in annual revenue and operating complexity has begun to outrun the way work is managed. The strain often becomes visible around $25 million to $30 million, when informal workflows, owner-dependent decisions, and disconnected systems stop scaling.</p>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section band-cream">
   <div class="section-inner prose">
     <h2 class="section-heading">Sized for your business</h2>
     <p>It starts with a conversation, at no charge, about the operating problem creating the most cost, delay, or management friction. If it makes sense, a <strong>Snapshot Diagnostic</strong>: one to two weeks on one workflow or one area, fixed fee, ending in a findings map, the economic impact of each finding, and a 90-day plan you can execute with or without us. Then, if you want the help, <strong>Fix Sprints</strong>: one bounded fix at a time, each with a baseline set before the work and the agreed measurement after.</p>
@@ -918,10 +952,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-inner prose">
     <h2 class="section-heading">He has run a business your size</h2>
     <p class="receipts-label">From Brad Berlin's operating career. Not BMG client outcomes.</p>
-    <ul>
-      <li>Brad has operated at the stage you are in, including the stretch where too many decisions depend on the owner.</li>
-      <li>As COO of Freightclaims.com, a venture-stage software company, built the operating structure from scratch: support, customer success, sales cadence, quality gates, financial controls. Later led a cost restructuring during a capital-constrained period that cut monthly operating expenses 30 to 40%.</li>
-      <li>As Chief Customer Officer at MyCarrier, cut customer onboarding from multiple weeks to about 3 to 4 days by working with the frontline team and redesigning the workflow.</li>
+    <ul class="career-rows" role="list">
+      <li><span class="cr-tick" aria-hidden="true"></span><div>Brad has operated at the stage you are in, including the stretch where too many decisions depend on the owner.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>As COO of Freightclaims.com, a venture-stage software company, built the operating structure from scratch: support, customer success, sales cadence, quality gates, financial controls. Later led a cost restructuring during a capital-constrained period that cut monthly operating expenses 30 to 40%.</div></li>
+      <li><span class="cr-tick" aria-hidden="true"></span><div>As Chief Customer Officer at MyCarrier, cut customer onboarding from multiple weeks to about 3 to 4 days by working with the frontline team and redesigning the workflow.</div></li>
     </ul>
     <p><a href="/about">The full operating record</a></p>
   </div>
