@@ -876,6 +876,11 @@ footer{color:#B9C2D4}
 :root{--cream:#F9F6EF}
 .band-cream{background:var(--cream)}
 </style>
+<style>
+/* D4P2 Stage 2A (2026-08-17): contact form AJAX status region */
+.form-status{color:#B3261E;font-size:.92em;line-height:1.5}
+.form-status:empty{display:none}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -949,6 +954,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </select></div>
       <div><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone"></div>
       <div><button type="submit" class="cta-primary" style="border:none;cursor:pointer">Book the conversation</button></div>
+      <div id="contactFormStatus" class="form-status" role="alert" aria-atomic="true"></div>
     </form>
     <p style="text-align:center;margin-top:18px">Prefer to book time directly? <a href="https://calendly.com/brad-berlinmanagementgroup/30min-discovery" target="_blank" rel="noopener noreferrer">Choose a slot here</a>.</p>
   </div>
@@ -1012,6 +1018,119 @@ function toggleMobileNav(){
   b.classList.toggle('active',open);
   b.setAttribute('aria-expanded',open?'true':'false');
 }
+</script>
+<script>
+/* D4P2 Stage 2A (2026-08-17): contact form AJAX submit, Architecture B */
+(function () {
+  window.dataLayer = window.dataLayer || [];
+
+  if (!window.fetch || !window.FormData || !window.AbortController) {
+    return;
+  }
+
+  var form = document.querySelector('form[action$="/f/xgonjavo"]');
+  if (!form) {
+    return;
+  }
+
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var statusEl = document.getElementById('contactFormStatus');
+  var submitting = false;
+
+  function setError(message) {
+    if (statusEl) {
+      statusEl.textContent = message;
+    }
+  }
+
+  function clearError() {
+    if (statusEl) {
+      statusEl.textContent = '';
+    }
+  }
+
+  form.addEventListener('submit', function (event) {
+    if (submitting) {
+      event.preventDefault();
+      return;
+    }
+
+    event.preventDefault();
+    submitting = true;
+
+    var originalLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
+    form.setAttribute('aria-busy', 'true');
+    if (submitBtn) {
+      submitBtn.textContent = 'Sending...';
+    }
+    clearError();
+
+    function resetSubmitState() {
+      submitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+      form.removeAttribute('aria-busy');
+    }
+
+    var formData = new FormData(form);
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function () {
+      controller.abort();
+    }, 15000);
+
+    function handleFetchSuccess(response) {
+      clearTimeout(timeoutId);
+
+      if (response.ok) {
+        var redirected = false;
+        var watchdogId;
+        var redirectOnce = function () {
+          if (redirected) {
+            return;
+          }
+          redirected = true;
+          clearTimeout(watchdogId);
+          window.location.assign('/thank-you/');
+        };
+        watchdogId = setTimeout(redirectOnce, 1500);
+
+        try {
+          window.dataLayer.push({
+            event: 'form_submit_success',
+            form_name: 'contact_form',
+            submission_method: 'formspree',
+            eventCallback: redirectOnce,
+            eventTimeout: 1500
+          });
+        } catch (pushError) {
+          redirectOnce();
+        }
+        return;
+      }
+
+      resetSubmitState();
+      setError('We could not send your request. Your information is still here. Please review the form and try again.');
+    }
+
+    function handleFetchRejection() {
+      clearTimeout(timeoutId);
+      resetSubmitState();
+      setError('We could not confirm whether your request was received. Your information is still here. Please wait a moment, then try again if needed.');
+    }
+
+    fetch(form.getAttribute('action'), {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' },
+      signal: controller.signal
+    }).then(handleFetchSuccess, handleFetchRejection);
+  });
+})();
 </script>
 </body>
 </html>
