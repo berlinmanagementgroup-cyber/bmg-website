@@ -92,8 +92,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav-links a:hover { color: var(--gold); }
 
         .nav-cta {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: var(--white) !important;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            color: var(--navy) !important;
             padding: 10px 20px;
             border-radius: var(--radius);
             font-weight: 500;
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav-cta:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-            color: var(--white) !important;
+            color: var(--navy) !important;
         }
 
         .hamburger {
@@ -162,8 +162,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .nav-panel a:hover { background: var(--gray-100); color: var(--gold); }
 
         .nav-panel .nav-cta {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: var(--white) !important;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            color: var(--navy) !important;
             text-align: center;
             margin-top: 8px;
         }
@@ -224,11 +224,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .footer-bottom span { color: rgba(255,255,255,0.2); }
         @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; gap: 32px; } .footer-links { grid-template-columns: 1fr; gap: 8px 16px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
         @media (max-width: 640px) { .thank-you-section { padding: 3rem 1.25rem; } .thank-you-container h1 { font-size: 1.75rem; } .thank-you-container .subtitle { font-size: 1rem; } .next-steps-card { padding: 1.25rem 0 0.5rem; } }
-    </style>
+    
+/* === UX execution batch 2026-08-17: a11y + Who We Serve === */
+.dropdown-group{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;padding:8px 18px 2px;margin:0}
+.dropdown-menu a{white-space:nowrap}
+.nav-group{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;padding:14px 0 0;margin:0}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--navy);outline-offset:2px;box-shadow:0 0 0 6px var(--gold-light);border-radius:4px}
+.skip-link:focus{left:16px !important;top:12px;z-index:2000;background:var(--navy);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none}
+.section-heading,h1{text-wrap:balance}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}html{scroll-behavior:auto !important}}
+</style>
 <style>
 /* D4C1 sitewide chrome normalization (2026-08-16): F1 footer recomposition + footer fine print + mobile wordmark */
 footer{color:#B9C2D4}
-.footer-content{grid-template-columns:1.6fr 1fr 1fr}
+.footer-content{grid-template-columns:1.5fr .8fr 1fr 1fr}
 .footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
 .footer-head{letter-spacing:.16em;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
 .footer-links{display:block}
@@ -282,10 +291,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="/how-we-work">How We Work</a>
             <a href="/operations-diagnostic">Operations Diagnostic</a>
             <div class="dropdown">
-                <a href="#" onclick="return false" aria-haspopup="true">Who We Help</a>
+                <a href="#" onclick="return false" aria-haspopup="true">Who We Serve</a>
                 <div class="dropdown-menu">
+                    <p class="dropdown-group">Audience</p>
                     <a href="/growing-businesses">Growing Businesses</a>
                     <a href="/enterprise">Enterprise</a>
+                    <p class="dropdown-group">Industries</p>
+                    <a href="/commercial-contractors">Commercial Contractors</a>
+                    <a href="/home-services">Home Services</a>
+                    <a href="/property-management">Property Management</a>
+                    <a href="/logistics-supply-chain">Logistics &amp; Supply Chain</a>
                 </div>
             </div>
             <a href="/blog">Field Notes</a>
@@ -297,8 +312,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="nav-panel" id="mobileNav">
     <a href="/how-we-work">How We Work</a>
     <a href="/operations-diagnostic">Operations Diagnostic</a>
+    <p class="nav-group">Who We Serve &middot; Audience</p>
     <a href="/growing-businesses">Growing Businesses</a>
     <a href="/enterprise">Enterprise</a>
+    <p class="nav-group">Who We Serve &middot; Industries</p>
+    <a href="/commercial-contractors">Commercial Contractors</a>
+    <a href="/home-services">Home Services</a>
+    <a href="/property-management">Property Management</a>
+    <a href="/logistics-supply-chain">Logistics &amp; Supply Chain</a>
     <a href="/blog">Field Notes</a>
     <a href="/about">About</a>
     <a href="/contact" class="nav-cta">Contact</a>
@@ -339,11 +360,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div>
-                <p class="footer-head">Who we help</p>
+                <p class="footer-head">Audience</p>
+                <div class="footer-links">
+                    <a href="/growing-businesses">Growing Businesses</a>
+                    <a href="/enterprise">Enterprise</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-head">Industries</p>
                 <div class="footer-links">
                     <a href="/commercial-contractors">Commercial Contractors</a>
                     <a href="/home-services">Home Services</a>
                     <a href="/property-management">Property Management</a>
+                    <a href="/logistics-supply-chain">Logistics &amp; Supply Chain</a>
                 </div>
             </div>
             <div>

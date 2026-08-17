@@ -134,3 +134,15 @@
   to = "/blog/what-a-phoenix-construction-operations-audit-actually-involves.html"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/logistics-supply-chain.html"
+  to = "/logistics-supply-chain"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/logistics-supply-chain-operations"
+  to = "/logistics-supply-chain"
+  status = 301
+  force = true

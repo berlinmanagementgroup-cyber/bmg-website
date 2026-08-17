@@ -127,6 +127,15 @@ footer p { margin-bottom: 0; }
   .footer-links a:last-child { border-bottom: none; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+
+/* === UX execution batch 2026-08-17: a11y + Who We Serve === */
+.dropdown-group{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;padding:8px 18px 2px;margin:0}
+.dropdown-menu a{white-space:nowrap}
+.nav-group{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;padding:14px 0 0;margin:0}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--navy);outline-offset:2px;box-shadow:0 0 0 6px var(--gold-light);border-radius:4px}
+.skip-link:focus{left:16px !important;top:12px;z-index:2000;background:var(--navy);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none}
+.section-heading,h1{text-wrap:balance}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}html{scroll-behavior:auto !important}}
 </style>
 </head>
 <body>
@@ -217,11 +226,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div>
-                <p class="footer-head">Who we help</p>
+                <p class="footer-head">Audience</p>
+                <div class="footer-links">
+                    <a href="/growing-businesses">Growing Businesses</a>
+                    <a href="/enterprise">Enterprise</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-head">Industries</p>
                 <div class="footer-links">
                     <a href="/commercial-contractors">Commercial Contractors</a>
                     <a href="/home-services">Home Services</a>
                     <a href="/property-management">Property Management</a>
+                    <a href="/logistics-supply-chain">Logistics &amp; Supply Chain</a>
                 </div>
             </div>
             <div>
