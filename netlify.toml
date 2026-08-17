@@ -11,97 +11,97 @@
 
 [[redirects]]
   from = "/audit"
-  to = "/contact"
+  to = "/contact/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/audit/thanks"
-  to = "/contact"
+  to = "/contact/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/free-audit"
-  to = "/contact"
+  to = "/contact/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/free-audit.html"
-  to = "/contact"
+  to = "/contact/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/commercial-contractors.html"
-  to = "/commercial-contractors"
+  to = "/commercial-contractors/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/home-services.html"
-  to = "/home-services"
+  to = "/home-services/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/property-management.html"
-  to = "/property-management"
+  to = "/property-management/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/own-vs-rent.html"
-  to = "/own-vs-rent"
+  to = "/own-vs-rent/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog.html"
-  to = "/blog"
+  to = "/blog/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/terms.html"
-  to = "/terms"
+  to = "/terms/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/privacy.html"
-  to = "/privacy"
+  to = "/privacy/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/about.html"
-  to = "/about"
+  to = "/about/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/thank-you.html"
-  to = "/thank-you"
+  to = "/thank-you/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/data-deletion.html"
-  to = "/data-deletion"
+  to = "/data-deletion/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/ai-assisted-build-vs-traditional-development-cost"
-  to = "/blog"
+  to = "/blog/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/ai-assisted-build-vs-traditional-development-cost.html"
-  to = "/blog"
+  to = "/blog/"
   status = 301
   force = true
 
@@ -137,12 +137,12 @@
 
 [[redirects]]
   from = "/logistics-supply-chain.html"
-  to = "/logistics-supply-chain"
+  to = "/logistics-supply-chain/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/logistics-supply-chain-operations"
-  to = "/logistics-supply-chain"
+  to = "/logistics-supply-chain/"
   status = 301
   force = true
