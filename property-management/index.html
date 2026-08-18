@@ -703,6 +703,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 16px 24px;
             z-index: 999;
             box-shadow: var(--shadow-md);
+            max-height: calc(100vh - 72px);
+            max-height: calc(100dvh - 72px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav-panel.active {
@@ -817,6 +822,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-links .dropdown>a{cursor:default}
 .nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
 .nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
+.nav-links .dropdown>button.dropdown-toggle{background:none;border:0;padding:0;margin:0;font:inherit;font-size:.9em;line-height:inherit;color:var(--text);cursor:pointer;transition:color .3s ease}
+.nav-links .dropdown>button.dropdown-toggle:hover{color:var(--gold-dark)}
+.nav-links .dropdown.open .dropdown-menu{display:block}
+.nav-links .dropdown.esc-closed .dropdown-menu{display:none}
+@media (max-width:767px){body.nav-open{overflow:hidden}}
 .nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
 .receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
 .prose{max-width:800px;margin:0 auto}
@@ -876,6 +886,9 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 footer{color:#B9C2D4}
 .footer-content{grid-template-columns:1.5fr .8fr 1fr 1fr}
 .footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
+.footer-brand .footer-phone{margin-top:10px}
+.footer-brand .footer-phone a{color:#E2CC7E;text-decoration:none;font-weight:600;font-size:1.02em}
+.footer-brand .footer-phone a:hover{color:#FFFFFF;text-decoration:underline}
 .footer-head{letter-spacing:.16em;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
 .footer-links{display:block}
 .footer-links a{display:block;color:#B9C2D4;font-size:.9em;padding:6px 0;line-height:1.5}
@@ -914,7 +927,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="/how-we-work/">How We Work</a>
             <a href="/operations-diagnostic/">Operations Diagnostic</a>
             <div class="dropdown">
-                <a href="#" onclick="return false" aria-haspopup="true">Who We Serve</a>
+                <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Who We Serve</button>
                 <div class="dropdown-menu">
                     <p class="dropdown-group">Audience</p>
                     <a href="/growing-businesses/">Growing Businesses</a>
@@ -1004,7 +1017,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="footer-brand">
                 <h3>Berlin Management Group</h3>
                 <p>Operations improvement that stays through implementation. Find the problem. Fix the operation. Measure what changed.</p>
-                <p>Phoenix, AZ</p>
+                <p>Phoenix, AZ</p><p class="footer-phone"><a href="tel:+16028217807">(602) 821-7807</a></p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
@@ -1049,13 +1062,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 <script>
-function toggleMobileNav(){
+function setMobileNav(open){
   var p=document.getElementById('mobileNav');
   var b=document.querySelector('.hamburger');
-  var open=p.classList.toggle('active');
+  if(!p||!b) return;
+  p.classList.toggle('active',open);
   b.classList.toggle('active',open);
   b.setAttribute('aria-expanded',open?'true':'false');
+  document.body.classList.toggle('nav-open',open);
+  if(open){ var first=p.querySelector('a,button'); if(first) first.focus(); }
+  else { b.focus(); }
 }
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  setMobileNav(!(p&&p.classList.contains('active')));
+}
+function closeServeDropdown(d){
+  if(!d) return;
+  d.classList.remove('open');
+  d.classList.add('esc-closed');
+  var t=d.querySelector('button');
+  if(t) t.setAttribute('aria-expanded','false');
+}
+(function(){
+  var d=document.querySelector('.nav-links .dropdown');
+  if(d){
+    var t=d.querySelector('button');
+    if(t){
+      var sync=function(open){ d.classList.toggle('open',open); t.setAttribute('aria-expanded',open?'true':'false'); };
+      t.addEventListener('click',function(){ d.classList.remove('esc-closed'); sync(!d.classList.contains('open')); });
+      d.addEventListener('mouseenter',function(){ d.classList.remove('esc-closed'); t.setAttribute('aria-expanded','true'); });
+      d.addEventListener('mouseleave',function(){ if(!d.classList.contains('open')) t.setAttribute('aria-expanded','false'); });
+      d.addEventListener('focusin',function(){ if(!d.classList.contains('esc-closed')) t.setAttribute('aria-expanded','true'); });
+      d.addEventListener('focusout',function(e){ if(!d.contains(e.relatedTarget)){ sync(false); d.classList.remove('esc-closed'); } });
+      document.addEventListener('click',function(e){ if(!d.contains(e.target)){ sync(false); d.classList.remove('esc-closed'); } });
+    }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'&&e.key!=='Esc') return;
+    var p=document.getElementById('mobileNav');
+    if(p&&p.classList.contains('active')){ setMobileNav(false); return; }
+    closeServeDropdown(document.querySelector('.nav-links .dropdown'));
+  });
+  window.addEventListener('resize',function(){
+    var p=document.getElementById('mobileNav');
+    if(window.innerWidth>=768&&p&&p.classList.contains('active')){
+      p.classList.remove('active');
+      var b=document.querySelector('.hamburger');
+      if(b){ b.classList.remove('active'); b.setAttribute('aria-expanded','false'); }
+      document.body.classList.remove('nav-open');
+    }
+  });
+})();
 </script>
 </body>
 </html>

@@ -721,6 +721,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 16px 24px;
             z-index: 999;
             box-shadow: var(--shadow-md);
+            max-height: calc(100vh - 72px);
+            max-height: calc(100dvh - 72px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav-panel.active {
@@ -843,6 +848,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-links .dropdown>a{cursor:default}
 .nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
 .nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
+.nav-links .dropdown>button.dropdown-toggle{background:none;border:0;padding:0;margin:0;font:inherit;font-size:.9em;line-height:inherit;color:var(--text);cursor:pointer;transition:color .3s ease}
+.nav-links .dropdown>button.dropdown-toggle:hover{color:var(--gold-dark)}
+.nav-links .dropdown.open .dropdown-menu{display:block}
+.nav-links .dropdown.esc-closed .dropdown-menu{display:none}
+@media (max-width:767px){body.nav-open{overflow:hidden}}
 .nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
 .receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
 .prose{max-width:800px;margin:0 auto}
@@ -886,6 +896,7 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .hero-rule{width:56px;height:3px;background:var(--gold);margin:0 auto 28px}
 .hero-micro{margin-top:36px;letter-spacing:.18em;font-size:.7rem;font-weight:600;color:var(--gold-light);text-transform:uppercase}
 .hero-micro span{margin:0 .35em}
+.hero .hero-reach{margin-top:16px;font-size:.95rem;line-height:1.6;color:#D7DCE6;letter-spacing:.01em}
 .d1-kicker{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:700;color:#7A6228;margin-bottom:12px}
 .d1-lede{max-width:680px;color:var(--slate);margin-bottom:40px}
 .d1-close{margin-top:38px;text-align:center}
@@ -905,7 +916,7 @@ a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border
 .rail{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:54px 0 8px;gap:18px}
 .rail:before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:var(--gold);opacity:.55}
 .rail-stop{text-align:center;position:relative}
-.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:var(--gold-dark);font-family:'Merriweather',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:#7A6228;font-family:'Merriweather',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
 .rail-stop.filled .dot{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 100%);color:var(--navy);border-color:var(--gold-dark)}
 .rail-stop h3{font-family:'Merriweather',serif;font-size:1em;color:var(--navy);margin-bottom:8px;font-weight:700}
 .rail-stop p{font-size:.88em;color:var(--text);max-width:210px;margin:0 auto;line-height:1.6}
@@ -947,6 +958,9 @@ a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border
 footer{color:#B9C2D4}
 .footer-content{grid-template-columns:1.5fr .8fr 1fr 1fr}
 .footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
+.footer-brand .footer-phone{margin-top:10px}
+.footer-brand .footer-phone a{color:#E2CC7E;text-decoration:none;font-weight:600;font-size:1.02em}
+.footer-brand .footer-phone a:hover{color:#FFFFFF;text-decoration:underline}
 .footer-head{letter-spacing:.16em;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
 .footer-links{display:block}
 .footer-links a{display:block;color:#B9C2D4;font-size:.9em;padding:6px 0;line-height:1.5}
@@ -984,6 +998,12 @@ footer{color:#B9C2D4}
 }
 @media (max-width:345px){
   .nav-logo .nav-logo-text{font-size:.8rem}
+  /* UX-02 reflow repair (WCAG 2.2 SC 1.4.10): allow the engagement rail track to shrink
+     below its min-content width and let the stop contents wrap instead of overflowing. */
+  .rail{grid-template-columns:minmax(0,1fr)}
+  .rail-stop{min-width:0;flex-wrap:wrap}
+  .rail-stop h3{min-width:0;flex:1 1 0}
+  .rail-stop p{min-width:0;flex:1 1 100%;margin-top:6px}
 }
 @media (prefers-reduced-motion: reduce){
   a.d1-arrow,.footer-links a,.proof-band a{transition:none}
@@ -1009,7 +1029,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="/how-we-work/">How We Work</a>
             <a href="/operations-diagnostic/">Operations Diagnostic</a>
             <div class="dropdown">
-                <a href="#" onclick="return false" aria-haspopup="true">Who We Serve</a>
+                <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Who We Serve</button>
                 <div class="dropdown-menu">
                     <p class="dropdown-group">Audience</p>
                     <a href="/growing-businesses/">Growing Businesses</a>
@@ -1052,6 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/contact/" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
     &nbsp; <a href="/operations-diagnostic/" class="cta-secondary">See how the Diagnostic works</a>
     <p class="hero-micro"><span class="item">Fixed scope</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Fixed fee</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Senior-led</span></p>
+    <p class="hero-reach">Based in Phoenix. Working with businesses nationwide.</p>
   </div>
 </section>
 
@@ -1215,7 +1236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="footer-brand">
                 <h3>Berlin Management Group</h3>
                 <p>Operations improvement that stays through implementation. Find the problem. Fix the operation. Measure what changed.</p>
-                <p>Phoenix, AZ</p>
+                <p>Phoenix, AZ</p><p class="footer-phone"><a href="tel:+16028217807">(602) 821-7807</a></p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/berlin-management-group/" title="LinkedIn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
@@ -1260,13 +1281,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 <script>
-function toggleMobileNav(){
+function setMobileNav(open){
   var p=document.getElementById('mobileNav');
   var b=document.querySelector('.hamburger');
-  var open=p.classList.toggle('active');
+  if(!p||!b) return;
+  p.classList.toggle('active',open);
   b.classList.toggle('active',open);
   b.setAttribute('aria-expanded',open?'true':'false');
+  document.body.classList.toggle('nav-open',open);
+  if(open){ var first=p.querySelector('a,button'); if(first) first.focus(); }
+  else { b.focus(); }
 }
+function toggleMobileNav(){
+  var p=document.getElementById('mobileNav');
+  setMobileNav(!(p&&p.classList.contains('active')));
+}
+function closeServeDropdown(d){
+  if(!d) return;
+  d.classList.remove('open');
+  d.classList.add('esc-closed');
+  var t=d.querySelector('button');
+  if(t) t.setAttribute('aria-expanded','false');
+}
+(function(){
+  var d=document.querySelector('.nav-links .dropdown');
+  if(d){
+    var t=d.querySelector('button');
+    if(t){
+      var sync=function(open){ d.classList.toggle('open',open); t.setAttribute('aria-expanded',open?'true':'false'); };
+      t.addEventListener('click',function(){ d.classList.remove('esc-closed'); sync(!d.classList.contains('open')); });
+      d.addEventListener('mouseenter',function(){ d.classList.remove('esc-closed'); t.setAttribute('aria-expanded','true'); });
+      d.addEventListener('mouseleave',function(){ if(!d.classList.contains('open')) t.setAttribute('aria-expanded','false'); });
+      d.addEventListener('focusin',function(){ if(!d.classList.contains('esc-closed')) t.setAttribute('aria-expanded','true'); });
+      d.addEventListener('focusout',function(e){ if(!d.contains(e.relatedTarget)){ sync(false); d.classList.remove('esc-closed'); } });
+      document.addEventListener('click',function(e){ if(!d.contains(e.target)){ sync(false); d.classList.remove('esc-closed'); } });
+    }
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'&&e.key!=='Esc') return;
+    var p=document.getElementById('mobileNav');
+    if(p&&p.classList.contains('active')){ setMobileNav(false); return; }
+    closeServeDropdown(document.querySelector('.nav-links .dropdown'));
+  });
+  window.addEventListener('resize',function(){
+    var p=document.getElementById('mobileNav');
+    if(window.innerWidth>=768&&p&&p.classList.contains('active')){
+      p.classList.remove('active');
+      var b=document.querySelector('.hamburger');
+      if(b){ b.classList.remove('active'); b.setAttribute('aria-expanded','false'); }
+      document.body.classList.remove('nav-open');
+    }
+  });
+})();
 </script>
 </body>
 </html>
