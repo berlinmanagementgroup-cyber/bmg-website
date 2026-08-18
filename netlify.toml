@@ -146,3 +146,74 @@
   to = "/logistics-supply-chain/"
   status = 301
   force = true
+
+# Explicit .html -> directory redirects, added 2026-08-18 (Packet 2).
+# Netlify Pretty URLs currently provides these implicitly and REMAINS ENABLED. These rules are
+# declared anyway so the redirect matrix is complete in version control and so that toggling
+# Pretty URLs off in the Netlify UI cannot silently 404 a legacy URL. They are inert today.
+# Context: Pretty URLs is what rewrites internal <a href="/blog/x.html"> to /blog/x at serve time,
+# which routes 18 internal links to the five canonical .html Field Notes through a single 301.
+# Disabling it was evaluated and rejected: it would stop /about -> /about/ style normalization and
+# leave bare-slug variants resolving 200 alongside their slash form. Google Search Console already
+# shows /fractional-coo and /terms indexed as bare-slug duplicates, so that trade is a net loss.
+# One single-hop 301 on an internal link costs less. Revisit only with Brad's explicit decision.
+
+[[redirects]]
+  from = "/enterprise.html"
+  to = "/enterprise/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fractional-coo.html"
+  to = "/fractional-coo/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/growing-businesses.html"
+  to = "/growing-businesses/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-we-work.html"
+  to = "/how-we-work/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations-consulting-phoenix.html"
+  to = "/operations-consulting-phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/operations-diagnostic.html"
+  to = "/operations-diagnostic/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/start-with-the-problem.html"
+  to = "/start-with-the-problem/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/signs-your-operations-cant-keep-up-with-growth.html"
+  to = "/blog/signs-your-operations-cant-keep-up-with-growth/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/get-out-of-the-day-to-day.html"
+  to = "/blog/get-out-of-the-day-to-day/"
+  status = 301
+  force = true
