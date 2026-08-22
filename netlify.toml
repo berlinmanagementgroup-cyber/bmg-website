@@ -217,3 +217,11 @@
   to = "/blog/get-out-of-the-day-to-day/"
   status = 301
   force = true
+
+# Cross-industry article campaign short link (2026-08-24). 302 by design: the target
+# carries campaign UTMs and the canonical lives at the clean blog URL.
+[[redirects]]
+  from = "/fresh-eyes"
+  to = "/blog/fresh-set-of-eyes-cross-industry-thinking/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=cross_industry_thinking&utm_content=personal_feed"
+  status = 302
+  force = true
