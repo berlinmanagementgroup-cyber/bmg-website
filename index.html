@@ -846,6 +846,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .serve-item span{color:var(--slate);font-size:.92em;line-height:1.5}
 .serve-item:hover strong{color:var(--gold-dark)}
 @media (max-width:768px){.serve-grid{grid-template-columns:1fr}}
+.lane-intro{max-width:760px;color:var(--slate);line-height:1.7;margin:0 0 28px}
+.lane-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:38px}
+.lane-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--gray-200);border-top:3px solid var(--gold);border-radius:var(--radius);padding:26px 24px 22px;text-decoration:none;box-shadow:var(--shadow-sm);transition:box-shadow .2s ease,transform .2s ease}
+.lane-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.lane-card .lane-band{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;margin-bottom:10px}
+.lane-card strong{display:block;font-family:'Merriweather',serif;color:var(--navy);font-size:1.15em;margin-bottom:10px;line-height:1.3}
+.lane-card .lane-copy{display:block;color:var(--slate);font-size:.93em;line-height:1.6;flex:1}
+.lane-card .lane-more{display:inline-block;margin-top:16px;color:#7A6228;font-weight:600;font-size:.88em}
+.lane-card:hover .lane-more{text-decoration:underline}
+.industry-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;max-width:980px}
+@media (max-width:900px){.lane-grid{grid-template-columns:1fr}}
+@media (max-width:768px){.industry-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.lane-card,.lane-card:hover{transition:none;transform:none}}
 </style>
 <style>
 /* Relaunch additions */
@@ -1037,8 +1050,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Who We Serve</button>
                 <div class="dropdown-menu">
                     <p class="dropdown-group">Audience</p>
-                    <a href="/growing-businesses/">Growing Businesses</a>
-                    <a href="/enterprise/">Enterprise</a>
+                    <a href="/growing-businesses/">Main Street Businesses</a>
+                    <a href="/middle-market/">Middle-Market Companies</a>
+                    <a href="/enterprise/">Enterprise Teams</a>
                     <p class="dropdown-group">Industries</p>
                     <a href="/commercial-contractors/">Commercial Contractors</a>
                     <a href="/home-services/">Home Services</a>
@@ -1056,8 +1070,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/how-we-work/">How We Work</a>
     <a href="/operations-diagnostic/">Operations Diagnostic</a>
     <p class="nav-group">Who We Serve &middot; Audience</p>
-    <a href="/growing-businesses/">Growing Businesses</a>
-    <a href="/enterprise/">Enterprise</a>
+    <a href="/growing-businesses/">Main Street Businesses</a>
+    <a href="/middle-market/">Middle-Market Companies</a>
+    <a href="/enterprise/">Enterprise Teams</a>
     <p class="nav-group">Who We Serve &middot; Industries</p>
     <a href="/commercial-contractors/">Commercial Contractors</a>
     <a href="/home-services/">Home Services</a>
@@ -1118,20 +1133,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section" id="who-we-serve">
   <div class="section-inner">
     <p class="d1-kicker">Who We Serve</p>
-    <h2 class="section-heading" style="margin-bottom:26px">Built for operationally complex businesses</h2>
-    <div class="serve-grid">
-      <div>
-        <p class="serve-head">Audience</p>
-        <a class="serve-item" href="/growing-businesses/"><strong>Growing Businesses</strong><span>The business grew faster than the operation.</span></a>
-        <a class="serve-item" href="/enterprise/"><strong>Enterprise</strong><span>A senior operator for one cross-functional operating problem.</span></a>
-      </div>
-      <div>
-        <p class="serve-head">Industries</p>
-        <a class="serve-item" href="/commercial-contractors/"><strong>Commercial Contractors</strong><span>Bid workflows, estimating handoffs, job data you cannot reuse.</span></a>
-        <a class="serve-item" href="/home-services/"><strong>Home Services</strong><span>Dispatch, invoicing, paperwork, and lead handling.</span></a>
-        <a class="serve-item" href="/property-management/"><strong>Property Management</strong><span>Tenant requests, maintenance dispatch, owner reporting.</span></a>
-        <a class="serve-item" href="/logistics-supply-chain/"><strong>Logistics &amp; Supply Chain</strong><span>Onboarding stalls, exceptions in inboxes, systems that do not connect.</span></a>
-      </div>
+    <h2 class="section-heading" style="margin-bottom:14px">Businesses We Serve</h2>
+    <p class="lane-intro">BMG works with businesses at three levels of operating complexity. Revenue is a guide, not the only qualification. The right fit depends on whether there is a defined operating problem with measurable economic value.</p>
+    <div class="lane-grid">
+      <a class="lane-card" href="/growing-businesses/">
+        <span class="lane-band">Approximately $5M to $25M</span>
+        <strong>Main Street Businesses</strong>
+        <span class="lane-copy">Owner-led businesses where growth has added complexity faster than the operating systems could keep up. A focused Operations Diagnostic on one operating area, workflow, or recurring constraint, with a practical, prioritized action plan.</span>
+        <span class="lane-more">How BMG works with Main Street businesses</span>
+      </a>
+      <a class="lane-card" href="/middle-market/">
+        <span class="lane-band">Approximately $25M to $1B</span>
+        <strong>Middle-Market Companies</strong>
+        <span class="lane-copy">Established companies with multiple teams, locations, systems, or cross-functional dependencies. BMG scopes the work around one defined operating area, constraint, or business objective, then creates a measurable implementation path.</span>
+        <span class="lane-more">How BMG works with middle-market companies</span>
+      </a>
+      <a class="lane-card" href="/enterprise/">
+        <span class="lane-band">Often above $1B</span>
+        <strong>Enterprise Teams</strong>
+        <span class="lane-copy">Large organizations where the problem typically sits within a particular business unit, workflow, customer journey, or transformation initiative. Engagements are scoped and priced around the specific initiative.</span>
+        <span class="lane-more">How BMG works with enterprise teams</span>
+      </a>
+    </div>
+    <p class="serve-head">Industries</p>
+    <div class="industry-grid">
+      <a class="serve-item" href="/commercial-contractors/"><strong>Commercial Contractors</strong><span>Bid workflows, estimating handoffs, job data you cannot reuse.</span></a>
+      <a class="serve-item" href="/home-services/"><strong>Home Services</strong><span>Dispatch, invoicing, paperwork, and lead handling.</span></a>
+      <a class="serve-item" href="/property-management/"><strong>Property Management</strong><span>Tenant requests, maintenance dispatch, owner reporting.</span></a>
+      <a class="serve-item" href="/logistics-supply-chain/"><strong>Logistics &amp; Supply Chain</strong><span>Onboarding stalls, exceptions in inboxes, systems that do not connect.</span></a>
     </div>
   </div>
 </section>
@@ -1215,11 +1244,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="related-blog-inner">
     <h2 class="section-heading">How we think about operating problems</h2>
     <div class="problem-grid">
+      <a class="blog-card" href="/blog/fresh-set-of-eyes-cross-industry-thinking/" style="text-decoration:none">
+        <div class="blog-content"><div class="blog-category">Thought Leadership</div><h3>A Fresh Set of Eyes Can Find the Work an Industry Has Learned to Ignore</h3><p>Expertise develops blind spots. How a fresh set of eyes exposes duplicated work, broken handoffs, and hidden process failure.</p></div>
+      </a>
       <a class="blog-card" href="/blog/signs-your-operations-cant-keep-up-with-growth/" style="text-decoration:none">
         <div class="blog-content"><div class="blog-category">Workflows</div><h3>Six signs the operation is not keeping up with the business</h3><p>Growth can hide operating problems for a while. These are the six signs to look for first.</p></div>
-      </a>
-      <a class="blog-card" href="/blog/where-the-hours-go-in-a-commercial-construction-bid.html" style="text-decoration:none">
-        <div class="blog-content"><div class="blog-category">Construction</div><h3>Where the hours actually go in a commercial construction bid</h3><p>Where bid hours actually go: assembly, coordination, and chasing information between tools.</p></div>
       </a>
     </div>
     <div class="prose" style="margin-top:22px"><p style="text-align:center"><a href="/blog/">All field notes</a></p></div>
@@ -1252,8 +1281,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div>
                 <p class="footer-head">Audience</p>
                 <div class="footer-links">
-                    <a href="/growing-businesses/">Growing Businesses</a>
-                    <a href="/enterprise/">Enterprise</a>
+                    <a href="/growing-businesses/">Main Street Businesses</a>
+                    <a href="/middle-market/">Middle-Market Companies</a>
+                    <a href="/enterprise/">Enterprise Teams</a>
                 </div>
             </div>
             <div>

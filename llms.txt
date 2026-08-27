@@ -19,7 +19,7 @@ Software, automation, and AI are supporting tools, not the starting point. BMG i
 
 ## Who BMG Serves
 
-Audience: growing owner-led businesses and enterprise operations teams (roughly $25M to $1B).
+Audience: three client-service lanes. Main Street businesses (owner-led, approximately $5M to $25M in revenue; focused Operations Diagnostics generally $5,000 to $7,500). Middle-market companies (approximately $25M to $1B, multiple teams, locations, or systems; Diagnostics scoped separately). Enterprise teams (often above $1B; one business unit, workflow, or initiative; scoped and priced per initiative). Revenue is a guide, not the only qualification.
 Industries: commercial contractors, home services companies, property management, and logistics and supply chain operations (the industry where Brad Berlin's operating career runs deepest).
 
 ## What BMG Does Not Claim
@@ -48,8 +48,9 @@ Talk through an operating problem — https://berlinmanagementgroup.ai/contact/
 - [Homepage](https://berlinmanagementgroup.ai/)
 - [How We Work](https://berlinmanagementgroup.ai/how-we-work/)
 - [The Operations Diagnostic](https://berlinmanagementgroup.ai/operations-diagnostic/)
-- [Growing Businesses](https://berlinmanagementgroup.ai/growing-businesses/)
-- [Enterprise](https://berlinmanagementgroup.ai/enterprise/)
+- [Main Street Businesses](https://berlinmanagementgroup.ai/growing-businesses/)
+- [Middle-Market Companies](https://berlinmanagementgroup.ai/middle-market/)
+- [Enterprise Teams](https://berlinmanagementgroup.ai/enterprise/)
 - [Commercial Contractors](https://berlinmanagementgroup.ai/commercial-contractors/)
 - [Home Services](https://berlinmanagementgroup.ai/home-services/)
 - [Property Management](https://berlinmanagementgroup.ai/property-management/)
