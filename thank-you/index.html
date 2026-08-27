@@ -22,10 +22,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional"></noscript>
     <style>
+        @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:400;size-adjust:107.09%;ascent-override:90.58%;descent-override:22.41%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:500;size-adjust:108.22%;ascent-override:89.63%;descent-override:22.18%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:600;size-adjust:101.63%;ascent-override:95.44%;descent-override:23.62%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:700;size-adjust:102.66%;ascent-override:94.49%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia');font-weight:400;size-adjust:108.50%;ascent-override:90.32%;descent-override:24.88%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:700;size-adjust:95.94%;ascent-override:102.15%;descent-override:28.14%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:900;size-adjust:97.49%;ascent-override:100.52%;descent-override:27.70%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman'),local('Liberation Serif');font-weight:400;size-adjust:118.14%;ascent-override:82.95%;descent-override:22.85%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:700;size-adjust:115.48%;ascent-override:84.86%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:900;size-adjust:117.34%;ascent-override:83.52%;descent-override:23.01%;line-gap-override:0%}
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root { --navy-dark: #0F1A30; --navy: #1B2A4A; --navy-light: #2C3E6B; --gold: #C8A951; --gold-light: #E2CC7E; --text-primary: #2D3748; --text-secondary: #4A5568; --text-muted: #718096; --bg-warm: #FAF9F7; --white: #FFFFFF;
             --gold-dark: #A8893A;
@@ -35,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --radius: 8px;
             --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
             --shadow-md: 0 4px 12px rgba(27,42,74,0.1); }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background-color: var(--navy-dark); min-height: 100vh; display: flex; flex-direction: column; }
+        body { font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background-color: var(--navy-dark); min-height: 100vh; display: flex; flex-direction: column; }
         /* Current navigation shell (ported verbatim from contact/index.html) */
         nav {
             position: fixed;
@@ -70,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .nav-logo-text {
-            font-family: Merriweather, serif;
+            font-family: Merriweather, 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--navy);
             font-weight: 900;
             font-size: 1.05rem;
@@ -203,14 +205,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .success-icon svg { width: 36px; height: 36px; stroke: var(--gold); stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
         @keyframes scaleIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes drawCheck { to { stroke-dashoffset: 0; } }
-        .thank-you-container h1 { font-family: 'Merriweather', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 1rem; }
+        .thank-you-container h1 { font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 1rem; }
         .thank-you-container .subtitle { font-size: 1.125rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 2.5rem; }
         .next-steps-card { border-top: 2px solid var(--gold); padding: 1.75rem 0 0.75rem; text-align: left; margin-bottom: 2.5rem; }
-        .next-steps-card h2 { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+        .next-steps-card h2 { font-family: 'Inter', 'Inter Fallback', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
         .step { display: flex; align-items: flex-start; gap: 1rem; padding: 0.75rem 0; }
         .step + .step { border-top: 1px solid rgba(255,255,255,0.06); }
         .step-number { flex-shrink: 0; width: 32px; height: 32px; background: rgba(200,169,81,0.15); border: 1px solid rgba(200,169,81,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--gold); }
-        .step-content h3 { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+        .step-content h3 { font-family: 'Inter', 'Inter Fallback', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
         .step-content p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
         .cta-group { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
         .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--gold); color: var(--navy-dark); font-size: 0.95rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
@@ -222,7 +224,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 60px 40px 30px; }
         .footer-inner { max-width: 1140px; margin: 0 auto; }
         .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 32px; }
-        .footer-brand h3 { font-family: 'Merriweather', serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; font-weight: 700; }
+        .footer-brand h3 { font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif; color: var(--white); margin-bottom: 8px; font-size: 1.1em; font-weight: 700; }
         .footer-brand p { font-size: 0.9em; line-height: 1.6; }
         .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
         .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9em; transition: color 0.3s ease; }

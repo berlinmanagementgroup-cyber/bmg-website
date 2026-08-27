@@ -54,10 +54,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional"></noscript>
 <style>
+        @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:400;size-adjust:107.09%;ascent-override:90.58%;descent-override:22.41%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:500;size-adjust:108.22%;ascent-override:89.63%;descent-override:22.18%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:600;size-adjust:101.63%;ascent-override:95.44%;descent-override:23.62%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:700;size-adjust:102.66%;ascent-override:94.49%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia');font-weight:400;size-adjust:108.50%;ascent-override:90.32%;descent-override:24.88%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:700;size-adjust:95.94%;ascent-override:102.15%;descent-override:28.14%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:900;size-adjust:97.49%;ascent-override:100.52%;descent-override:27.70%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman'),local('Liberation Serif');font-weight:400;size-adjust:118.14%;ascent-override:82.95%;descent-override:22.85%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:700;size-adjust:115.48%;ascent-override:84.86%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:900;size-adjust:117.34%;ascent-override:83.52%;descent-override:23.01%;line-gap-override:0%}
+
         :root {
             --navy: #1B2A4A;
             --navy-light: #2C3E6B;
@@ -87,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Inter Fallback', sans-serif;
             color: var(--text);
             background: var(--white);
             line-height: 1.6;
@@ -140,7 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .nav-logo-text {
-            font-family: Merriweather, serif;
+            font-family: Merriweather, 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--navy);
             font-weight: 900;
             font-size: 1.05rem;
@@ -234,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .hero h1 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(2em, 5vw, 3.5em);
             line-height: 1.2;
             margin-bottom: 20px;
@@ -280,7 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .section-heading {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(1.8em, 4vw, 2.5em);
             line-height: 1.2;
             margin-bottom: 50px;
@@ -303,7 +305,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .problem-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.2em;
             margin-bottom: 12px;
             color: var(--navy);
@@ -354,7 +356,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .automate-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.1em;
             margin-bottom: 12px;
             color: var(--navy);
@@ -381,7 +383,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .credential-item h4 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--navy);
             font-size: 1em;
             margin-bottom: 8px;
@@ -411,7 +413,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .impact-number {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 2.5em;
             font-weight: 700;
             color: var(--gold-light);
@@ -449,14 +451,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.8em;
             font-weight: 700;
             margin: 0 auto 20px;
         }
 
         .step h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.2em;
             color: var(--navy);
             margin-bottom: 12px;
@@ -478,7 +480,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .cta-section h2 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(2em, 4vw, 2.8em);
             margin-bottom: 24px;
             font-weight: 700;
@@ -575,7 +577,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .blog-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.3em;
             color: var(--navy);
             margin-bottom: 12px;
@@ -621,7 +623,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .footer-brand h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--white);
             margin-bottom: 8px;
             font-size: 1.1em;
@@ -871,7 +873,7 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .d4b-rows{max-width:800px;margin:0;border-top:2px solid var(--navy)}
 .d4b-row{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--gray-200)}
 .d4b-tick{width:14px;height:2px;background:var(--gold);margin-top:.72em}
-.d4b-row h3{font-family:'Merriweather',serif;font-size:1.1em;color:var(--navy);font-weight:700;margin:0 0 8px}
+.d4b-row h3{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-size:1.1em;color:var(--navy);font-weight:700;margin:0 0 8px}
 .d4b-row p{font-size:.95em;line-height:1.65;color:var(--text);margin:0}
 /* Ruled career evidence rows (D4A treatment) */
 .career-rows{list-style:none;margin:0;padding:0;max-width:800px;border-top:2px solid var(--navy)}

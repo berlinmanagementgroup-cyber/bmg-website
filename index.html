@@ -76,10 +76,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=optional"></noscript>
 <style>
+        @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:400;size-adjust:107.09%;ascent-override:90.58%;descent-override:22.41%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:500;size-adjust:108.22%;ascent-override:89.63%;descent-override:22.18%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:600;size-adjust:101.63%;ascent-override:95.44%;descent-override:23.62%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:700;size-adjust:102.66%;ascent-override:94.49%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia');font-weight:400;size-adjust:108.50%;ascent-override:90.32%;descent-override:24.88%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:700;size-adjust:95.94%;ascent-override:102.15%;descent-override:28.14%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback';src:local('Georgia Bold');font-weight:900;size-adjust:97.49%;ascent-override:100.52%;descent-override:27.70%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman'),local('Liberation Serif');font-weight:400;size-adjust:118.14%;ascent-override:82.95%;descent-override:22.85%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:700;size-adjust:115.48%;ascent-override:84.86%;descent-override:23.38%;line-gap-override:0%}@font-face{font-family:'Merriweather Fallback2';src:local('Times New Roman Bold'),local('Liberation Serif Bold');font-weight:900;size-adjust:117.34%;ascent-override:83.52%;descent-override:23.01%;line-gap-override:0%}
+
         :root {
             --navy: #1B2A4A;
             --navy-light: #2C3E6B;
@@ -110,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Inter Fallback', sans-serif;
             color: var(--text);
             background: var(--white);
             line-height: 1.6;
@@ -163,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .nav-logo-text {
-            font-family: Merriweather, serif;
+            font-family: Merriweather, 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--navy);
             font-weight: 900;
             font-size: 1.05rem;
@@ -257,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .hero h1 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(2em, 5vw, 3.5em);
             line-height: 1.2;
             margin-bottom: 20px;
@@ -303,7 +305,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .section-heading {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(1.8em, 4vw, 2.5em);
             line-height: 1.2;
             margin-bottom: 50px;
@@ -326,7 +328,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .problem-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.2em;
             margin-bottom: 12px;
             color: var(--navy);
@@ -377,7 +379,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .automate-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.1em;
             margin-bottom: 12px;
             color: var(--navy);
@@ -404,7 +406,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .credential-item h4 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--navy);
             font-size: 1em;
             margin-bottom: 8px;
@@ -434,7 +436,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .impact-number {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 2.5em;
             font-weight: 700;
             color: var(--gold-light);
@@ -472,14 +474,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.8em;
             font-weight: 700;
             margin: 0 auto 20px;
         }
 
         .step h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.2em;
             color: var(--navy);
             margin-bottom: 12px;
@@ -501,7 +503,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .cta-section h2 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: clamp(2em, 4vw, 2.8em);
             margin-bottom: 24px;
             font-weight: 700;
@@ -598,7 +600,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .blog-card h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             font-size: 1.3em;
             color: var(--navy);
             margin-bottom: 12px;
@@ -644,7 +646,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .footer-brand h3 {
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', 'Merriweather Fallback', 'Merriweather Fallback2', serif;
             color: var(--white);
             margin-bottom: 8px;
             font-size: 1.1em;
@@ -842,7 +844,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .serve-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:12px 64px;max-width:980px}
 .serve-head{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;margin:0 0 6px;padding-top:10px}
 .serve-item{display:block;padding:12px 0;border-bottom:1px solid var(--gray-200);text-decoration:none;min-height:44px}
-.serve-item strong{display:block;font-family:'Merriweather',serif;color:var(--navy);font-size:1.02em;margin-bottom:2px}
+.serve-item strong{display:block;font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;color:var(--navy);font-size:1.02em;margin-bottom:2px}
 .serve-item span{color:var(--slate);font-size:.92em;line-height:1.5}
 .serve-item:hover strong{color:var(--gold-dark)}
 @media (max-width:768px){.serve-grid{grid-template-columns:1fr}}
@@ -851,7 +853,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .lane-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--gray-200);border-top:3px solid var(--gold);border-radius:var(--radius);padding:26px 24px 22px;text-decoration:none;box-shadow:var(--shadow-sm);transition:box-shadow .2s ease,transform .2s ease}
 .lane-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
 .lane-card .lane-band{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;margin-bottom:10px}
-.lane-card strong{display:block;font-family:'Merriweather',serif;color:var(--navy);font-size:1.15em;margin-bottom:10px;line-height:1.3}
+.lane-card strong{display:block;font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;color:var(--navy);font-size:1.15em;margin-bottom:10px;line-height:1.3}
 .lane-card .lane-copy{display:block;color:var(--slate);font-size:.93em;line-height:1.6;flex:1}
 .lane-card .lane-more{display:inline-block;margin-top:16px;color:#7A6228;font-weight:600;font-size:.88em}
 .lane-card:hover .lane-more{text-decoration:underline}
@@ -926,26 +928,26 @@ a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border
 .ledger{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;border-top:1px solid var(--gray-200)}
 .ledger-item:last-child:nth-child(odd){grid-column:1 / -1}
 .ledger-item{display:flex;gap:22px;padding:26px 0;border-bottom:1px solid var(--gray-200)}
-.ledger-item .num{font-family:'Merriweather',serif;font-weight:900;font-size:1.7rem;color:var(--gold-dark);line-height:1.1;min-width:44px;flex-shrink:0}
-.ledger-item h3{font-family:'Merriweather',serif;font-size:1.05em;color:var(--navy);margin-bottom:6px;font-weight:700}
+.ledger-item .num{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-weight:900;font-size:1.7rem;color:var(--gold-dark);line-height:1.1;min-width:44px;flex-shrink:0}
+.ledger-item h3{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-size:1.05em;color:var(--navy);margin-bottom:6px;font-weight:700}
 .ledger-item p{font-size:.95em;color:var(--text);line-height:1.6}
 /* Process rail */
 .band-cream{background:var(--cream)}
 .rail{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:54px 0 8px;gap:18px}
 .rail:before{content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;background:var(--gold);opacity:.55}
 .rail-stop{text-align:center;position:relative}
-.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:#7A6228;font-family:'Merriweather',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.rail-stop .dot{width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--gold);color:#7A6228;font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
 .rail-stop.filled .dot{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 100%);color:var(--navy);border-color:var(--gold-dark)}
-.rail-stop h3{font-family:'Merriweather',serif;font-size:1em;color:var(--navy);margin-bottom:8px;font-weight:700}
+.rail-stop h3{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-size:1em;color:var(--navy);margin-bottom:8px;font-weight:700}
 .rail-stop p{font-size:.88em;color:var(--text);max-width:210px;margin:0 auto;line-height:1.6}
 .rail-note{text-align:center;margin-top:42px}
-.rail-note .big{font-family:'Merriweather',serif;font-weight:700;color:var(--navy);font-size:1.15rem;margin-bottom:16px}
+.rail-note .big{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-weight:700;color:var(--navy);font-size:1.15rem;margin-bottom:16px}
 /* Proof band */
 .proof-band{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);color:var(--white);padding:84px 40px}
 .proof-band .section-heading{color:var(--white);margin-bottom:10px}
 .proof-band .receipts-label{color:var(--gold-light);margin-bottom:48px}
 .receipts{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;max-width:1140px;margin:0 auto}
-.receipt .stat{font-family:'Merriweather',serif;font-weight:900;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.18;color:var(--white);margin-bottom:6px}
+.receipt .stat{font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;font-weight:900;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.18;color:var(--white);margin-bottom:6px}
 .receipt .stat-rule{width:38px;height:2px;background:var(--gold);margin:16px 0}
 .receipt p{font-size:.92em;color:#C9D2E4;line-height:1.65}
 .proof-band a:not([class]){color:var(--white);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
@@ -955,7 +957,7 @@ a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border
 .lens-strip{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid var(--gray-200);margin-top:6px}
 .lens{border-right:1px solid var(--gray-200);padding:6px 22px 2px}
 .lens .tick{width:18px;height:4px;background:var(--gold);margin-bottom:16px}
-.lens h3{letter-spacing:.14em;font-size:.74rem;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-family:'Inter',sans-serif}
+.lens h3{letter-spacing:.14em;font-size:.74rem;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-family:'Inter','Inter Fallback',sans-serif}
 .lens p{font-size:.87em;color:var(--slate);line-height:1.6}
 .lens.money .tick{width:34px;background:var(--gold-dark)}
 /* Modern tooling */

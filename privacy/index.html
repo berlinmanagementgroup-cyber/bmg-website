@@ -31,10 +31,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/bmg-icon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/bmg-icon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/bmg-apple-touch-180.png">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional"></noscript>
   <style>
+        @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:400;size-adjust:107.09%;ascent-override:90.58%;descent-override:22.41%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial'),local('Liberation Sans');font-weight:500;size-adjust:108.22%;ascent-override:89.63%;descent-override:22.18%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:600;size-adjust:101.63%;ascent-override:95.44%;descent-override:23.62%;line-gap-override:0%}@font-face{font-family:'Inter Fallback';src:local('Arial Bold'),local('Liberation Sans Bold');font-weight:700;size-adjust:102.66%;ascent-override:94.49%;descent-override:23.38%;line-gap-override:0%}
+
     :root {
       --navy: #1B2A4A;
       --navy-light: #2C3E6B;
@@ -50,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Inter", 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--navy-dark);
       color: var(--text);
       line-height: 1.7;
