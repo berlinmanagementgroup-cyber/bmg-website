@@ -752,7 +752,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
 
             .footer-content {
-                grid-template-columns: 1.6fr .9fr 1fr 1fr;
+                grid-template-columns: 1.6fr .9fr 1fr;
             }
 
             .footer-bottom {
@@ -949,7 +949,7 @@ a.d1-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border
 <style>
 /* D4C1 sitewide chrome normalization (2026-08-16): F1 footer recomposition + footer fine print + mobile wordmark */
 footer{color:#B9C2D4}
-.footer-content{grid-template-columns:1.5fr .8fr 1fr 1fr}
+.footer-content{grid-template-columns:1.5fr .8fr 1fr}
 .footer-brand p{color:#B9C2D4;font-size:.9em;line-height:1.75}
 .footer-brand .footer-phone{margin-top:10px}
 .footer-brand .footer-phone a{color:#E2CC7E;text-decoration:none;font-weight:600;font-size:1.02em}
@@ -977,6 +977,17 @@ footer{color:#B9C2D4}
   .rail-stop h3{min-width:0;flex:1 1 0}
   .rail-stop p{min-width:0;flex:1 1 100%;margin-top:6px}
 }
+
+/* Audience fit component (contextual "find your fit" navigation) */
+.serve-head{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A6228;margin:0 0 10px}
+.fit-lead{max-width:760px;color:var(--slate);line-height:1.7;margin:0 0 20px}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 48px;max-width:1000px}
+.fit-grid.two{grid-template-columns:1fr 1fr;max-width:760px}
+.serve-item{display:block;padding:12px 0;border-bottom:1px solid var(--gray-200);text-decoration:none;min-height:44px}
+.serve-item strong{display:block;font-family:'Merriweather','Merriweather Fallback','Merriweather Fallback2',serif;color:var(--navy);font-size:1.02em;margin-bottom:2px}
+.serve-item span{color:var(--slate);font-size:.92em;line-height:1.5}
+.serve-item:hover strong{color:var(--gold-dark)}
+@media (max-width:768px){.fit-grid,.fit-grid.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1073,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="ll-head"><span class="ll-num" aria-hidden="true">III</span><h3>Systems.</h3></div>
         <div class="ll-body">
           <p class="ll-q">What talks to what?</p>
-          <p>The software you own, how much of it is actually used, the manual work happening between tools, and where integration, automation, or AI would pay for itself once the workflow is designed to support it.</p>
+          <p>The software you own, how much of it is actually used, the manual work happening between tools, and where integration, automation, or AI would pay for itself <a href="/start-with-the-problem/">once the workflow is designed to support it</a>.</p>
         </div>
       </div>
       <div class="ll-row">
@@ -1166,6 +1177,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section class="section">
+  <div class="section-inner">
+    <p class="serve-head">Find your fit</p>
+    <p class="fit-lead">A Diagnostic is scoped to the operation it is looking at, so what it covers depends on how complex that operation is. Start with the level that matches yours.</p>
+    <div class="fit-grid">
+      <a class="serve-item" href="/growing-businesses/"><strong>Main Street Businesses</strong><span>Owner-led operations, roughly $5M to $25M, where growth outran the systems.</span></a>
+      <a class="serve-item" href="/middle-market/"><strong>Middle-Market Companies</strong><span>Roughly $25M to $1B, with multiple teams, locations, and systems to coordinate.</span></a>
+      <a class="serve-item" href="/enterprise/"><strong>Enterprise Teams</strong><span>Often above $1B, scoped to one business unit, workflow, or initiative.</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <h2>Start with one problem.</h2>
   <div class="cta-buttons">
@@ -1198,21 +1221,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div>
-                <p class="footer-head">Industries</p>
-                <div class="footer-links">
-                    <a href="/commercial-contractors/">Commercial Contractors</a>
-                    <a href="/home-services/">Home Services</a>
-                    <a href="/property-management/">Property Management</a>
-                    <a href="/logistics-supply-chain/">Logistics &amp; Supply Chain</a>
-                </div>
-            </div>
-            <div>
                 <p class="footer-head">Explore BMG</p>
                 <div class="footer-links">
-                    <a href="/operations-consulting-phoenix/">Phoenix Operations Consulting</a>
-                    <a href="/fractional-coo/">Fractional COO</a>
-                    <a href="/start-with-the-problem/">Start With the Problem</a>
-                    <a href="/own-vs-rent/">Own the Workflow</a>
+                    <a href="/operations-diagnostic/">Operations Diagnostic</a>
+                    <a href="/how-we-work/">How We Work</a>
+                    <a href="/about/">About</a>
                 </div>
             </div>
         </div>
