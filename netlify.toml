@@ -225,3 +225,11 @@
   to = "/blog/fresh-set-of-eyes-cross-industry-thinking/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=cross_industry_thinking&utm_content=personal_feed"
   status = 302
   force = true
+
+# Legacy service-path redirect (2026-09-21). The /services/ prefix was never rebuilt in the
+# relaunch; the canonical industry page lives at the clean URL. Single-hop 301.
+[[redirects]]
+  from = "/services/property-management"
+  to = "/property-management/"
+  status = 301
+  force = true
