@@ -892,6 +892,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .hero .cta-secondary:hover{background:var(--white);color:var(--navy)}
 .hero .cta-secondary:focus-visible{outline:3px solid #C6993E;outline-offset:2px;background:var(--white);color:var(--navy)}
 
+/* Mobile hero CTA alignment (2026-09-21): stack both hero buttons at equal width with
+   matching left/right edges and a 12px vertical gap. Desktop layout is unchanged. */
+@media (max-width:640px){
+  .hero .cta-primary,.hero .cta-secondary{display:block;width:100%;margin-left:0;text-align:center}
+  .hero .cta-secondary{margin-top:12px}
+}
+
 /* Traffic-readiness polish (2026-08-14): branded content links + contact form finish */
 main a:not([class]){color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .2s ease,text-decoration-color .2s ease}
 main a:not([class]):visited{color:var(--navy)}
@@ -1091,8 +1098,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-rule" aria-hidden="true"></div>
     <h1>We find and fix the operating problems costing you time, margin, and capacity.</h1>
     <p>Berlin Management Group delivers operations improvement that stays through implementation. We diagnose where the work breaks down, fix it with your team, and measure what changed.</p>
-    <a href="/contact/" class="cta-primary" style="display:inline-block;">Talk through an operating problem</a>
-    &nbsp; <a href="/operations-diagnostic/" class="cta-secondary">See how the Diagnostic works</a>
+    <a href="/contact/" class="cta-primary">Talk through an operating problem</a>
+    <a href="/operations-diagnostic/" class="cta-secondary">See how the Diagnostic works</a>
     <p class="hero-micro"><span class="item">Fixed scope</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Fixed fee</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Senior-led</span></p>
     <p class="hero-reach">Based in Phoenix. Working with businesses nationwide.</p>
   </div>
