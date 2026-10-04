@@ -11,7 +11,9 @@ Berlin Management Group (BMG) is an operations improvement firm based in Phoenix
 1. A thirty-minute conversation about one operating problem, at no charge.
 2. A fixed-fee Operations Diagnostic on one workflow: one to two weeks, ending in a findings map, the economic impact of each finding, and a 90-day plan.
 3. Bounded Fix Sprints that implement the highest-priority changes, each with a baseline before and agreed measurement after.
-4. Measurement. Every engagement closes against the numbers agreed up front.
+4. Measurement. Every Diagnostic-led engagement closes against the numbers agreed up front.
+
+Local, owner-operated businesses can start smaller: a starter project from $1,250 on one recurring task or workflow, with scope and fee agreed in writing before paid work begins.
 
 ## Technology Position
 
@@ -19,7 +21,7 @@ Software, automation, and AI are supporting tools, not the starting point. BMG i
 
 ## Who BMG Serves
 
-Audience: three BMG client-service lanes. Main Street businesses: typically owner-led companies with approximately $5M to $25M in revenue. Middle-market companies: BMG typically serves established organizations from approximately $25M to $1B. Enterprise teams: large organizations, often above $1B, with work scoped to one business unit, workflow, or initiative. Revenue is a guide, not the only qualification.
+Audience: three BMG client-service lanes. Local and small businesses: local, owner-operated companies, with starter projects from $1,250 for one recurring task or workflow. Middle-market companies: BMG typically serves established organizations from approximately $25M to $1B. Enterprise teams: large organizations, often above $1B, with work scoped to one business unit, workflow, or initiative. Revenue is a guide, not the only qualification.
 Industries: commercial contractors, home services companies, property management, and logistics and supply chain operations (the industry where Brad Berlin's operating career runs deepest).
 
 ## What BMG Does Not Claim
@@ -34,7 +36,7 @@ Based in Phoenix, Arizona. In-person across metro Phoenix and the Valley; remote
 
 ## Primary Call to Action
 
-Talk through an operating problem — https://berlinmanagementgroup.ai/contact/
+Talk through a task or operating problem — https://berlinmanagementgroup.ai/contact/
 
 ## Contact
 
@@ -48,7 +50,7 @@ Talk through an operating problem — https://berlinmanagementgroup.ai/contact/
 - [Homepage](https://berlinmanagementgroup.ai/)
 - [How We Work](https://berlinmanagementgroup.ai/how-we-work/)
 - [The Operations Diagnostic](https://berlinmanagementgroup.ai/operations-diagnostic/)
-- [Main Street Businesses](https://berlinmanagementgroup.ai/growing-businesses/)
+- [Local & Small Businesses](https://berlinmanagementgroup.ai/growing-businesses/)
 - [Middle-Market Companies](https://berlinmanagementgroup.ai/middle-market/)
 - [Enterprise Teams](https://berlinmanagementgroup.ai/enterprise/)
 - [Commercial Contractors](https://berlinmanagementgroup.ai/commercial-contractors/)
