@@ -226,6 +226,32 @@
   status = 302
   force = true
 
+# Local & Small Businesses source-tagged short links (2026-10-04). 302 by design: each target
+# carries campaign UTMs and the canonical stays the clean /growing-businesses/ URL.
+[[redirects]]
+  from = "/local-fb"
+  to = "/growing-businesses/?utm_source=facebook&utm_medium=organic_social&utm_campaign=local_starter&utm_content=page_profile"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/local-gla"
+  to = "/growing-businesses/?utm_source=golocal&utm_medium=referral&utm_campaign=local_starter&utm_content=member_profile"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/local-li"
+  to = "/growing-businesses/?utm_source=linkedin&utm_medium=organic_social&utm_campaign=local_starter&utm_content=personal_feed"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/local-ref"
+  to = "/growing-businesses/?utm_source=referral&utm_medium=person&utm_campaign=local_starter&utm_content=direct"
+  status = 302
+  force = true
+
 # Legacy service-path redirect (2026-09-21). The /services/ prefix was never rebuilt in the
 # relaunch; the canonical industry page lives at the clean URL. Single-hop 301.
 [[redirects]]
