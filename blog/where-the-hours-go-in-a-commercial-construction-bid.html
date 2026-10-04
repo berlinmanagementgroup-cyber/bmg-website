@@ -778,20 +778,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 display: inline;
             }
 
-            .hamburger {
-                display: none;
-            }
-
-            .nav-links {
-                display: flex;
-            }
-
             .footer-content {
                 grid-template-columns: 1.6fr .9fr 1fr;
             }
 
             .footer-bottom {
                 flex-wrap: nowrap;
+            }
+        }
+
+        /* Desktop navigation starts at 1140px, the width of the site container. Below that the
+           brand and the full link row do not fit side by side with the real fonts, so tablets use
+           the menu button. The body.nav-open scroll lock and the resize check in the page script
+           test the same 1140px width; keep all three in step. */
+        @media (min-width: 1140px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex;
             }
         }
 
@@ -863,7 +869,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-links .dropdown>button.dropdown-toggle:hover{color:var(--gold-dark)}
 .nav-links .dropdown.open .dropdown-menu{display:block}
 .nav-links .dropdown.esc-closed .dropdown-menu{display:none}
-@media (max-width:767px){body.nav-open{overflow:hidden}}
+@media not all and (min-width:1140px){body.nav-open{overflow:hidden}}
 .nav-links .dropdown-menu a{display:block;padding:9px 18px;white-space:nowrap}
 .receipts-label{font-style:italic;font-size:.92rem;color:#5a6478;margin-bottom:18px}
 .prose{max-width:800px;margin:0 auto}
@@ -1149,7 +1155,7 @@ function closeServeDropdown(d){
   });
   window.addEventListener('resize',function(){
     var p=document.getElementById('mobileNav');
-    if(window.innerWidth>=768&&p&&p.classList.contains('active')){
+    if(window.matchMedia('(min-width:1140px)').matches&&p&&p.classList.contains('active')){
       p.classList.remove('active');
       var b=document.querySelector('.hamburger');
       if(b){ b.classList.remove('active'); b.setAttribute('aria-expanded','false'); }
