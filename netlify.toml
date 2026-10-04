@@ -248,7 +248,7 @@
 
 [[redirects]]
   from = "/local-ref"
-  to = "/growing-businesses/?utm_source=referral&utm_medium=person&utm_campaign=local_starter&utm_content=direct"
+  to = "/growing-businesses/?utm_source=word_of_mouth&utm_medium=referral&utm_campaign=local_starter&utm_content=direct"
   status = 302
   force = true
 
