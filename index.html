@@ -932,6 +932,7 @@ main a:not([class]):focus-visible{outline:2px solid var(--gold);outline-offset:3
 .hero-micro{margin-top:36px;letter-spacing:.18em;font-size:.7rem;font-weight:600;color:var(--gold-light);text-transform:uppercase}
 .hero-micro span{margin:0 .35em}
 .hero .hero-reach{margin-top:16px;font-size:.95rem;line-height:1.6;color:#D7DCE6;letter-spacing:.01em}
+.hero .hero-local{margin:28px auto 0;max-width:560px;font-size:1rem;line-height:1.6;color:#fff}
 .d1-kicker{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:700;color:#7A6228;margin-bottom:12px}
 .d1-lede{max-width:680px;color:var(--slate);margin-bottom:40px}
 .d1-close{margin-top:38px;text-align:center}
@@ -1033,6 +1034,11 @@ footer{color:#B9C2D4}
   .proof-band .receipts-label{font-size:1em}
   .blog-card p{font-size:1em}
 }
+@media (width > 345px) and (width <= 480px){
+  .rail-stop{display:grid;grid-template-columns:52px minmax(0,1fr);gap:0 20px;align-items:start}
+  .rail-stop .dot{grid-row:1 / span 2}
+  .rail-stop h3,.rail-stop p{grid-column:2;min-width:0}
+}
 @media (max-width:345px){
   .nav-logo .nav-logo-text{font-size:.8rem}
   /* UX-02 reflow repair (WCAG 2.2 SC 1.4.10): allow the engagement rail track to shrink
@@ -1110,6 +1116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Berlin Management Group delivers operations improvement that stays through implementation. We diagnose where the work breaks down, fix it with your team, and measure what changed.</p>
     <a href="/contact/" class="cta-primary">Talk through an operating problem</a>
     <a href="/operations-diagnostic/" class="cta-secondary">See how the Diagnostic works</a>
+    <p class="hero-local">Local business owner? Explore <a href="/growing-businesses/">starter projects from $1,250</a>. First conversation: 30 minutes, at no charge.</p>
     <p class="hero-micro"><span class="item">Fixed scope</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Fixed fee</span><span class="sep" aria-hidden="true">&middot;</span><span class="item">Senior-led</span></p>
     <p class="hero-reach">Based in Phoenix. Working with businesses nationwide.</p>
   </div>
