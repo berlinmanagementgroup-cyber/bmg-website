@@ -199,7 +199,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: #7A6228;
         }
 
         .nav-cta {
@@ -762,14 +762,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .nav-panel a:hover {
             background: var(--gray-100);
-            color: var(--gold);
+            color: #7A6228;
         }
 
         .nav-panel .nav-cta {
             background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
             color: var(--navy) !important;
             text-align: center;
-            margin-top: 8px;
+            margin-bottom: 8px;
         }
 
         /* Responsive */
@@ -866,7 +866,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-links .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:200px;box-shadow:0 8px 24px rgba(27,43,75,.14);border-radius:8px;padding:8px 0;z-index:60}
 .nav-links .dropdown:hover .dropdown-menu,.nav-links .dropdown:focus-within .dropdown-menu{display:block}
 .nav-links .dropdown>button.dropdown-toggle{background:none;border:0;padding:0;margin:0;font:inherit;font-size:.9em;line-height:inherit;color:var(--text);cursor:pointer;transition:color .3s ease}
-.nav-links .dropdown>button.dropdown-toggle:hover{color:var(--gold-dark)}
+.nav-links .dropdown>button.dropdown-toggle:hover{color:#7A6228}
 .nav-links .dropdown.open .dropdown-menu{display:block}
 .nav-links .dropdown.esc-closed .dropdown-menu{display:none}
 @media not all and (min-width:1140px){body.nav-open{overflow:hidden}}
@@ -987,6 +987,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </nav>
 <div class="nav-panel" id="mobileNav">
+    <a href="/contact/" class="nav-cta">Contact</a>
     <a href="/how-we-work/">How We Work</a>
     <a href="/operations-diagnostic/">Operations Diagnostic</a>
     <p class="nav-group">Who We Serve &middot; Audience</p>
@@ -1000,7 +1001,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/logistics-supply-chain/">Logistics &amp; Supply Chain</a>
     <a href="/blog/">Field Notes</a>
     <a href="/about/">About</a>
-    <a href="/contact/" class="nav-cta">Contact</a>
 </div>
 <main id="main">
 
@@ -1107,10 +1107,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 <script>
+function setNavBackgroundInert(on){
+  var bg=document.querySelectorAll('.skip-link,main,footer');
+  for(var i=0;i<bg.length;i++){ if(on) bg[i].setAttribute('inert',''); else bg[i].removeAttribute('inert'); }
+}
 function setMobileNav(open){
   var p=document.getElementById('mobileNav');
   var b=document.querySelector('.hamburger');
   if(!p||!b) return;
+  setNavBackgroundInert(open);
   p.classList.toggle('active',open);
   b.classList.toggle('active',open);
   b.setAttribute('aria-expanded',open?'true':'false');
@@ -1152,6 +1157,7 @@ function closeServeDropdown(d){
   window.addEventListener('resize',function(){
     var p=document.getElementById('mobileNav');
     if(window.matchMedia('(min-width:1140px)').matches&&p&&p.classList.contains('active')){
+      setNavBackgroundInert(false);
       p.classList.remove('active');
       var b=document.querySelector('.hamburger');
       if(b){ b.classList.remove('active'); b.setAttribute('aria-expanded','false'); }
