@@ -6,11 +6,30 @@
 # .com -> .ai host redirects (2026-10-08). .com was the original domain; .ai is the primary site.
 # Website traffic only: this changes how HTTP requests to the .com web hosts are answered.
 # It does not touch DNS, MX, SPF, DKIM, or DMARC. .com remains the email domain.
-# These rules sit FIRST on purpose: Netlify applies the first matching rule, so .com requests
-# reach .ai in a single hop with path preserved. Query strings are passed through automatically
-# on 301 (Netlify redirect docs). Both rules are scoped to the .com hosts and cannot match .ai.
+# ORDER MATTERS. Netlify applies the first matching rule, so these four rules sit FIRST:
+#   1-2. Google Search Console verification file, kept on the .com hosts as a forced 200 with its
+#        original content. Kept in case any .com Search Console property relies on it (the
+#        verification method could not be established for .com). The same file stays on .ai.
+#   3-4. Everything else on the .com hosts: 301 to the matching .ai URL, path preserved.
+#        Query strings are passed through automatically on 301 (Netlify redirect docs).
+# All four are host-scoped and cannot match .ai requests.
+# Verified on the real Netlify engine via a throwaway Deploy Preview (2026-10-08): the forced
+# 200 rule wins over the wildcard 301, the file is served 200 unchanged, other paths 301 with
+# path and query preserved.
 # http://.com is upgraded to https by the site's Force HTTPS setting before these rules apply.
 # Note: /fresh-eyes and /local-* short links requested on .com take two hops (301 then 302).
+
+[[redirects]]
+  from = "https://berlinmanagementgroup.com/google33783b8c6c287a25.html"
+  to = "/google33783b8c6c287a25.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.berlinmanagementgroup.com/google33783b8c6c287a25.html"
+  to = "/google33783b8c6c287a25.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "https://berlinmanagementgroup.com/*"
