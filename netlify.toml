@@ -3,6 +3,27 @@
 # retain their .html URLs as a deliberate preservation exception.
 # All rules single-hop 301. www/http redirects live in Netlify domain settings.
 
+# .com -> .ai host redirects (2026-10-08). .com was the original domain; .ai is the primary site.
+# Website traffic only: this changes how HTTP requests to the .com web hosts are answered.
+# It does not touch DNS, MX, SPF, DKIM, or DMARC. .com remains the email domain.
+# These rules sit FIRST on purpose: Netlify applies the first matching rule, so .com requests
+# reach .ai in a single hop with path preserved. Query strings are passed through automatically
+# on 301 (Netlify redirect docs). Both rules are scoped to the .com hosts and cannot match .ai.
+# http://.com is upgraded to https by the site's Force HTTPS setting before these rules apply.
+# Note: /fresh-eyes and /local-* short links requested on .com take two hops (301 then 302).
+
+[[redirects]]
+  from = "https://berlinmanagementgroup.com/*"
+  to = "https://berlinmanagementgroup.ai/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.berlinmanagementgroup.com/*"
+  to = "https://berlinmanagementgroup.ai/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/index.html"
   to = "/"
