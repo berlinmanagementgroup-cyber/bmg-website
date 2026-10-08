@@ -3,6 +3,19 @@
 # retain their .html URLs as a deliberate preservation exception.
 # All rules single-hop 301. www/http redirects live in Netlify domain settings.
 
+# TEST RULES (throwaway): mirror of the proposed .com rules, scoped to the PR #10 preview host.
+[[redirects]]
+  from = "https://deploy-preview-10--dreamy-licorice-025927.netlify.app/google33783b8c6c287a25.html"
+  to = "/google33783b8c6c287a25.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://deploy-preview-10--dreamy-licorice-025927.netlify.app/*"
+  to = "https://berlinmanagementgroup.ai/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/index.html"
   to = "/"
