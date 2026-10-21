@@ -188,15 +188,17 @@
   force = true
 
 # Explicit .html -> directory redirects, added 2026-08-18 (Packet 2).
-# Netlify Pretty URLs currently provides these implicitly and REMAINS ENABLED. These rules are
-# declared anyway so the redirect matrix is complete in version control and so that toggling
-# Pretty URLs off in the Netlify UI cannot silently 404 a legacy URL. They are inert today.
-# Context: Pretty URLs is what rewrites internal <a href="/blog/x.html"> to /blog/x at serve time,
-# which routes 18 internal links to the five canonical .html Field Notes through a single 301.
-# Disabling it was evaluated and rejected: it would stop /about -> /about/ style normalization and
-# leave bare-slug variants resolving 200 alongside their slash form. Google Search Console already
-# shows /fractional-coo and /terms indexed as bare-slug duplicates, so that trade is a net loss.
-# One single-hop 301 on an internal link costs less. Revisit only with Brad's explicit decision.
+# CORRECTION 2026-10-21 (BMG-GEO-004). The note previously here said Pretty URLs was enabled and
+# that these rules were inert. Both are inconsistent with what was observed on 2026-10-21:
+#   Netlify dashboard: Pretty URLs is disabled.
+#   Live requests:     /about.html -> /about/ (301) and /index.html -> / (301), so these rules are
+#                      active, not inert.
+#   Live requests:     /about, /about/ and /about/index.html each return 200 with no redirect.
+# Netlify documents Pretty URLs as rewriting link URLs in served HTML. Its effect on incoming
+# requests was not tested here, so treat it as unverified rather than assumed either way.
+# Bare-slug variants are intentionally left un-redirected for now: no internal link or canonical
+# tag in this repo emits a bare slug (checked 2026-10-21) and Search Console is consolidating the
+# variants. Revisit if either of those changes.
 
 [[redirects]]
   from = "/enterprise.html"
