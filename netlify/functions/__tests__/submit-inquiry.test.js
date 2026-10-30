@@ -248,6 +248,91 @@ test('a hanging OpenAI call is aborted within its bounded timeout rather than ho
   }
 });
 
+test('a hanging Formspree call is aborted within its own bounded timeout, not left to hang indefinitely', async function () {
+  var original = global.fetch;
+  try {
+    global.fetch = async function (url, opts) {
+      return new Promise(function (resolve, reject) {
+        opts.signal.addEventListener('abort', function () {
+          var err = new Error('aborted');
+          err.name = 'AbortError';
+          reject(err);
+        });
+      });
+    };
+    var handler = freshHandler();
+    var started = Date.now();
+    var res = await handler.handler({
+      httpMethod: 'POST',
+      headers: {},
+      body: JSON.stringify({ email: 'a@example.com', problem: 'x' })
+    });
+    var elapsedMs = Date.now() - started;
+    // submit-inquiry.js passes FORMSPREE_TIMEOUT_MS (6000) for this call.
+    assert.ok(elapsedMs < 8000, 'must abort within the 6s bound plus slack, got ' + elapsedMs + 'ms');
+    assert.equal(res.statusCode, 502, 'must report failure, never hang or silently succeed');
+    var body = JSON.parse(res.body);
+    assert.ok(body.error, 'must give the visitor something to act on so the UI can offer a retry');
+  } finally {
+    global.fetch = original;
+  }
+});
+
+test('no-JS fallback (application/x-www-form-urlencoded body): success redirects to /thank-you/', async function () {
+  delete process.env.CONTEXT;
+  await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
+    var handler = freshHandler();
+    var res = await handler.handler({
+      httpMethod: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: 'email=a%40example.com&problem=x&name=Jane'
+    });
+    assert.equal(res.statusCode, 302);
+    assert.equal(res.headers.Location, '/thank-you/');
+    assert.equal(calls.length, 1);
+    assert.ok(calls[0].url.indexOf('formspree.io') !== -1);
+  });
+});
+
+test('no-JS fallback: missing required field redirects back to /contact/ instead of showing raw JSON on a blank page', async function () {
+  var handler = freshHandler();
+  var res = await handler.handler({
+    httpMethod: 'POST',
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    body: 'name=Jane' // no email, no problem
+  });
+  assert.equal(res.statusCode, 302);
+  assert.equal(res.headers.Location, '/contact/');
+});
+
+test('no-JS fallback: a Formspree-side error also redirects back to /contact/, not a raw JSON body', async function () {
+  await withMockedFetch([{ status: 422, body: JSON.stringify({ errors: [{ message: 'bad' }] }) }], async function () {
+    var handler = freshHandler();
+    var res = await handler.handler({
+      httpMethod: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: 'email=a%40example.com&problem=x'
+    });
+    assert.equal(res.statusCode, 302);
+    assert.equal(res.headers.Location, '/contact/');
+  });
+});
+
+test('the JSON path (normal JS-enabled submit) is unaffected by the form-encoded support added for the no-JS fallback', async function () {
+  delete process.env.CONTEXT;
+  await withMockedFetch([{ status: 200, body: '{"ok":true}' }], async function (calls) {
+    var handler = freshHandler();
+    var res = await handler.handler({
+      httpMethod: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: 'a@example.com', problem: 'x' })
+    });
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.body, '{"ok":true}');
+    assert.equal(calls.length, 1);
+  });
+});
+
 test('rejects non-POST methods', async function () {
   var handler = freshHandler();
   var res = await handler.handler({ httpMethod: 'GET', body: '' });
