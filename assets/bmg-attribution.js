@@ -48,17 +48,19 @@
     return out;
   }
 
-  var merged = readStored();
+  /* A fresh touch (any tracking param present in this load's URL) replaces the stored
+   * record wholesale rather than merging field-by-field on top of it. A field-by-field
+   * merge would let a later, differently-sourced link (e.g. one of this site's other
+   * UTM-bearing short links in netlify.toml) overwrite just utm_source/utm_campaign while
+   * leaving the original ad's campaign_id/ad_id/oppref in place - a corrupted record that
+   * looks like it came from both touches at once. Replacing wholesale means every field in
+   * the stored record always comes from the same, single, most recent touch. Ordinary
+   * internal navigation carrying no tracking params at all (the normal case once a visitor
+   * has landed) leaves the existing record untouched. */
   var fresh = fromQuery();
-  var sawFreshParams = false;
-  for (var k in fresh) {
-    if (fresh[k]) {
-      merged[k] = fresh[k];
-      sawFreshParams = true;
-    }
-  }
+  var sawFreshParams = Object.keys(fresh).length > 0;
   if (sawFreshParams) {
-    writeStored(merged);
+    writeStored(fresh);
   }
 
   function get() {

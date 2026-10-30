@@ -16,9 +16,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'G-182LJV882X');
 </script>
-<!-- ChatGPT Ads pilot (2026-10-30): see /assets/bmg-attribution.js and bmg-conversion.js -->
+<!-- ChatGPT Ads pilot (2026-10-30): see /assets/bmg-attribution.js -->
 <script src="/assets/bmg-attribution.js"></script>
-<script src="/assets/bmg-conversion.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Talk Through a Task or Operating Problem | BMG</title>
@@ -1009,7 +1008,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="section-inner">
     <h2 class="section-heading">Tell us about the problem</h2>
-    <form class="form-grid" action="https://formspree.io/f/xgonjavo" method="POST">
+    <form id="contactForm" class="form-grid" action="/.netlify/functions/submit-inquiry" method="POST">
       <div><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
       <div><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
       <div><label for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization"></div>
@@ -1152,7 +1151,7 @@ function closeServeDropdown(d){
     return;
   }
 
-  var form = document.querySelector('form[action$="/f/xgonjavo"]');
+  var form = document.getElementById('contactForm');
   if (form) {
     window.BMG_ATTR.hiddenFieldsInto(form);
   }
@@ -1169,17 +1168,32 @@ function closeServeDropdown(d){
 })();
 </script>
 <script>
-/* D4P2 Stage 2A (2026-08-17): contact form AJAX submit, Architecture B */
+/* D4P2 Stage 2A (2026-08-17): contact form AJAX submit, Architecture B.
+   ChatGPT Ads pilot (2026-10-30): now posts JSON to our own submit-inquiry function, which
+   forwards to Formspree server-side and only reports a conversion once Formspree itself
+   confirms acceptance - the browser no longer has any way to assert a conversion on its
+   own. See netlify/functions/submit-inquiry.js. */
 (function () {
   window.dataLayer = window.dataLayer || [];
 
-  if (!window.fetch || !window.FormData || !window.AbortController) {
+  if (!window.fetch || !window.AbortController) {
     return;
   }
 
-  var form = document.querySelector('form[action$="/f/xgonjavo"]');
+  var form = document.getElementById('contactForm');
   if (!form) {
     return;
+  }
+
+  function formToObject(formEl) {
+    var obj = {};
+    Array.prototype.forEach.call(formEl.elements, function (el) {
+      if (!el.name || el.type === 'submit' || el.type === 'button') {
+        return;
+      }
+      obj[el.name] = el.value;
+    });
+    return obj;
   }
 
   var submitBtn = form.querySelector('button[type="submit"]');
@@ -1226,7 +1240,8 @@ function closeServeDropdown(d){
       form.removeAttribute('aria-busy');
     }
 
-    var formData = new FormData(form);
+    var requestBody = formToObject(form);
+    requestBody.source_url = window.location.href;
     var controller = new AbortController();
     var timeoutId = setTimeout(function () {
       controller.abort();
@@ -1260,15 +1275,6 @@ function closeServeDropdown(d){
           redirectOnce();
         }
 
-        /* ChatGPT Ads pilot (2026-10-30): reports the successful submission only - this
-           branch is only reached when Formspree returned response.ok above. Fire-and-forget;
-           never delays the redirectOnce() watchdog already scheduled above. */
-        try {
-          if (window.BMG_CONVERSION) {
-            window.BMG_CONVERSION.report('lead_created');
-          }
-        } catch (conversionError) { /* best-effort only */ }
-
         return;
       }
 
@@ -1284,8 +1290,8 @@ function closeServeDropdown(d){
 
     fetch(form.getAttribute('action'), {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' },
+      body: JSON.stringify(requestBody),
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       signal: controller.signal
     }).then(handleFetchSuccess, handleFetchRejection);
   });

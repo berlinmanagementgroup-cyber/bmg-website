@@ -16,39 +16,78 @@
  *      variable CALENDLY_WEBHOOK_SIGNING_KEY. Until that variable is set, this function
  *      refuses every request rather than trusting an unauthenticated caller.
  *   3. Set OPENAI_PIXEL_ID and OPENAI_CONVERSIONS_API_KEY (same two variables
- *      report-conversion.js needs).
+ *      submit-inquiry.js needs), scoped to the Production context only.
  *
- * Reference: https://developer.calendly.com/api-docs/db8674e86351c-webhook-subscriptions
+ * Reference: https://developer.calendly.com/api-docs/overview/webhooks/webhook-signatures
  *            https://developers.openai.com/ads/conversions-api
  */
 
 var crypto = require('crypto');
+var capi = require('./lib/openai-capi');
 
-function verifySignature(signatureHeader, rawBody, signingKey) {
-  if (!signatureHeader) {
-    return false;
+var REPLAY_TOLERANCE_SECONDS = 180; // Matches Calendly's own documented example tolerance.
+
+/* Parses "t=<unix>,v1=<hex>" into { t, v1 }. Returns null if either part is missing. */
+function parseSignatureHeader(signatureHeader) {
+  if (!signatureHeader || typeof signatureHeader !== 'string') {
+    return null;
   }
   var parts = {};
   signatureHeader.split(',').forEach(function (part) {
     var eq = part.indexOf('=');
     if (eq > -1) {
-      parts[part.slice(0, eq)] = part.slice(eq + 1);
+      parts[part.slice(0, eq).trim()] = part.slice(eq + 1).trim();
     }
   });
   if (!parts.t || !parts.v1) {
+    return null;
+  }
+  return parts;
+}
+
+/* True only if `t` is a finite Unix-seconds timestamp within toleranceSeconds of `nowMs`
+ * (exported separately from verifySignature so both directions - stale and excessively
+ * future, and malformed/non-finite - can be unit-tested without an HMAC key at all). */
+function isTimestampFresh(t, toleranceSeconds, nowMs) {
+  var n = Number(t);
+  if (!Number.isFinite(n)) {
     return false;
   }
+  var nowSeconds = (typeof nowMs === 'number' ? nowMs : Date.now()) / 1000;
+  return Math.abs(nowSeconds - n) <= toleranceSeconds;
+}
+
+/* Verifies a Calendly webhook signature: HMAC-SHA256 over "{t}.{rawBody}" with the
+ * subscription's signing key, timing-safe compared against v1, with the timestamp checked
+ * against replay (too old or implausibly future) per Calendly's documented recommendation.
+ * Pure aside from Date.now() (overridable via nowMs) - no network, no Netlify - so every
+ * branch is unit-testable with a synthetic key. */
+function verifySignature(signatureHeader, rawBody, signingKey, opts) {
+  opts = opts || {};
+  var toleranceSeconds = opts.toleranceSeconds || REPLAY_TOLERANCE_SECONDS;
+
+  var parts = parseSignatureHeader(signatureHeader);
+  if (!parts) {
+    return { valid: false, reason: 'missing_or_malformed_header' };
+  }
+  if (!isTimestampFresh(parts.t, toleranceSeconds, opts.nowMs)) {
+    return { valid: false, reason: 'stale_or_invalid_timestamp' };
+  }
+
   var expected = crypto
     .createHmac('sha256', signingKey)
     .update(parts.t + '.' + rawBody)
     .digest('hex');
-  // Constant-time compare.
-  var a = Buffer.from(expected);
-  var b = Buffer.from(parts.v1);
-  if (a.length !== b.length) {
-    return false;
+
+  var a = Buffer.from(expected, 'hex');
+  var b = Buffer.from(parts.v1, 'hex');
+  if (a.length === 0 || b.length === 0 || a.length !== b.length) {
+    return { valid: false, reason: 'signature_mismatch' };
   }
-  return crypto.timingSafeEqual(a, b);
+  if (!crypto.timingSafeEqual(a, b)) {
+    return { valid: false, reason: 'signature_mismatch' };
+  }
+  return { valid: true };
 }
 
 exports.handler = async function (event) {
@@ -66,8 +105,9 @@ exports.handler = async function (event) {
     event.headers['calendly-webhook-signature'] || event.headers['Calendly-Webhook-Signature'];
   var rawBody = event.body || '';
 
-  if (!verifySignature(signatureHeader, rawBody, signingKey)) {
-    console.log('[calendly-webhook] Missing or invalid signature; rejecting.');
+  var verification = verifySignature(signatureHeader, rawBody, signingKey);
+  if (!verification.valid) {
+    console.log('[calendly-webhook] Rejected:', verification.reason);
     return { statusCode: 401, body: 'Invalid signature' };
   }
 
@@ -84,45 +124,32 @@ exports.handler = async function (event) {
 
   var invitee = payload.payload || {};
   var tracking = invitee.tracking || {};
-
-  var pixelId = process.env.OPENAI_PIXEL_ID;
-  var apiKey = process.env.OPENAI_CONVERSIONS_API_KEY;
-
-  if (!pixelId || !apiKey) {
-    console.log('[calendly-webhook] Booking verified but OpenAI credentials not configured; not forwarded.');
-    return { statusCode: 200, body: JSON.stringify({ forwarded: false, reason: 'not_configured' }) };
-  }
-
   var eventId = 'calendly_' + (invitee.uri ? invitee.uri.split('/').pop() : crypto.randomUUID());
 
-  var oaiEvent = {
-    id: eventId,
+  var built = capi.buildConversionPayload({
     type: 'appointment_scheduled',
-    timestamp_ms: Date.now(),
-    action_source: 'web',
-    data: { type: 'customer_action' }
-  };
-  if (tracking.salesforce_uuid) {
-    oaiEvent.oppref = tracking.salesforce_uuid;
+    eventId: eventId,
+    oppref: tracking.salesforce_uuid,
+    // The real "web" location of this action is the booking page itself, not a Calendly
+    // API URI (invitee.uri/scheduled_event.uri are API resource references, not web pages).
+    sourceUrl: 'https://calendly.com/brad-berlinmanagementgroup/30min-discovery'
+  });
+
+  if (!built.ok) {
+    console.log('[calendly-webhook] Not forwarding to OpenAI - ' + built.error, 'event id', eventId);
+    return { statusCode: 200, body: JSON.stringify({ forwarded: false, reason: built.error }) };
   }
 
-  try {
-    var resp = await fetch(
-      'https://bzr.openai.com/v1/events?pid=' + encodeURIComponent(pixelId),
-      {
-        method: 'POST',
-        headers: {
-          Authorization: 'Bearer ' + apiKey,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ validate_only: false, events: [oaiEvent] })
-      }
-    );
-    var text = await resp.text();
-    console.log('[calendly-webhook] OpenAI CAPI response', resp.status, text);
-    return { statusCode: 200, body: JSON.stringify({ forwarded: true, openai_status: resp.status }) };
-  } catch (err) {
-    console.log('[calendly-webhook] OpenAI CAPI request failed:', err && err.message);
-    return { statusCode: 502, body: JSON.stringify({ forwarded: false }) };
-  }
+  var result = await capi.sendConversion({
+    pixelId: process.env.OPENAI_PIXEL_ID,
+    apiKey: process.env.OPENAI_CONVERSIONS_API_KEY,
+    event: built.event,
+    logPrefix: '[calendly-webhook]'
+  });
+
+  return { statusCode: 200, body: JSON.stringify(result) };
 };
+
+module.exports.verifySignature = verifySignature;
+module.exports.isTimestampFresh = isTimestampFresh;
+module.exports.parseSignatureHeader = parseSignatureHeader;
