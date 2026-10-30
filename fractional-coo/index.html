@@ -903,6 +903,26 @@ footer{color:#B9C2D4}
   .nav-logo .nav-logo-text{font-size:.8rem}
 }
 </style>
+<style>
+/* BMG-GEO-LOOP-01 U2-4: source-qualified pricing table. Page-local. Wide screens: a table. Narrow screens: each row stacks into a
+   card with its column labels, the caption stays fully visible and nothing scrolls sideways. */
+.prose .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 1.4em}
+.prose table.benchmarks{border-collapse:collapse;width:100%;min-width:640px;font-size:.95em;line-height:1.55}
+.prose table.benchmarks caption{caption-side:top;text-align:left;font-size:.9rem;color:#5a6478;padding:0 0 .6em}
+.prose table.benchmarks th,.prose table.benchmarks td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.prose table.benchmarks thead th{background:var(--navy);color:var(--white);font-weight:600}
+.prose table.benchmarks tbody th{font-weight:600}
+@media (max-width:700px){
+.prose .table-scroll{overflow-x:visible}
+.prose table.benchmarks{min-width:0}
+.prose table.benchmarks,.prose table.benchmarks caption,.prose table.benchmarks tbody,.prose table.benchmarks tr,.prose table.benchmarks th,.prose table.benchmarks td{display:block;width:auto}
+.prose table.benchmarks thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.prose table.benchmarks tbody tr{border:1px solid var(--gray-200);margin:0 0 1em}
+.prose table.benchmarks tbody th,.prose table.benchmarks td{border:0;border-top:1px solid var(--gray-200)}
+.prose table.benchmarks tbody th{border-top:0;background:var(--gray-100)}
+.prose table.benchmarks td::before{content:attr(data-label);display:block;font-weight:600;font-size:.85em;color:#5a6478;margin:0 0 2px}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -978,12 +998,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-inner prose">
     <h2 class="section-heading">What does a fractional COO cost?</h2>
     <p>Published provider benchmarks vary widely based on seniority, scope, and time commitment. Current published ranges extend from the low thousands per month for lighter engagements into the high teens or above for more experienced or time-intensive leadership. These are third-party market examples, not BMG prices.</p>
-    <p>Published benchmarks, each verified against the source publication on August 18, 2026:</p>
-    <ul>
-      <li><strong>ScaleUpExec</strong> publishes retainer tiers from roughly $5,000 to $7,000 per month at about an hour a day, up to roughly $22,000 to $26,000 per month at about four hours a day, with hourly rates of $150 to $500. <a href="https://scaleupexec.com/fractional-coo-rates/" rel="nofollow noopener" target="_blank">ScaleUpExec fractional COO rate tiers</a></li>
-      <li><strong>Kamyar Shah</strong> publishes benchmarks by revenue tier: roughly $3,500 to $5,000 per month for advisory work under $1M revenue, $12,000 to $15,000 per month at $1M to $10M, and $18,000 to $22,000 or more per month above $10M, with day rates of $2,000 to $3,500. <a href="https://kamyarshah.com/how-much-does-a-fractional-coo-cost-benchmarks-by-revenue-tier/" rel="nofollow noopener" target="_blank">Kamyar Shah fractional COO benchmarks by revenue tier</a></li>
-      <li><strong>GetSysPro</strong> publishes market tiers of roughly $3,000 to $8,000 per month for light advisory, $8,000 to $18,000 per month at two to three days a week, and $18,000 or more per month for senior or complex engagements. <a href="https://www.getsyspro.com/newsroom/affordable-fractional-coo-options/" rel="nofollow noopener" target="_blank">GetSysPro fractional COO price tiers</a></li>
-    </ul>
+    <p>Published benchmarks, each verified against the source publication on October 30, 2026:</p>
+    <div class="table-scroll">
+      <table class="benchmarks" role="table">
+        <caption>Third-party pricing benchmarks, not BMG's rates. Each source prices on a different basis and covers different scopes, so the rows are not equivalent tiers. Read each row on its own.</caption>
+        <thead role="rowgroup">
+          <tr><th scope="col">Source</th><th scope="col">Whose figures</th><th scope="col">Priced by</th><th scope="col">Published monthly figures</th><th scope="col">Other published rates</th></tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr><th scope="row" data-label="Source"><a href="https://scaleupexec.com/fractional-coo-rates/" rel="nofollow noopener" target="_blank">ScaleUpExec fractional COO rate tiers</a></th><td data-label="Whose figures">The firm's own engagement pricing</td><td data-label="Priced by">Hours of COO time per day</td><td data-label="Published monthly figures">$5,000 to $7,000 at 1 hour a day (entry tier), up to $22,000 to $26,000 at 4 hours a day (highest of four tiers)</td><td data-label="Other published rates">Cited US market hourly range, not its own rate: $150 to $500 per hour (most experienced operators: $200 to $300)</td></tr>
+          <tr><th scope="row" data-label="Source"><a href="https://kamyarshah.com/how-much-does-a-fractional-coo-cost-benchmarks-by-revenue-tier/" rel="nofollow noopener" target="_blank">Kamyar Shah fractional COO benchmarks by revenue tier</a></th><td data-label="Whose figures">A provider's suggested budgets, published as benchmarks</td><td data-label="Priced by">Company revenue, with scope widening from advisory to an ongoing operating partner</td><td data-label="Published monthly figures">About $3,500 to $5,000 for advisory work under $1M revenue; $12,000 to $15,000 at $1M to $10M; $18,000 to $22,000 or more above $10M</td><td data-label="Other published rates">Day rates of $2,000 to $3,500</td></tr>
+          <tr><th scope="row" data-label="Source"><a href="https://www.getsyspro.com/newsroom/affordable-fractional-coo-options/" rel="nofollow noopener" target="_blank">GetSysPro fractional COO price tiers</a></th><td data-label="Whose figures">Market ranges drawn from its own engagements and published market data</td><td data-label="Priced by">Engagement intensity and seniority</td><td data-label="Published monthly figures">About $3,000 to $8,000 for light advisory; $8,000 to $18,000 at two to three days a week; above $18,000 for senior or complex engagements</td><td data-label="Other published rates">Not quoted here</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
