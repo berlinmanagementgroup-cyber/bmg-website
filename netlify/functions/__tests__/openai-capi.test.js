@@ -154,20 +154,24 @@ test('an invalid oppref riding inside source_url\'s own query string is omitted 
   assert.ok(clean.indexOf('oppref=') === -1);
 });
 
-test('isProductionContext reflects process.env.CONTEXT exactly', function () {
-  var original = process.env.CONTEXT;
+test('isProductionContext reflects process.env.DEPLOY_CONTEXT exactly, failing closed on anything but the literal string "production"', function () {
+  var original = process.env.DEPLOY_CONTEXT;
   try {
-    process.env.CONTEXT = 'production';
+    process.env.DEPLOY_CONTEXT = 'production';
     assert.equal(capi.isProductionContext(), true);
-    process.env.CONTEXT = 'deploy-preview';
+    process.env.DEPLOY_CONTEXT = 'deploy-preview';
     assert.equal(capi.isProductionContext(), false);
-    delete process.env.CONTEXT;
+    process.env.DEPLOY_CONTEXT = 'Production'; // wrong case - must not be treated as a match
+    assert.equal(capi.isProductionContext(), false);
+    process.env.DEPLOY_CONTEXT = '';
+    assert.equal(capi.isProductionContext(), false);
+    delete process.env.DEPLOY_CONTEXT;
     assert.equal(capi.isProductionContext(), false);
   } finally {
     if (original === undefined) {
-      delete process.env.CONTEXT;
+      delete process.env.DEPLOY_CONTEXT;
     } else {
-      process.env.CONTEXT = original;
+      process.env.DEPLOY_CONTEXT = original;
     }
   }
 });

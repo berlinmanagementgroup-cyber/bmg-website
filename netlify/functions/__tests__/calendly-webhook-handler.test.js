@@ -106,7 +106,7 @@ test('ignores a validly-signed event that is not invitee.created, without callin
 
 test('a valid, fresh, signed invitee.created forwards appointment_scheduled to OpenAI in production, carrying oppref from tracking.salesforce_uuid', async function () {
   process.env.CALENDLY_WEBHOOK_SIGNING_KEY = SYNTHETIC_SIGNING_KEY;
-  process.env.CONTEXT = 'production';
+  process.env.DEPLOY_CONTEXT = 'production';
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   try {
@@ -138,7 +138,7 @@ test('a valid, fresh, signed invitee.created forwards appointment_scheduled to O
     );
   } finally {
     delete process.env.CALENDLY_WEBHOOK_SIGNING_KEY;
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
@@ -146,7 +146,7 @@ test('a valid, fresh, signed invitee.created forwards appointment_scheduled to O
 
 test('a valid signed invitee.created outside production does not call OpenAI', async function () {
   process.env.CALENDLY_WEBHOOK_SIGNING_KEY = SYNTHETIC_SIGNING_KEY;
-  process.env.CONTEXT = 'deploy-preview';
+  process.env.DEPLOY_CONTEXT = 'deploy-preview';
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   try {
@@ -167,7 +167,7 @@ test('a valid signed invitee.created outside production does not call OpenAI', a
     });
   } finally {
     delete process.env.CALENDLY_WEBHOOK_SIGNING_KEY;
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
@@ -175,7 +175,7 @@ test('a valid signed invitee.created outside production does not call OpenAI', a
 
 test('a replayed (stale) but correctly signed invitee.created is rejected before ever reaching OpenAI logic', async function () {
   process.env.CALENDLY_WEBHOOK_SIGNING_KEY = SYNTHETIC_SIGNING_KEY;
-  process.env.CONTEXT = 'production';
+  process.env.DEPLOY_CONTEXT = 'production';
   try {
     var body = JSON.stringify({ event: 'invitee.created', payload: { uri: 'x' } });
     var staleSeconds = Math.floor(Date.now() / 1000) - 3600; // an hour old
@@ -192,6 +192,6 @@ test('a replayed (stale) but correctly signed invitee.created is rejected before
     });
   } finally {
     delete process.env.CALENDLY_WEBHOOK_SIGNING_KEY;
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
   }
 });
