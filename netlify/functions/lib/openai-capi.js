@@ -155,13 +155,21 @@ function buildConversionPayload(opts) {
 }
 
 function isProductionContext() {
-  // Netlify sets this automatically: "production" | "deploy-preview" | "branch-deploy" | "dev".
+  // NOTE: Netlify's documented CONTEXT variable ("production" | "deploy-preview" |
+  // "branch-deploy" | "dev") is build-time only - it is NOT exposed to process.env at
+  // Function runtime (confirmed via Netlify's own docs: only URL, SITE_NAME, SITE_ID, and the
+  // AWS-reserved vars are runtime-available to classic Lambda-style handlers like this one).
+  // Checking process.env.CONTEXT here previously always evaluated to false in real production,
+  // silently blocking every conversion. DEPLOY_CONTEXT is a manually-created env var, scoped to
+  // Production only in the Netlify dashboard (the same scoping mechanism already proven working
+  // for OPENAI_PIXEL_ID / OPENAI_CONVERSIONS_API_KEY), set to the literal string "production".
   // Checked here, independent of whether OPENAI_PIXEL_ID/OPENAI_CONVERSIONS_API_KEY happen to
   // be scoped correctly in the Netlify dashboard, so a deploy preview can never forward a real
   // conversion even if the secrets are (mis)configured as available to all contexts. This
   // guard reduces the blast radius of a scoping mistake; it is not a substitute for scoping
-  // the secrets to Production in the Netlify dashboard, which is still required.
-  return process.env.CONTEXT === 'production';
+  // the secrets to Production in the Netlify dashboard, which is still required. Missing or any
+  // other value is treated as non-production (fail closed).
+  return process.env.DEPLOY_CONTEXT === 'production';
 }
 
 /* Sends one event to OpenAI's Conversions API. Accepts `attempts` (default 2) and
@@ -183,8 +191,8 @@ async function sendConversion(opts) {
   var timeoutMs = opts.timeoutMs || 8000;
 
   if (!isProductionContext()) {
-    console.log(logPrefix, 'Skipped: not running in the production context (CONTEXT=' +
-      process.env.CONTEXT + '). Event not sent:', event && event.id);
+    console.log(logPrefix, 'Skipped: not running in the production context (DEPLOY_CONTEXT=' +
+      process.env.DEPLOY_CONTEXT + '). Event not sent:', event && event.id);
     return { sent: false, reason: 'not_production_context' };
   }
 

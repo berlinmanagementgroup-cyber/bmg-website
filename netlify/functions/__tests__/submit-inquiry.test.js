@@ -1,6 +1,6 @@
 /* Unit tests for submit-inquiry.js's own control flow, with global.fetch mocked so no real
- * network call (to Formspree or OpenAI) ever happens. No credentials required - CONTEXT is
- * deliberately left unset/non-production here, which is also what proves the production-
+ * network call (to Formspree or OpenAI) ever happens. No credentials required - DEPLOY_CONTEXT
+ * is deliberately left unset/non-production here, which is also what proves the production-
  * context guard does its job even when OPENAI_PIXEL_ID/OPENAI_CONVERSIONS_API_KEY happen to
  * be set (simulating a misconfigured "available in all contexts" secret).
  * Run with: node --test netlify/functions/__tests__/submit-inquiry.test.js
@@ -47,7 +47,7 @@ function freshHandler() {
 }
 
 test('rejects a request missing required fields before ever calling fetch', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch([], async function (calls) {
     var handler = freshHandler();
     var res = await handler.handler({
@@ -60,7 +60,7 @@ test('rejects a request missing required fields before ever calling fetch', asyn
 });
 
 test('passes through Formspree\'s own error status/body on failure', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch(
     [{ status: 422, body: JSON.stringify({ errors: [{ message: 'bad field' }] }) }],
     async function (calls) {
@@ -77,7 +77,7 @@ test('passes through Formspree\'s own error status/body on failure', async funct
 });
 
 test('on Formspree success, returns 200 and does not forward to OpenAI outside the production context', async function () {
-  process.env.CONTEXT = 'deploy-preview'; // simulate a preview, even with creds "available"
+  process.env.DEPLOY_CONTEXT = 'deploy-preview'; // simulate a preview, even with creds "available"
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   try {
@@ -102,14 +102,14 @@ test('on Formspree success, returns 200 and does not forward to OpenAI outside t
       }
     );
   } finally {
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
 });
 
 test('on Formspree success in production context with real-shaped credentials, also calls OpenAI', async function () {
-  process.env.CONTEXT = 'production';
+  process.env.DEPLOY_CONTEXT = 'production';
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   try {
@@ -136,14 +136,14 @@ test('on Formspree success in production context with real-shaped credentials, a
       }
     );
   } finally {
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
 });
 
 test('an OpenAI-side failure after Formspree succeeds still returns 200 to the browser (lead capture is never blocked by ad tracking)', async function () {
-  process.env.CONTEXT = 'production';
+  process.env.DEPLOY_CONTEXT = 'production';
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   try {
@@ -168,14 +168,14 @@ test('an OpenAI-side failure after Formspree succeeds still returns 200 to the b
       }
     );
   } finally {
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
 });
 
 test('forwards a Referer matching the visitor\'s real page to Formspree, to stay compatible with "Restrict to Domain"', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
     var handler = freshHandler();
     await handler.handler({
@@ -191,7 +191,7 @@ test('forwards a Referer matching the visitor\'s real page to Formspree, to stay
 });
 
 test('falls back to a safe default Referer when source_url is missing or is not this site (never forwards an attacker-supplied Referer unchecked)', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
     var handler = freshHandler();
     await handler.handler({
@@ -207,7 +207,7 @@ test('falls back to a safe default Referer when source_url is missing or is not 
 });
 
 test('a hanging OpenAI call is aborted within its bounded timeout rather than holding the response open', async function () {
-  process.env.CONTEXT = 'production';
+  process.env.DEPLOY_CONTEXT = 'production';
   process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
   process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
   var original = global.fetch;
@@ -242,7 +242,7 @@ test('a hanging OpenAI call is aborted within its bounded timeout rather than ho
     assert.ok(elapsedMs < 7000, 'must resolve well within the 5s bound plus slack, got ' + elapsedMs + 'ms');
   } finally {
     global.fetch = original;
-    delete process.env.CONTEXT;
+    delete process.env.DEPLOY_CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;
   }
@@ -279,7 +279,7 @@ test('a hanging Formspree call is aborted within its own bounded timeout, not le
 });
 
 test('no-JS fallback (application/x-www-form-urlencoded body): success redirects to /thank-you/', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
     var handler = freshHandler();
     var res = await handler.handler({
@@ -319,7 +319,7 @@ test('no-JS fallback: a Formspree-side error also redirects back to /contact/, n
 });
 
 test('the JSON path (normal JS-enabled submit) is unaffected by the form-encoded support added for the no-JS fallback', async function () {
-  delete process.env.CONTEXT;
+  delete process.env.DEPLOY_CONTEXT;
   await withMockedFetch([{ status: 200, body: '{"ok":true}' }], async function (calls) {
     var handler = freshHandler();
     var res = await handler.handler({
