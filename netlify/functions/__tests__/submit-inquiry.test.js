@@ -150,8 +150,7 @@ test('an OpenAI-side failure after Formspree succeeds still returns 200 to the b
     await withMockedFetch(
       [
         { status: 200, body: JSON.stringify({ ok: true }) }, // Formspree succeeds
-        { throw: new Error('simulated network failure') }, // OpenAI attempt 1
-        { throw: new Error('simulated network failure') } // OpenAI attempt 2 (retry)
+        { throw: new Error('simulated network failure') } // OpenAI's single bounded attempt
       ],
       async function (calls) {
         var handler = freshHandler();
@@ -160,10 +159,89 @@ test('an OpenAI-side failure after Formspree succeeds still returns 200 to the b
           body: JSON.stringify({ email: 'a@example.com', problem: 'x', source_url: 'https://berlinmanagementgroup.ai/contact/' })
         });
         assert.equal(res.statusCode, 200);
-        assert.equal(calls.length, 3, 'Formspree once, OpenAI attempted twice (retry) before giving up');
+        // submit-inquiry.js deliberately passes attempts:1 to sendConversion (not the
+        // library's default of 2) specifically so a slow/failing OpenAI leg can never push
+        // this request past the browser's own 15s AbortController after Formspree has
+        // *already* accepted the submission - that would show the visitor a false failure
+        // and risk a genuine duplicate inquiry on retry. See the comment in submit-inquiry.js.
+        assert.equal(calls.length, 2, 'Formspree once, OpenAI attempted exactly once (bounded, no inline retry here)');
       }
     );
   } finally {
+    delete process.env.CONTEXT;
+    delete process.env.OPENAI_PIXEL_ID;
+    delete process.env.OPENAI_CONVERSIONS_API_KEY;
+  }
+});
+
+test('forwards a Referer matching the visitor\'s real page to Formspree, to stay compatible with "Restrict to Domain"', async function () {
+  delete process.env.CONTEXT;
+  await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
+    var handler = freshHandler();
+    await handler.handler({
+      httpMethod: 'POST',
+      body: JSON.stringify({
+        email: 'a@example.com',
+        problem: 'x',
+        source_url: 'https://berlinmanagementgroup.ai/contact/?utm_source=chatgpt'
+      })
+    });
+    assert.equal(calls[0].opts.headers.Referer, 'https://berlinmanagementgroup.ai/contact/?utm_source=chatgpt');
+  });
+});
+
+test('falls back to a safe default Referer when source_url is missing or is not this site (never forwards an attacker-supplied Referer unchecked)', async function () {
+  delete process.env.CONTEXT;
+  await withMockedFetch([{ status: 200, body: '{}' }], async function (calls) {
+    var handler = freshHandler();
+    await handler.handler({
+      httpMethod: 'POST',
+      body: JSON.stringify({
+        email: 'a@example.com',
+        problem: 'x',
+        source_url: 'https://evil.example/not-this-site/'
+      })
+    });
+    assert.equal(calls[0].opts.headers.Referer, 'https://berlinmanagementgroup.ai/contact/');
+  });
+});
+
+test('a hanging OpenAI call is aborted within its bounded timeout rather than holding the response open', async function () {
+  process.env.CONTEXT = 'production';
+  process.env.OPENAI_PIXEL_ID = 'fake-pixel-for-test-only';
+  process.env.OPENAI_CONVERSIONS_API_KEY = 'fake-key-for-test-only';
+  var original = global.fetch;
+  try {
+    var callCount = 0;
+    global.fetch = async function (url, opts) {
+      callCount++;
+      if (url.indexOf('formspree.io') !== -1) {
+        return { ok: true, status: 200, text: async function () { return '{}'; } };
+      }
+      // Simulate a hang: never resolve on its own, only react to the abort signal - exactly
+      // what a real fetch does when its AbortController fires.
+      return new Promise(function (resolve, reject) {
+        opts.signal.addEventListener('abort', function () {
+          var err = new Error('aborted');
+          err.name = 'AbortError';
+          reject(err);
+        });
+      });
+    };
+    var handler = freshHandler();
+    var started = Date.now();
+    var res = await handler.handler({
+      httpMethod: 'POST',
+      body: JSON.stringify({ email: 'a@example.com', problem: 'x', source_url: 'https://berlinmanagementgroup.ai/contact/' })
+    });
+    var elapsedMs = Date.now() - started;
+    assert.equal(res.statusCode, 200, 'the inquiry itself must still succeed');
+    assert.equal(callCount, 2, 'Formspree once, OpenAI attempted once');
+    // submit-inquiry.js passes timeoutMs: 5000 for this call; allow generous slack for test
+    // overhead but this must not have hung indefinitely.
+    assert.ok(elapsedMs < 7000, 'must resolve well within the 5s bound plus slack, got ' + elapsedMs + 'ms');
+  } finally {
+    global.fetch = original;
     delete process.env.CONTEXT;
     delete process.env.OPENAI_PIXEL_ID;
     delete process.env.OPENAI_CONVERSIONS_API_KEY;

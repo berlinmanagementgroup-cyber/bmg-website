@@ -139,6 +139,10 @@ exports.handler = async function (event) {
     console.log('[calendly-webhook] Not forwarding to OpenAI - ' + built.error, 'event id', eventId);
     return { statusCode: 200, body: JSON.stringify({ forwarded: false, reason: built.error }) };
   }
+  if (built.droppedOppref) {
+    console.log('[calendly-webhook] oppref present but invalid (' + built.droppedOppref +
+      '); dropped, not truncated. Event still sent without it:', eventId);
+  }
 
   var result = await capi.sendConversion({
     pixelId: process.env.OPENAI_PIXEL_ID,

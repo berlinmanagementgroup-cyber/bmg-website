@@ -88,15 +88,70 @@ test('clampString caps length and trims', function () {
   assert.equal(capi.clampString('  padded  ', 128), 'padded');
 });
 
-test('oppref longer than 128 chars is truncated, not rejected', function () {
+test('a well-formed oppref is preserved byte-for-byte, including past the 128-char field limit used elsewhere', function () {
+  // 150 chars: longer than the 128-char limit that applies to other normalized fields, to
+  // prove specifically that oppref is exempt from that limit, not just under it by luck.
+  var longButPlausibleOppref = 'gAAAAAb' + '1'.repeat(143);
+  assert.equal(longButPlausibleOppref.length, 150);
   var result = capi.buildConversionPayload({
     type: 'appointment_scheduled',
     eventId: 'calendly_xyz',
-    oppref: 'o'.repeat(300),
+    oppref: longButPlausibleOppref,
     sourceUrl: 'https://calendly.com/brad-berlinmanagementgroup/30min-discovery'
   });
   assert.equal(result.ok, true);
-  assert.equal(result.event.oppref.length, 128);
+  assert.equal(result.event.oppref, longButPlausibleOppref, 'must be byte-for-byte identical, not truncated');
+  assert.equal(result.droppedOppref, undefined);
+});
+
+test('an oppref past the sanity ceiling is dropped, not truncated - the rest of the event still sends', function () {
+  var absurdOppref = 'o'.repeat(5000);
+  var result = capi.buildConversionPayload({
+    type: 'appointment_scheduled',
+    eventId: 'calendly_xyz',
+    oppref: absurdOppref,
+    sourceUrl: 'https://calendly.com/brad-berlinmanagementgroup/30min-discovery'
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.event.oppref, undefined, 'must not send a truncated fragment of it');
+  assert.equal(result.droppedOppref, 'oppref_exceeds_sanity_ceiling');
+});
+
+test('a non-string oppref is dropped, not coerced or truncated', function () {
+  var result = capi.buildConversionPayload({
+    type: 'lead_created',
+    eventId: 'inquiry_xyz',
+    oppref: 12345,
+    sourceUrl: 'https://berlinmanagementgroup.ai/contact/'
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.event.oppref, undefined);
+  assert.equal(result.droppedOppref, 'oppref_not_a_string');
+});
+
+test('an absent oppref is simply absent - not an error, no droppedOppref flag', function () {
+  var result = capi.buildConversionPayload({
+    type: 'lead_created',
+    eventId: 'inquiry_xyz',
+    sourceUrl: 'https://berlinmanagementgroup.ai/contact/'
+  });
+  assert.equal(result.ok, true);
+  assert.equal(result.event.oppref, undefined);
+  assert.equal(result.droppedOppref, undefined);
+});
+
+test('validateOppref directly: present/ok/reason shape for each case', function () {
+  assert.deepEqual(capi.validateOppref(undefined), { present: false });
+  assert.deepEqual(capi.validateOppref(''), { present: false });
+  assert.deepEqual(capi.validateOppref('abc'), { present: true, ok: true, value: 'abc' });
+  assert.equal(capi.validateOppref(42).ok, false);
+  assert.equal(capi.validateOppref('x'.repeat(3000)).ok, false);
+});
+
+test('an invalid oppref riding inside source_url\'s own query string is omitted from the rebuilt URL, not truncated into it', function () {
+  var dirty = 'https://berlinmanagementgroup.ai/contact/?oppref=' + 'o'.repeat(5000);
+  var clean = capi.sanitizeSourceUrl(dirty);
+  assert.ok(clean.indexOf('oppref=') === -1);
 });
 
 test('isProductionContext reflects process.env.CONTEXT exactly', function () {

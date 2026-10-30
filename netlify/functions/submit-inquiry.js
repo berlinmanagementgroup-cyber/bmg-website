@@ -26,6 +26,29 @@ var crypto = require('crypto');
 var capi = require('./lib/openai-capi');
 
 var FORMSPREE_URL = 'https://formspree.io/f/xgonjavo';
+var SITE_HOSTNAME = 'berlinmanagementgroup.ai';
+var DEFAULT_REFERER = 'https://' + SITE_HOSTNAME + '/contact/';
+
+/* Formspree's "Restrict to Domain" setting (if Brad has it enabled on this form) checks the
+ * Referer header on every submission and routes anything that doesn't match to the spam
+ * folder instead of the inbox - silently, with no error back to the caller. A direct
+ * browser-to-Formspree submission always carried a real Referer; this server-side relay
+ * does not unless it sets one explicitly. Using the visitor's own real page (when it's
+ * genuinely this site) keeps that behaviour equivalent instead of silently routing every
+ * submission as unexpected-origin. */
+function refererFor(sourceUrl) {
+  if (typeof sourceUrl === 'string') {
+    try {
+      var parsed = new URL(sourceUrl);
+      if (parsed.hostname === SITE_HOSTNAME) {
+        return sourceUrl;
+      }
+    } catch (e) {
+      // fall through to default
+    }
+  }
+  return DEFAULT_REFERER;
+}
 
 // Fields the real contact form sends; anything else in the request body is dropped rather
 // than blindly forwarded, so this can't become an open relay for arbitrary POST bodies to
@@ -74,7 +97,11 @@ exports.handler = async function (event) {
   try {
     formspreeResp = await fetch(FORMSPREE_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Referer: refererFor(typeof payload.source_url === 'string' ? payload.source_url : null)
+      },
       body: JSON.stringify(forwardBody)
     });
   } catch (err) {
@@ -101,12 +128,25 @@ exports.handler = async function (event) {
   });
 
   if (built.ok) {
+    if (built.droppedOppref) {
+      console.log('[submit-inquiry] oppref present but invalid (' + built.droppedOppref +
+        '); dropped, not truncated. Event still sent without it:', eventId);
+    }
     try {
+      // attempts: 1, a short timeoutMs: this call is chained behind the browser's own 15s
+      // AbortController (see contact/index.html). A slow or hanging OpenAI leg must never
+      // make that budget run out after Formspree has *already* accepted the submission -
+      // that would make the browser show a false failure and invite the visitor to retry,
+      // submitting a genuine duplicate inquiry into Formspree. A single bounded attempt here
+      // trades a slightly lower OpenAI-delivery success rate for a latency ceiling that
+      // can't jeopardize the inquiry itself; a miss is still fully logged for manual resend.
       await capi.sendConversion({
         pixelId: process.env.OPENAI_PIXEL_ID,
         apiKey: process.env.OPENAI_CONVERSIONS_API_KEY,
         event: built.event,
-        logPrefix: '[submit-inquiry]'
+        logPrefix: '[submit-inquiry]',
+        attempts: 1,
+        timeoutMs: 5000
       });
     } catch (err) {
       // Never let an OpenAI-side problem fail the lead capture itself - Formspree already
