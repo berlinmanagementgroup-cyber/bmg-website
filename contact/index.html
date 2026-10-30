@@ -16,6 +16,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'G-182LJV882X');
 </script>
+<!-- ChatGPT Ads pilot (2026-10-30): see /assets/bmg-attribution.js and bmg-conversion.js -->
+<script src="/assets/bmg-attribution.js"></script>
+<script src="/assets/bmg-conversion.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Talk Through a Task or Operating Problem | BMG</title>
@@ -1025,7 +1028,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div><button type="submit" class="cta-primary" style="border:none;cursor:pointer">Request the conversation</button></div>
       <div id="contactFormStatus" class="form-status" role="alert" aria-atomic="true"></div>
     </form>
-    <p style="text-align:center;margin-top:18px">Prefer to book time directly? <a href="https://calendly.com/brad-berlinmanagementgroup/30min-discovery" target="_blank" rel="noopener noreferrer">Choose a slot here</a>.</p>
+    <p style="text-align:center;margin-top:18px">Prefer to book time directly? <a id="calendlyLink" href="https://calendly.com/brad-berlinmanagementgroup/30min-discovery" target="_blank" rel="noopener noreferrer">Choose a slot here</a>.</p>
 <p style="text-align:center;margin-top:10px">Prefer to talk it through first? Call <a href="tel:+16028217807">(602) 821-7807</a>.</p>
   </div>
 </section>
@@ -1140,6 +1143,32 @@ function closeServeDropdown(d){
 })();
 </script>
 <script>
+/* ChatGPT Ads pilot (2026-10-30): attach captured ad attribution to the contact form as
+   hidden fields (so Formspree shows which campaign a lead came from) and to the Calendly
+   link (so a completed booking can be traced back to the same ad click). Separate from,
+   and does not touch, the AJAX submit handler below. */
+(function () {
+  if (!window.BMG_ATTR) {
+    return;
+  }
+
+  var form = document.querySelector('form[action$="/f/xgonjavo"]');
+  if (form) {
+    window.BMG_ATTR.hiddenFieldsInto(form);
+  }
+
+  /* Booking-link clicks are already captured distinctly from form submissions today, with
+     no code change needed: GA4 Enhanced Measurement automatically logs an outbound "click"
+     event with link_domain=calendly.com, outbound=true, separate from the generate_lead
+     event the form submission produces (confirmed live on this site 2026-10-21). Only the
+     href needs the attribution passthrough so a completed booking can be traced back. */
+  var calendlyLink = document.getElementById('calendlyLink');
+  if (calendlyLink) {
+    calendlyLink.href = window.BMG_ATTR.calendlyUrl(calendlyLink.href);
+  }
+})();
+</script>
+<script>
 /* D4P2 Stage 2A (2026-08-17): contact form AJAX submit, Architecture B */
 (function () {
   window.dataLayer = window.dataLayer || [];
@@ -1230,6 +1259,16 @@ function closeServeDropdown(d){
         } catch (pushError) {
           redirectOnce();
         }
+
+        /* ChatGPT Ads pilot (2026-10-30): reports the successful submission only - this
+           branch is only reached when Formspree returned response.ok above. Fire-and-forget;
+           never delays the redirectOnce() watchdog already scheduled above. */
+        try {
+          if (window.BMG_CONVERSION) {
+            window.BMG_CONVERSION.report('lead_created');
+          }
+        } catch (conversionError) { /* best-effort only */ }
+
         return;
       }
 
